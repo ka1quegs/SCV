@@ -90,23 +90,45 @@
                         </div>
                         <div class="input-field">
                             <label>Acesso ao Estacionamento</label>
-                            <select>
-                                <option disabled selected>Selecione uma opção</option>
-                                <option>Sim</option>
-                                <option>Não</option>
-                                
+                            <select id="mySelect">
+                                <option value="">Selecione uma opção</option>
+                                <option value="option1">Sim</option>
+                                <option value="option2">Não</option>
+
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>Placa do Carro</label>
-                            <input type="text" placeholder="Digite a placa">
+                            <label for="input1">Placa do Carro</label>
+                            <input type="text" id="input1" disabled>
                         </div>
-                     
+
 
                         <div class="input-field">
-                            <label>Modelo do Carro</label>
-                            <input type="text" placeholder="Digite o Modelo">
+                            <label for="input2">Modelo do Carro</label>
+                            <input type="text" id="input2" disabled>
                         </div>
+                        <script>
+
+                            const mySelect = document.getElementById("mySelect");
+                            const input1 = document.getElementById("input1");
+                            const input2 = document.getElementById("input2");
+
+                            mySelect.addEventListener("change", function () {
+                                const selectedOption = mySelect.value;
+
+                                if (selectedOption === "option1") {
+                                    // Habilite o input 1 e o input 2 se a opção 1 for selecionada
+                                    input1.disabled = false;
+                                    input2.disabled = false;
+                                } else {
+                                    // Desative o input 1 e o input 2 se a opção 2 ou nenhuma opção for selecionada
+
+                                    input1.disabled = true;
+                                    input2.disabled = true;
+                                }
+                            });
+
+                        </script>
                     <button class="nextBtn">
                         <span class="btnText">Enviar</span>
                         <i class="uil uil-navigator"></i>
