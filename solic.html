@@ -1,153 +1,211 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="solic.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous" ></script>
     <link rel="icon" type="image/png" href="Images/Logo P.png"/>
-    <title>Solicitação</title> 
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="CSS/solic.css">
+    <title>Solicitação</title>
 </head>
 <body>
-
     
-
-    <div class="container">
-        <img src="Images/logo600x80.png" class="image" alt="" />
-        <header>Solicitação de Aprovação de Visitas</header>
-
-        <form action="#">
-            <div class="form first">
-                <div class="details personal">
-                    <span class="title">Informações Pessoais</span>
-
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>Nome Completo</label>
-                            <input type="text" placeholder="Digite o Nome" required>
-                        </div>
-                        <div class="input-field">
-                            <label>RG</label>
-                            <input type="number" placeholder="Digite o RG">
-                        </div>
-                    
-                        <div class="input-field">
-                            <label>CPF</label>
-                            <input type="number" placeholder="Digite o CPF">
-                        </div>
-
-                        <div class="input-field">
-                            <label>Telefone</label>
-                            <input type="number" placeholder="Digite o Telefone">
-                        </div>
-
-                        <div class="input-field">
-                            <label>Celular</label>
-                            <input type="number" placeholder="Digite o celular">
-                        </div>
-                        <div class="input-field">
-                            <label>E-mail</label>
-                            <input type="number" placeholder="Digite o E-mail">
-                        </div>
-                        <div class="input-field">
-                            <label>Período da visita de</label>
-                            <input type="datetime-local" placeholder="Digite o Período">
-                        </div>
-                        <div class="input-field">
-                            <label>Período da visita de</label>
-                            <input type="datetime-local" placeholder="Digite o Período">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="details ID">
-                    <span class="title">Detalhes da Visita</span>
-
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>Empresa</label>
-                            <input type="text" placeholder="Digite a Empresa" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Quem Visitar</label>
-                            <input type="text" placeholder="Digite seu nome" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Área que irá visitar</label>
-                            <input type="text" placeholder="Digite a área" required>
-                        </div>
-                        <div class="input-field">
-                            <label>Acesso a Fábrica</label>
-                            <select>
-                                <option disabled selected>Selecione uma opção</option>
-                                <option>Sim</option>
-                                <option>Não</option>
-                                
-                            </select>
-                        </div>
-                        <div class="input-field">
-                            <label>Acesso ao Estacionamento</label>
-                            <select id="mySelect">
-                                <option value=""  disabled selected>Selecione uma opção</option>
-                                <option value="option1">Sim</option>
-                                <option value="option2">Não</option>
-
-                            </select>
-                        </div>
-                        <div class="input-field">
-                            <label for="input1">Placa do Carro</label>
-                            <input type="text" id="input1" disabled>
-                        </div>
-
-
-                        <div class="input-field">
-                            <label for="input2">Modelo do Carro</label>
-                            <input type="text" id="input2" disabled>
-                        </div>
-                        <script>
-
-                            const mySelect = document.getElementById("mySelect");
-                            const input1 = document.getElementById("input1");
-                            const input2 = document.getElementById("input2");
-
-                            mySelect.addEventListener("change", function () {
-                                const selectedOption = mySelect.value;
-
-                                if (selectedOption === "option1") {
-                                    // Habilite o input 1 e o input 2 se a opção 1 for selecionada
-                                    input1.disabled = false;
-                                    input2.disabled = false;
-                                } else {
-                                    // Desative o input 1 e o input 2 se a opção 2 ou nenhuma opção for selecionada
-
-                                    input1.disabled = true;
-                                    input2.disabled = true;
-                                }
-                            });
-
-                        </script>
-                    <button class="nextBtn">
-                        <span class="btnText">Enviar</span>
-                        <i class="uil uil-navigator"></i>
-                    </button>
-                </div> 
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="images/Logo P.png" alt="">
             </div>
 
-            <div class="fields">
-            <div class="input-field">
-                <label>Observação</label>
-                <textarea id="story" name="story">
-                </textarea>
-                </div>
+            <span class="logo_name">PARANOÁ</span>
         </div>
-    </div> 
-          </div>
-        </form>
-    </div>
 
-    <script src="script.js"></script>
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="#">
+                    <i class="uil uil-user-check"></i>  
+                    <span class="link-name">Solicitação</span>
+                </a></li>
+                <li><a href="#">
+                  <i class="uil uil-clipboard-alt"></i>
+                    <span class="link-name">Cadastro</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-thumbs-up"></i>
+                    <span class="link-name">Aprovação</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-file-search-alt"></i>
+                    <span class="link-name">Consulta</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-monitor"></i>
+                    <span class="link-name">Recepção</span>
+                </a></li>
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Sair</span>
+                </a></li>
+                <!--
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Modo Escuro</span>
+                </a>
+                -->
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+   
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+        </div>
+
+        <!--corpo da página-->
+
+        <div class="container">
+            <img src="Images/logo600x80.png" class="image" alt="" />
+            <header>Solicitação de Aprovação de Visitas</header>
+    
+            <form action="#">
+                <div class="form first">
+                    <div class="details personal">
+                        <span class="title">Informações Pessoais</span>
+    
+                        <div class="fields">
+                            <div class="input-field">
+                                <label>Nome Completo</label>
+                                <input type="text" placeholder="Digite o Nome" required>
+                            </div>
+                            <div class="input-field">
+                                <label>RG</label>
+                                <input type="number" placeholder="Digite o RG">
+                            </div>
+                        
+                            <div class="input-field">
+                                <label>CPF</label>
+                                <input type="number" placeholder="Digite o CPF">
+                            </div>
+    
+                            <div class="input-field">
+                                <label>Telefone</label>
+                                <input type="number" placeholder="Digite o Telefone">
+                            </div>
+    
+                            <div class="input-field">
+                                <label>Celular</label>
+                                <input type="number" placeholder="Digite o celular">
+                            </div>
+                            <div class="input-field">
+                                <label>E-mail</label>
+                                <input type="number" placeholder="Digite o E-mail">
+                            </div>
+                            <div class="input-field">
+                                <label>Período da visita de</label>
+                                <input type="datetime-local" placeholder="Digite o Período">
+                            </div>
+                            <div class="input-field">
+                                <label>Período da visita de</label>
+                                <input type="datetime-local" placeholder="Digite o Período">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="details ID">
+                        <span class="title">Detalhes da Visita</span>
+    
+                        <div class="fields">
+                            <div class="input-field">
+                                <label>Empresa</label>
+                                <input type="text" placeholder="Digite a Empresa" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label>Quem Visitar</label>
+                                <input type="text" placeholder="Digite seu nome" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label>Área que irá visitar</label>
+                                <input type="text" placeholder="Digite a área" required>
+                            </div>
+                            <div class="input-field">
+                                <label>Acesso a Fábrica</label>
+                                <select>
+                                    <option disabled selected>Selecione uma opção</option>
+                                    <option>Sim</option>
+                                    <option>Não</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label>Acesso ao Estacionamento</label>
+                                <select id="mySelect">
+                                    <option value=""  disabled selected>Selecione uma opção</option>
+                                    <option value="option1">Sim</option>
+                                    <option value="option2">Não</option>
+    
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label for="input1">Placa do Carro</label>
+                                <input type="text" id="input1" disabled>
+                            </div>
+    
+    
+                            <div class="input-field">
+                                <label for="input2">Modelo do Carro</label>
+                                <input type="text" id="input2" disabled>
+                            </div>
+                            <script>
+    
+                                const mySelect = document.getElementById("mySelect");
+                                const input1 = document.getElementById("input1");
+                                const input2 = document.getElementById("input2");
+    
+                                mySelect.addEventListener("change", function () {
+                                    const selectedOption = mySelect.value;
+    
+                                    if (selectedOption === "option1") {
+                                        // Habilite o input 1 e o input 2 se a opção 1 for selecionada
+                                        input1.disabled = false;
+                                        input2.disabled = false;
+                                    } else {
+                                        // Desative o input 1 e o input 2 se a opção 2 ou nenhuma opção for selecionada
+    
+                                        input1.disabled = true;
+                                        input2.disabled = true;
+                                    }
+                                });
+    
+                            </script>
+                        <button class="nextBtn">
+                            <span class="btnText">Enviar</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div> 
+                </div>
+    
+                <div class="fields">
+                <div class="input-field">
+                    <label>Observação</label>
+                    <textarea id="story" name="story">
+                    </textarea>
+                    </div>
+            </div>
+        </div> 
+              </div>
+            </form>
+        </div>
+
+        <script src="script.js"></script>
 </body>
 </html>
