@@ -405,6 +405,7 @@ body.dark .nav-links li a:hover .link-name{
     .container form .form{
         max-height: 280px;
     }
+
 }
 
 @media (max-width: 550px) {

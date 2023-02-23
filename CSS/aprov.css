@@ -855,3 +855,39 @@ nav.close ~ .dashboard .top{
 .rwd-table th, .rwd-table td:before {
   color: #4481eb ;
 }
+
+@media (min-width: 450px){
+
+    input{
+      margin-right: 200px;
+      width: 20px;
+    }
+}
+@media (min-width: 430px){
+
+    input{
+      margin-right: 200px;
+      width: 20px;
+    }
+}
+@media (min-width: 410px){
+
+    input{
+      margin-right: 200px;
+      width: 20px;
+    }
+}
+@media (min-width: 400px){
+
+    input{
+      margin-right: 200px;
+      width: 20px;
+    }
+}
+@media (min-width: 420px){
+
+    input{
+      margin-right: 200px;
+      width: 20px;
+    }
+}
