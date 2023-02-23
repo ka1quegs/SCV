@@ -14,13 +14,13 @@ body{
 
 }
 .container{
-    position: relative;
+    position: absolute;
     max-width: 900px;
     width: 100%;
     border-radius: 6px;
     padding: 30px;
     margin: 0 15px;
-   background-color: white;
+    background-color: white;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 .container header{
@@ -49,13 +49,7 @@ background-color: white;
     background-repeat: no-repeat;
     
 }
-.container form .form{
-    max-height: 700px;
-    background-color: #fff;
-    transition: 0.3s ease;
-background-color: white;
-    background-repeat: no-repeat;
-}
+
 
 .container form .form.second{
     opacity: 0;
@@ -420,6 +414,18 @@ body.dark .nav-links li a:hover .link-name{
 /**/
 
  /* Responsive Media Query */
+ @media (max-width: 1920px) {
+    body{
+        max-width: 1140px;
+    }  
+   
+}
+
+@media (max-width: 1200px) {
+    .container{
+        margin: 0;
+    }
+}
 
  @media (max-width: 1000px) {
     nav{
@@ -476,6 +482,14 @@ body.dark .nav-links li a:hover .link-name{
         width: 100% ;
     }
 }
+@media (max-width: 414px){
+    .container{
+        height: 900px;
+    }
+    .container form{
+        height: 700px;
+    }
+}
 @media (max-width: 400px) {
     nav{
         width: 0px;
@@ -515,4 +529,12 @@ body.dark .nav-links li a:hover .link-name{
         left: 0;
         width: 100%;
     }
+   
+    .container{
+        height: 900px;
+    }
+    .container form{
+        height: 700px;
+    }
 }
+
