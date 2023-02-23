@@ -19,7 +19,6 @@ body{
     width: 100%;
     border-radius: 6px;
     padding: 30px;
-    margin: 0 15px;
     background-color: white;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
@@ -45,7 +44,7 @@ body{
     min-height: 490px;
     background-color: #fff;
     overflow: hidden;
-background-color: white;
+    background-color: white;
     background-repeat: no-repeat;
     
 }
@@ -74,7 +73,7 @@ form.secActive .form.first{
     font-weight: 500;
     margin: 6px 0;
     color: #333;
-background-color: white;
+    background-color: white;
     
 }
 .container form .fields{
@@ -82,7 +81,7 @@ background-color: white;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-background-color: white;
+    background-color: white;
 }
 form .fields .input-field{
     display: flex;
@@ -210,7 +209,7 @@ nav{
 
 .dashboard{
     position: relative;
-    left: 350px;
+    left: 300px;
     width: calc(100% - 250px);
     transition: var(--tran-05);
 }

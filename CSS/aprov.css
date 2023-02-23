@@ -513,15 +513,15 @@ nav.close ~ .dashboard .top{
   }
   .home-content .box .cart.two{
      color: #2BD47D;
-     background: #C0F2D8;
+     background: rgba(255, 160, 122, 0.82);
    }
   .home-content .box .cart.three{
      color: #ffc233;
-     background: #ffe8b3;
+     background: rgba(144, 238, 144, 0.82);
    }
   .home-content .box .cart.four{
      color: #e05260;
-     background: #f7d4d7;
+     background: rgba(255, 0, 0, 0.82);
    }
   .home-content .total-order{
     font-size: 20px;
@@ -673,9 +673,25 @@ nav.close ~ .dashboard .top{
     box-shadow: 0 1px 0 0 #15A317;
   }
 
-  input{
-    width: 70%;
+  #scales{
     cursor: pointer;
+    margin: auto;
+  }
+
+  .pendente{
+    background-color: rgba(255, 160, 122, 0.765);
+    border-radius: 5%;
+    font-weight: bold;
+  }
+  .aprovado{
+    background-color: rgba(144, 238, 144, 0.765);
+    border-radius: 5%;
+    font-weight: bold;
+  }
+  .rejeitado{
+    background-color: rgba(255, 0, 0, 0.765);
+    border-radius: 5%;
+    font-weight: bold;
   }
   
   .rwd-table {
@@ -685,13 +701,19 @@ nav.close ~ .dashboard .top{
     overflow: hidden;
     margin: auto;
     width: 100%;
+    
   }
   .rwd-table tr {
     border-color: #46637f;
+    
   }
   .rwd-table th, .rwd-table td {
     margin: .5em 1em;
+    
+    
   }
+
+  
 
   .title{
     font-size: 24px;
@@ -850,16 +872,19 @@ nav.close ~ .dashboard .top{
 @media (min-width: 480px) {
   .rwd-table th, .rwd-table td {
     padding: 1em !important;
+    text-align: center;
   }
+
 }
 .rwd-table th, .rwd-table td:before {
   color: #4481eb ;
+  text-align: center;
 }
 
 @media (min-width: 450px){
 
     input{
-      margin-right: 200px;
+      
       width: 20px;
     }
 }
