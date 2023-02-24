@@ -417,7 +417,11 @@ body.dark .nav-links li a:hover .link-name{
  @media (max-width: 1920px) {
     body{
         max-width: 1140px;
-    }  
+    } 
+    .container {
+        margin-top: 20%;
+        margin-left: 40%;
+    } 
    
 }
 
@@ -471,10 +475,191 @@ body.dark .nav-links li a:hover .link-name{
     }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 800px) {
+    .container form button{
+        margin-right: 8%;
+    }
+    .container{
+        height: 874px;
+    }
+    .container form{
+        overflow-y: scroll;
+        height: 700px;
+    }
+    
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+}
+@media (max-width: 790px) {
+    .container form button{
+        margin-right: 8%;
+    }
+    .container{
+        height: 874px;
+    }
+    .container form{
+        overflow-y: scroll;
+        height: 700px;
+    }
     .dash-content .boxes .box{
         width: calc(100% / 2 - 15px);
         margin-top: 15px;
+    }
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+}
+@media (max-width: 780px) {
+    .container{
+        height: 874px;
+    }
+    .container form{
+        overflow-y: scroll;
+        height: 700px;
+    }
+    .dash-content .boxes .box{
+        width: calc(100% / 2 - 15px);
+        margin-top: 15px;
+    }
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+}
+
+@media (max-width: 770px){
+    .container{
+        height: 874px;
+    }
+    .container form{
+        overflow-y: scroll;
+        height: 700px;
+    }
+    .container form::-webkit-scrollbar{
+       display: none;
+    }
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+    .container form .form{
+        max-height: 280px;
+    }
+    .container img{
+        width: 30%;
+        margin-left: 30%;
+    }
+}
+@media (max-width: 760px){
+    .container{
+        height: 874px;
+    }
+    .container form{
+        overflow-y: scroll;
+        height: 700px;
+    }
+    .container form::-webkit-scrollbar{
+       display: none;
+    }
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+    .container form .form{
+        max-height: 280px;
+    }
+    .container img{
+        width: 30%;
+        margin-left: 30%;
+    }
+
+}
+@media (max-width: 750px){
+    .container{
+        height: 1150px;
+    }
+    .container form{
+        height: 1000px;
+    }
+
+    .container img{
+        width: 50%;
+        margin-left: 30px;
+    }
+
+    .container img{
+        width: 50%;
+        margin-left: 30px;
+    }
+}
+@media (max-width: 740px){
+    .container{
+        height: 1150px;
+    }
+    .container form{
+        height: 1000px;
+    }
+
+    .container img{
+        width: 50%;
+        margin-left: 30px;
+    }
+
+    .container img{
+        width: 50%;
+        margin-left: 30px;
+    }
+}
+@media (max-width: 730px){
+    .container{
+        height: 1150px;
+    }
+    .container form{
+        height: 1000px;
+    }
+
+    .container img{
+        width: 50%;
+        margin-left: 30px;
+    }
+
+    .container img{
+        width: 50%;
+        margin-left: 30px;
+    }
+}
+@media (max-width: 720px){
+    .container{
+        height: 1150px;
+    }
+    .container form{
+        height: 1000px;
+    }
+
+    .container img{
+        width: 50%;
+        margin-left: 30px;
+    }
+
+    .container img{
+        width: 50%;
+        margin-left: 30px;
+    }
+}
+@media (max-width: 712px){
+    .container{
+        height: 1150px;
+    }
+    .container form{
+        height: 1000px;
+    }
+
+    .container img{
+        width: 50%;
+        margin-left: 30px;
+    }
+
+    .container img{
+        width: 50%;
+        margin-left: 30px;
     }
 }
 
@@ -551,6 +736,7 @@ body.dark .nav-links li a:hover .link-name{
         margin-left: 30px;
     }
 }
+
 @media (max-width: 400px) {
     nav{
         width: 0px;
@@ -601,6 +787,12 @@ body.dark .nav-links li a:hover .link-name{
     .container img{
         width: 50%;
         margin-left: 30px;
+    }
+}
+
+@media (max-width: 390px){
+    nav .logo-image img{
+        z-index: 999;
     }
 }
 
