@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+    <link rel="stylesheet" href="aprov-novo.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxs-parking icon'></i>
+        <div class="logo_name">PARANOÁ</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list"> 
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+         <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">User</span>
+       </a>
+       <span class="tooltip">User</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">Messages</span>
+       </a>
+       <span class="tooltip">Messages</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-pie-chart-alt-2' ></i>
+         <span class="links_name">Analytics</span>
+       </a>
+       <span class="tooltip">Analytics</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-folder' ></i>
+         <span class="links_name">File Manager</span>
+       </a>
+       <span class="tooltip">Files</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cart-alt' ></i>
+         <span class="links_name">Order</span>
+       </a>
+       <span class="tooltip">Order</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">Saved</span>
+       </a>
+       <span class="tooltip">Saved</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Setting</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <!--<img src="profile.jpg" alt="profileImg">-->
+           <div class="name_job">
+             <div class="name">Funcionário</div>
+             <div class="job">Sair</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+  
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+  </script>
+
+<section class="dashboard">
+    <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+
+        <div class="search-box">
+            <i class="uil uil-search"></i>
+            <input type="text" placeholder="Pesquise aqui...">
+        </div>
+        
+        <a href="#"><img src="images/profile.jpg" alt=""></a>
+    </div>
+
+    <div class="home-content">
+        <div class="overview-boxes">
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Total Solicitações</div>
+              <div class="number">1,814</div>
+              <div class="indicator">
+                
+                
+              </div>
+            </div>
+            <i class='bx bx-cart-alt cart'></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Solicitações Pendentes</div>
+              <div class="number">736</div>
+              <div class="indicator">
+            
+              </div>
+            </div>
+            <i class='bx bxs-cart-add cart two' ></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Solicitações Aprovadas</div>
+              <div class="number">569</div>
+              <div class="indicator">
+    
+              </div>
+            </div>
+            <i class='bx bx-cart cart three' ></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Solicitações Rejeitadas</div>
+              <div class="number">213</div>
+              <div class="indicator">
+               
+              </div>
+            </div>
+            <i class='bx bxs-cart-download cart four' ></i>
+          </div>
+        </div>
+
+        <button type="button" class="simple-button simple-button--blue">APROVAR</button>
+        <button type="button" class="simple-button simple-button--red">REJEITAR</button>
+        <br><br><br>
+
+        <div class="title">
+            <i class="uil uil-clock"></i>
+    <span class="title">Últimas Solicitações</span>
+        </div>
+    <br>
+<table class="rwd-table">
+<tr>
+<th>Selecionar</th>
+<th>Código</th>
+<th>Visitante</th>
+<th>Solicitante</th>
+<th>Empresa</th>
+<th>Status</th>
+</tr>
+<tr>
+<td><input type="checkbox" id="scales" name="scales"></td>
+<td data-th="Código">003</td>
+<td data-th="Nome">Caio Garcia</td>
+<td data-th="Solic.">Crislaine Garcia</td>
+<td data-th="Empresa">Paranoá</td>
+<td data-th="Status" class="aprovado">Aprovado</td>
+</tr>
+<tr>
+<td><input type="checkbox" id="scales" name="scales"></td>
+<td data-th="Código">002</td>
+<td data-th="Nome">Kaique Santana</td>
+<td data-th="Solic.">Cintia Cruz</td>
+<td data-th="Empresa">Scania</td>
+<td data-th="Status" class="rejeitado">Rejeitado</td>
+</tr>
+<tr>
+<td><input type="checkbox" id="scales" name="scales"></td>
+<td data-th="Código">001</td>
+<td data-th="Nome">Beatriz Torres</td>
+<td data-th="Solic.">André Santos</td>
+<td data-th="Empresa">Mercedes</td>
+<td data-th="Status" class="pendente">Pendente</td>
+</tr>
+</table>
+    </div>
+</section>
+
+</body>
+</html>
