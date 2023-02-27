@@ -411,10 +411,10 @@ img{
     margin-top: 10%;
   }
 }
-@media(max-width: 1340px){
+@media(max-width: 1370px){
   .container{
     margin-left: 20%;
-    margin-top: -1%;
+    margin-top: 1%;
   }
 }
 
