@@ -267,7 +267,7 @@ body{
 .container form{
     position: relative;
     margin-top: 16px;
-    min-height: 490px;
+    
     background-color: #fff;
     overflow: hidden;
     background-color: white;
@@ -391,7 +391,7 @@ img{
         max-width: 1140px;
     } 
     .container {
-        margin-top: 30%;
+        margin-top: 10%;
         margin-left: 30%;
        }
 }
