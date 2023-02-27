@@ -115,7 +115,10 @@ form.login-form {
   margin: 10px 0;
   cursor: pointer;
   transition: 0.5s;
+  margin-left: 42%;
 }
+
+
 
 .btn:hover {
   background-color: #4d84e2;
@@ -214,6 +217,7 @@ form.login-form {
 .container.sign-up-mode .right-panel {
   pointer-events: all;
 }
+
 
 @media (max-width: 870px) {
   .container {
