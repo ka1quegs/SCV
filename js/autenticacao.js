@@ -7,7 +7,7 @@ btnLogin.addEventListener('click', function(){
 
     firebaseConfig.auth().signInWithEmailAndPassword(inputEmail.value,inputPassword.value).then(function(result){
         alert('Usuário conectado!');
-
+console.log("sucess")
     }).catch(function(error){
         var errorCode = error.code;
         var errorMessage = error.message;
