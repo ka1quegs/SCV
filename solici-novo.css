@@ -405,6 +405,12 @@ img{
 
 }
 
+@media(max-width: 1920px){
+  .container{
+    margin-left: 30%;
+    margin-top: 10%;
+  }
+}
 
 
 @media (max-width: 750px) {
