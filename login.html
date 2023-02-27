@@ -16,13 +16,14 @@
             <h2 class="title">Login</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Usuário ou RE" />
+              <input type="text" id="inputEmail" placeholder="Usuário ou RE"  />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Senha" />
+              <input type="password" id="inputPassword" placeholder="Senha"  />
             </div>
-            <a href="solici-novo.html"><input type="button" value="Entrar" class="btn solid" /></a>
+            <a href="solic.html"><button class="btn solid" id="btnLogin">Entrar</button></a>
+
           </form>
       </div>
       <div class="panels-container">
@@ -36,11 +37,8 @@
           </div>
           <img src="Images/logo600x80.png" class="image" alt="" />
         </div>
-        <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth-compat.js"></script>
-        <script>
-
- 
-        </script>
+        <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/autenticacao.js"></script>
   </body>
 </html>
