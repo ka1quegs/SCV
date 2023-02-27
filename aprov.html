@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/aprov.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="icon" type="image/png" href="Images/Logo P.png"/>
+    <title>Aprovação de Visita</title> 
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="images/Logo P.png" alt="">
+            </div>
+
+            <span class="logo_name">PARANOÁ</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="solic.html">
+                    <i class="uil uil-user-check"></i>  
+                    <span class="link-name">Solicitação</span>  
+                </a></li>
+                <li><a href="#">
+                  <i class="uil uil-clipboard-alt"></i>
+                    <span class="link-name">Cadastro</span>
+                </a></li>
+                <li><a href="aprov.html">
+                    <i class="uil uil-thumbs-up"></i>
+                    <span class="link-name">Aprovação</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-file-search-alt"></i>
+                    <span class="link-name">Consulta</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-monitor"></i>
+                    <span class="link-name">Recepção</span>
+                </a></li>
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Sair</span>
+                </a></li>
+                <!--
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Modo Escuro</span>
+                </a>
+                -->
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Pesquise aqui...">
+            </div>
+            
+            <a href="#"><img src="images/profile.jpg" alt=""></a>
+        </div>
+
+        <div class="home-content">
+            <div class="overview-boxes">
+              <div class="box">
+                <div class="right-side">
+                  <div class="box-topic">Total Solicitações</div>
+                  <div class="number">1,814</div>
+                  <div class="indicator">
+                    
+                    
+                  </div>
+                </div>
+                <i class='bx bx-cart-alt cart'></i>
+              </div>
+              <div class="box">
+                <div class="right-side">
+                  <div class="box-topic">Solicitações Pendentes</div>
+                  <div class="number">736</div>
+                  <div class="indicator">
+                
+                  </div>
+                </div>
+                <i class='bx bxs-cart-add cart two' ></i>
+              </div>
+              <div class="box">
+                <div class="right-side">
+                  <div class="box-topic">Solicitações Aprovadas</div>
+                  <div class="number">569</div>
+                  <div class="indicator">
+        
+                  </div>
+                </div>
+                <i class='bx bx-cart cart three' ></i>
+              </div>
+              <div class="box">
+                <div class="right-side">
+                  <div class="box-topic">Solicitações Rejeitadas</div>
+                  <div class="number">213</div>
+                  <div class="indicator">
+                   
+                  </div>
+                </div>
+                <i class='bx bxs-cart-download cart four' ></i>
+              </div>
+            </div>
+
+            <button type="button" class="simple-button simple-button--blue">APROVAR</button>
+            <button type="button" class="simple-button simple-button--red">REJEITAR</button>
+            <br><br><br>
+
+            <div class="title">
+                <i class="uil uil-clock"></i>
+        <span class="title">Últimas Solicitações</span>
+            </div>
+        <br>
+<table class="rwd-table">
+  <tr>
+    <th>Selecionar</th>
+    <th>Código</th>
+    <th>Visitante</th>
+    <th>Solicitante</th>
+    <th>Empresa</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td><input type="checkbox" id="scales" name="scales"></td>
+    <td data-th="Código">003</td>
+    <td data-th="Nome">Caio Garcia</td>
+    <td data-th="Solic.">Crislaine Garcia</td>
+    <td data-th="Empresa">Paranoá</td>
+    <td data-th="Status" class="aprovado">Aprovado</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" id="scales" name="scales"></td>
+    <td data-th="Código">002</td>
+    <td data-th="Nome">Kaique Santana</td>
+    <td data-th="Solic.">Cintia Cruz</td>
+    <td data-th="Empresa">Scania</td>
+    <td data-th="Status" class="rejeitado">Rejeitado</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" id="scales" name="scales"></td>
+    <td data-th="Código">001</td>
+    <td data-th="Nome">Beatriz Torres</td>
+    <td data-th="Solic.">André Santos</td>
+    <td data-th="Empresa">Mercedes</td>
+    <td data-th="Status" class="pendente">Pendente</td>
+  </tr>
+</table>
+        </div>
+    </section>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
