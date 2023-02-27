@@ -4,8 +4,8 @@
   <head>
     <meta charset="UTF-8">
     <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
-    <link rel="stylesheet" href="cadastro.css">
-    <link rel="stylesheet" href="foto.css">
+    <link rel="stylesheet" href="CSS/cadastro.css">
+    <link rel="stylesheet" href="CSS/foto.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,71 +20,58 @@
     <ul class="nav-list"> 
       <li>
           <i class='bx bx-search' ></i>
-         <input type="text" placeholder="Search...">
-         <span class="tooltip">Search</span>
+         <input type="text" placeholder="Pesquisar...">
+         <span class="tooltip">Pesquisar</span>
       </li>
       <li>
-        <a href="#">
+        <a href="solici-novo.html">
           <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Dashboard</span>
+          <span class="links_name">Solicitação</span>
         </a>
-         <span class="tooltip">Dashboard</span>
+         <span class="tooltip">Solicitação</span>
       </li>
       <li>
-       <a href="#">
+       <a href="cadastro.html">
          <i class='bx bx-user' ></i>
-         <span class="links_name">User</span>
+         <span class="links_name">Cadastro</span>
        </a>
-       <span class="tooltip">User</span>
+       <span class="tooltip">Cadastro</span>
      </li>
      <li>
        <a href="#">
          <i class='bx bx-chat' ></i>
-         <span class="links_name">Messages</span>
+         <span class="links_name">Consulta</span>
        </a>
-       <span class="tooltip">Messages</span>
+       <span class="tooltip">Consulta</span>
      </li>
      <li>
-       <a href="#">
+       <a href="aprov-novo.html">
          <i class='bx bx-pie-chart-alt-2' ></i>
-         <span class="links_name">Analytics</span>
+         <span class="links_name">Aprovação</span>
        </a>
-       <span class="tooltip">Analytics</span>
+       <span class="tooltip">Aprovação</span>
      </li>
      <li>
        <a href="#">
          <i class='bx bx-folder' ></i>
-         <span class="links_name">File Manager</span>
+         <span class="links_name">Recepção</span>
        </a>
-       <span class="tooltip">Files</span>
+       <span class="tooltip">Recepção</span>
      </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-cart-alt' ></i>
-         <span class="links_name">Order</span>
-       </a>
-       <span class="tooltip">Order</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-heart' ></i>
-         <span class="links_name">Saved</span>
-       </a>
-       <span class="tooltip">Saved</span>
-     </li>
+
      <li>
        <a href="#">
          <i class='bx bx-cog' ></i>
-         <span class="links_name">Setting</span>
+         <span class="links_name">Configurações</span>
        </a>
-       <span class="tooltip">Setting</span>
+       <span class="tooltip">Configurações</span>
      </li>
      <li class="profile">
          <div class="profile-details">
            <!--<img src="profile.jpg" alt="profileImg">-->
            <div class="name_job">
-             <div class="name">Prem Shahi</div>
-             <div class="job">Web designer</div>
+             <div class="name">Funcionário</div>
+             <div class="job">Sair</div>
            </div>
          </div>
          <i class='bx bx-log-out' id="log_out" ></i>
@@ -139,70 +126,69 @@
 
                 <div class="fields">
                     <div class="input-field">
-                        <label>Full Name</label>
-                        <input type="text" placeholder="Enter your name" required>
+                        <label>Código de Controle</label>
+                        <input type="number" placeholder="Código de Controle" required>
+                    </div>
+                    <div class="input-field">
+                      <label>Data do Cadastro</label>
+                      <input type="date" required>
+                  </div>
+
+                    <div class="input-field">
+                        <label>Hora da Entrada</label>
+                        <input type="time" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Hora da Saída</label>
+                        <input type="time" required>
                     </div>
 
                     <div class="input-field">
-                        <label>Date of Birth</label>
-                        <input type="date" placeholder="Enter birth date" required>
+                      <label>Tipo do Cadastro</label>
+                      <input type="text" placeholder="Pré-Cadastro/Efetivo" required>
+                  </div>
+
+                    <div class="input-field">
+                        <label>Nome Completo</label>
+                        <input type="text" placeholder="Digite o Nome" required>
                     </div>
 
                     <div class="input-field">
-                        <label>Email</label>
-                        <input type="text" placeholder="Enter your email" required>
+                        <label>RG</label>
+                        <input type="number" placeholder="Digite o RG" required>
                     </div>
 
                     <div class="input-field">
-                        <label>Mobile Number</label>
-                        <input type="number" placeholder="Enter mobile number" required>
+                        <label>CPF</label>
+                        <input type="number" placeholder="Digite o CPF" required>
                     </div>
 
                     <div class="input-field">
-                        <label>Gender</label>
-                        <select required>
-                            <option disabled selected>Select gender</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Others</option>
-                        </select>
+                        <label>Celular</label>
+                        <input type="number" placeholder="Digite o Celular" required>
                     </div>
 
                     <div class="input-field">
-                        <label>Occupation</label>
-                        <input type="text" placeholder="Enter your ccupation" required>
+                        <label>E-Mail</label>
+                        <input type="email" placeholder="Digite o E-Mail" required>
                     </div>
         
         
                     <div class="input-field">
-                        <label>ID Type</label>
-                        <input type="text" placeholder="Enter ID type" required>
+                        <label>Empresa</label>
+                        <input type="text" placeholder="Digite a Empresa" required>
                     </div>
 
-                    <div class="input-field">
-                        <label>ID Number</label>
-                        <input type="number" placeholder="Enter ID number" required>
+                  
+
+                      <div class="input-field">
+                        <label>Observação</label>
+                        <textarea id="story" name="story">
+                      </textarea>
+                      </div>
                     </div>
 
-                    <div class="input-field">
-                        <label>Issued Authority</label>
-                        <input type="text" placeholder="Enter issued authority" required>
-                    </div>
-
-                    <div class="input-field">
-                        <label>Issued State</label>
-                        <input type="text" placeholder="Enter issued state" required>
-                    </div>
-
-                    <div class="input-field">
-                        <label>Issued Date</label>
-                        <input type="date" placeholder="Enter your issued date" required>
-                    </div>
-
-                    <div class="input-field">
-                        <label>Expiry Date</label>
-                        <input type="date" placeholder="Enter expiry date" required>
-                    </div>
+                    
                 </div>
 
                 <button style="margin-left: 75%;">
@@ -211,6 +197,6 @@
                 </button>
             </form>
 
-<script src="foto.js"></script>
+<script src="js/foto.js"></script>
 </body>
 </html> 
