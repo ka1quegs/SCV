@@ -1,6 +1,6 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
-
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js';
+import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -17,8 +17,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-
+  
 const auth = getAuth();
 signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
