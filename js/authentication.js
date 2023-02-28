@@ -7,16 +7,17 @@ var inputPassword = document.getElementById('inputPassword');
 btnLogin.addEventListener('click', function(){
 
     const auth = getAuth();
-    signInWithEmailAndPassword(auth, inputEmail, inputPassword)
-      .then((userCredential) => {
+    signInWithEmailAndPassword(auth, inputEmail.value, inputPassword.value)
+      .then(function(result){
         // Signed in
-        const user = userCredential.user;
+        alert("Usuário conectado");
         // ...
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-      });
+      .catch(function(error){
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        alert(errorMessage);
+      })
 
 
 });
