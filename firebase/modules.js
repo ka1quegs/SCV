@@ -6,7 +6,7 @@ import { getAuth, signInWithEmailAndPassword, signOut} from "https://www.gstatic
 
 
 
-// Your web app's Firebase configuration
+// Configurações do Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyCT1mvPmNZ6MAUxVnga4vFqk5-oUxSrACc",
     authDomain: "projeto-tcc-bca68.firebaseapp.com",
@@ -32,7 +32,6 @@ const firebaseConfig = {
   let password = inputPassword;
   let login = btnLogin;
   
-
     login.addEventListener('click', function(){
       signInWithEmailAndPassword(auth, email, password )
         .then(async (userCredential) => {
