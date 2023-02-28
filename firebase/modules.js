@@ -28,9 +28,10 @@ const firebaseConfig = {
   let password = inputPassword;
 
   
+
+
   btnLogin.addEventListener('click', function(){
   
-      const auth = getAuth();
       signInWithEmailAndPassword(auth, email, password )
         .then(async (userCredential) => {
             const user = userCredential.user
