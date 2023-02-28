@@ -26,7 +26,7 @@ const firebaseConfig = {
   
   
 
-  if (htmlAtual == "TCC-main/login.html"){
+  if (htmlAtual == "https://ka1quegs.github.io/TCC/login"){
 
   let email = inputEmail;
   let password = inputPassword;
