@@ -1,4 +1,8 @@
-import { initializeApp,  getAuth, signOut , signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+import { initializeApp,  getAuth, signOut , signInWithEmailAndPassword}
+from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.0/firebase-app.js";
+
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -22,7 +26,9 @@ var inputPassword = document.getElementById('inputPassword');
 
 btnLogin.addEventListener('click', function(){
 
-    firebaseConfig.auth().signInWithEmailAndPassword(inputEmail.value,inputPassword.value).then(function(result){
+    firebaseConfig.auth().signInWithEmailAndPassword(inputEmail.value,inputPassword.value)
+    
+    .then(function(result){
         alert('Usuário conectado!');
         console.log("sucess")
     }).catch(function(error){
