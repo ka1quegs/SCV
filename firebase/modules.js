@@ -43,7 +43,7 @@ const firebaseConfig = {
             const errorCode = error.code;
             const errorMessage = error.message;
             if (errorCode == "auth/user-not-found"){
-                alert("Usuário não existente, por favor realize o cadastro.")
+                alert("Usuário não existente!")
             }else if (errorCode == "auth/wrong-password") {
                 alert("Email ou senha incorreta!")}
             else if(errorCode == "auth/internal-error"){alert("Ops um erro ocorreu, tente novamente mais tarde")}
