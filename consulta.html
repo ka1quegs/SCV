@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Consulta de Visitantes</title>
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="shortcut icon" href="Images/Logo P.png" >
+        
+        <link rel="stylesheet" href="CSS/consulta.css">
+    </head>
+    <body>
+
+        <div class="sidebar">
+            <div class="logo-details">
+              <i class='bx bxs-parking icon'></i>
+                <div class="logo_name">PARANOÁ</div>
+                <i class='bx bx-menu' id="btn" ></i>
+            </div>
+            <ul class="nav-list"> 
+              <li>
+                  <i class='bx bx-search' ></i>
+                 <input type="text" placeholder="Pesquisar...">
+                 <span class="tooltip">Pesquisar</span>
+              </li>
+              <li>
+                <a href="solici-novo.html">
+                  <i class='bx bx-grid-alt'></i>
+                  <span class="links_name">Solicitação</span>
+                </a>
+                 <span class="tooltip">Solicitação</span>
+              </li>
+              <li>
+               <a href="cadastro.html">
+                 <i class='bx bx-user' ></i>
+                 <span class="links_name">Cadastro</span>
+               </a>
+               <span class="tooltip">Cadastro</span>
+             </li>
+             <li>
+               <a href="consulta.html">
+                 <i class='bx bx-chat' ></i>
+                 <span class="links_name">Consulta</span>
+               </a>
+               <span class="tooltip">Consulta</span>
+             </li>
+             <li>
+               <a href="aprov-novo.html">
+                 <i class='bx bx-pie-chart-alt-2' ></i>
+                 <span class="links_name">Aprovação</span>
+               </a>
+               <span class="tooltip">Aprovação</span>
+             </li>
+             <li>
+          
+        
+             <li>
+               <a href="#">
+                 <i class='bx bx-cog' ></i>
+                 <span class="links_name">Configurações</span>
+               </a>
+               <span class="tooltip">Configurações</span>
+             </li>
+             <li class="profile">
+                 <div class="profile-details">
+                   <!--<img src="profile.jpg" alt="profileImg">-->
+                   <div class="name_job">
+                     <div class="name">Funcionário</div>
+                     <div class="job">Sair</div>
+                   </div>
+                 </div>
+                 <i class='bx bx-log-out' id="log_out" ></i>
+             </li>
+            </ul>
+          </div>
+          
+          <script>
+          let sidebar = document.querySelector(".sidebar");
+          let closeBtn = document.querySelector("#btn");
+          let searchBtn = document.querySelector(".bx-search");
+        
+          closeBtn.addEventListener("click", ()=>{
+            sidebar.classList.toggle("open");
+            menuBtnChange();//calling the function(optional)
+          });
+        
+          searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+            sidebar.classList.toggle("open");
+            menuBtnChange(); //calling the function(optional)
+          });
+        
+          // following are the code to change sidebar button(optional)
+          function menuBtnChange() {
+           if(sidebar.classList.contains("open")){
+             closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+           }else {
+             closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+           }
+          }
+          </script>
+
+        <img class="img" src="Images/logo600x80.png" alt="">
+        
+        <div class="title">
+            <h1>Consulta de Visitantes</h1>
+            <hr>
+        
+            <input id="input-busca" type="text" placeholder="O que você procura?">
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Cód.</th>
+                        <th>Data da Visita</th>
+                        <th>Nome</th>
+                        <th>Empresa</th>
+                        <th>Solicitante</th>
+                        <th>Status</th>
+                        <th>Aprovado/rejeitado Por</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-func">
+                    <tr>
+                        <td>1</td>
+                        <td>28/02/2023</td>
+                        <td>Caio Garcia</td>
+                        <td>Paranóa</td>
+                        <td>Crislaine Garcia</td>
+                        <td>Aprovado</td>
+                        <td>Cristiane Alves</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning">Visualizar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>28/02/2023</td>
+                        <td>Wanderson fabricio</td>
+                        <td>Paranóa</td>
+                        <td>Regiane Kemita</td>
+                        <td>Aprovado</td>
+                        <td>Cristiane Alves</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning">Visualizar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>28/02/2023</td>
+                        <td>Isabelly Gomes</td>
+                        <td>Paranóa</td>
+                        <td>José Carlos</td>
+                        <td>Aprovado</td>
+                        <td>Cristiane Alves</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning">Visualizar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>28/02/2023</td>
+                        <td>Caio Garcia</td>
+                        <td>Paranóa</td>
+                        <td>Crislaine Garcia</td>
+                        <td>Aprovado</td>
+                        <td>Cristiane Alves</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning">Visualizar</button>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>28/02/2023</td>
+                        <td>Caio Garcia</td>
+                        <td>Paranóa</td>
+                        <td>Crislaine Garcia</td>
+                        <td>Aprovado</td>
+                        <td>Cristiane Alves</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning">Visualizar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>28/02/2023</td>
+                        <td>Caio Garcia</td>
+                        <td>Paranóa</td>
+                        <td>Crislaine Garcia</td>
+                        <td>Aprovado</td>
+                        <td>Cristiane Alves</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning">Visualizar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>28/02/2023</td>
+                        <td>Caio Garcia</td>
+                        <td>Paranóa</td>
+                        <td>Crislaine Garcia</td>
+                        <td>Aprovado</td>
+                        <td>Cristiane Alves</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning">Visualizar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>28/02/2023</td>
+                        <td>Caio Garcia</td>
+                        <td>Paranóa</td>
+                        <td>Crislaine Garcia</td>
+                        <td>Aprovado</td>
+                        <td>Cristiane Alves</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning">Visualizar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>28/02/2023</td>
+                        <td>Caio Garcia</td>
+                        <td>Paranóa</td>
+                        <td>Crislaine Garcia</td>
+                        <td>Aprovado</td>
+                        <td>Cristiane Alves</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning">Visualizar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </thead>
+        </div>
+
+        <script>
+            const INPUT_BUSCA = document.getElementById('input-busca');
+const TABELA_BEBIDAS = document.getElementById('tabela-func');
+
+INPUT_BUSCA.addEventListener('keyup', () => {
+    let expressao = INPUT_BUSCA.value.toLowerCase();
+
+    if (expressao.length === 1) {
+        return;
+    }
+
+    let linhas = TABELA_BEBIDAS.getElementsByTagName('tr');
+
+    for (let posicao in linhas) {
+        if (true === isNaN(posicao)) {
+            continue;
+        }
+
+        let conteudoDaLinha = linhas[posicao].innerHTML.toLowerCase();
+
+        if (true === conteudoDaLinha.includes(expressao)) {
+            linhas[posicao].style.display = '';
+        } else {
+            linhas[posicao].style.display = 'none';
+        }
+    }
+});
+        </script>
+    </body>
+</html>
