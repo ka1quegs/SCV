@@ -45,7 +45,7 @@
     font-size: 17px;
     text-align: center;
     padding: 5px;
-    line-height: 2;  
+    line-height: 3;  
 }
 
 .btn{
@@ -55,6 +55,12 @@
     padding: 7px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.btn:hover {
+  background-color: goldenrod;
+  color:white;
+  transition: 0.5s ease;
 }
 
 .sidebar{
