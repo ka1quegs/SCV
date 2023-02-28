@@ -19,7 +19,7 @@ const db = getFirestore(app);
 
   
 const auth = getAuth();
-signInWithEmailAndPassword(auth, email, password)
+signInWithEmailAndPassword(auth, inputEmail, inputPassword)
   .then((userCredential) => {
     // Signed in
     const user = userCredential.user;
