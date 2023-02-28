@@ -1,7 +1,8 @@
+let htmlAtual = document.location.pathname
 //Inicializa aplicação e sincroniza com o Firebase.
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js';
 //Importa os métodos de autenticação.
-import { getAuth, signOut , signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
 
 
@@ -19,19 +20,20 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
   
-
-  let btnLogin = document.getElementById('btnLogin').value;
   let inputEmail = document.getElementById('inputEmail').value;
   let inputPassword = document.getElementById('inputPassword').value;
+  let btnLogin = document.getElementById('btnLogin').value;
   
+  
+
+  if (htmlAtual == "TCC-main/login.html"){
+
   let email = inputEmail;
   let password = inputPassword;
-
+  let login = btnLogin;
   
 
-
-  btnLogin.addEventListener('click', function(){
-  
+    login.addEventListener('click', function(){
       signInWithEmailAndPassword(auth, email, password )
         .then(async (userCredential) => {
             const user = userCredential.user
@@ -53,4 +55,4 @@ const firebaseConfig = {
         });
   
   });
-  
+}
