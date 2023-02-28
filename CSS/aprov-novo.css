@@ -113,6 +113,7 @@
   border-radius: 12px;
   transition: all 0.5s ease;
   background: #1d1b31;
+  
 }
 .sidebar.open input{
   padding: 0 20px 0 50px;
@@ -253,10 +254,10 @@
 
 .dashboard{
     position: relative;
-    left: 250px;
+    left: 70px;
     background-color: var(--panel-color);
     min-height: 100vh;
-    width: calc(100% - 250px);
+    width: 94%;
     padding: 10px 14px;
     transition: var(--tran-05);
 }
@@ -305,6 +306,7 @@ nav.close ~ .dashboard .top{
     font-size: 15px;
     font-weight: 400;
     outline: none;
+    
 }
 .top .search-box i{
     position: absolute;
@@ -536,7 +538,7 @@ nav.close ~ .dashboard .top{
     margin-top: 10%;
   }
   .overview-boxes .box-topic{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
   }
   .home-content .box .number{
