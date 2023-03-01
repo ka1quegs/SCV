@@ -268,15 +268,13 @@ nav.close ~ .dashboard{
 .dashboard .top{
     position: fixed;
     top: 0;
-    left: 250px;
-    display: flex;
-    width: calc(100% - 250px);
-    justify-content: space-between;
+    width: 100%;
+    right: 0;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     padding: 10px 14px;
-    background-color: var(--panel-color);
-    transition: var(--tran-05);
-    z-index: 10;
+   
 }
 nav.close ~ .dashboard .top{
     left: 73px;
@@ -317,10 +315,7 @@ nav.close ~ .dashboard .top{
     transform: translateY(-50%);
     color: var(--black-light-color);
 }
-.top img{
-    width: 40px;
-    border-radius: 50%;
-}
+
 
 .dash-content .title{
     display: flex;
@@ -415,6 +410,22 @@ nav.close ~ .dashboard .top{
     background-color: rgb(245, 239, 239);
     
 }
+
+.btn{
+  background-color: gold;
+  border: none;
+  border-radius: 7px;
+  padding: 7px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+background-color: goldenrod;
+color:white;
+transition: 0.5s ease;
+}
+
 
 @media (max-width: 1000px) {
     nav{
