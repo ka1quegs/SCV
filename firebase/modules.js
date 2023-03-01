@@ -1,57 +1,82 @@
-let htmlAtual = document.location.pathname
-//Inicializa aplicação e sincroniza com o Firebase.
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js';
-//Importa os métodos de autenticação.
-import { getAuth, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+// Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+  import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
 
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Configurações do Firebase
-const firebaseConfig = {
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
     apiKey: "AIzaSyCT1mvPmNZ6MAUxVnga4vFqk5-oUxSrACc",
     authDomain: "projeto-tcc-bca68.firebaseapp.com",
+    databaseURL: "https://projeto-tcc-bca68-default-rtdb.firebaseio.com",
     projectId: "projeto-tcc-bca68",
     storageBucket: "projeto-tcc-bca68.appspot.com",
     messagingSenderId: "334672042370",
     appId: "1:334672042370:web:ce02de20192a1a3d37d79b"
   };
-  
 
+  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  
-  let inputEmail = document.getElementById('inputEmail').value;
-  let inputPassword = document.getElementById('inputPassword').value;
-  let btnLogin = document.getElementById('btnLogin').value;
-  
-  
+  const database = getDatabase(app);
+  const auth = getAuth();
 
-  if (htmlAtual == "https://ka1quegs.github.io/TCC/login"){
+// Criando novo usuário (funcionário)
+  signUp.addEventListener('click',(e) => {
 
-  let email = inputEmail;
-  let password = inputPassword;
-  let login = btnLogin;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var username = document.getElementById('username').value;
   
-    login.addEventListener('click', function(){
-      signInWithEmailAndPassword(auth, email, password )
-        .then(async (userCredential) => {
-            const user = userCredential.user
-          // Signed in
-          alert("Usuário conectado");
-          // ...
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+       
+        const user = userCredential.user;
+  
+        set(ref(database, 'users/' + user.uid ),{
+          username: username,
+          email: email
         })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            if (errorCode == "auth/user-not-found"){
-                alert("Usuário não existente!")
-            }else if (errorCode == "auth/wrong-password") {
-                alert("Email ou senha incorreta!")}
-            else if(errorCode == "auth/internal-error"){alert("Ops um erro ocorreu, tente novamente mais tarde")}
-            else {alert(errorCode, "Ops um erro ocorreu")}
-
-            alert(errorMessage)
-        });
+  
+        alert('Usuário criado');
+        
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+  
+        alert(errorMessage);
+      
+      });
   
   });
-}
+
+  login.addEventListener('click',(e) =>{
+
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        
+        const user = userCredential.user;
+
+        const dt = new Date();
+        update(ref(database, 'users/' + user.uid ),{
+          ultimo_login: dt,
+        })
+        alert('Usuário logado!');
+        
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        alert(errorMessage);
+      });
+
+  })
+
+
