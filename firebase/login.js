@@ -20,6 +20,7 @@ import {signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.1
           ultimo_login: dt,
         })
         alert('Usuário logado!');
+        window.location.href = "https://ka1quegs.github.io/TCC/solici-novo"
         
       })
       .catch((error) => {
@@ -27,7 +28,9 @@ import {signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.1
           
          if (errorCode == "auth/user-not-found"){
             alert("Usuário não existente, por favor realize o cadastro.")
-              }else if (errorCode == "auth/wrong-password"){
+              }else if(errorCode == "auth/invalid-email"){
+                  alert("Email inválido")
+              } else if (errorCode == "auth/wrong-password"){
                   alert("Email ou senha incorreta!")
               }else if(errorCode == "auth/internal-error"){
                   alert("Ops um erro ocorreu, tente novamente mais tarde")
