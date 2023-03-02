@@ -1,4 +1,4 @@
-import { database, auth} from "./modules.js"
+import {database, auth} from "./modules.js"
 import {set, ref} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
 import {createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
