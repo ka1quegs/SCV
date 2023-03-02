@@ -24,9 +24,15 @@ import {signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.1
       })
       .catch((error) => {
         const errorCode = error.code;
-        const errorMessage = error.message;
-
-        alert(errorMessage);
+          
+         if (errorCode == "auth/user-not-found"){
+            alert("Usuário não existente, por favor realize o cadastro.")
+              }else if (errorCode == "auth/wrong-password"){
+                  alert("Email ou senha incorreta!")
+              }else if(errorCode == "auth/internal-error"){
+                  alert("Ops um erro ocorreu, tente novamente mais tarde")
+              }else {
+                  alert(errorCode, "Ops um erro ocorreu")}
       });
 
   })
