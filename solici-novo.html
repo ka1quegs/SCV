@@ -113,38 +113,38 @@
           <div class="fields">
             <div class="input-field">
               <label>Nome Completo</label>
-              <input type="text" placeholder="Digite o Nome" required>
+              <input id="nome" type="text" placeholder="Digite o Nome" required>
             </div>
             <div class="input-field">
               <label>RG</label>
-              <input type="number" placeholder="Digite o RG">
+              <input id="rg" type="number" placeholder="Digite o RG">
             </div>
 
             <div class="input-field">
               <label>CPF</label>
-              <input type="number" placeholder="Digite o CPF">
+              <input id="cpf" type="number" placeholder="Digite o CPF">
             </div>
 
             <div class="input-field">
               <label>Telefone</label>
-              <input type="number" placeholder="Digite o Telefone">
+              <input id="telefone" type="number" placeholder="Digite o Telefone">
             </div>
 
             <div class="input-field">
               <label>Celular</label>
-              <input type="number" placeholder="Digite o celular">
+              <input id="celular" type="number" placeholder="Digite o celular">
             </div>
             <div class="input-field">
               <label>E-mail</label>
-              <input type="number" placeholder="Digite o E-mail">
+              <input id="emailVisitante" type="number" placeholder="Digite o E-mail">
             </div>
             <div class="input-field">
               <label>Período da visita de</label>
-              <input type="datetime-local" placeholder="Digite o Período">
+              <input id="entrada" type="datetime-local" placeholder="Digite o Período">
             </div>
             <div class="input-field">
               <label>Período da visita de</label>
-              <input type="datetime-local" placeholder="Digite o Período">
+              <input id="saida" type="datetime-local" placeholder="Digite o Período">
             </div>
           </div>
         </div>
@@ -155,17 +155,17 @@
           <div class="fields">
             <div class="input-field">
               <label>Empresa</label>
-              <input type="text" placeholder="Digite a Empresa" required>
+              <input id="empresa" type="text" placeholder="Digite a Empresa" required>
             </div>
 
             <div class="input-field">
               <label>Quem Visitar</label>
-              <input type="text" placeholder="Digite seu nome" required>
+              <input id="responsavelVisita" type="text" placeholder="Digite seu nome" required>
             </div>
 
             <div class="input-field">
               <label>Área que irá visitar</label>
-              <input type="text" placeholder="Digite a área" required>
+              <input id="setor" type="text" placeholder="Digite a área" required>
             </div>
             <div class="input-field">
               <label>Acesso a Fábrica</label>
@@ -244,6 +244,7 @@
   </form>
   </div>
 
+  <script type="module" src="firebase/script.js"></script>
 </body>
 
 </html>
