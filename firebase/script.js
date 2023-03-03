@@ -1,7 +1,9 @@
-import { app } from "./modules.js"
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
+const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
+
 
 try {
   const docRef = await addDoc(collection(db, "visitante"), {
