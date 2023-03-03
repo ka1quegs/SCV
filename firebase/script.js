@@ -16,9 +16,13 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
 
-enviarSolici.addEventListener('click',(e) => {
+
+enviarSolici.addEventListener('submit',e => {
+  e.preventDefault(e.target.nome.value, e.target.rg.value, e.target.cpf.value, e.target.emailVisitante.value, e.target.responsavelVisita.value, e.target.setor.value, e.target.telefone.value, e.target.celular.value, e.target.entrada.value, e.target.saida.value, e.target.empresa.value, e.target.modelo_carro.value , e.target.placa_carro.value)
+  console
   try {
-    const docRef = await addDoc(collection(db, "visitante"), {
+    
+    addDoc(collection(db, "visitante"), {
       nome: document.getElementById('nome').value,
       rg: document.getElementById('rg').value,
       cpf: document.getElementById('cpf').value,
@@ -30,10 +34,16 @@ enviarSolici.addEventListener('click',(e) => {
       entrada: document.getElementById('entrada').value,
       saida: document.getElementById('saida').value,
       empresa: document.getElementById('empresa').value,
+      modelo_carro: document.getElementById('modelo_carro').value,
+      placa_carro: document.getElementById('placa_carro').value,
+
     });
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }}
+    
+  } catch (error) {
+    const errorCode = error.code;
+    alert(errorCode)
+  }
+
+});
 
 
