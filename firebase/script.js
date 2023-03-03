@@ -1,4 +1,4 @@
-import { database } from "./modules.js"
+import { app } from "./modules.js"
 import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 const db = getFirestore(app)
