@@ -71,7 +71,7 @@
             <div class="job">Sair</div>
           </div>
         </div>
-        <i class='bx bx-log-out' id="log_out"></i>
+        <a href="login.html"><i class='bx bx-log-out' id="log_out" ></i></a>
       </li>
     </ul>
   </div>
@@ -186,33 +186,33 @@
               </select>
             </div>
             <div class="input-field">
-              <label for="input1">Placa do Carro</label>
-              <input type="text" id="input1" disabled>
+              <label for="placa_carro">Placa do Carro</label>
+              <input type="text" id="placa_carro" disabled>
             </div>
 
 
             <div class="input-field">
-              <label for="input2">Modelo do Carro</label>
-              <input type="text" id="input2" disabled>
+              <label for="modelo_carro">Modelo do Carro</label>
+              <input type="text" id="modelo_carro" disabled>
             </div>
             <script>
 
               const mySelect = document.getElementById("mySelect");
-              const input1 = document.getElementById("input1");
-              const input2 = document.getElementById("input2");
+              const placa_carro = document.getElementById("placa_carro");
+              const modelo_carro= document.getElementById("modelo_carro");
 
               mySelect.addEventListener("change", function () {
                 const selectedOption = mySelect.value;
 
                 if (selectedOption === "option1") {
                   // Habilite o input 1 e o input 2 se a opção 1 for selecionada
-                  input1.disabled = false;
-                  input2.disabled = false;
+                  placa_carro.disabled = false;
+                  modelo_carro.disabled = false;
                 } else {
                   // Desative o input 1 e o input 2 se a opção 2 ou nenhuma opção for selecionada
 
-                  input1.disabled = true;
-                  input2.disabled = true;
+                  placa_carro.disabled = true;
+                  modelo_carro.disabled = true;
                 }
               });
 
