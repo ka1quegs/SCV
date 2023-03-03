@@ -264,14 +264,10 @@
 }
 
 .dashboard .top{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    right: 0;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 10px 14px;
+    margin-bottom: -70px;
    
 }
 
@@ -284,6 +280,7 @@
     font-size: 16px;
     text-align: center;
     padding:4px;
+   
     
 }
 .table{
@@ -293,8 +290,8 @@
     font-size: 17px;
     text-align: center;
     padding: 5px;
-    line-height: 3;  
-    z-index: 1;
+    line-height: 3; 
+    
 }
 
 .btn{
@@ -331,9 +328,6 @@
     transition: 0.5s ease;
     }
 
-.img-topo{
-z-index: 0;
-}
 
 .titulo{
   margin-bottom: 20px;
