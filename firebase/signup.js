@@ -47,6 +47,6 @@ signUp.addEventListener('click',() => {
   
   });
 
-  export const user = userCredential.user;
+  nomeUsuario = username.value
 
 
