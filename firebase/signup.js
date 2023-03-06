@@ -13,7 +13,7 @@ signUp.addEventListener('click',() => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
        
-         const user = userCredential.user;
+       const user = userCredential.user;
   
         set(ref(database, 'users/' + user.uid ),{
           username: username,
@@ -47,6 +47,5 @@ signUp.addEventListener('click',() => {
   
   });
 
-  nomeUsuario = username.value
-
+ 
 
