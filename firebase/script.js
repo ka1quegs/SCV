@@ -52,10 +52,11 @@ enviarSolici.addEventListener('click', () => {
       modelo_carro: `${modelo_carro}`,
       placa_carro: `${placa_carro}`,
       acesso_fabrica : `${acesso_fabrica}`,
-      estacionamento : `${estacionamento}`
+      estacionamento : `${estacionamento}`,
 
-
+      
 })
+  window.location.href = "#"
    
   });
 
