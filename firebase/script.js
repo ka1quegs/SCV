@@ -51,7 +51,7 @@ enviarSolici.addEventListener('submit', function() {
     });
     console.log('teste');
   } catch (error) {
-    codeError = code.error
-    console.log(codeError)
+    errorCode = error.code;
+    console.log(errorCode)
   }})
 
