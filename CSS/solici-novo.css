@@ -349,7 +349,7 @@ form .fields .input-field{
 .input-field input[type="date"]:valid{
   color: #333;
 }
-.container form button, .backBtn{
+.btn{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -360,33 +360,23 @@ form .fields .input-field{
   outline: none;
   color: #fff;
   border-radius: 5px;
-  margin: 25px 0;
+  margin: 7px 0;
   background-color: #4d84e2;
   transition: all 0.3s linear;
   cursor: pointer;
   margin-top: 30px;
 }
-.container form .btnText{
-  font-size: 14px;
-  font-weight: 400;
-}
+
 form button:hover{
   background-color: #265df2;
 }
-form button i,
-form .backBtn i{
-  margin: 0 6px;
-}
-form .backBtn i{
-  transform: rotate(180deg);
-}
+
+
 form .buttons{
   display: flex;
   align-items: center;
 }
-form .buttons button , .backBtn{
-  margin-right: 14px;
-}
+
 
 img{
   width: 18%;
