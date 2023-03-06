@@ -415,6 +415,43 @@ img{
     }
 }
 
+@media (max-width: 712px){
+    .container{
+        height: 1100px;
+        max-width: 700px;
+        margin-left: 15%;
+        margin-top: 15%;
+    }
+    .container form{
+        height: 800px;
+        
+    }
+    .container form .form{
+        width: 600px;
+    }
+
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+
+    .container img{
+        width: 50%;
+        margin-left: 30px;
+    }
+
+    .container img{
+        width: 50%;
+        margin-left: 30px;
+    }
+
+    .container form button{
+        margin-left: 55%;
+        margin-top: 10%;
+    }
+    .max-width{
+      max-width: 90%;
+  }
+}
 @media (max-width: 414px){
     .container{
         height: 1200px;
