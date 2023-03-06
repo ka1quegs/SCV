@@ -31,8 +31,9 @@ let placa_carro =  document.getElementById('placa_carro').value
 
 const enviarSolici = document.getElementById('enviarSolici');
 
+alert('aqui')
 enviarSolici.addEventListener('submit', function() {
-  alert('aqui')
+
     addDoc(collection(db, "visitante"), {
       nome: `${nome}`,
       rg: `${rg}`,
