@@ -14,23 +14,24 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
-let nome = document.getElementById('nome').value
-let rg = document.getElementById('rg').value
-let cpf = document.getElementById('cpf').value
-let emailVisitante = document.getElementById('emailVisitante').value
-let responsavelVisita = document.getElementById('responsavelVisita').value
-let setor = document.getElementById('setor').value
-let telefone = document.getElementById('telefone').value
-let celular = document.getElementById('celular').value
-let entrada = document.getElementById('entrada').value
-let saida = document.getElementById('saida').value
-let empresa = document.getElementById('empresa').value
-let modelo_carro = document.getElementById('modelo_carro').value
-let placa_carro =  document.getElementById('placa_carro').value
+
 
 const enviarSolici = document.getElementById('enviarSolici');
-alert('teste')
-enviarSolici.addEventListener('submit', function() {
+
+enviarSolici.addEventListener('click', () => { 
+  let nome = document.getElementById('nome').value
+  let rg = document.getElementById('rg').value
+  let cpf = document.getElementById('cpf').value
+  let emailVisitante = document.getElementById('emailVisitante').value
+  let responsavelVisita = document.getElementById('responsavelVisita').value
+  let setor = document.getElementById('setor').value
+  let telefone = document.getElementById('telefone').value
+  let celular = document.getElementById('celular').value
+  let entrada = document.getElementById('entrada').value
+  let saida = document.getElementById('saida').value
+  let empresa = document.getElementById('empresa').value
+  let modelo_carro = document.getElementById('modelo_carro').value
+  let placa_carro =  document.getElementById('placa_carro').value
 
     addDoc(collection(db, "visitante"), {
       nome: `${nome}`,
