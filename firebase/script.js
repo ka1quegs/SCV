@@ -29,9 +29,9 @@ let modelo_carro = document.getElementById('modelo_carro').value
 let placa_carro =  document.getElementById('placa_carro').value
 
 const enviarSolici = document.getElementById('enviarSolici');
-
-enviarSolici.addEventListener('submit', function() {
 alert('teste')
+enviarSolici.addEventListener('submit', function() {
+
     addDoc(collection(db, "visitante"), {
       nome: `${nome}`,
       rg: `${rg}`,
