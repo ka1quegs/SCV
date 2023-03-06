@@ -33,6 +33,8 @@ enviarSolici.addEventListener('click', () => {
   let modelo_carro = document.getElementById('modelo_carro').value
   let placa_carro =  document.getElementById('placa_carro').value
 
+    alert('Solicitação enviada!')
+
     addDoc(collection(db, "visitante"), {
       nome: `${nome}`,
       rg: `${rg}`,
@@ -49,7 +51,7 @@ enviarSolici.addEventListener('click', () => {
       placa_carro: `${placa_carro}`
 
     });
-    console.log('teste');
+   
   });
 
 
