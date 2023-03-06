@@ -306,5 +306,23 @@
   }
 }
 
+@media (max-width: 414px) {
+  .table{
+    width: 950px;
+  }
+  #input-busca{
+    width: 950px;
+  }
+  .title{
+    margin-left: 20%;
+    width: 400px;
+  }
+
+  .img{
+    margin-left: 700px;
+   
+  }
+}
+
 
 
