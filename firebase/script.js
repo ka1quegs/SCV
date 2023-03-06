@@ -51,8 +51,8 @@ enviarSolici.addEventListener('click', () => {
       empresa:`${empresa}`,
       modelo_carro: `${modelo_carro}`,
       placa_carro: `${placa_carro}`,
-      acesso_fabrica = `${acesso_fabrica}`,
-      estacionamento = `${estacionamento}`
+      acesso_fabrica : `${acesso_fabrica}`,
+      estacionamento : `${estacionamento}`
 
 
 })
