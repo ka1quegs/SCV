@@ -4,7 +4,7 @@ import {createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs
 
 
 // Criando novo usuário (funcionário)
-signUp.addEventListener('click',(e) => {
+signUp.addEventListener('click',() => {
 
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
@@ -13,7 +13,7 @@ signUp.addEventListener('click',(e) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
        
-        const user = userCredential.user;
+         const user = userCredential.user;
   
         set(ref(database, 'users/' + user.uid ),{
           username: username,
@@ -46,4 +46,7 @@ signUp.addEventListener('click',(e) => {
       });
   
   });
+
+  export const user = userCredential.user;
+
 
