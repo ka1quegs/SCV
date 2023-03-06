@@ -29,6 +29,7 @@ let empresa = document.getElementById('empresa').value
 let modelo_carro = document.getElementById('modelo_carro').value
 let placa_carro =  document.getElementById('placa_carro').value
 
+const enviarSolici = document.getElementById('enviarSolici');
 
 enviarSolici.addEventListener('submit', function() {
   
@@ -50,5 +51,8 @@ enviarSolici.addEventListener('submit', function() {
     });
     console.log('teste');
   } 
+  .catch(error){
+
+  }
 )
 
