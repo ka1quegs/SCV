@@ -180,8 +180,8 @@
               <label>Acesso ao Estacionamento</label>
               <select id="mySelect">
                 <option value="" disabled selected>Selecione uma opção</option>
-                <option value="option1">Sim</option>
-                <option value="option2">Não</option>
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
 
               </select>
             </div>
@@ -204,7 +204,7 @@
               mySelect.addEventListener("change", function () {
                 const selectedOption = mySelect.value;
 
-                if (selectedOption === "option1") {
+                if (selectedOption === "Sim") {
                   // Habilite o input 1 e o input 2 se a opção 1 for selecionada
                   placa_carro.disabled = false;
                   modelo_carro.disabled = false;
