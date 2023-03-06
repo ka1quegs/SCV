@@ -31,7 +31,6 @@ let placa_carro =  document.getElementById('placa_carro').value
 
 
 enviarSolici.addEventListener('submit', function() {
-  enviarSolici.pr
   try {
     
     addDoc(collection(db, "visitante"), {
@@ -51,7 +50,8 @@ enviarSolici.addEventListener('submit', function() {
 
     });
     console.log('teste');
-  } catch (e) {
-    
-})
+  } catch (error) {
+    codeError = code.error
+    console.log(codeError)
+  }})
 
