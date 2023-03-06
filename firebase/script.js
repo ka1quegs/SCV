@@ -1,7 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
-
 const firebaseConfig = {
     apiKey: "AIzaSyCT1mvPmNZ6MAUxVnga4vFqk5-oUxSrACc",
     authDomain: "projeto-tcc-bca68.firebaseapp.com",
@@ -32,7 +31,7 @@ let placa_carro =  document.getElementById('placa_carro').value
 const enviarSolici = document.getElementById('enviarSolici');
 
 enviarSolici.addEventListener('submit', function() {
-  
+alert('teste')
     addDoc(collection(db, "visitante"), {
       nome: `${nome}`,
       rg: `${rg}`,
@@ -51,3 +50,5 @@ enviarSolici.addEventListener('submit', function() {
     });
     console.log('teste');
   });
+
+
