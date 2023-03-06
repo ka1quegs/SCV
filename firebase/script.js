@@ -32,11 +32,13 @@ enviarSolici.addEventListener('click', () => {
   let empresa = document.getElementById('empresa').value
   let modelo_carro = document.getElementById('modelo_carro').value
   let placa_carro =  document.getElementById('placa_carro').value
+  let acesso_fabrica = document.getElementById('acesso_fabrica').value
+  let estacionamento = document.getElementById('mySelect').value
 
     alert('Solicitação enviada!')
 
     addDoc(collection(db, "visitante"), {
-      nome: `${nome}`,
+      nome: `${nome}`,  
       rg: `${rg}`,
       cpf: `${cpf}`,
       emailVisitante: `${emailVisitante}`,
@@ -48,9 +50,12 @@ enviarSolici.addEventListener('click', () => {
       saida: `${saida}`,
       empresa:`${empresa}`,
       modelo_carro: `${modelo_carro}`,
-      placa_carro: `${placa_carro}`
+      placa_carro: `${placa_carro}`,
+      acesso_fabrica = `${acesso_fabrica}`,
+      estacionamento = `${estacionamento}`
 
-    });
+
+})
    
   });
 
