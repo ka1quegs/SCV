@@ -61,4 +61,94 @@ enviarSolici.addEventListener('click', () => {
   window.location.href = "#";   
   });
 
+if(document.location.pathname.includes("/aprov-novo.html")){
+  const colecao = collection(db,"visitante")
 
+  const arrayDocumentos = await getDocs(colecao)
+
+    arrayDocumentos.forEach(doc =>{
+      let sectionRegistro = document.getElementById('sectionRegistro')
+      
+      let registroItem = document.createElement('div')
+      registroItem.setAttribute("class", "tabela-func")
+
+      let table = document.createElement("table")
+      let thead = document.createElement("thead")
+      let tbody = document.createElement("tbody")
+
+      let th = document.createElement("th")
+      th.innerHTML = "Visualizar"
+      thead.append(th)
+
+      th = document.createElement("th")
+      th.innerHTML = "Código"
+      thead.append(th)
+
+      th = document.createElement("th")
+      th.innerHTML = "Visitante"
+      thead.append(th)
+
+      th = document.createElement("th")
+      th.innerHTML = "Empresa"
+      thead.append(th)
+
+      th = document.createElement("th")
+      th.innerHTML = "Solicitante"
+      thead.append(th)
+
+      th = document.createElement("th")
+      th.innerHTML = "Periodo De:"
+      thead.append(th)
+
+      th = document.createElement("th")
+      th.innerHTML = "Perido Até:"
+      thead.append(th)
+
+      th = document.createElement("th")
+      th.innerHTML = "Ações"
+      thead.append(th)
+
+      //tbody
+
+      let td = document.createElement("td")
+      td.innerHTML = doc.get("#")
+      tbody.append(td)
+
+      td = document.createElement("td")
+      td.innerHTML = doc.get("#")
+      tbody.append(td)
+
+      td = document.createElement("td")
+      td.innerHTML = doc.get("nome")
+      tbody.append(td)
+
+      td = document.createElement("empresa")
+      td.innerHTML = doc.get("#")
+      tbody.append(td)
+
+      td = document.createElement("responsavelVisita")
+      td.innerHTML = doc.get("#")
+      tbody.append(td)
+
+      td = document.createElement("td")
+      td.innerHTML = doc.get("entrada")
+      tbody.append(td)
+
+      td = document.createElement("td")
+      td.innerHTML = doc.get("saida")
+      tbody.append(td)
+
+      td = document.createElement("td")
+      td.innerHTML = doc.get("#")
+      tbody.append(td)
+
+      table.append(thead,tbody)
+      registroItem.append(table)
+      sectionRegistro.append(registroItem)
+    })
+  
+    
+
+
+
+  }
