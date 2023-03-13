@@ -141,9 +141,18 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       td.innerHTML = doc.get("saida")
       tbody.append(td)
 
-      td = document.createElement("td")
-      td.innerHTML = doc.get("#")
-      tbody.append(td)
+      let button = document.createElement("button")
+      button.setAttribute("class", "btn")
+      button.setAttribute("id", "aceitar")
+      button.innerHTML = "Aprovar"
+      tbody.appendChild(button)
+
+      button = document.createElement("button")
+      button.setAttribute("class", "btn2")
+      button.setAttribute("id", "negar")
+      button.innerHTML = "Rejeitar"
+      tbody.appendChild(button)
+
 
       table.append(thead,tbody)
       registro.append(table)
