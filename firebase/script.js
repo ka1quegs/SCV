@@ -75,46 +75,18 @@ if(document.location.pathname.includes("/aprov-novo.html")){
 
       let table = document.createElement("table")
       table.setAttribute("class", "table")
-      let thead = document.createElement("thead")
-      thead.setAttribute("class", "table-dark")
+      
       let tbody = document.createElement("tbody")
 
-      let th = document.createElement("th")
-      th.innerHTML = "Visualizar"
-      thead.append(th)
-
-      th = document.createElement("th")
-      th.innerHTML = "Código"
-      thead.append(th)
-
-      th = document.createElement("th")
-      th.innerHTML = "Visitante"
-      thead.append(th)
-
-      th = document.createElement("th")
-      th.innerHTML = "Empresa"
-      thead.append(th)
-
-      th = document.createElement("th")
-      th.innerHTML = "Solicitante"
-      thead.append(th)
-
-      th = document.createElement("th")
-      th.innerHTML = "Periodo De:"
-      thead.append(th)
-
-      th = document.createElement("th")
-      th.innerHTML = "Periodo Até:"
-      thead.append(th)
-
-      th = document.createElement("th")
-      th.innerHTML = "Ações"
-      thead.append(th)
-
+ 
       //tbody
 
-      let td = document.createElement("td")
-      td.innerHTML = doc.get("#")
+      let td = document.createElement("td");
+      let image = document.createElement("img");
+      image.setAttribute("class", "img-table")
+      image.setAttribute("src","Images/olho.png")
+      td.innerHTML = ""
+      td.append(image)
       tbody.append(td)
 
       td = document.createElement("td")
@@ -154,7 +126,7 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       tbody.appendChild(button)
 
 
-      table.append(thead,tbody)
+      table.append(tbody)
       registro.append(table)
       sectionRegistro.append(registro)
     })
