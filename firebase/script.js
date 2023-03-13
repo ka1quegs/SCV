@@ -141,12 +141,8 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       td.innerHTML = doc.get("saida")
       tbody.append(td)
 
-      td = document.createElement("button")
-      button.setAttribute("class","btn")
-      button.setAttribute("value", "APROVAR")
-      td = document.createElement("button")
-      button2.setAttribute("class","btn2")
-      button.setAttribute("value","REPROVAR")
+      td = document.createElement("td")
+      td.innerHTML = doc.get("#")
       tbody.append(td)
 
       table.append(thead,tbody)
