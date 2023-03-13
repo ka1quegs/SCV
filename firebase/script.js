@@ -104,7 +104,7 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       thead.append(th)
 
       th = document.createElement("th")
-      th.innerHTML = "Perido Até:"
+      th.innerHTML = "Periodo Até:"
       thead.append(th)
 
       th = document.createElement("th")
@@ -125,11 +125,11 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       td.innerHTML = doc.get("nome")
       tbody.append(td)
 
-      td = document.createElement("empresa")
+      td = document.createElement("td")
       td.innerHTML = doc.get("empresa")
       tbody.append(td)
 
-      td = document.createElement("responsavelVisita")
+      td = document.createElement("td")
       td.innerHTML = doc.get("responsavelVisita")
       tbody.append(td)
 
