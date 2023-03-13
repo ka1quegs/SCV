@@ -17,7 +17,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
 
-
+try{
 const enviarSolici = document.getElementById('enviarSolici');
 
 enviarSolici.addEventListener('click', () => { 
@@ -60,6 +60,7 @@ enviarSolici.addEventListener('click', () => {
 })
   window.location.href = "#";   
   });
+}catch{}
 
 if(document.location.pathname.includes("/aprov-novo.html")){
   const colecao = collection(db,"visitante")
@@ -69,11 +70,13 @@ if(document.location.pathname.includes("/aprov-novo.html")){
     arrayDocumentos.forEach(doc =>{
       let sectionRegistro = document.getElementById('sectionRegistro')
       
-      let registroItem = document.createElement('div')
-      registroItem.setAttribute("class", "tabela-func")
+      let registro = document.createElement('div')
+      registro.setAttribute("class", "registro")
 
       let table = document.createElement("table")
+      table.setAttribute("class", "table")
       let thead = document.createElement("thead")
+      thead.setAttribute("class", "table-dark")
       let tbody = document.createElement("tbody")
 
       let th = document.createElement("th")
@@ -123,11 +126,11 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       tbody.append(td)
 
       td = document.createElement("empresa")
-      td.innerHTML = doc.get("#")
+      td.innerHTML = doc.get("empresa")
       tbody.append(td)
 
       td = document.createElement("responsavelVisita")
-      td.innerHTML = doc.get("#")
+      td.innerHTML = doc.get("responsavelVisita")
       tbody.append(td)
 
       td = document.createElement("td")
@@ -143,12 +146,7 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       tbody.append(td)
 
       table.append(thead,tbody)
-      registroItem.append(table)
-      sectionRegistro.append(registroItem)
+      registro.append(table)
+      sectionRegistro.append(registro)
     })
-  
-    
-
-
-
   }
