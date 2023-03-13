@@ -141,10 +141,10 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       td.innerHTML = doc.get("saida")
       tbody.append(td)
 
-      button = document.createElement("button")
+      td = document.createElement("button")
       button.setAttribute("class","btn")
       button.setAttribute("value", "APROVAR")
-      button2 = document.createElement("button")
+      td = document.createElement("button")
       button2.setAttribute("class","btn2")
       button.setAttribute("value","REPROVAR")
       tbody.append(td)
