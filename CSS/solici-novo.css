@@ -280,7 +280,7 @@ body{
   border-radius: 8px;
  
 }
-.container form{
+.container main{
   position: relative;
   margin-top: 16px;
   min-height: 490px;
@@ -294,12 +294,12 @@ body{
 
 
 
-form.secActive .form.first{
+main.secActive .main.first{
   opacity: 0;
   pointer-events: none;
   transform: translateX(-100%);
 }
-.container form .title{
+.container main .title{
   display: block;
   margin-bottom: 8px;
   font-size: 16px;
@@ -309,14 +309,14 @@ form.secActive .form.first{
   background-color: white;
   
 }
-.container form .fields{
+.container main .fields{
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   background-color: white;
 }
-form .fields .input-field{
+main .fields .input-field{
   display: flex;
   width: calc(100% / 4 - 15px);
   flex-direction: column;

@@ -113,11 +113,14 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       td.innerHTML = doc.get("saida")
       tbody.append(td)
 
+      //Botão aprovar
       let button = document.createElement("button")
       button.setAttribute("class", "btn")
       button.setAttribute("id", "aceitar")
       button.innerHTML = "Aprovar"
       tbody.appendChild(button)
+
+      //Botão negar
 
       button = document.createElement("button")
       button.setAttribute("class", "btn2")
