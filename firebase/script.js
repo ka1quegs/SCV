@@ -74,7 +74,7 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       registro.setAttribute("class", "registro")
 
       let table = document.createElement("table")
-      table.setAttribute("class", "table")
+      table.setAttribute("class", "table2")
       
       let tbody = document.createElement("tbody")
 

@@ -274,27 +274,18 @@
 }
 
 
-
-  .table-dark{
-    background-color: rgb(246, 246, 246);
-    color: #4481eb ;
-    width: 100%;
-    font-size: 16px;
-    text-align: center;
-    padding:4px;
-   
-    
-}
 .table{
-    background-color: rgb(246, 246, 246);
-    color: black;
-    width: 100%;
-    font-size: 17px;
-    text-align: center;
-    padding: 5px;
-    line-height: 3; 
-    
+  width: 100%; 
+   color: red; 
 }
+
+.table2{
+  width: 100%; 
+   color: rgb(30, 255, 0); 
+}
+
+
+
 
 .btn{
     background-color: rgb(124, 223, 124);
