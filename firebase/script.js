@@ -55,7 +55,7 @@ enviarSolici.addEventListener('click', () => {
       placa_carro: `${placa_carro}`,
       acesso_fabrica : `${acesso_fabrica}`,
       estacionamento : `${estacionamento}`,
-
+      consulta: false
       
 })
   window.location.href = "#";   
@@ -63,7 +63,7 @@ enviarSolici.addEventListener('click', () => {
 }catch{}
 
 if(document.location.pathname.includes("/aprov-novo.html")){
-  const colecao = collection(db,"visitante")
+  const colecao = query(collection(db,"visitante"),where("consulta", "==", false))
 
   const arrayDocumentos = await getDocs(colecao)
 
@@ -120,6 +120,7 @@ if(document.location.pathname.includes("/aprov-novo.html")){
      
       button.addEventListener("click", ()=>{
         table.remove();
+        
       })
       
       button.innerHTML = "Aprovar"
