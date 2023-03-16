@@ -116,7 +116,12 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       //Botão aprovar
       let button = document.createElement("button")
       button.setAttribute("class", "btn")
-      button.setAttribute("id", "aceitar")
+      button.setAttribute("id", "aprovar")
+     
+      button.addEventListener("click", ()=>{
+        table.remove();
+      })
+      
       button.innerHTML = "Aprovar"
       tbody.appendChild(button)
 
@@ -125,6 +130,11 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       button = document.createElement("button")
       button.setAttribute("class", "btn2")
       button.setAttribute("id", "negar")
+
+      button.addEventListener("click", ()=>{
+        table.remove();
+      })
+      
       button.innerHTML = "Rejeitar"
       tbody.appendChild(button)
 
@@ -134,3 +144,5 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       sectionRegistro.append(registro)
     })
   }
+
+
