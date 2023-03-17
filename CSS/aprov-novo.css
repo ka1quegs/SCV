@@ -276,11 +276,14 @@
 
 .table{
   width: 100%; 
-   color: red; 
+   color: orange; 
+   table-layout: fixed;
 }
 
 .table2{
   width: 100%; 
+  table-layout: fixed;
+  text-align: center;
 }
 
 

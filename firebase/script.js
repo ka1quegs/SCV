@@ -90,10 +90,6 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       tbody.append(td)
 
       td = document.createElement("td")
-      td.innerHTML = doc.get("#")
-      tbody.append(td)
-
-      td = document.createElement("td")
       td.innerHTML = doc.get("nome")
       tbody.append(td)
 
