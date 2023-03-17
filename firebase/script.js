@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
-
+import { getFirestore, collection, addDoc, getDocs, query, where, setDoc }
+from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 
 const firebaseConfig = {
@@ -115,8 +115,9 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       button.setAttribute("id", "aprovar")
      
       button.addEventListener("click", ()=>{
-        table.remove();
-        
+      alert('Funcionando')  
+      setDoc(collection(db, "visitante"),{consulta: true})
+          
       })
       
       button.innerHTML = "Aprovar"
@@ -128,9 +129,7 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       button.setAttribute("class", "btn2")
       button.setAttribute("id", "negar")
 
-      button.addEventListener("click", ()=>{
-        table.remove();
-      })
+ 
       
       button.innerHTML = "Rejeitar"
       tbody.appendChild(button)
