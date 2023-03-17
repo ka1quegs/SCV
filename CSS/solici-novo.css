@@ -254,15 +254,17 @@ body{
     display: none;
   }
 }
+
 .container{
   position: absolute;
-  max-width: 900px;
+  max-width: 1200px;
   width: 100%;
   border-radius: 6px;
   padding: 30px;
   background-color: white;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-  margin-left: 20%;
+  margin-left: 5%;
+  
 }
 .container header{
   position: relative;
@@ -283,16 +285,13 @@ body{
 .container main{
   position: relative;
   margin-top: 16px;
-  min-height: 490px;
+  max-width: 100%;
   background-color: #fff;
   overflow: hidden;
   background-color: white;
   background-repeat: no-repeat;
   
 }
-
-
-
 
 main.secActive .main.first{
   opacity: 0;
@@ -354,7 +353,7 @@ main .fields .input-field{
   align-items: center;
   justify-content: center;
   height: 45px;
-  max-width: 200px;
+  max-width: 270px;
   width: 100%;
   border: none;
   outline: none;
@@ -384,35 +383,6 @@ img{
   margin-left: 38%;
 
 }
-
-@media(max-width: 1920px){
-  .container{
-    margin-left: 30%;
-    margin-top: 10%;
-  }
-}
-
-@media(max-width: 1920px){
-  .container{
-    margin-left: 30%;
-    margin-top: 10%;
-  }
-}
-
-@media(max-width: 1370px){
-  .container{
-    margin-left: 20%;
-    margin-top: 1%;
-  }
-}
-
-@media(max-width: 1360px){
-  .container{
-    margin-left: 20%;
-    margin-top: 1%;
-  }
-}
-
 
 @media (max-width: 750px) {
     .container form{
