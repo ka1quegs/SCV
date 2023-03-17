@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
-
+import { getFirestore, collection, addDoc, getDocs, query, where, updateDoc  }
+from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 
 const firebaseConfig = {
@@ -109,13 +109,18 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       td.innerHTML = doc.get("saida")
       tbody.append(td)
 
+
+      try{
       //Botão aprovar
       let button = document.createElement("button")
       button.setAttribute("class", "btn")
       button.setAttribute("id", "aprovar")
      
       button.addEventListener("click", ()=>{
-        table.remove();
+      updateDoc(collection(db,"visitante"),where("consulta", "==", false),{
+        consulta:true
+
+      })
         
       })
       
@@ -127,10 +132,6 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       button = document.createElement("button")
       button.setAttribute("class", "btn2")
       button.setAttribute("id", "negar")
-
-      button.addEventListener("click", ()=>{
-        table.remove();
-      })
       
       button.innerHTML = "Rejeitar"
       tbody.appendChild(button)
@@ -139,7 +140,9 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       table.append(tbody)
       registro.append(table)
       sectionRegistro.append(registro)
-    })
-  }
+    }catch{}
+  })
+}
+  
 
 
