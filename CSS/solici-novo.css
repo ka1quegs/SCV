@@ -423,6 +423,45 @@ img{
     margin-top: 30px;
   }
 }
+@media(max-width:1360px){
+  .container{
+    position: absolute;
+    max-width: 1200px;
+    max-height: 1900px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    margin-left: 5%;
+    
+  }
+
+  main .fields .input-field{
+    display: flex;
+    width: calc(100% / 4 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+  }
+
+  .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    max-width: 270px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 7px 0;
+    background-color: #4d84e2;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+}
 
 @media (max-width: 750px) {
     .container form{
