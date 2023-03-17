@@ -104,7 +104,7 @@ form.login-form {
 
 .btn {
   width: 150px;
-  background-color: #5995fd;
+  background-color: #012f9b;
   border: none;
   outline: none;
   height: 49px;
@@ -121,7 +121,7 @@ form.login-form {
 
 
 .btn:hover {
-  background-color: #4d84e2;
+  background-color: #011b6c;
 }
 .panels-container {
   position: absolute;
@@ -141,7 +141,9 @@ form.login-form {
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
-  background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%);
+  background-image: url(https://i.pinimg.com/736x/9a/b2/db/9ab2db9f45473899f303624ed5c58adc.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;
@@ -175,6 +177,7 @@ form.login-form {
   transition: transform 0.9s ease-in-out;
   transition-delay: 0.6s;
 }
+
 
 
 
