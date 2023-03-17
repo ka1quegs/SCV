@@ -384,6 +384,46 @@ img{
 
 }
 
+@media(max-width:1920px){
+  .container{
+    position: absolute;
+    max-width: 1840px;
+    max-height: 1900px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    margin-left: 4%;
+    
+  }
+
+  main .fields .input-field{
+    display: flex;
+    width: calc(100% / 2 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+  }
+
+  .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 43px;
+    max-width: 875px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 7px 0;
+    background-color: #4d84e2;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+}
+
 @media (max-width: 750px) {
     .container form{
         overflow-y: scroll;
