@@ -80,7 +80,7 @@ if(document.location.pathname.includes("/aprov-novo.html")){
 
  
       //tbody
-
+      try{
       let td = document.createElement("td");
       let image = document.createElement("img");
       image.setAttribute("class", "img-table")
@@ -110,14 +110,15 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       tbody.append(td)
 
 
-      try{
+     
       //Botão aprovar
       let button = document.createElement("button")
       button.setAttribute("class", "btn")
       button.setAttribute("id", "aprovar")
      
       button.addEventListener("click", ()=>{
-      updateDoc(collection(db,"visitante"),where("consulta", "==", false),{
+      alert("Teste")
+        updateDoc(collection(db, "visitante"), {
         consulta:true
 
       })
