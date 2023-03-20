@@ -134,12 +134,10 @@ if(document.location.pathname.includes("/aprov-novo.html")){
   
 try{
 document.getElementById("aprovar").addEventListener("click", () => {
-  alert("Working")
   updateDoc(collection(db, "visitante")),{
    consulta:true
 
   }
     
   })
-
 }catch{}
