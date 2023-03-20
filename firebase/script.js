@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, query, where, setDoc  }
+import { getFirestore, collection, addDoc, getDocs, query, where, updateDoc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 
@@ -85,6 +85,7 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       let image = document.createElement("img");
       image.setAttribute("class", "img-table")
       image.setAttribute("src","Images/olho.png")
+      image.setAttribute("onclick", "window.location.href='/consulta.html';");
       td.innerHTML = ""
       td.append(image)
       tbody.append(td)
@@ -134,7 +135,7 @@ if(document.location.pathname.includes("/aprov-novo.html")){
 try{
 document.getElementById("aprovar").addEventListener("click", () => {
   alert("Working")
-  setDoc(collection(db, "visitante")),{
+  updateDoc(collection(db, "visitante")),{
    consulta:true
 
   }
