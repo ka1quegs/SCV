@@ -85,7 +85,7 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       let image = document.createElement("img");
       image.setAttribute("class", "img-table")
       image.setAttribute("src","Images/olho.png")
-      image.setAttribute("onclick", "window.location.href='/consulta.html';");
+      image.setAttribute("onclick", "window.location.href='/visualizar.html';");
       td.innerHTML = ""
       td.append(image)
       tbody.append(td)
@@ -114,6 +114,10 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       let button = document.createElement("button")
       button.setAttribute("class", "btn")
       button.setAttribute("id", "aprovar")
+      button.addEventListener("click", async () => {
+      await updateDoc(doc.ref, { consulta: true })
+      console.log("consulta field updated")
+    })
       button.innerHTML = "Aprovar"
       tbody.appendChild(button)
 
@@ -132,12 +136,6 @@ if(document.location.pathname.includes("/aprov-novo.html")){
   })
 }
   
-try{
-document.getElementById("aprovar").addEventListener("click", () => {
-  updateDoc(collection(db, "visitante")),{
-   consulta:true
 
-  }
-    
-  })
-}catch{}
+
+
