@@ -64,6 +64,9 @@ enviarSolici.addEventListener('click', () => {
   });
 }catch{}
 
+
+//Página de Aprovação
+
 if(document.location.pathname.includes("/aprov-novo.html")){
   const colecao = query(collection(db,"visitante"),where("consulta", "==", false))
 
@@ -119,6 +122,7 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       button.addEventListener("click", async () => {
       await updateDoc(doc.ref, { consulta: true })
       console.log("consulta field updated")
+      location.reload()
     })
       button.innerHTML = "Aprovar"
       tbody.appendChild(button)
@@ -138,5 +142,67 @@ if(document.location.pathname.includes("/aprov-novo.html")){
   })
 }
   
+//Página Consulta
 
+if(document.location.pathname.includes("/consulta.html")){
+  const colecao = query(collection(db,"visitante"),where("consulta", "==", true))
 
+  const arrayDocumentos = await getDocs(colecao)
+
+    arrayDocumentos.forEach(doc =>{
+      let sectionRegistro = document.getElementById('sectionRegistro')
+      
+      let registro = document.createElement('div')
+      registro.setAttribute("class", "registro")
+
+      let table = document.createElement("table")
+      table.setAttribute("class", "table2")
+      
+      let tbody = document.createElement("tbody")
+      tbody.setAttribute("class", "tabela-func")
+
+ 
+      //tbody
+      try{
+      let td = document.createElement("td");
+      td = document.createElement("td")
+      td.innerHTML = doc.get("entrada")
+      tbody.append(td)
+      tbody.append(td)
+
+      td = document.createElement("td")
+      td.innerHTML = doc.get("nome")
+      tbody.append(td)
+
+      td = document.createElement("td")
+      td.innerHTML = doc.get("empresa")
+      tbody.append(td)
+
+      td = document.createElement("td")
+      td.innerHTML = doc.get("responsavelVisita")
+      tbody.append(td)
+
+      td = document.createElement("td")
+      td.innerHTML = doc.get("#")
+      tbody.append(td)
+
+      td = document.createElement("td")
+      td.innerHTML = doc.get("#")
+      tbody.append(td)
+
+      //Botão Visualizar
+      let button = document.createElement("button")
+      button.setAttribute("class", "btn btn-sm btn-warning")
+      button.setAttribute("id", "aprovar")
+      button.setAttribute("onclick", "window.location.href='/visualizar.html';");
+      button.innerHTML = "Visualizar"
+      tbody.appendChild(button)
+
+      //Botão negar
+      table.append(tbody)
+      registro.append(table)
+      sectionRegistro.append(registro)
+    }catch{}
+  })
+}
+  

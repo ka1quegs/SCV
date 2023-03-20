@@ -45,7 +45,21 @@
     font-size: 17px;
     text-align: center;
     padding: 5px;
-    line-height: 3;  
+    line-height:2;  
+    table-layout: fixed;
+    
+}
+
+.table2{
+  background-color: rgb(246, 246, 246);
+  color: black;
+  width: 100%;
+  font-size: 17px;
+  text-align: center;
+  padding: 5px;
+  line-height: 1;
+  table-layout: fixed;  
+  
 }
 
 .btn{
