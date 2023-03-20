@@ -11,6 +11,7 @@
     background-image: url(https://img.freepik.com/vetores-gratis/degrade-de-fundo-azul_23-2149337039.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    
   }
 
   .img{
@@ -89,6 +90,27 @@
     color: #4caf50;
   }
   
-  
+  @media(max-width:1920px){
+    #login-box {
+      background-color: #f1f1f1;
+      width: 400px;
+      padding: 40px;
+      margin-top: 12%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+  @media(max-width:1360px){
+    #login-box {
+      background-color: #f1f1f1;
+      width: 400px;
+      margin: 49px auto;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+
 
   
