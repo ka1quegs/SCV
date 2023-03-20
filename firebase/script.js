@@ -36,6 +36,7 @@ enviarSolici.addEventListener('click', () => {
   let placa_carro =  document.getElementById('placa_carro').value
   let acesso_fabrica = document.getElementById('acesso_fabrica').value
   let estacionamento = document.getElementById('mySelect').value
+  let observacao = document.getElementById('observacao').value
 
     alert('Solicitação enviada!')
 
@@ -55,6 +56,7 @@ enviarSolici.addEventListener('click', () => {
       placa_carro: `${placa_carro}`,
       acesso_fabrica : `${acesso_fabrica}`,
       estacionamento : `${estacionamento}`,
+      observacao:   `${observacao}`,
       consulta: false
       
 })
@@ -136,6 +138,5 @@ if(document.location.pathname.includes("/aprov-novo.html")){
   })
 }
   
-
 
 
