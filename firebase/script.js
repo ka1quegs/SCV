@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, query, where, updateDoc}
+import { getFirestore, collection, addDoc, getDocs, query, where, updateDoc,getCountFromServer}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 
@@ -144,11 +144,27 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       sectionRegistro.append(registro)
     }catch{}
   })
-}
 
 
+  const coll = query(collection(db, "visitante"));
+  const firstCounter = await getCountFromServer(coll);
+  document.getElementById("count-total").innerHTML = firstCounter.data().count;
 
-  
+  const coll2 = query(collection(db, "visitante"), where("consulta", "==", false))
+  const secondCounter = await getCountFromServer(coll2);
+  document.getElementById("count-pendente").innerHTML = secondCounter.data().count;
+
+  const coll3 = query(collection(db, "visitante"), where("consulta", "==", true))
+  const thirdCounter = await getCountFromServer(coll3);
+  document.getElementById("count-aprovada").innerHTML = thirdCounter.data().count;
+
+  const coll4 = query(collection(db, "visitante"), where("consulta", "==", true))
+  const fourthCounter = await getCountFromServer(coll4);
+  document.getElementById("count-negada").innerHTML = fourthCounter.data().count;
+
+
+} //fim do IF da aprovação
+
 //Página Consulta
 
 if(document.location.pathname.includes("/consulta.html")){
@@ -211,5 +227,6 @@ if(document.location.pathname.includes("/consulta.html")){
       sectionRegistro.append(registro)
     }catch{}
   })
-}
+
+}//fim do IF da consulta
   
