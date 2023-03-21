@@ -120,10 +120,10 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       button.setAttribute("class", "btn")
       button.setAttribute("id", "aprovar")
       button.addEventListener("click", async () => {
-      await updateDoc(doc.ref, { consulta: true })
-      console.log("consulta atualizado")
-      location.reload()
-    })
+        await updateDoc(doc.ref, { consulta: true })
+        console.log("consulta atualizado")
+        location.reload()
+      })
       button.innerHTML = "Aprovar"
       tbody.appendChild(button)
 
@@ -133,7 +133,11 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       button.setAttribute("class", "btn2")
       button.setAttribute("id", "negar")
       button.innerHTML = "Rejeitar"
-
+      button.addEventListener("click", async () => {
+        await updateDoc(doc.ref, { consulta: true })
+        console.log("consulta atualizado")
+        location.reload()
+      })
       tbody.appendChild(button)
       table.append(tbody)
       registro.append(table)
@@ -141,6 +145,9 @@ if(document.location.pathname.includes("/aprov-novo.html")){
     }catch{}
   })
 }
+
+
+
   
 //Página Consulta
 
@@ -193,7 +200,7 @@ if(document.location.pathname.includes("/consulta.html")){
       //Botão Visualizar
       let button = document.createElement("button")
       button.setAttribute("class", "btn btn-sm btn-warning")
-      button.setAttribute("id", "aprovar")
+      button.setAttribute("id", "visualizar")
       button.setAttribute("onclick", "window.location.href='/visualizar.html';");
       button.innerHTML = "Visualizar"
       tbody.appendChild(button)
