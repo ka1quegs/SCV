@@ -121,7 +121,7 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       button.setAttribute("id", "aprovar")
       button.addEventListener("click", async () => {
       await updateDoc(doc.ref, { consulta: true })
-      console.log("consulta field updated")
+      console.log("consulta atualizado")
       location.reload()
     })
       button.innerHTML = "Aprovar"
