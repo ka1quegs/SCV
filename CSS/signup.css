@@ -100,12 +100,24 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
   }
-  @media(max-width:1360px){
+  @media(max-width:1370px){
     #login-box {
       background-color: #f1f1f1;
       width: 400px;
       margin: 49px auto;
       padding: 40px;
+      top: 5%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+  @media(max-width:1366px){
+    #login-box {
+      background-color: #f1f1f1;
+      width: 400px;
+      margin: 49px auto;
+      padding: 40px;
+      margin-top: 8%;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }

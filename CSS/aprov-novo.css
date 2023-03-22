@@ -275,12 +275,14 @@
 
 
 .table{
-  width: 100%; 
+    width: 100%;
    color: orange; 
-   table-layout: fixed;
+   margin: 0 auto;
+    
 }
 
 .table2{
+ 
   width: 100%; 
   table-layout: fixed;
   text-align: center;
