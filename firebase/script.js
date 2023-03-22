@@ -57,7 +57,8 @@ enviarSolici.addEventListener('click', () => {
       acesso_fabrica : `${acesso_fabrica}`,
       estacionamento : `${estacionamento}`,
       observacao:   `${observacao}`,
-      consulta: false
+      consulta: false,
+      status: "undefined"
       
 })
   window.location.href = "#";   
@@ -120,7 +121,7 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       button.setAttribute("class", "btn")
       button.setAttribute("id", "aprovar")
       button.addEventListener("click", async () => {
-        await updateDoc(doc.ref, { consulta: true })
+        await updateDoc(doc.ref, { consulta: true },{ status: "aprovado" })
         console.log("consulta atualizado")
         location.reload()
       })
@@ -134,7 +135,7 @@ if(document.location.pathname.includes("/aprov-novo.html")){
       button.setAttribute("id", "negar")
       button.innerHTML = "Rejeitar"
       button.addEventListener("click", async () => {
-        await updateDoc(doc.ref, { consulta: true })
+        await updateDoc(doc.ref, { consulta: true },{ status: "reprovado" })
         console.log("consulta atualizado")
         location.reload()
       })
@@ -220,6 +221,18 @@ if(document.location.pathname.includes("/consulta.html")){
       button.setAttribute("onclick", "window.location.href='/visualizar.html';");
       button.innerHTML = "Visualizar"
       tbody.appendChild(button)
+
+      button = document.createElement("button")
+      button.setAttribute("class", "btn btn-sm btn-warning")
+      button.setAttribute("id", "revisao")
+      button.addEventListener("click", async () => {
+        await updateDoc(doc.ref, { consulta: false })
+        console.log("consulta atualizado")
+        location.reload()
+      })
+      button.innerHTML = "Rever"
+      tbody.appendChild(button)
+
 
       //Botão negar
       table.append(tbody)
