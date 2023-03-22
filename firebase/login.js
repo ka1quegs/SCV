@@ -20,7 +20,7 @@ import {signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.1
           ultimo_login: dt,
         })
         alert('Usuário logado!');
-        window.location.href = "https://ka1quegs.github.io/TCC/solici-novo"
+        window.location.href = "https://ka1quegs.github.io/SCV/solici-novo"
         
       })
       .catch((error) => {

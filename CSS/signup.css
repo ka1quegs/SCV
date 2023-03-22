@@ -89,6 +89,12 @@
   .text-center a {
     color: #4caf50;
   }
+  .login{
+    font-weight: bold;
+    color: #011b6c;
+    text-decoration: none;
+    width: 0;
+  }
   
   @media(max-width:1920px){
     #login-box {
