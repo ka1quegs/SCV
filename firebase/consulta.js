@@ -80,3 +80,4 @@ const arrayDocumentos = await getDocs(colecao)
     sectionRegistro.append(registro)
   }catch{}
 })
+

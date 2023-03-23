@@ -60,7 +60,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
           location.reload()
         })
         button.addEventListener("click", async () => {
-          await updateDoc(doc.ref, { status: "aprovado" })
+          await updateDoc(doc.ref, { status: "Aprovado" })
           console.log("verificação atualizado")
           location.reload()
         })
@@ -78,7 +78,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
           location.reload()
         })
         button.addEventListener("click", async () => {
-          await updateDoc(doc.ref, { status: "reprovado" })
+          await updateDoc(doc.ref, { status: "Reprovado" })
           console.log("verificação atualizado")
           location.reload()
         })
@@ -100,11 +100,11 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
     const secondCounter = await getCountFromServer(coll2);
     document.getElementById("count-pendente").innerHTML = secondCounter.data().count;
   
-    const coll3 = query(collection(db, "visitante"), where("status", "==", "aprovado"))
+    const coll3 = query(collection(db, "visitante"), where("status", "==", "Aprovado"))
     const thirdCounter = await getCountFromServer(coll3);
     document.getElementById("count-aprovada").innerHTML = thirdCounter.data().count;
   
-    const coll4 = query(collection(db, "visitante"), where("status", "==", "reprovado"))
+    const coll4 = query(collection(db, "visitante"), where("status", "==", "Reprovado"))
     const fourthCounter = await getCountFromServer(coll4);
     document.getElementById("count-negada").innerHTML = fourthCounter.data().count;
   
