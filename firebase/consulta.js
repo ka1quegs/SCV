@@ -41,7 +41,7 @@ const arrayDocumentos = await getDocs(colecao)
     tbody.append(td)
 
     td = document.createElement("td")
-    td.innerHTML = doc.get("#")
+    td.innerHTML = doc.get("status")
     tbody.append(td)
 
     td = document.createElement("td")
