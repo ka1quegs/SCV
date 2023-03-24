@@ -25,7 +25,8 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         let image = document.createElement("img");
         image.setAttribute("class", "img-table")
         image.setAttribute("src","Images/olho.png")
-        image.setAttribute("onclick", "window.location.href='/visualizar.html';");
+        image.setAttribute("id", "openModal")
+        image.addEventListener("click", openModal)
         td.innerHTML = ""
         td.append(image)
         tbody.append(td)
