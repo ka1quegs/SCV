@@ -6,6 +6,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
     const colecao = query(collection(db,"visitante"),where("verificacao", "==", false))
   
     const arrayDocumentos = await getDocs(colecao)
+    
   
       arrayDocumentos.forEach(doc =>{
         let sectionRegistro = document.getElementById('sectionRegistro')
@@ -23,12 +24,15 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         try{
         let td = document.createElement("td");
         let image = document.createElement("img");
-        image.setAttribute("class", "img-table")
+        image.setAttribute("class", "img-table open-modal")
         image.setAttribute("src","Images/olho.png")
-        image.setAttribute("id", "openModal")
+        let imageCount = 1;
+        image.setAttribute("id", "openModal" + imageCount)
         td.innerHTML = ""
         td.append(image)
         tbody.append(td)
+
+
   
         td = document.createElement("td")
         td.innerHTML = doc.get("nome")
@@ -88,10 +92,14 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         table.append(tbody)
         registro.append(table)
         sectionRegistro.append(registro)
+
+        
+        
       }catch{}
     })
-  
-  
+
+
+  //Contadores de Aprovações
     const coll = query(collection(db, "visitante"));
     const firstCounter = await getCountFromServer(coll);
     document.getElementById("count-total").innerHTML = firstCounter.data().count;
@@ -109,15 +117,19 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
     document.getElementById("count-negada").innerHTML = fourthCounter.data().count;
   
   
-const openModal = document.getElementById("openModal");
-const modal = document.getElementById("modal");
 
-openModal.addEventListener("click", () => {
-modal.style.display = "block";
-});
+    //Abrir Modal
+    const openModalButtons = document.querySelectorAll(".open-modal");
+    openModalButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        modal.style.display = "block";
+      });
 
-modal.addEventListener("click", (event) => {
-if (event.target == modal) {
-modal.style.display = "none";
-}
+    modal.addEventListener("click", (event) => {
+    if (event.target == modal) {
+    modal.style.display = "none";
+    }
+    });
+    
 });
+  
