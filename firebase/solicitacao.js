@@ -14,14 +14,15 @@ try{
       let setor = document.getElementById('setor').value
       let telefone = document.getElementById('telefone').value
       let celular = document.getElementById('celular').value
-      let entrada = document.getElementById('entrada').value
-      let saida = document.getElementById('saida').value
+      let periodoDe = document.getElementById('periodoDe').value
+      let periodoAte = document.getElementById('periodoAte').value
       let empresa = document.getElementById('empresa').value
       let modelo_carro = document.getElementById('modelo_carro').value
       let placa_carro =  document.getElementById('placa_carro').value
       let acesso_fabrica = document.getElementById('acesso_fabrica').value
       let estacionamento = document.getElementById('mySelect').value
       let observacao = document.getElementById('observacao').value
+      
 
         alert('Solicitação enviada!')
 
@@ -34,8 +35,8 @@ try{
           setor:`${setor}`,
           telefone: `${telefone}`,
           celular: `${celular}`,
-          entrada: `${entrada}`,
-          saida: `${saida}`,
+          periodoDe: `${periodoDe}`,
+          periodoAte: `${periodoAte}`,
           empresa:`${empresa}`,
           modelo_carro: `${modelo_carro}`,
           placa_carro: `${placa_carro}`,
@@ -43,7 +44,9 @@ try{
           estacionamento : `${estacionamento}`,
           observacao:   `${observacao}`,
           verificacao: false,
-          status: ""
+          status: "",
+          entrada: "",
+          saida: ""
           
     })
       window.location.href = "#";

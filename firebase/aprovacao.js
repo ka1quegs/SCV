@@ -43,11 +43,11 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         tbody.append(td)
   
         td = document.createElement("td")
-        td.innerHTML = doc.get("entrada")
+        td.innerHTML = doc.get("periodoDe")
         tbody.append(td)
   
         td = document.createElement("td")
-        td.innerHTML = doc.get("saida")
+        td.innerHTML = doc.get("periodoAte")
         tbody.append(td)
   
         //Botão aprovar
