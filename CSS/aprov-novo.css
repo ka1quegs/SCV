@@ -329,10 +329,17 @@
 .titulo{
   margin-bottom: 20px;
 }
-
-@media (max-width:1366px){
+@media (max-width:1920px){
   .table{
-    width: 1180px;
+    table-layout: fixed;
+    width: 100%;
+  }
+}
+
+@media (max-width:1360px){
+  .table{
+    table-layout: fixed;
+    width: 100%;
   }
   .main-cards{
     width: 1180px;
