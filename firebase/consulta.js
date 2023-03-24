@@ -24,7 +24,7 @@ const arrayDocumentos = await getDocs(colecao)
     try{
     let td = document.createElement("td");
     td = document.createElement("td")
-    td.innerHTML = doc.get("entrada")
+    td.innerHTML = doc.get("periodoDe")
     tbody.append(td)
     tbody.append(td)
 
