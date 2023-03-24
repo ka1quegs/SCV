@@ -4,7 +4,7 @@ import {createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs
 
 
 // Criando novo usuário (funcionário)
-signUp.addEventListener('click',() => {
+  signUp.addEventListener('click',() => {
 
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
