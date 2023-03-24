@@ -45,6 +45,10 @@ const arrayDocumentos = await getDocs(colecao)
     tbody.append(td)
 
     td = document.createElement("td")
+    td.innerHTML = doc.get("visita")
+    tbody.append(td)
+
+    td = document.createElement("td")
     td.innerHTML = doc.get("#")
     tbody.append(td)
 
@@ -70,7 +74,7 @@ const arrayDocumentos = await getDocs(colecao)
       console.log("verificação atualizado")
       location.reload()
     })
-    button.innerHTML = "Rever"
+    button.innerHTML = "Revisar"
     tbody.appendChild(button)
 
 
