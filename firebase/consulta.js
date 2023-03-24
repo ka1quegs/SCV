@@ -24,7 +24,7 @@ const arrayDocumentos = await getDocs(colecao)
     try{
     let td = document.createElement("td");
     td = document.createElement("td")
-    td.innerHTML = doc.get("entrada")
+    td.innerHTML = doc.get("periodoDe")
     tbody.append(td)
     tbody.append(td)
 
@@ -42,6 +42,10 @@ const arrayDocumentos = await getDocs(colecao)
 
     td = document.createElement("td")
     td.innerHTML = doc.get("status")
+    tbody.append(td)
+
+    td = document.createElement("td")
+    td.innerHTML = doc.get("visita")
     tbody.append(td)
 
     td = document.createElement("td")
@@ -70,7 +74,7 @@ const arrayDocumentos = await getDocs(colecao)
       console.log("verificação atualizado")
       location.reload()
     })
-    button.innerHTML = "Rever"
+    button.innerHTML = "Revisar"
     tbody.appendChild(button)
 
 

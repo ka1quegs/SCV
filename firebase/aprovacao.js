@@ -25,7 +25,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         let image = document.createElement("img");
         image.setAttribute("class", "img-table")
         image.setAttribute("src","Images/olho.png")
-        image.setAttribute("onclick", "window.location.href='/visualizar.html';");
+        image.setAttribute("id", "openModal")
         td.innerHTML = ""
         td.append(image)
         tbody.append(td)
@@ -43,11 +43,11 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         tbody.append(td)
   
         td = document.createElement("td")
-        td.innerHTML = doc.get("entrada")
+        td.innerHTML = doc.get("periodoDe")
         tbody.append(td)
   
         td = document.createElement("td")
-        td.innerHTML = doc.get("saida")
+        td.innerHTML = doc.get("periodoAte")
         tbody.append(td)
   
         //Botão aprovar
@@ -109,3 +109,15 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
     document.getElementById("count-negada").innerHTML = fourthCounter.data().count;
   
   
+const openModal = document.getElementById("openModal");
+const modal = document.getElementById("modal");
+
+openModal.addEventListener("click", () => {
+modal.style.display = "block";
+});
+
+modal.addEventListener("click", (event) => {
+if (event.target == modal) {
+modal.style.display = "none";
+}
+});
