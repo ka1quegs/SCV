@@ -26,7 +26,6 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         image.setAttribute("class", "img-table")
         image.setAttribute("src","Images/olho.png")
         image.setAttribute("id", "openModal")
-        image.addEventListener("click", openModal)
         td.innerHTML = ""
         td.append(image)
         tbody.append(td)
@@ -110,3 +109,15 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
     document.getElementById("count-negada").innerHTML = fourthCounter.data().count;
   
   
+const openModal = document.getElementById("openModal");
+const modal = document.getElementById("modal");
+
+openModal.addEventListener("click", () => {
+modal.style.display = "block";
+});
+
+modal.addEventListener("click", (event) => {
+if (event.target == modal) {
+modal.style.display = "none";
+}
+});
