@@ -63,16 +63,17 @@
 }
 
 .btn{
-    background-color: gold;
+    background-color: orange;
     border: none;
     border-radius: 7px;
     padding: 7px;
+    margin: 2px;
     font-weight: bold;
     cursor: pointer;
 }
 
 .btn:hover {
-  background-color: goldenrod;
+  background-color: darkorange;
   color:white;
   transition: 0.5s ease;
 }
