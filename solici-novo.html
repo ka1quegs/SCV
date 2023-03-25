@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="CSS/solici-novo.css">
   <!-- Boxicons CDN Link -->
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="Images/Logo P.png">
   <title>Solicitação de Visita</title>
@@ -212,7 +213,7 @@
 
             </script>
 
-          <button class="btn solid" id='enviarSolici' value="Enviar"> Enviar </button>
+          <button class="btn solid" id='enviarSolici' onclick="notification()" value="Enviar"> Enviar </button>
 
           </div>
         </div>
@@ -231,5 +232,5 @@
 
 </body>
 <script type="module" src="firebase/solicitacao.js"></script>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </html>

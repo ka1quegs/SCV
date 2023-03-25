@@ -24,8 +24,7 @@ try{
       let observacao = document.getElementById('observacao').value
       
 
-        alert('Solicitação enviada!')
-
+    
         addDoc(collection(db, "visitante"), {
           nome: `${nome}`,  
           rg: `${rg}`,
@@ -52,4 +51,23 @@ try{
       window.location.href = "#";
       
       });
+      
+      
 }catch{}
+
+enviarSolici.addEventListener('click', () => { 
+Toastify({
+  text: "Socilitação enviada",
+  duration: 2500,
+  newWindow: true,
+  close: true,
+  gravity: "top", // `top` or `bottom`
+  position: "center", // `left`, `center` or `right`
+  stopOnFocus: true, // Prevents dismissing of toast on hover
+  style: {
+    background: "#265df2",
+    top: 40,
+  },
+  onClick: function(){} // Callback after click
+}).showToast();
+})
