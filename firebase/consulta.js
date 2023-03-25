@@ -56,7 +56,6 @@ const arrayDocumentos = await getDocs(colecao)
     let button = document.createElement("button")
     button.setAttribute("class", "btn btn-sm btn-warning")
     button.setAttribute("id", "visualizar")
-    button.setAttribute("onclick", "window.location.href='/visualizar.html';");
     button.innerHTML = "Visualizar"
     tbody.appendChild(button)
 
