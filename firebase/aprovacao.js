@@ -18,7 +18,10 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         table.setAttribute("class", "table2")
         
         let tbody = document.createElement("tbody")
-  
+        let valueCpf = document.createElement("input")
+        valueCpf.setAttribute("type", "hidden")
+        valueCpf.setAttribute("class", "valueCpf")
+        valueCpf.value = doc.get("cpf")
    
         //tbody
         try{
@@ -26,8 +29,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         let image = document.createElement("img");
         image.setAttribute("class", "img-table open-modal")
         image.setAttribute("src","Images/olho.png")
-        let imageCount = 1;
-        image.setAttribute("id", "openModal" + imageCount)
+      
         td.innerHTML = ""
         td.append(image)
         tbody.append(td)
@@ -90,30 +92,9 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
   
         tbody.appendChild(button)
         table.append(tbody)
-        registro.append(table)
+        registro.append(table,valueCpf)
         sectionRegistro.append(registro)
 
-        
-        async function getDocumentData(docId) {
-          const docRef = doc(db, "visitante", docId);
-          const docSnap = await getDocs(docRef);
-          if (docSnap.exists()) {
-            return docSnap.data();
-          } else {
-            console.log("No such document!");
-          }
-        }
-     
-        
-        image.addEventListener("click", async () => {
-          const data = await getDocumentData(doc.id);
-          document.getElementById("nomeVisitante").innerHTML = data.nome;
-          document.getElementById("empresaVisitante").innerHTML = data.empresa;
-          document.getElementById("responsavelVisita").innerHTML = data.responsavelVisita;
-          document.getElementById("periodoDeVisitante").innerHTML = data.periodoDe;
-          document.getElementById("periodoAteVisitante").innerHTML = data.periodoAte;
-          modal.style.display = "block";
-        });
         
       }catch{}
 
@@ -161,4 +142,38 @@ closeBtn.addEventListener('click', function() {
 	modal.style.display = 'none';
 });
 
+//Puxando informações de visitante para o Modal
+let arrayRegistro = document.getElementsByClassName("table2")
+
+for (let i = 0; i < arrayRegistro.length; i++){
+  arrayRegistro[i].addEventListener("click", async () => {
+
+      const cpf = document.getElementsByClassName("valueCpf")[i].value
+
+
+    
+      const busca = query(collection(db, "visitante"), where("cpf", "==", cpf))
+
+      const resultadoBusca = await getDocs(busca)
+      resultadoBusca.forEach((doc) => {
+          document.getElementById("cpf").innerHTML = doc.get("cpf")
+          document.getElementById("nomeVisitante").innerHTML = doc.get("nome")
+          document.getElementById("emailVisitante").innerHTML = doc.get("emailVisitante")
+          document.getElementById("celular").innerHTML = doc.get("celular")
+          document.getElementById("rg").innerHTML = doc.get("rg")
+          document.getElementById("empresaVisitante").value = doc.get("empresa")
+          document.getElementById("responsavelVisita").value = doc.get("responsavelVisita")
+          document.getElementById("setor").value = doc.get("setor")
+          document.getElementById("acesso_fabrica").value = doc.get("acesso_fabrica")
+          document.getElementById("estacionamento").value = doc.get("estacionamento")
+          document.getElementById("placa_carro").value = doc.get("placa_carro")
+          document.getElementById("modelo_carro").value = doc.get("modelo_carro")
+          document.getElementById("story").value = doc.get("observacao")
+          document.getElementById("periodoDe").value = doc.get("periodoDe")
+          document.getElementById("periodoAte").value = doc.get("periodoAte")
+          document.getElementById("story").value = doc.get("observacao")
+      })
+
+      modal.style.display = "flex"
   
+    })}
