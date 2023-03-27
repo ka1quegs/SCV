@@ -23,6 +23,9 @@ try{
       let estacionamento = document.getElementById('mySelect').value
       let observacao = document.getElementById('observacao').value
       
+      //Data de registro do modal
+      let dataRegistro = new Date();
+      let dataFormatada = ((dataRegistro.getDate() )) + "/" + ((dataRegistro.getMonth() + 1)) + "/" + dataRegistro.getFullYear(); 
 
     
         addDoc(collection(db, "visitante"), {
@@ -45,8 +48,8 @@ try{
           verificacao: false,
           status: "",
           entrada: "",
-          saida: ""
-          
+          saida: "",
+          date: `${dataFormatada}`
     })
       window.location.href = "#";
       

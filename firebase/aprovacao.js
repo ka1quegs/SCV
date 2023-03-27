@@ -154,6 +154,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
 
       const resultadoBusca = await getDocs(busca)
       resultadoBusca.forEach((doc) => {
+          document.getElementById("dataRegistro").value = doc.get("date")
           document.getElementById("cpf").value = doc.get("cpf")
           document.getElementById("nomeVisitante").value = doc.get("nome")
           document.getElementById("emailVisitante").value = doc.get("emailVisitante")
