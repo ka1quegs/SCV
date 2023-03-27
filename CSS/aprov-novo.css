@@ -509,6 +509,7 @@
   
   .close:hover {
     color: #f00;
+    transition: 0.3s ease;
   }
 
   @media (max-width:1370px){
