@@ -156,11 +156,11 @@ for (let i = 0; i < arrayRegistro.length; i++){
 
       const resultadoBusca = await getDocs(busca)
       resultadoBusca.forEach((doc) => {
-          document.getElementById("cpf").innerHTML = doc.get("cpf")
-          document.getElementById("nomeVisitante").innerHTML = doc.get("nome")
-          document.getElementById("emailVisitante").innerHTML = doc.get("emailVisitante")
-          document.getElementById("celular").innerHTML = doc.get("celular")
-          document.getElementById("rg").innerHTML = doc.get("rg")
+          document.getElementById("cpf").value = doc.get("cpf")
+          document.getElementById("nomeVisitante").value = doc.get("nome")
+          document.getElementById("emailVisitante").value = doc.get("emailVisitante")
+          document.getElementById("celular").value = doc.get("celular")
+          document.getElementById("rg").value = doc.get("rg")
           document.getElementById("empresaVisitante").value = doc.get("empresa")
           document.getElementById("responsavelVisita").value = doc.get("responsavelVisita")
           document.getElementById("setor").value = doc.get("setor")
