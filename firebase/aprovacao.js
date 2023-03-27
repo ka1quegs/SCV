@@ -94,11 +94,33 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         sectionRegistro.append(registro)
 
         
+        async function getDocumentData(docId) {
+          const docRef = doc(db, "visitante", docId);
+          const docSnap = await getDocs(docRef);
+          if (docSnap.exists()) {
+            return docSnap.data();
+          } else {
+            console.log("No such document!");
+          }
+        }
+     
+        
+        image.addEventListener("click", async () => {
+          const data = await getDocumentData(doc.id);
+          document.getElementById("nomeVisitante").innerHTML = data.nome;
+          document.getElementById("empresaVisitante").innerHTML = data.empresa;
+          document.getElementById("responsavelVisita").innerHTML = data.responsavelVisita;
+          document.getElementById("periodoDeVisitante").innerHTML = data.periodoDe;
+          document.getElementById("periodoAteVisitante").innerHTML = data.periodoAte;
+          modal.style.display = "block";
+        });
         
       }catch{}
+
     })
 
 
+ 
   //Contadores de Aprovações
     const coll = query(collection(db, "visitante"));
     const firstCounter = await getCountFromServer(coll);
@@ -130,6 +152,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
     modal.style.display = "none";
     }
     });
+
     
 });
-  
+
