@@ -62,12 +62,10 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         button.setAttribute("id", "aprovar")
         button.addEventListener("click", async () => {
           await updateDoc(doc.ref, { verificacao: true } )
-          console.log("verificação atualizado")
           location.reload()
         })
         button.addEventListener("click", async () => {
           await updateDoc(doc.ref, { status: "Aprovado" })
-          console.log("verificação atualizado")
           location.reload()
         })
         button.innerHTML = "Aprovar"
@@ -80,12 +78,10 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         button.setAttribute("id", "rejeitar")
         button.addEventListener("click", async () => {
           await updateDoc(doc.ref, { verificacao: true })
-          console.log("verificação atualizado")
           location.reload()
         })
         button.addEventListener("click", async () => {
           await updateDoc(doc.ref, { status: "Reprovado" })
-          console.log("verificação atualizado")
           location.reload()
         })
         button.innerHTML = "Rejeitar"
