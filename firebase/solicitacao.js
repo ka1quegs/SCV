@@ -71,3 +71,24 @@ Toastify({
   onClick: function(){} // Callback after click
 }).showToast();
 })
+
+const name = document.getElementById("nome");
+const empresa = document.getElementById("empresa");
+const visita = document.getElementById("responsavelVisita");
+const periodoDe = document.getElementById("periodoDe");
+const periodoAte = document.getElementById("periodoAte");
+const submitBtn = document.getElementById("enviarSolici");
+
+function checkValidity() {
+  if (name.validity.valid && empresa.validity.valid && visita.validity.valid && periodoDe.validity.valid && periodoAte.validity.valid) {
+    submitBtn.disabled = false;
+  } else {
+    submitBtn.disabled = true;
+  }
+}
+
+name.addEventListener("input", checkValidity);
+empresa.addEventListener("input", checkValidity);
+visita.addEventListener("input", checkValidity);
+periodoDe.addEventListener("input", checkValidity);
+periodoAte.addEventListener("input", checkValidity);

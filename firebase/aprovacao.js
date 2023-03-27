@@ -118,7 +118,8 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
   
   
 
-    //Abrir Modal
+    //Abrir/Fechar Modal
+    var closeBtn = document.getElementsByClassName('close')[0];
     const openModalButtons = document.querySelectorAll(".open-modal");
     openModalButtons.forEach((button) => {
       button.addEventListener("click", () => {
@@ -132,4 +133,8 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
     });
     
 });
+closeBtn.addEventListener('click', function() {
+	modal.style.display = 'none';
+});
+
   

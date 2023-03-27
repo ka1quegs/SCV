@@ -33,7 +33,7 @@
     background-color: black;
     color: white;
     width: 100%;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     padding:4px;
     
@@ -298,6 +298,28 @@
 .sidebar.open ~ .home-section{
   left: 250px;
   width: calc(100% - 250px);
+}
+@media (max-width: 1366px) {
+  .table{
+    width: 1200px;
+    margin-left: -1%;
+    
+  }
+
+  .btn{
+    width: 60px;
+    font-size: 10px;
+    
+  }
+
+  .table2{
+    width: 1200px;
+    margin-left: -1%;
+  }
+
+  #input-busca{
+    width: 100%;
+  }
 }
 
 @media (max-width: 420px) {
