@@ -150,8 +150,6 @@ for (let i = 0; i < arrayRegistro.length; i++){
 
       const cpf = document.getElementsByClassName("valueCpf")[i].value
 
-
-    
       const busca = query(collection(db, "visitante"), where("cpf", "==", cpf))
 
       const resultadoBusca = await getDocs(busca)
@@ -168,7 +166,6 @@ for (let i = 0; i < arrayRegistro.length; i++){
           document.getElementById("estacionamento").value = doc.get("estacionamento")
           document.getElementById("placa_carro").value = doc.get("placa_carro")
           document.getElementById("modelo_carro").value = doc.get("modelo_carro")
-          document.getElementById("story").value = doc.get("observacao")
           document.getElementById("periodoDe").value = doc.get("periodoDe")
           document.getElementById("periodoAte").value = doc.get("periodoAte")
           document.getElementById("story").value = doc.get("observacao")
