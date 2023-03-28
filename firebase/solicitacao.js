@@ -49,7 +49,8 @@ try{
           status: "",
           entrada: "",
           saida: "",
-          date: `${dataFormatada}`
+          date: `${dataFormatada}`,
+          estadoVisita: ""
     })
       window.location.href = "#";
       
