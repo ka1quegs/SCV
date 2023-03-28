@@ -625,7 +625,7 @@ img{
     padding: 30px;
     background-color: white;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    margin-left: 13%;
+    margin-left: 15%;
     
   }
   main .fields .input-field{
@@ -648,8 +648,66 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 44px;
-    max-width: 270px;
+    height: 45px;
+    max-width: 170px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 7px 0;
+    background-color: #4d84e2;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+}
+@media (min-width: 300px) {
+  .sidebar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 78px;
+    background: #11101D;
+    padding: 6px 14px;
+    z-index: 99;
+    transition: all 0.5s ease;
+  }
+
+  .container{
+    position: absolute;
+    max-width: 650px;
+    height: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    margin-left: 15%;
+    
+  }
+  main .fields .input-field{
+    display: flex;
+    width: calc(100% / 1 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+  }
+  .sidebar li.profile{
+    position: absolute;
+    height: 60px;
+    width: 78px;
+    left: 0;
+    padding: 10px 14px;
+    background: #1d1b31;
+    transition: all 0.5s ease;
+    overflow: hidden;
+  }
+  .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 170px;
     width: 100%;
     border: none;
     outline: none;
