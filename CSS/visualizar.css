@@ -152,6 +152,39 @@ form .buttons button , .backBtn{
 #story{
   border: 1px solid black;
 }
+
+/*foto*/
+input[type='file']{
+    display: none;
+}
+
+.max-width{
+    width: 100%;
+}
+
+.imageContainer{
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50%;
+    margin-left: 85%;
+    
+}
+#imgPhoto{
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    background-color: #eee;
+    border: 5px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+#imgPhoto:hover{
+    background-color: rgb(180, 180, 180);
+    border: 5px solid #111;
+}
+
 /**/
 @media(max-width:1370px){
 form .fields .input-field{
