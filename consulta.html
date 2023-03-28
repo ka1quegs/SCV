@@ -117,10 +117,11 @@
 
                 </section>
 
-        </div>
-<!--
+       
+
         <div class="modal" id="modal">
           <div class="modal-content">
+            
               <div class="container">
                 <span class="close">&times;</span>
                   <header>
@@ -168,7 +169,7 @@
               
                                   <div class="input-field">
                                     <label>Tipo do Cadastro</label>
-                                    <input type="text" placeholder="Pré-Cadastro/Efetivo" disabled>
+                                    <input id="tipo_cadastro" type="text" placeholder="Pré-Cadastro/Efetivo" disabled >
                                 </div>
                                
               
@@ -241,17 +242,13 @@
               
                                     <div class="input-field">
                                       <label>Observação</label>
-                                      <textarea id="story" name="story">
+                                      <textarea id="story" name="story" disabled>
                                     </textarea>
                                     </div>
-                                  </div> 
-                                  
-                                  <button>Salvar</button>                           
-                              </div>
-                              
+                                  </div>                       
+                                </div>        
           </div>
         </div>
--->
         <script src="firebase/consulta.js" type="module"></script>
     </body>
 </html>
