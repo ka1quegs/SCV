@@ -87,6 +87,9 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
           await updateDoc(doc.ref, { status: "Reprovado" })
           location.reload()
         })
+        button.addEventListener("click", async () => {
+          await updateDoc(doc.ref, { tipo_cadastro: "Efetivo" })
+        })
         button.innerHTML = "Rejeitar"
   
         tbody.appendChild(button)
