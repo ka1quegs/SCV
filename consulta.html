@@ -8,58 +8,50 @@
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <link rel="shortcut icon" href="Images/Logo P.png" >
         <link rel="stylesheet" href="CSS/visualizar.css">
-        <link rel="stylesheet" href="CSS/foto.css">
         <link rel="stylesheet" href="CSS/consulta.css">
     </head>
     <body>
 
-        <div class="sidebar">
-            <div class="logo-details">
-              <i class='bx bxs-parking icon'></i>
-                <div class="logo_name">PARANOÁ</div>
-                <i class='bx bx-menu' id="btn" ></i>
+      <div class="sidebar">
+        <div class="logo-details">
+          <i class='bx bxs-parking icon'></i>
+          <div class="logo_name">PARANOÁ</div>
+          <i class='bx bx-menu' id="btn"></i>
+        </div>
+          <li>
+            <a href="solici-novo.html" >
+              <i class='bx bx-id-card'></i>
+              <span class="links_name">Solicitação</span>
+            </a>
+            <span class="tooltip">Solicitação</span>
+          </li>
+          <li>
+          <li>
+            <a href="consulta.html">
+              <i class='bx bx-file-find'></i>
+              <span class="links_name">Consulta</span>
+            </a>
+            <span class="tooltip">Consulta</span>
+          </li>
+          <li>
+            <a href="aprov-novo.html">
+              <i class='bx bxs-user-check'></i>
+              <span class="links_name">Aprovação</span>
+            </a>
+            <span class="tooltip">Aprovação</span>
+          </li>
+          <li class="profile">
+            <div class="profile-details">
+              <!--<img src="profile.jpg" alt="profileImg">-->
+              <div class="name_job">
+                <div class="name">Funcionário</div>
+                <div class="job">Sair</div>
+              </div>
             </div>
-            <ul class="nav-list"> 
-              <li>
-                  <i class='bx bx-search' ></i>
-                 <input type="text" placeholder="Pesquisar...">
-                 <span class="tooltip">Pesquisar</span>
-              </li>
-              <li>
-                <a href="solici-novo.html">
-                  <i class='bx bx-grid-alt'></i>
-                  <span class="links_name">Solicitação</span>
-                </a>
-                 <span class="tooltip">Solicitação</span>
-              </li>
-              <li>
-             <li>
-               <a href="consulta.html">
-                 <i class='bx bx-chat' ></i>
-                 <span class="links_name">Consulta</span>
-               </a>
-               <span class="tooltip">Consulta</span>
-             </li>
-             <li>
-               <a href="aprov-novo.html">
-                 <i class='bx bx-pie-chart-alt-2' ></i>
-                 <span class="links_name">Aprovação</span>
-               </a>
-               <span class="tooltip">Aprovação</span>
-             </li>
-             <li>
-             <li class="profile">
-                 <div class="profile-details">
-                   <!--<img src="profile.jpg" alt="profileImg">-->
-                   <div class="name_job">
-                     <div class="name">Funcionário</div>
-                     <div class="job">Sair</div>
-                   </div>
-                 </div>
-                 <a href="login.html"><i class='bx bx-log-out' id="log_out" ></i></a>
-             </li>
-            </ul>
-          </div>
+            <a href="login.html"><i class='bx bx-log-out' id="log_out" ></i></a>
+          </li>
+        </ul>
+      </div>
           
           <script>
           let sidebar = document.querySelector(".sidebar");
