@@ -98,3 +98,6 @@ empresa.addEventListener("input", checkValidity);
 visita.addEventListener("input", checkValidity);
 periodoDe.addEventListener("input", checkValidity);
 periodoAte.addEventListener("input", checkValidity);
+
+
+
