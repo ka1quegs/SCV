@@ -61,7 +61,7 @@ const arrayDocumentos = await getDocs(colecao)
     let img = document.createElement("img")
     img.setAttribute("src", "Images/olho.png")
 
-    img.setAttribute("class", "visualizar")
+    img.setAttribute("class", "visualizar open-modal")
       img.setAttribute("alt", "Visualizar")
       img.setAttribute("id", "visualizar")
 
