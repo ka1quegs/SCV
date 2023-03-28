@@ -46,6 +46,7 @@ const arrayDocumentos = await getDocs(colecao)
 
     td = document.createElement("td")
     td.innerHTML = doc.get("visita")
+    td.setAttribute("id","visita")
     tbody.append(td)
 
     td = document.createElement("td")
@@ -84,3 +85,6 @@ const arrayDocumentos = await getDocs(colecao)
   }catch{}
 })
 
+//if(document.getElementById('visita'== "")){
+ // set
+//}
