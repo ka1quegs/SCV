@@ -7,7 +7,8 @@
         <title>Consulta de Visitantes</title>
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <link rel="shortcut icon" href="Images/Logo P.png" >
-        
+        <link rel="stylesheet" href="CSS/visualizar.css">
+        <link rel="stylesheet" href="CSS/foto.css">
         <link rel="stylesheet" href="CSS/consulta.css">
     </head>
     <body>
@@ -134,35 +135,140 @@
                 </section>
 
         </div>
-
-        <script>
-            const INPUT_BUSCA = document.getElementById('input-busca');
-const TABELA_BEBIDAS = document.getElementById('tabela-func');
-
-INPUT_BUSCA.addEventListener('keyup', () => {
-    let expressao = INPUT_BUSCA.value.toLowerCase();
-
-    if (expressao.length === 1) {   
-        return;
-    }
-
-    let linhas = TABELA_BEBIDAS.getElementsByTagName('tr');
-
-    for (let posicao in linhas) {
-        if (true === isNaN(posicao)) {
-            continue;
-        }
-
-        let conteudoDaLinha = linhas[posicao].innerHTML.toLowerCase();
-
-        if (true === conteudoDaLinha.includes(expressao)) {
-            linhas[posicao].style.display = '';
-        } else {
-            linhas[posicao].style.display = 'none';
-        }
-    }
-});
-        </script>
+<!--
+        <div class="modal" id="modal">
+          <div class="modal-content">
+              <div class="container">
+                <span class="close">&times;</span>
+                  <header>
+                    <img src="Images/logo600x80.png" alt="">
+                  </header>
+                  
+                    <div class="max-width">
+              
+                      <div class="imageContainer">
+                        
+                          <img src="Images/camera.png" alt="Selecione a Imagem" id="imgPhoto">
+                      </div>
+                  </div>
+                  
+                 <input type="file" id="flImage" name="fImage" accept="image/*">
+                 
+                  <form action="#">
+                      <div class="form first">
+                          <div class="details personal">
+                              <h3 style="margin-bottom: 20px; color: rgb(79, 202, 243);">INFORMAÇÕES GERAIS</h3>
+              
+                              <div class="fields">
+                                  <div class="input-field">
+                                    <label>Data do Cadastro</label>
+                                    <input id="dataRegistro" type="text" disabled>
+                                </div>
+              
+                                  <div class="input-field">
+                                      <label>Hora da Entrada</label>
+                                      <input type="time" disabled>
+                                  </div>
+                                  <div class="input-field">
+                                      <label>Hora da Saída</label>
+                                      <input type="time" disabled>
+                                  </div>
+                                  <div class="input-field">
+                                      <label>Periodo de:</label>
+                                      <input id="periodoDe" type="text" disabled>
+                                  </div>
+                                  <div class="input-field">
+                                      <label>Periodo Até:</label>
+                                      <input id="periodoAte" type="text" disabled>
+      
+                                  </div>
+              
+                                  <div class="input-field">
+                                    <label>Tipo do Cadastro</label>
+                                    <input type="text" placeholder="Pré-Cadastro/Efetivo" disabled>
+                                </div>
+                               
+              
+                                  <div class="input-field">
+                                      <label>Nome Completo</label>
+                                      <input id="nomeVisitante" type="text" placeholder="Digite o Nome" disabled>
+      
+                                  </div>
+                                  
+              
+                                  <div class="input-field">
+                                      <label>RG</label>
+                                      <input id="rg" type="text" placeholder="Digite o RG" disabled>
+      
+                                  </div>
+              
+                                  <div class="input-field">
+                                      <label>CPF</label>
+      
+                                      <input id="cpf" type="text" placeholder="Digite o CPF" disabled>
+      
+                                  </div>
+              
+                                  <div class="input-field">
+                                      <label>Celular</label>
+                                      <input id="celular" type="text" placeholder="Digite o Celular" disabled>
+      
+                                  </div>
+              
+                                  <div class="input-field">
+                                      <label>E-Mail</label>
+                                      <input id="emailVisitante" type="email" placeholder="Digite o E-Mail" disabled>
+      
+                                  </div>
+                      
+                                  <div class="input-field">
+                                      <label>Empresa</label>
+                                      <input id="empresaVisitante" type="text" placeholder="Digite a Empresa" disabled>
+                                  </div>
+      
+                                  <div class="input-field">
+                                      <label>Quem Visitar</label>
+                                      <input id="responsavelVisita" type="text" placeholder="Digite a Empresa" disabled>
+                                  </div>
+      
+                                  <div class="input-field">
+                                      <label>Área  que irá vistar</label>
+                                      <input id="setor" type="text" placeholder="Digite a Empresa" disabled>
+                                  </div>
+      
+                                  <div class="input-field">
+                                      <label>Acesso a Fábrica</label>
+                                      <input id="acesso_fabrica" type="text" placeholder="Digite a Empresa" disabled>
+                                  </div>
+      
+                                  <div class="input-field">
+                                      <label>Acesso ao Estacionamento</label>
+                                      <input id="estacionamento" type="text" placeholder="Digite a Empresa" disabled>
+                                  </div>
+      
+                                  <div class="input-field">
+                                      <label>Placa do Carro</label>
+                                      <input id="placa_carro" type="text" placeholder="Digite a Empresa" disabled>
+                                  </div>
+      
+                                  <div class="input-field">
+                                      <label>Modelo do Carro</label>
+                                      <input id="modelo_carro" type="text" placeholder="Digite a Empresa" disabled>
+                                  </div>
+              
+                                    <div class="input-field">
+                                      <label>Observação</label>
+                                      <textarea id="story" name="story">
+                                    </textarea>
+                                    </div>
+                                  </div> 
+                                  
+                                  <button>Salvar</button>                           
+                              </div>
+                              
+          </div>
+        </div>
+-->
         <script src="firebase/consulta.js" type="module"></script>
     </body>
 </html>
