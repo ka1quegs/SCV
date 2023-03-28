@@ -60,35 +60,33 @@ const arrayDocumentos = await getDocs(colecao)
     //Botão Visualizar
     let img = document.createElement("img")
     img.setAttribute("src", "Images/olho.png")
-
     img.setAttribute("class", "visualizar open-modal")
-      img.setAttribute("alt", "Visualizar")
-      img.setAttribute("id", "visualizar")
-
-      tbody.appendChild(img)
+    img.setAttribute("alt", "Visualizar")
+    img.setAttribute("id", "visualizar")
+    tbody.appendChild(img)
 
     //Botão rever
    
-img = document.createElement("img")
-img.setAttribute("src", "Images/revisar.png")
-img.setAttribute("alt", "Revisar")
-img.setAttribute("id", "revisao")
-img.addEventListener("click", async () => {
-  await updateDoc(doc.ref, { verificacao: false })
-  console.log("consulta atualizado")
-  location.reload()
-})
-img.addEventListener("click", async () => {
-  await updateDoc(doc.ref, { tipo_cadastro: "Pré-Cadastro" })
-  console.log("consulta atualizado")
-  location.reload()
-})
-img.addEventListener("click", async () => {
-  await updateDoc(doc.ref, { status: "" })
-  console.log("verificação atualizado")
-  location.reload()
-})
-tbody.appendChild(img)
+    img = document.createElement("img")
+    img.setAttribute("src", "Images/revisar.png")
+    img.setAttribute("alt", "Revisar")
+    img.setAttribute("id", "revisao")
+    img.addEventListener("click", async () => {
+      await updateDoc(doc.ref, { verificacao: false })
+      console.log("consulta atualizado")
+      location.reload()
+    })
+    img.addEventListener("click", async () => {
+      await updateDoc(doc.ref, { tipo_cadastro: "Pré-Cadastro" })
+      console.log("consulta atualizado")
+      location.reload()
+    })
+    img.addEventListener("click", async () => {
+      await updateDoc(doc.ref, { status: "" })
+      console.log("verificação atualizado")
+      location.reload()
+    })
+    tbody.appendChild(img)
 
 
     //Botão negar
