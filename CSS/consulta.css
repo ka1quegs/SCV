@@ -299,6 +299,10 @@
   left: 250px;
   width: calc(100% - 250px);
 }
+
+.visualizar{
+  margin: 5px;
+}
 @media (max-width: 1370px) {
   .table{
     width: 100%;

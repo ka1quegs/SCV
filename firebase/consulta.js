@@ -56,6 +56,7 @@ const arrayDocumentos = await getDocs(colecao)
     //Botão Visualizar
     let img = document.createElement("img")
     img.setAttribute("src", "Images/olho.png")
+    img.setAttribute("class", "visualizar")
       img.setAttribute("alt", "Visualizar")
       img.setAttribute("id", "visualizar")
       tbody.appendChild(img)

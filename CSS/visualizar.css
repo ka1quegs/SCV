@@ -186,6 +186,15 @@ input[type='file']{
 }
 
 /**/
+
+@media(max-width:1920px){
+    form .fields .input-field{
+        display: flex;
+        width: calc(100% / 3 - 15px);
+        flex-direction: column;
+        margin: 4px 0;
+    }
+}
 @media(max-width:1370px){
 form .fields .input-field{
     display: flex;
