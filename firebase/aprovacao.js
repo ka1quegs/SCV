@@ -68,6 +68,9 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
           await updateDoc(doc.ref, { status: "Aprovado" })
           location.reload()
         })
+        button.addEventListener("click", async () => {
+          await updateDoc(doc.ref, { tipo_cadastro: "Efetivo" })
+        })
         button.innerHTML = "Aprovar"
         tbody.appendChild(button)
   
@@ -83,6 +86,9 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         button.addEventListener("click", async () => {
           await updateDoc(doc.ref, { status: "Reprovado" })
           location.reload()
+        })
+        button.addEventListener("click", async () => {
+          await updateDoc(doc.ref, { tipo_cadastro: "Efetivo" })
         })
         button.innerHTML = "Rejeitar"
   
@@ -156,6 +162,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
           document.getElementById("emailVisitante").value = doc.get("emailVisitante")
           document.getElementById("celular").value = doc.get("celular")
           document.getElementById("rg").value = doc.get("rg")
+          document.getElementById("tipo_cadastro").value = doc.get("tipo_cadastro")
           document.getElementById("empresaVisitante").value = doc.get("empresa")
           document.getElementById("responsavelVisita").value = doc.get("responsavelVisita")
           document.getElementById("setor").value = doc.get("setor")

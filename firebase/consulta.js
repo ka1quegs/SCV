@@ -45,8 +45,8 @@ const arrayDocumentos = await getDocs(colecao)
     tbody.append(td)
 
     td = document.createElement("td")
-    td.innerHTML = doc.get("visita")
-    td.setAttribute("id","visita")
+    td.innerHTML = doc.get("estadoVisita")
+   
     tbody.append(td)
 
     td = document.createElement("td")
@@ -72,6 +72,11 @@ img.addEventListener("click", async () => {
   location.reload()
 })
 img.addEventListener("click", async () => {
+  await updateDoc(doc.ref, { tipo_cadastro: "Pré-Cadastro" })
+  console.log("consulta atualizado")
+  location.reload()
+})
+img.addEventListener("click", async () => {
   await updateDoc(doc.ref, { status: "" })
   console.log("verificação atualizado")
   location.reload()
@@ -86,6 +91,4 @@ tbody.appendChild(img)
   }catch{}
 })
 
-//if(document.getElementById('visita'== "")){
- // set
-//}
+

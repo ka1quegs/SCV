@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
-    <link rel="stylesheet" href="CSS/aprov-novo.css">
+    <link rel="stylesheet" href="CSS/aprovacao.css">
     <link rel="stylesheet" href="CSS/visualizar.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=devi  ce-width, initial-scale=1.0">
@@ -19,7 +19,7 @@
       <i class='bx bx-menu' id="btn"></i>
     </div>
       <li>
-        <a href="solici-novo.html" >
+        <a href="solicitacao.html" >
           <i class='bx bx-id-card'></i>
           <span class="links_name">Solicitação</span>
         </a>
@@ -34,7 +34,7 @@
         <span class="tooltip">Consulta</span>
       </li>
       <li>
-        <a href="aprov-novo.html">
+        <a href="aprovacao.html">
           <i class='bx bxs-user-check'></i>
           <span class="links_name">Aprovação</span>
         </a>
@@ -230,7 +230,7 @@
         
                             <div class="input-field">
                               <label>Tipo do Cadastro</label>
-                              <input type="text" placeholder="Pré-Cadastro/Efetivo" disabled>
+                              <input id="tipo_cadastro" type="text" placeholder="Pré-Cadastro/Efetivo" disabled >
                           </div>
                          
         
@@ -303,7 +303,7 @@
         
                               <div class="input-field">
                                 <label>Observação</label>
-                                <textarea id="story" name="story">
+                                <textarea id="story" name="story" disabled>
                               </textarea>
                               </div>
                             </div>                       

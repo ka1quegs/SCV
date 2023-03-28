@@ -50,7 +50,9 @@ try{
           entrada: "",
           saida: "",
           date: `${dataFormatada}`,
-          estadoVisita: ""
+          estadoVisita: "",
+          tipo_cadastro: "Pré-Cadastro"
+
     })
       window.location.href = "#";
       
