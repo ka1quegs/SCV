@@ -17,12 +17,11 @@ const arrayDocumentos = await getDocs(colecao)
     table.setAttribute("class", "table2")
     
     let tbody = document.createElement("tbody")
-    tbody.setAttribute("class", "tabela-func")
     let valueCpf = document.createElement("input")
     valueCpf.setAttribute("type", "hidden")
     valueCpf.setAttribute("class", "valueCpf")
     valueCpf.value = doc.get("cpf")
-
+   
 
     //tbody
     try{
@@ -98,58 +97,62 @@ const arrayDocumentos = await getDocs(colecao)
 
 
 
-//Abrir/Fechar Modal
-var closeBtn = document.getElementsByClassName('close')[0];
-const openModalButtons = document.querySelectorAll(".open-modal");
-openModalButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    modal.style.display = "block";
-  });
 
-modal.addEventListener("click", (event) => {
-if (event.target == modal) {
-modal.style.display = "none";
-}
-});
+    //Abrir/Fechar Modal
+    var closeBtn = document.getElementsByClassName('close')[0];
+    const openModalButtons = document.querySelectorAll(".open-modal");
+    openModalButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        modal.style.display = "block";
+      });
 
-
+    modal.addEventListener("click", (event) => {
+    if (event.target == modal) {
+    modal.style.display = "none";
+    }
+    });
+   
 });
 
 closeBtn.addEventListener('click', function() {
-modal.style.display = 'none';
+	modal.style.display = 'none';
 });
 
 //Puxando informações de visitante para o Modal
 let arrayRegistro = document.getElementsByClassName("table2")
 
 for (let i = 0; i < arrayRegistro.length; i++){
-arrayRegistro[i].addEventListener("click", async () => {
+  arrayRegistro[i].addEventListener("click", async () => {
 
-  const cpf = document.getElementsByClassName("valueCpf")[i].value
+      const cpf = document.getElementsByClassName("valueCpf")[i].value
 
-  const busca = query(collection(db, "visitante"), where("cpf", "==", cpf))
+      const busca = query(collection(db, "visitante"), where("cpf", "==", cpf))
 
-  const resultadoBusca = await getDocs(busca)
-  resultadoBusca.forEach((doc) => {
-      document.getElementById("dataRegistro").value = doc.get("date")
-      document.getElementById("cpf").value = doc.get("cpf")
-      document.getElementById("nomeVisitante").value = doc.get("nome")
-      document.getElementById("emailVisitante").value = doc.get("emailVisitante")
-      document.getElementById("celular").value = doc.get("celular")
-      document.getElementById("rg").value = doc.get("rg")
-      document.getElementById("tipo_cadastro").value = doc.get("tipo_cadastro")
-      document.getElementById("empresaVisitante").value = doc.get("empresa")
-      document.getElementById("responsavelVisita").value = doc.get("responsavelVisita")
-      document.getElementById("setor").value = doc.get("setor")
-      document.getElementById("acesso_fabrica").value = doc.get("acesso_fabrica")
-      document.getElementById("estacionamento").value = doc.get("estacionamento")
-      document.getElementById("placa_carro").value = doc.get("placa_carro")
-      document.getElementById("modelo_carro").value = doc.get("modelo_carro")
-      document.getElementById("periodoDe").value = doc.get("periodoDe")
-      document.getElementById("periodoAte").value = doc.get("periodoAte")
-      document.getElementById("story").value = doc.get("observacao")
-  })
+      const resultadoBusca = await getDocs(busca)
+      resultadoBusca.forEach((doc) => {
+          document.getElementById("dataRegistro").value = doc.get("date")
+          document.getElementById("cpf").value = doc.get("cpf")
+          document.getElementById("nomeVisitante").value = doc.get("nome")
+          document.getElementById("emailVisitante").value = doc.get("emailVisitante")
+          document.getElementById("celular").value = doc.get("celular")
+          document.getElementById("rg").value = doc.get("rg")
+          document.getElementById("tipo_cadastro").value = doc.get("tipo_cadastro")
+          document.getElementById("empresaVisitante").value = doc.get("empresa")
+          document.getElementById("responsavelVisita").value = doc.get("responsavelVisita")
+          document.getElementById("setor").value = doc.get("setor")
+          document.getElementById("acesso_fabrica").value = doc.get("acesso_fabrica")
+          document.getElementById("estacionamento").value = doc.get("estacionamento")
+          document.getElementById("placa_carro").value = doc.get("placa_carro")
+          document.getElementById("modelo_carro").value = doc.get("modelo_carro")
+          document.getElementById("periodoDe").value = doc.get("periodoDe")
+          document.getElementById("periodoAte").value = doc.get("periodoAte")
+          document.getElementById("story").value = doc.get("observacao")
+      })
 
-  modal.style.display = "flex"
+      modal.style.display = "flex"
+      
+      
+    })}
 
-})}
+
+
