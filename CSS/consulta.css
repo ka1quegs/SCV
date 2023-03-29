@@ -410,3 +410,39 @@
   
 }
 
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #f00;
+  transition: 0.3s ease;
+}
+
+
+@media (max-width:1370px){
+  .modal{
+    overflow-x: hidden;
+  }
+  .modal-content{
+    top: -30%;
+    margin-left: 14%;
+  }
+}
+@media (max-width:1360px){
+  .modal{
+    overflow-x: hidden;
+  }
+  .modal-content{
+    top: -30%;
+    margin-left: 14%;
+  }
+}
+
+
+
