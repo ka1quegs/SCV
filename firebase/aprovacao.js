@@ -59,33 +59,22 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         button.setAttribute("id", "aprovar")
         button.addEventListener("click", async () => {
           await updateDoc(doc.ref, { verificacao: true } )
-          location.reload()
-        })
-        button.addEventListener("click", async () => {
           await updateDoc(doc.ref, { status: "Aprovado" })
-          location.reload()
-        })
-        button.addEventListener("click", async () => {
           await updateDoc(doc.ref, { tipo_cadastro: "Efetivo" })
+          location.reload()
         })
         button.innerHTML = "Aprovar"
         tbody.appendChild(button)
   
         //Botão negar
-  
         button = document.createElement("button")
         button.setAttribute("class", "btn2")
         button.setAttribute("id", "rejeitar")
         button.addEventListener("click", async () => {
           await updateDoc(doc.ref, { verificacao: true })
-          location.reload()
-        })
-        button.addEventListener("click", async () => {
           await updateDoc(doc.ref, { status: "Reprovado" })
-          location.reload()
-        })
-        button.addEventListener("click", async () => {
           await updateDoc(doc.ref, { tipo_cadastro: "Efetivo" })
+          location.reload()
         })
         button.innerHTML = "Rejeitar"
   

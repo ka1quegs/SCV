@@ -71,24 +71,13 @@ const arrayDocumentos = await getDocs(colecao)
 
     img.addEventListener("click", async () => {
       await updateDoc(doc.ref, { verificacao: false })
-      console.log("consulta atualizado")
-      location.reload()
-    })
-
-    img.addEventListener("click", async () => {
       await updateDoc(doc.ref, { tipo_cadastro: "Pré-Cadastro" })
-      console.log("consulta atualizado")
-      location.reload()
-    })
-
-    img.addEventListener("click", async () => {
       await updateDoc(doc.ref, { status: "" })
-      console.log("verificação atualizado")
+      console.log("Atualizado")
       location.reload()
     })
 
     tbody.appendChild(img)
-
 
     //Botão negar
     table.append(tbody)
