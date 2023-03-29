@@ -2,33 +2,32 @@ import { db } from "./modules.js"
 import { collection, addDoc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
-try{
 
+  try{
     const enviarSolici = document.getElementById('enviarSolici');
+      enviarSolici.addEventListener('click', () => { 
+        let nome = document.getElementById('nome').value
+        let rg = document.getElementById('rg').value
+        let cpf = document.getElementById('cpf').value
+        let emailVisitante = document.getElementById('emailVisitante').value
+        let responsavelVisita = document.getElementById('responsavelVisita').value
+        let setor = document.getElementById('setor').value
+        let telefone = document.getElementById('telefone').value
+        let celular = document.getElementById('celular').value
+        let periodoDe = document.getElementById('periodoDe').value
+        let periodoAte = document.getElementById('periodoAte').value
+        let empresa = document.getElementById('empresa').value
+        let modelo_carro = document.getElementById('modelo_carro').value
+        let placa_carro =  document.getElementById('placa_carro').value
+        let acesso_fabrica = document.getElementById('acesso_fabrica').value
+        let estacionamento = document.getElementById('mySelect').value
+        let observacao = document.getElementById('observacao').value
+        let dataRegistro = new Date();    //Data de registro do modal
+        let dataFormatada = ((dataRegistro.getDate() )) + "/" + ((dataRegistro.getMonth() + 1)) + "/" + dataRegistro.getFullYear(); //Data de registro do modal FORMATADA
 
-    enviarSolici.addEventListener('click', () => { 
-      let nome = document.getElementById('nome').value
-      let rg = document.getElementById('rg').value
-      let cpf = document.getElementById('cpf').value
-      let emailVisitante = document.getElementById('emailVisitante').value
-      let responsavelVisita = document.getElementById('responsavelVisita').value
-      let setor = document.getElementById('setor').value
-      let telefone = document.getElementById('telefone').value
-      let celular = document.getElementById('celular').value
-      let periodoDe = document.getElementById('periodoDe').value
-      let periodoAte = document.getElementById('periodoAte').value
-      let empresa = document.getElementById('empresa').value
-      let modelo_carro = document.getElementById('modelo_carro').value
-      let placa_carro =  document.getElementById('placa_carro').value
-      let acesso_fabrica = document.getElementById('acesso_fabrica').value
-      let estacionamento = document.getElementById('mySelect').value
-      let observacao = document.getElementById('observacao').value
-      
-      
-      let dataRegistro = new Date();    //Data de registro do modal
-      let dataFormatada = ((dataRegistro.getDate() )) + "/" + ((dataRegistro.getMonth() + 1)) + "/" + dataRegistro.getFullYear(); //Data de registro do modal FORMATADA
+        //Adiciona os dados para o Firestore
 
-        addDoc(collection(db, "visitante"), {   //Adiciona os dados para o Firestore
+        addDoc(collection(db, "visitante"), {   
           nome: `${nome}`,  
           rg: `${rg}`,
           cpf: `${cpf}`,
@@ -58,42 +57,42 @@ try{
       
       });
     
-}catch{}
+    }catch{}
 
-//Toastify de Solicitação enviada
-enviarSolici.addEventListener('click', () => { 
-Toastify({
-  text: "Socilitação enviada",
-  duration: 2500,
-  newWindow: true,
-  close: true,
-  gravity: "top", // `top` or `bottom`
-  position: "center", // `left`, `center` or `right`
-  stopOnFocus: true, // Prevents dismissing of toast on hover
-  style: {
-    background: "#265df2",
-    top: 40,
-  },
-  onClick: function(){} // Callback after click
-}).showToast();
-})
+  //Toastify de Solicitação enviada
+  enviarSolici.addEventListener('click', () => { 
+    Toastify({
+      text: "Socilitação enviada",
+      duration: 2500,
+      newWindow: true,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "center", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "#265df2",
+        top: 40,
+      },
+      onClick: function(){} // Callback after click
+    }).showToast();
+  })
 
 //Validação dos campos
 
-const name = document.getElementById("nome");
-const empresa = document.getElementById("empresa");
-const visita = document.getElementById("responsavelVisita");
-const periodoDe = document.getElementById("periodoDe");
-const periodoAte = document.getElementById("periodoAte");
-const submitBtn = document.getElementById("enviarSolici");
+  const name = document.getElementById("nome");
+  const empresa = document.getElementById("empresa");
+  const visita = document.getElementById("responsavelVisita");
+  const periodoDe = document.getElementById("periodoDe");
+  const periodoAte = document.getElementById("periodoAte");
+  const submitBtn = document.getElementById("enviarSolici");
 
-function checkValidity() {
-  if (name.validity.valid && empresa.validity.valid && visita.validity.valid && periodoDe.validity.valid && periodoAte.validity.valid) {
-    submitBtn.disabled = false;
-  } else {
-    submitBtn.disabled = true;
+  function checkValidity() {
+    if (name.validity.valid && empresa.validity.valid && visita.validity.valid && periodoDe.validity.valid && periodoAte.validity.valid) {
+      submitBtn.disabled = false;
+    } else {
+      submitBtn.disabled = true;
+    }
   }
-}
 
 name.addEventListener("input", checkValidity);
 empresa.addEventListener("input", checkValidity);

@@ -24,66 +24,65 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
    
         //tbody
         try{
-        let td = document.createElement("td");
-        let image = document.createElement("img");
-        image.setAttribute("class", "img-table open-modal")
-        image.setAttribute("src","Images/olho.png")
-      
-        td.innerHTML = ""
-        td.append(image)
-        tbody.append(td)
-
-        td = document.createElement("td")
-        td.innerHTML = doc.get("nome")
-        tbody.append(td)
-  
-        td = document.createElement("td")
-        td.innerHTML = doc.get("empresa")
-        tbody.append(td)
-  
-        td = document.createElement("td")
-        td.innerHTML = doc.get("responsavelVisita")
-        tbody.append(td)
-  
-        td = document.createElement("td")
-        td.innerHTML = doc.get("periodoDe")
-        tbody.append(td)
-  
-        td = document.createElement("td")
-        td.innerHTML = doc.get("periodoAte")
-        tbody.append(td)
-  
-        //Botão aprovar
-        let button = document.createElement("button")
-        button.setAttribute("class", "btn")
-        button.setAttribute("id", "aprovar")
-        button.addEventListener("click", async () => {
-          await updateDoc(doc.ref, { verificacao: true } )
-          await updateDoc(doc.ref, { status: "Aprovado" })
-          await updateDoc(doc.ref, { tipo_cadastro: "Efetivo" })
-          location.reload()
-        })
-        button.innerHTML = "Aprovar"
-        tbody.appendChild(button)
-  
-        //Botão negar
-        button = document.createElement("button")
-        button.setAttribute("class", "btn2")
-        button.setAttribute("id", "rejeitar")
-        button.addEventListener("click", async () => {
-          await updateDoc(doc.ref, { verificacao: true })
-          await updateDoc(doc.ref, { status: "Reprovado" })
-          await updateDoc(doc.ref, { tipo_cadastro: "Efetivo" })
-          location.reload()
-        })
-        button.innerHTML = "Rejeitar"
-  
-        tbody.appendChild(button)
-        table.append(tbody)
-        registro.append(table,valueCpf)
-        sectionRegistro.append(registro)
-
+          let td = document.createElement("td");
+          let image = document.createElement("img");
+          image.setAttribute("class", "img-table open-modal")
+          image.setAttribute("src","Images/olho.png")
         
+          td.innerHTML = ""
+          td.append(image)
+          tbody.append(td)
+
+          td = document.createElement("td")
+          td.innerHTML = doc.get("nome")
+          tbody.append(td)
+    
+          td = document.createElement("td")
+          td.innerHTML = doc.get("empresa")
+          tbody.append(td)
+    
+          td = document.createElement("td")
+          td.innerHTML = doc.get("responsavelVisita")
+          tbody.append(td)
+    
+          td = document.createElement("td")
+          td.innerHTML = doc.get("periodoDe")
+          tbody.append(td)
+    
+          td = document.createElement("td")
+          td.innerHTML = doc.get("periodoAte")
+          tbody.append(td)
+    
+          //Botão aprovar
+          let button = document.createElement("button")
+          button.setAttribute("class", "btn")
+          button.setAttribute("id", "aprovar")
+          button.addEventListener("click", async () => {
+            await updateDoc(doc.ref, { verificacao: true } )
+            await updateDoc(doc.ref, { status: "Aprovado" })
+            await updateDoc(doc.ref, { tipo_cadastro: "Efetivo" })
+            location.reload()
+          })
+          button.innerHTML = "Aprovar"
+          tbody.appendChild(button)
+    
+          //Botão negar
+          button = document.createElement("button")
+          button.setAttribute("class", "btn2")
+          button.setAttribute("id", "rejeitar")
+          button.addEventListener("click", async () => {
+            await updateDoc(doc.ref, { verificacao: true })
+            await updateDoc(doc.ref, { status: "Reprovado" })
+            await updateDoc(doc.ref, { tipo_cadastro: "Efetivo" })
+            location.reload()
+          })
+          button.innerHTML = "Rejeitar"
+    
+          tbody.appendChild(button)
+          table.append(tbody)
+          registro.append(table,valueCpf)
+          sectionRegistro.append(registro)
+   
       }catch{}
 
     })
@@ -91,34 +90,33 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
   //Contadores de Aprovações
     const coll = query(collection(db, "visitante"));
     const firstCounter = await getCountFromServer(coll);
-    document.getElementById("count-total").innerHTML = firstCounter.data().count;
+      document.getElementById("count-total").innerHTML = firstCounter.data().count;
   
     const coll2 = query(collection(db, "visitante"), where("verificacao", "==", false))
     const secondCounter = await getCountFromServer(coll2);
-    document.getElementById("count-pendente").innerHTML = secondCounter.data().count;
+      document.getElementById("count-pendente").innerHTML = secondCounter.data().count;
   
     const coll3 = query(collection(db, "visitante"), where("status", "==", "Aprovado"))
     const thirdCounter = await getCountFromServer(coll3);
-    document.getElementById("count-aprovada").innerHTML = thirdCounter.data().count;
+      document.getElementById("count-aprovada").innerHTML = thirdCounter.data().count;
   
     const coll4 = query(collection(db, "visitante"), where("status", "==", "Reprovado"))
     const fourthCounter = await getCountFromServer(coll4);
-    document.getElementById("count-negada").innerHTML = fourthCounter.data().count;
+      document.getElementById("count-negada").innerHTML = fourthCounter.data().count;
 
     //Abrir
     var closeBtn = document.getElementsByClassName('close')[0];
     const openModalButtons = document.querySelectorAll(".open-modal");
-    openModalButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        modal.style.display = "block";
-      });
+      openModalButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          modal.style.display = "block";
+        });
 
     modal.addEventListener("click", (event) => {
-    if (event.target == modal) {
-    modal.style.display = "none";
-    }
-    });
-   
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });  
 });
 
 //Fechar Modal
@@ -137,7 +135,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
       const busca = query(collection(db, "visitante"), where("cpf", "==", cpf))
 
       const resultadoBusca = await getDocs(busca)
-      resultadoBusca.forEach((doc) => {
+        resultadoBusca.forEach((doc) => {
           document.getElementById("dataRegistro").value = doc.get("date")
           document.getElementById("cpf").value = doc.get("cpf")
           document.getElementById("nomeVisitante").value = doc.get("nome")

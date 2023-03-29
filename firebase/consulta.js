@@ -21,73 +21,70 @@ const arrayDocumentos = await getDocs(colecao)
     valueCpf.setAttribute("class", "valueCpf")
     valueCpf.value = doc.get("cpf")
    
-
     //tbody
     try{
-    let td = document.createElement("td");
-    td = document.createElement("td")
-    td.innerHTML = doc.get("periodoDe")
-    tbody.append(td)
-    
+        let td = document.createElement("td");
+        td = document.createElement("td")
+        td.innerHTML = doc.get("periodoDe")
+        tbody.append(td)
+        
+        td = document.createElement("td")
+        td.innerHTML = doc.get("nome")
+        tbody.append(td)
 
-    td = document.createElement("td")
-    td.innerHTML = doc.get("nome")
-    tbody.append(td)
+        td = document.createElement("td")
+        td.innerHTML = doc.get("empresa")
+        tbody.append(td)
 
-    td = document.createElement("td")
-    td.innerHTML = doc.get("empresa")
-    tbody.append(td)
+        td = document.createElement("td")
+        td.innerHTML = doc.get("responsavelVisita")
+        tbody.append(td)
 
-    td = document.createElement("td")
-    td.innerHTML = doc.get("responsavelVisita")
-    tbody.append(td)
+        td = document.createElement("td")
+        td.innerHTML = doc.get("status")
+        tbody.append(td)
 
-    td = document.createElement("td")
-    td.innerHTML = doc.get("status")
-    tbody.append(td)
+        td = document.createElement("td")
+        td.innerHTML = doc.get("estadoVisita")
+      
+        tbody.append(td)
 
-    td = document.createElement("td")
-    td.innerHTML = doc.get("estadoVisita")
-   
-    tbody.append(td)
+        td = document.createElement("td")
+        td.innerHTML = doc.get("#")
+        tbody.append(td)
 
-    td = document.createElement("td")
-    td.innerHTML = doc.get("#")
-    tbody.append(td)
+        //Botão VISUALIZAR
+        let img = document.createElement("img")
+        img.setAttribute("src", "Images/olho.png")
+        img.setAttribute("class", "visualizar open-modal")
+        img.setAttribute("alt", "Visualizar")
+        img.setAttribute("id", "visualizar")
+        tbody.appendChild(img)
 
-    //Botão VISUALIZAR
-    let img = document.createElement("img")
-    img.setAttribute("src", "Images/olho.png")
-    img.setAttribute("class", "visualizar open-modal")
-    img.setAttribute("alt", "Visualizar")
-    img.setAttribute("id", "visualizar")
-    tbody.appendChild(img)
+        //Botão REVER
+      
+        img = document.createElement("img")
+        img.setAttribute("src", "Images/revisar.png")
+        img.setAttribute("id", "revisao")
+        img.addEventListener("click", async () => {
+          await updateDoc(doc.ref, { verificacao: false })
+          await updateDoc(doc.ref, { tipo_cadastro: "Pré-Cadastro" })
+          await updateDoc(doc.ref, { status: "" })
+          console.log("Atualizado")
+          location.reload()
+        })
 
-    //Botão REVER
-   
-    img = document.createElement("img")
-    img.setAttribute("src", "Images/revisar.png")
-    img.setAttribute("id", "revisao")
+        tbody.appendChild(img)
 
-    img.addEventListener("click", async () => {
-      await updateDoc(doc.ref, { verificacao: false })
-      await updateDoc(doc.ref, { tipo_cadastro: "Pré-Cadastro" })
-      await updateDoc(doc.ref, { status: "" })
-      console.log("Atualizado")
-      location.reload()
-    })
-
-    tbody.appendChild(img)
-
-    //Botão negar
-    table.append(tbody)
-    registro.append(table,valueCpf)
-    sectionRegistro.append(registro)
-  }catch{}
-})
+        //Botão negar
+        table.append(tbody)
+        registro.append(table,valueCpf)
+        sectionRegistro.append(registro)
+    }catch{}
+  })
 
     //Abrir
-    var closeBtn = document.getElementsByClassName('close')[0];
+  var closeBtn = document.getElementsByClassName('close')[0];
     const openModalButtons = document.querySelectorAll(".open-modal");
     openModalButtons.forEach((button) => {
       button.addEventListener("click", () => {
@@ -103,9 +100,9 @@ const arrayDocumentos = await getDocs(colecao)
 });
 
 //Fechar Modal
-closeBtn.addEventListener('click', function() {
-	modal.style.display = 'none';
-});
+  closeBtn.addEventListener('click', function() {
+	  modal.style.display = 'none';
+  });
 
 //Puxando informações de visitante para o Modal
 let arrayRegistro = document.getElementsByClassName("table2")
@@ -115,9 +112,9 @@ for (let i = 0; i < arrayRegistro.length; i++){
 
     const cpf = document.getElementsByClassName("valueCpf")[i].value;
     
-      const busca = query(collection(db, "visitante"), where("cpf", "==", cpf))
+    const busca = query(collection(db, "visitante"), where("cpf", "==", cpf))
 
-      const resultadoBusca = await getDocs(busca)
+    const resultadoBusca = await getDocs(busca)
       resultadoBusca.forEach((doc) => {
           document.getElementById("dataRegistro").value = doc.get("date")
           document.getElementById("cpf").value = doc.get("cpf")
