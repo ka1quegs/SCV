@@ -90,7 +90,7 @@ const arrayDocumentos = await getDocs(colecao)
 
     //Botão negar
     table.append(tbody)
-    registro.append(table)
+    registro.append(table,valueCpf)
     sectionRegistro.append(registro)
   }catch{}
 })
@@ -124,8 +124,8 @@ let arrayRegistro = document.getElementsByClassName("table2")
 for (let i = 0; i < arrayRegistro.length; i++){
   arrayRegistro[i].addEventListener("click", async () => {
 
-      const cpf = document.getElementsByClassName("valueCpf")[i].value
-
+    const cpf = document.getElementsByClassName("valueCpf")[i].value;
+    
       const busca = query(collection(db, "visitante"), where("cpf", "==", cpf))
 
       const resultadoBusca = await getDocs(busca)
