@@ -3,6 +3,7 @@ import { collection, addDoc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 try{
+
     const enviarSolici = document.getElementById('enviarSolici');
 
     enviarSolici.addEventListener('click', () => { 
@@ -23,12 +24,11 @@ try{
       let estacionamento = document.getElementById('mySelect').value
       let observacao = document.getElementById('observacao').value
       
-      //Data de registro do modal
-      let dataRegistro = new Date();
-      let dataFormatada = ((dataRegistro.getDate() )) + "/" + ((dataRegistro.getMonth() + 1)) + "/" + dataRegistro.getFullYear(); 
+      
+      let dataRegistro = new Date();    //Data de registro do modal
+      let dataFormatada = ((dataRegistro.getDate() )) + "/" + ((dataRegistro.getMonth() + 1)) + "/" + dataRegistro.getFullYear(); //Data de registro do modal FORMATADA
 
-    
-        addDoc(collection(db, "visitante"), {
+        addDoc(collection(db, "visitante"), {   //Adiciona os dados para o Firestore
           nome: `${nome}`,  
           rg: `${rg}`,
           cpf: `${cpf}`,
@@ -57,10 +57,10 @@ try{
       window.location.href = "#";
       
       });
-      
-      
+    
 }catch{}
 
+//Toastify de Solicitação enviada
 enviarSolici.addEventListener('click', () => { 
 Toastify({
   text: "Socilitação enviada",
@@ -77,6 +77,8 @@ Toastify({
   onClick: function(){} // Callback after click
 }).showToast();
 })
+
+//Validação dos campos
 
 const name = document.getElementById("nome");
 const empresa = document.getElementById("empresa");
@@ -98,6 +100,3 @@ empresa.addEventListener("input", checkValidity);
 visita.addEventListener("input", checkValidity);
 periodoDe.addEventListener("input", checkValidity);
 periodoAte.addEventListener("input", checkValidity);
-
-
-

@@ -2,7 +2,6 @@ import { db } from "./modules.js"
 import {collection,getDocs, query, where, updateDoc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
-
 const colecao = query(collection(db,"visitante"),where("verificacao", "==", true))
 
 const arrayDocumentos = await getDocs(colecao)
@@ -56,7 +55,7 @@ const arrayDocumentos = await getDocs(colecao)
     td.innerHTML = doc.get("#")
     tbody.append(td)
 
-    //Botão Visualizar
+    //Botão VISUALIZAR
     let img = document.createElement("img")
     img.setAttribute("src", "Images/olho.png")
     img.setAttribute("class", "visualizar open-modal")
@@ -64,27 +63,30 @@ const arrayDocumentos = await getDocs(colecao)
     img.setAttribute("id", "visualizar")
     tbody.appendChild(img)
 
-    //Botão rever
+    //Botão REVER
    
     img = document.createElement("img")
     img.setAttribute("src", "Images/revisar.png")
-    img.setAttribute("alt", "Revisar")
     img.setAttribute("id", "revisao")
+
     img.addEventListener("click", async () => {
       await updateDoc(doc.ref, { verificacao: false })
       console.log("consulta atualizado")
       location.reload()
     })
+
     img.addEventListener("click", async () => {
       await updateDoc(doc.ref, { tipo_cadastro: "Pré-Cadastro" })
       console.log("consulta atualizado")
       location.reload()
     })
+
     img.addEventListener("click", async () => {
       await updateDoc(doc.ref, { status: "" })
       console.log("verificação atualizado")
       location.reload()
     })
+
     tbody.appendChild(img)
 
 
@@ -95,10 +97,7 @@ const arrayDocumentos = await getDocs(colecao)
   }catch{}
 })
 
-
-
-
-    //Abrir/Fechar Modal
+    //Abrir
     var closeBtn = document.getElementsByClassName('close')[0];
     const openModalButtons = document.querySelectorAll(".open-modal");
     openModalButtons.forEach((button) => {
@@ -114,6 +113,7 @@ const arrayDocumentos = await getDocs(colecao)
    
 });
 
+//Fechar Modal
 closeBtn.addEventListener('click', function() {
 	modal.style.display = 'none';
 });
@@ -150,8 +150,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
       })
 
       modal.style.display = "flex"
-      
-      
+
     })}
 
 

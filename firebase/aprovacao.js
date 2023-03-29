@@ -7,7 +7,6 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
   
     const arrayDocumentos = await getDocs(colecao)
     
-  
       arrayDocumentos.forEach(doc =>{
         let sectionRegistro = document.getElementById('sectionRegistro')
         
@@ -34,8 +33,6 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         td.append(image)
         tbody.append(td)
 
-
-  
         td = document.createElement("td")
         td.innerHTML = doc.get("nome")
         tbody.append(td)
@@ -102,8 +99,6 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
     })
 
-
- 
   //Contadores de Aprovações
     const coll = query(collection(db, "visitante"));
     const firstCounter = await getCountFromServer(coll);
@@ -120,10 +115,8 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
     const coll4 = query(collection(db, "visitante"), where("status", "==", "Reprovado"))
     const fourthCounter = await getCountFromServer(coll4);
     document.getElementById("count-negada").innerHTML = fourthCounter.data().count;
-  
-  
 
-    //Abrir/Fechar Modal
+    //Abrir
     var closeBtn = document.getElementsByClassName('close')[0];
     const openModalButtons = document.querySelectorAll(".open-modal");
     openModalButtons.forEach((button) => {
@@ -139,6 +132,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
    
 });
 
+//Fechar Modal
 closeBtn.addEventListener('click', function() {
 	modal.style.display = 'none';
 });

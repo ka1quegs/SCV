@@ -2,7 +2,6 @@ import { db } from "./modules.js"
 import {collection,getDocs, query, where, updateDoc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
-
 const colecao = query(collection(db,"visitante"),where("verificacao", "==", true))
 
 const arrayDocumentos = await getDocs(colecao)
@@ -29,7 +28,6 @@ const arrayDocumentos = await getDocs(colecao)
     td.innerHTML = doc.get("periodoDe")
     tbody.append(td)
     
-
     td = document.createElement("td")
     td.innerHTML = doc.get("nome")
     tbody.append(td)
@@ -69,21 +67,25 @@ const arrayDocumentos = await getDocs(colecao)
     img.setAttribute("src", "Images/revisar.png")
     img.setAttribute("alt", "Revisar")
     img.setAttribute("id", "revisao")
+
     img.addEventListener("click", async () => {
       await updateDoc(doc.ref, { verificacao: false })
       console.log("consulta atualizado")
       location.reload()
     })
+
     img.addEventListener("click", async () => {
       await updateDoc(doc.ref, { tipo_cadastro: "Pré-Cadastro" })
       console.log("consulta atualizado")
       location.reload()
     })
+
     img.addEventListener("click", async () => {
       await updateDoc(doc.ref, { status: "" })
       console.log("verificação atualizado")
       location.reload()
     })
+
     tbody.appendChild(img)
 
 
@@ -94,10 +96,7 @@ const arrayDocumentos = await getDocs(colecao)
   }catch{}
 })
 
-
-
-
-    //Abrir/Fechar Modal
+    //Abrir
     var closeBtn = document.getElementsByClassName('close')[0];
     const openModalButtons = document.querySelectorAll(".open-modal");
     openModalButtons.forEach((button) => {
@@ -113,6 +112,7 @@ const arrayDocumentos = await getDocs(colecao)
    
 });
 
+//Fechar Modal
 closeBtn.addEventListener('click', function() {
 	modal.style.display = 'none';
 });
@@ -149,8 +149,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
       })
 
       modal.style.display = "flex"
-      
-      
+  
     })}
 
 
