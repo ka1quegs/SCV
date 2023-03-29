@@ -23,18 +23,18 @@ import {signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.1
         window.location.href = "https://ka1quegs.github.io/SCV/solicitacao"
         
       })
-      .catch((error) => {
+    .catch((error) => {
         const errorCode = error.code;
-          
-         if (errorCode == "auth/user-not-found"){
+      
+          if (errorCode == "auth/user-not-found"){
             alert("Usuário não existente, por favor realize o cadastro.")
-              }else if(errorCode == "auth/invalid-email"){
-                  alert("Email inválido")
-              } else if (errorCode == "auth/wrong-password"){
-                  alert("Email ou senha incorreta!")
+          }else if(errorCode == "auth/invalid-email"){
+              alert("Email inválido")
+            }else if (errorCode == "auth/wrong-password"){
+                alert("Email ou senha incorreta!")
               }else if(errorCode == "auth/internal-error"){
-                  alert("Ops um erro ocorreu, tente novamente mais tarde")
-              }else {
+                alert("Ops um erro ocorreu, tente novamente mais tarde")
+                }else {
                   alert(errorCode, "Ops um erro ocorreu")}
       });
 

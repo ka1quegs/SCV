@@ -21,7 +21,6 @@ import {createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs
         })
   
         alert('Usuário criado');
-        
       })
       .catch((error) => {
         
@@ -30,22 +29,17 @@ import {createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs
         if (errorCode == "auth/email-already-in-use"){
             alert("Email já em uso");
             window.location.href = "#"
-        }else if(errorCode =="auth/invalid-email"){
-            alert("Email inválido");
+          }else if(errorCode =="auth/invalid-email"){
+              alert("Email inválido");
             
-        }else if(errorCode =="auth/weak-password"){
-            alert("Digite uma senha com mais de 6 caracteres");
-        
-         }else if(errorCode =="auth/internal-error"){
-            alert("Algo deu errado! Digite email e senha novamente")
-         } 
-         else{
-            alert(errorCode)
-        }
-      
+            }else if(errorCode =="auth/weak-password"){
+                alert("Digite uma senha com mais de 6 caracteres");
+    
+              }else if(errorCode =="auth/internal-error"){
+                  alert("Algo deu errado! Digite email e senha novamente")
+                }else{
+                    alert(errorCode)
+                }
       });
   
   });
-
-
-
