@@ -294,6 +294,7 @@ img{
 }
 
 @media(max-width:1920px){
+
   .container{
     position: absolute;
     max-width: 1840px;
@@ -303,7 +304,7 @@ img{
     padding: 30px;
     background-color: white;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    margin-left: 4%;
+    margin-left: 13%;
     
   }
 
