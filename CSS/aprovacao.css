@@ -500,15 +500,7 @@
     
   }
   
-  .close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
+
   .close:hover {
     color: #f00;
     transition: 0.3s ease;

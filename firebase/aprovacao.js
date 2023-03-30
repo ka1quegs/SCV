@@ -104,26 +104,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
     const fourthCounter = await getCountFromServer(coll4);
       document.getElementById("count-negada").innerHTML = fourthCounter.data().count;
 
-    //Abrir
-    var closeBtn = document.getElementsByClassName('close')[0];
-    const openModalButtons = document.querySelectorAll(".open-modal");
-      openModalButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          modal.style.display = "block";
-        });
-
-    modal.addEventListener("click", (event) => {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    });  
-});
-
-//Fechar Modal
-closeBtn.addEventListener('click', function() {
-	modal.style.display = 'none';
-});
-
+      
 //Puxando informações de visitante para o Modal
 let arrayRegistro = document.getElementsByClassName("table2")
 
@@ -155,6 +136,14 @@ for (let i = 0; i < arrayRegistro.length; i++){
           document.getElementById("story").value = doc.get("observacao")
       })
 
-      modal.style.display = "flex"
+      modal.style.display = "block"
   
+
+      
+    modal.addEventListener("click", (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });  
+
     })}
