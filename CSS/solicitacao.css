@@ -53,11 +53,9 @@
   background-color: #11101D;
   color: #fff;
   overflow-y: auto;
-  -webkit-transition: all 0.5s;
   z-index: 4;
   width: 70%;
-  
-  
+
 }
 
 
@@ -553,8 +551,8 @@ img{
   }
 
   #sidebar{
-    width: 50%;
-
+    width: 55%;
+    height: 200vh;
   }
 
   img{
@@ -606,7 +604,16 @@ img{
     margin-top: 30px;
   }
 }
-@media (max-width: 300px) {
+
+@media (max-width: 392px) {
+  #sidebar{
+    height: 300vh;
+    width: 60%;
+  }
+}
+
+
+
 
   .container{
     position: absolute;
@@ -653,7 +660,7 @@ img{
     cursor: pointer;
     margin-top: 30px;
   }
-}
+
 
 
 
