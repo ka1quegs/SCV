@@ -140,6 +140,26 @@ for (let i = 0; i < arrayRegistro.length; i++){
 
       modal.style.display = "flex"
   
+    
+   // updateBtn.addEventListener("click", async()=>{
+   //   let entrada = document.getElementById('entrada').value
+   //   let saida = document.getElementById('nomeVisitante').value
+  //    let nome = document.getElementById('nomeVisitante').value
+   //   let rg = document.getElementById('rg').value
+   //   let cpf = document.getElementById('cpf').value
+   //   let emailVisitante = document.getElementById('emailVisitante').value
+   //   let responsavelVisita = document.getElementById('responsavelVisita').value
+   //   let setor = document.getElementById('setor').value
+  //    let celular = document.getElementById('celular').value
+    //  let periodoDe = document.getElementById('periodoDe').value
+   //   let periodoAte = document.getElementById('periodoAte').value
+   //   let empresa = document.getElementById('empresa').value
+  //    let modelo_carro = document.getElementById('modelo_carro').value
+   //   let placa_carro =  document.getElementById('placa_carro').value
+   //   let observacao = document.getElementById('observacao').value
+    })
+
+
     })}
 
 
