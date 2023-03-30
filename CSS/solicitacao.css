@@ -568,7 +568,7 @@ img{
     background-color: white;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     margin: 0 auto;
-   
+    overflow-x: hidden;
   }
   main .fields .input-field{
     display: flex;
@@ -612,55 +612,12 @@ img{
   }
 }
 
-
-
-
-  .container{
-    position: absolute;
-    max-width: 650px;
-    height: 100%;
-    border-radius: 6px;
-    padding: 30px;
-    background-color: white;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    margin-left: 15%;
-    margin: 0 auto;
-    
+@media (max-width: 280px) {
+  #sidebar{
+    height: 300vh;
+    width: 56%;
   }
-  main .fields .input-field{
-    display: flex;
-    width: calc(100% / 1 - 15px);
-    flex-direction: column;
-    margin: 4px 0;
-  }
-  .sidebar li.profile{
-    position: absolute;
-    height: 60px;
-    width: 78px;
-    left: 0;
-    padding: 10px 14px;
-    background: #1d1b31;
-    transition: all 0.5s ease;
-    overflow: hidden;
-  }
-  .btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 45px;
-    max-width: 170px;
-    width: 100%;
-    border: none;
-    outline: none;
-    color: #fff;
-    border-radius: 5px;
-    margin: 7px 0;
-    background-color: #4d84e2;
-    transition: all 0.3s linear;
-    cursor: pointer;
-    margin-top: 30px;
-  }
-
+}
 
 
 
