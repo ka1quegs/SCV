@@ -405,7 +405,7 @@
   background-color: #fff;
   margin: 15% auto;
   border: 1px solid #888;
-  width: 80%;
+  width: 60%;
   position: relative;
   
 }
@@ -422,6 +422,12 @@
 .close:hover {
   color: #f00;
   transition: 0.3s ease;
+}
+
+@media(max-width:1920px){
+  .modal-content{
+ margin: 40px auto;  
+}
 }
 
 
