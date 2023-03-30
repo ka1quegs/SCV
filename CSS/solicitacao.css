@@ -53,13 +53,13 @@
   background-color: #11101D;
   color: #fff;
   overflow-y: auto;
-  transition: all 0.5s;
   -webkit-transition: all 0.5s;
   z-index: 4;
   width: 70%;
   
   
 }
+
 
 .sidebar-title {
   display: flex;
@@ -147,41 +147,6 @@
 .logo-p{
   width: 100%;
   margin: 0 auto;
-}
-
-
-/* ---------- MEDIA QUERIES ---------- */
-
-
-/* Medium <= 992px */
-@media screen and (max-width: 992px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 3fr;
-    grid-template-areas:
-      "header"
-      "main";
-  }
-
-  #sidebar {
-    display: none;
-  }
-
-  .menu-icon {
-    display: inline;
-    
-  }
-
-  .sidebar-title > span {
-    display: inline;
-  }
-}
-
-/* Extra Small <= 576px */
-@media screen and (max-width: 576px) {
-  .header-left {
-    display: none;
-  }
 }
 
 .container{
@@ -313,6 +278,9 @@ img{
 
 }
 
+
+/* ---------- MEDIA QUERIES ---------- */
+
 @media(max-width:1920px){
 
   .container{
@@ -354,7 +322,11 @@ img{
     margin-top: 30px;
   }
 }
-@media(max-width:1370px){
+@media(max-width:1400px){
+
+  #sidebar{
+    height: 150vh;
+  }
   .container{
     position: absolute;
     max-width: 1110px;
@@ -364,14 +336,12 @@ img{
     padding: 30px;
     background-color: white;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    margin-left: 18%;
-    margin-top: 0.2%;
     
   }
 
   main .fields .input-field{
     display: flex;
-    width: calc(100% / 4 - 15px);
+    width: calc(100% / 2 - 15px);
     flex-direction: column;
     margin: 4px 0;
     
@@ -382,7 +352,7 @@ img{
     align-items: center;
     justify-content: center;
     height: 44px;
-    max-width: 270px;
+    max-width: 49%;
     width: 100%;
     border: none;
     outline: none;
@@ -395,7 +365,8 @@ img{
     margin-top: 30px;
   }
 }
-@media(max-width:1360px){
+/*
+@media(max-width:1361px){
   .container{
     position: absolute;
     max-width: 1200px;
@@ -433,6 +404,31 @@ img{
     transition: all 0.3s linear;
     cursor: pointer;
     margin-top: 30px;
+  }
+}
+*/  
+
+/* Medium <= 992px */
+@media screen and (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      "header"
+      "main";
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline;
+    
+  }
+
+  .sidebar-title > span {
+    display: inline;
   }
 }
 
@@ -532,6 +528,14 @@ img{
   }
 }
 
+/* Extra Small <= 576px */
+@media screen and (max-width: 576px) {
+  .header-left {
+    display: none;
+  }
+}
+
+
 @media (max-width: 550px) {
     form .fields .input-field{
         width: 100%;
@@ -545,8 +549,7 @@ img{
     color: white;
     font-weight: bold;
     border-radius: 20%;
-    
-  
+     
   }
 
   #sidebar{
@@ -567,6 +570,7 @@ img{
     background-color: white;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     margin: 0 auto;
+   
   }
   main .fields .input-field{
     display: flex;
