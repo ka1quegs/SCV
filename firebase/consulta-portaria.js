@@ -56,7 +56,7 @@ const arrayDocumentos = await getDocs(colecao)
       //Botão Visualizar
       let img = document.createElement("img")
       img.setAttribute("src", "Images/olho.png")
-      img.setAttribute("class", "visualizar open-modal")
+      img.setAttribute("class", "visualizar")
       img.setAttribute("alt", "Visualizar")
       img.setAttribute("id", "visualizar")
       tbody.appendChild(img)
@@ -86,29 +86,8 @@ const arrayDocumentos = await getDocs(colecao)
   }catch{}
 })
 
-    //Abrir
-    var closeBtn = document.getElementsByClassName('close')[0];
-    const openModalButtons = document.querySelectorAll(".open-modal");
-      openModalButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          modal.style.display = "block";
-        });
-
-      modal.addEventListener("click", (event) => {
-      if (event.target == modal) {
-      modal.style.display = "none";
-      }
-    });
-   
-});
-
-//Fechar Modal
-closeBtn.addEventListener('click', function() {
-	modal.style.display = 'none';
-});
-
 //Puxando informações de visitante para o Modal
-let arrayRegistro = document.getElementsByClassName("table2")
+let arrayRegistro = document.getElementsByClassName("visualizar")
 
 for (let i = 0; i < arrayRegistro.length; i++){
   arrayRegistro[i].addEventListener("click", async () => {
@@ -164,3 +143,8 @@ for (let i = 0; i < arrayRegistro.length; i++){
 
 
 
+    modal.addEventListener("click", (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });  
