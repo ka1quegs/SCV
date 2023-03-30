@@ -27,6 +27,7 @@
 .header {
   grid-area: header;
   height: 70px;
+ 
   background-color:transparent;
   display: flex;
   align-items: center;
@@ -56,6 +57,7 @@
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   z-index: 4;
+  width: 70%;
   
 }
 
@@ -299,12 +301,12 @@ img{
     position: absolute;
     max-width: 1840px;
     max-height: 1900px;
-    width: 100%;
+    width: 87%;
     border-radius: 6px;
     padding: 30px;
     background-color: white;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    margin-left: 13%;
+    align-items: center;
     
   }
 
@@ -319,8 +321,8 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 43px;
-    max-width: 875px;
+    height: 45px;
+    max-width: 800px;
     width: 100%;
     border: none;
     outline: none;
