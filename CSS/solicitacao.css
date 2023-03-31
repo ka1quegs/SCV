@@ -37,8 +37,8 @@
 
 .menu-icon {
   display: none;
-  background-color: #21232d;
-  color: #9799ab;
+  background-color: white;
+  color: black;
   padding: 4px;
   z-index: 3;
   cursor: pointer;
@@ -483,7 +483,8 @@ img{
   .menu-icon {
     width: 35px;
     height: 32px;
-    color: white;
+    color: black;
+    background-color: white;
     font-weight: bold;
     border-radius: 20%;
      
