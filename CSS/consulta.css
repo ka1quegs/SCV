@@ -244,6 +244,10 @@
 
 
 @media (max-width:1370px){
+
+  .table{
+    width: 79vw;
+  }
   .modal{
     overflow-x: hidden;
   }
