@@ -91,88 +91,64 @@ let arrayRegistro = document.getElementsByClassName("visualizar")
 
 for (let i = 0; i < arrayRegistro.length; i++){
   arrayRegistro[i].addEventListener("click", async () => {
-
     const cpf = document.getElementsByClassName("valueCpf")[i].value;
     
-      const busca = query(collection(db, "visitante"), where("cpf", "==", cpf))
+    const busca = query(collection(db, "visitante"), where("cpf", "==", cpf))
 
-      const resultadoBusca = await getDocs(busca)
-        resultadoBusca.forEach((doc) => {
-          document.getElementById("dataRegistro").value = doc.get("date")
-          document.getElementById("cpf").value = doc.get("cpf")
-          document.getElementById("nomeVisitante").value = doc.get("nome")
-          document.getElementById("emailVisitante").value = doc.get("emailVisitante")
-          document.getElementById("celular").value = doc.get("celular")
-          document.getElementById("rg").value = doc.get("rg")
-          document.getElementById("tipo_cadastro").value = doc.get("tipo_cadastro")
-          document.getElementById("empresaVisitante").value = doc.get("empresa")
-          document.getElementById("responsavelVisita").value = doc.get("responsavelVisita")
-          document.getElementById("setor").value = doc.get("setor")
-          document.getElementById("acesso_fabrica").value = doc.get("acesso_fabrica")
-          document.getElementById("estacionamento").value = doc.get("estacionamento")
-          document.getElementById("placa_carro").value = doc.get("placa_carro")
-          document.getElementById("modelo_carro").value = doc.get("modelo_carro")
-          document.getElementById("periodoDe").value = doc.get("periodoDe")
-          document.getElementById("periodoAte").value = doc.get("periodoAte")
-          document.getElementById("story").value = doc.get("observacao")
-      })
-
-      modal.style.display = "block"
-
-
+    const resultadoBusca = await getDocs(busca)
+    resultadoBusca.forEach((doc) => {
+      document.getElementById("dataRegistro").value = doc.get("date")
+      document.getElementById("cpf").value = doc.get("cpf")
+      document.getElementById("nomeVisitante").value = doc.get("nome")
+      document.getElementById("emailVisitante").value = doc.get("emailVisitante")
+      document.getElementById("celular").value = doc.get("celular")
+      document.getElementById("rg").value = doc.get("rg")
+      document.getElementById("tipo_cadastro").value = doc.get("tipo_cadastro")
+      document.getElementById("empresaVisitante").value = doc.get("empresa")
+      document.getElementById("responsavelVisita").value = doc.get("responsavelVisita")
+      document.getElementById("setor").value = doc.get("setor")
+      document.getElementById("acesso_fabrica").value = doc.get("acesso_fabrica")
+      document.getElementById("estacionamento").value = doc.get("estacionamento")
+      document.getElementById("placa_carro").value = doc.get("placa_carro")
+      document.getElementById("modelo_carro").value = doc.get("modelo_carro")
+      document.getElementById("periodoDe").value = doc.get("periodoDe")
+      document.getElementById("periodoAte").value = doc.get("periodoAte")
+      document.getElementById("story").value = doc.get("observacao")
     })
+
+    modal.style.display = "block"
+
+    // add event listener to the update button
     const updateBtn = document.getElementById("updateBtn")
+    updateBtn.addEventListener("click", async () => {
+      let entrada = document.getElementById('entrada').value
+      let saida = document.getElementById('nomeVisitante').value
+      let nome = document.getElementById('nomeVisitante').value
+      let rg = document.getElementById('rg').value
+      let cpf = document.getElementById('cpf').value
+      let emailVisitante = document.getElementById('emailVisitante').value
+      let responsavelVisita = document.getElementById('responsavelVisita').value
+      let setor = document.getElementById('setor').value
+      let celular = document.getElementById('celular').value
+      let periodoDe = document.getElementById('periodoDe').value
+      let periodoAte = document.getElementById('periodoAte').value
+      let empresa = document.getElementById('empresaVisitante').value
+      let modelo_carro = document.getElementById('modelo_carro').value
+      let placa_carro =  document.getElementById('placa_carro').value
+      let observacao = document.getElementById('story').value
       
-    try{
-    updateBtn.addEventListener("click", async() => {
-    let entrada = document.getElementById('entrada').value
-    let saida = document.getElementById('nomeVisitante').value
-    let nome = document.getElementById('nomeVisitante').value
-    let rg = document.getElementById('rg').value
-    let cpf = document.getElementById('cpf').value
-    let emailVisitante = document.getElementById('emailVisitante').value
-    let responsavelVisita = document.getElementById('responsavelVisita').value
-    let setor = document.getElementById('setor').value
-    let celular = document.getElementById('celular').value
-    let periodoDe = document.getElementById('periodoDe').value
-    let periodoAte = document.getElementById('periodoAte').value
-    let empresa = document.getElementById('empresaVisitante').value
-    let modelo_carro = document.getElementById('modelo_carro').value
-    let placa_carro =  document.getElementById('placa_carro').value
-    let observacao = document.getElementById('story').value
+      // update document in the Firestore database
+      const docRef = doc(db, "visitante", cpf)
+      await updateDoc(docRef, { entrada, saida, nome, rg, emailVisitante, responsavelVisita, setor, celular, periodoDe, periodoAte, empresa,modelo_carro,placa_carro,observacao })
+      
+      // hide the modal and reload the page
+      modal.addEventListener("click", (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });  
 
 
-    const registroRef = doc(db, "visitante", cpf);
-
-    await updateDoc(registroRef, {
-       entrada: `${entrada}`,   
-       saida: `${saida}`,   
-       nome: `${nome}`,   
-       rg: `${rg}`,   
-       cpf: `${cpf}`,   
-       emailVisitante: `${emailVisitante}`,   
-       responsavelVisita: `${responsavelVisita}`,   
-       setor: `${setor}`,   
-       celular: `${celular}`,   
-       periodoDe: `${periodoDe}`,   
-       periodoAte: `${periodoAte}`,   
-       empresa: `${empresa}`,   
-       modelo_carro: `${modelo_carro}`,   
-       placa_carro: `${placa_carro}`,   
-       observacao: `${observacao}`,   
-
-    
-
-
-  })
-
-})
-    
-  
-    modal.addEventListener("click", (event) => {
-      if (event.target == modal) {
-      modal.style.display = "none";
-      }
     })
-
-  }catch{}   }
+  })
+}
