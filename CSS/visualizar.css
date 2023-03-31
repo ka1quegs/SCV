@@ -27,7 +27,7 @@
     border-radius: 8px;
    
 }
-.container form{
+.container main{
     position: relative;
     margin-top: 16px;
     
@@ -37,23 +37,23 @@
     background-repeat: no-repeat;
     
 }
-.container form .form.second{
+.container main .main.second{
     opacity: 0;
     pointer-events: none;
     transform: translateX(100%);
     
 }
-form.secActive .form.second{
+main.secActive .main.second{
     opacity: 1;
     pointer-events: auto;
     transform: translateX(0);
 }
-form.secActive .form.first{
+main.secActive .main.first{
     opacity: 0;
     pointer-events: none;
     transform: translateX(-100%);
 }
-.container form .title{
+.container main .title{
     display: block;
     margin-bottom: 8px;
     font-size: 16px;
@@ -63,14 +63,14 @@ form.secActive .form.first{
     background-color: white;
     
 }
-.container form .fields{
+.container main .fields{
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     background-color: white;
 }
-form .fields .input-field{
+main .fields .input-field{
     display: flex;
     width: calc(100% / 4 - 15px);
     flex-direction: column;
@@ -103,7 +103,7 @@ form .fields .input-field{
 .input-field input[type="date"]:valid{
     color: #333;
 }
-.container form button, .backBtn{
+.container main button, .backBtn{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,25 +120,25 @@ form .fields .input-field{
     cursor: pointer;
     margin-top: 30px;
 }
-.container form .btnText{
+.container main .btnText{
     font-size: 14px;
     font-weight: 400;
 }
-form button:hover{
+main button:hover{
     background-color: #265df2;
 }
-form button i,
-form .backBtn i{
+main button i,
+main .backBtn i{
     margin: 0 6px;
 }
-form .backBtn i{
+main .backBtn i{
     transform: rotate(180deg);
 }
-form .buttons{
+main .buttons{
     display: flex;
     align-items: center;
 }
-form .buttons button , .backBtn{
+main .buttons button , .backBtn{
     margin-right: 14px;
 }
 
@@ -188,7 +188,7 @@ input[type='file']{
 /**/
 
 @media(max-width:1920px){
-    form .fields .input-field{
+    main .fields .input-field{
         display: flex;
         width: calc(100% / 3 - 15px);
         flex-direction: column;
@@ -196,7 +196,7 @@ input[type='file']{
     }
 }
 @media(max-width:1370px){
-form .fields .input-field{
+    main .fields .input-field{
     display: flex;
     width: calc(100% / 3 - 15px);
     flex-direction: column;
@@ -204,7 +204,7 @@ form .fields .input-field{
 }
 }
 @media(max-width:1360px){
-form .fields .input-field{
+    main .fields .input-field{
     display: flex;
     width: calc(100% / 3 - 15px);
     flex-direction: column;
