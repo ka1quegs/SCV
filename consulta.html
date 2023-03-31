@@ -9,80 +9,78 @@
         <link rel="shortcut icon" href="Images/Logo P.png" >
         <link rel="stylesheet" href="CSS/visualizar.css">
         <link rel="stylesheet" href="CSS/consulta.css">
+        
     </head>
     <body>
 
-      <div class="sidebar">
-        <div class="logo-details">
-          <i class='bx bxs-parking icon'></i>
-          <div class="logo_name">PARANOÁ</div>
-          <i class='bx bx-menu' id="btn"></i>
-        </div>
-          <li>
-            <a href="solicitacao.html" >
-              <i class='bx bx-id-card'></i>
-              <span class="links_name">Solicitação</span>
-            </a>
-            <span class="tooltip">Solicitação</span>
-          </li>
-          <li>
-          <li>
-            <a href="consulta.html">
-              <i class='bx bx-file-find'></i>
-              <span class="links_name">Consulta</span>
-            </a>
-            <span class="tooltip">Consulta</span>
-          </li>
-          <li>
-            <a href="consulta-portaria.html">
-              <i class='bx bx-file-find'></i>
-              <span class="links_name">Consulta</span>
-            </a>
-            <span class="tooltip">Consulta</span>
-          </li>
-          <li>
-            <a href="aprovacao.html">
-              <i class='bx bxs-user-check'></i>
-              <span class="links_name">Aprovação</span>
-            </a>
-            <span class="tooltip">Aprovação</span>
-          </li>
-          <li class="profile">
-            <div class="profile-details">
-              <!--<img src="profile.jpg" alt="profileImg">-->
-              <div class="name_job">
-                <div class="name">Funcionário</div>
-                <div class="job">Sair</div>
-              </div>
-            </div>
-            <a href="login.html"><i class='bx bx-log-out' id="log_out" ></i></a>
-          </li>
-        </ul>
-      </div>
-          
-          <script>
-          let sidebar = document.querySelector(".sidebar");
-          let closeBtn = document.querySelector("#btn");
-          let searchBtn = document.querySelector(".bx-search");
-        
-          closeBtn.addEventListener("click", ()=>{
-            sidebar.classList.toggle("open");
-            menuBtnChange();//calling the function(optional)
-          });
-        
-         
-          // following are the code to change sidebar button(optional)
-          function menuBtnChange() {
-           if(sidebar.classList.contains("open")){
-             closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
-           }else {
-             closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
-           }
-          }
-          </script>
+     <!-- Montserrat Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
-        <img class="img" src="Images/logo600x80.png" alt="">
-        
+  
+  <div class="grid-container">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="menu-icon" onclick="openSidebar()">
+        <span class="material-icons-outlined">menu</span>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <div class="sidebar-title">
+        <div class="sidebar-brand">
+          <img class="logo-p" src="Images/logoBranco.png" alt="">
+        </div>
+        <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+      </div>
+      <ul class="sidebar-list">
+        <li class="sidebar-list-item">
+          <a href="solicitacao.html" target="_blank">
+            <box-icon name='id-card' color='#05aeed' ></box-icon>ㅤSolicitação
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="consulta.html" target="_blank">
+            <box-icon name='file-find' color='#05aeed' ></box-icon>ㅤConsulta
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="consulta.html" target="_blank">
+            <span class="material-icons-outlined"></span> Consulta
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="aprovacao.html" target="_blank">
+            <box-icon name='user-check' color='#05aeed' ></box-icon>ㅤAprovação
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <!-- End Sidebar -->
+  <script>
+    // SIDEBAR TOGGLE
+
+var sidebarOpen = false;
+var sidebar = document.getElementById("sidebar");
+
+function openSidebar() {
+if(!sidebarOpen) {
+  sidebar.classList.add("sidebar-responsive");
+  sidebarOpen = true;
+}
+}
+
+function closeSidebar() {
+if(sidebarOpen) {
+  sidebar.classList.remove("sidebar-responsive");
+  sidebarOpen = false;
+}
+}
+  </script>        
         <div class="title">
             <h1>Consulta de Visitantes</h1>
             <hr>
@@ -219,13 +217,22 @@
                                   </div>
       
                                   <div class="input-field">
-                                      <label>Acesso a Fábrica</label>
-                                      <input id="acesso_fabrica" type="text" placeholder="Digite a Empresa" disabled>
+                                    <label>Acesso a Fábrica</label>
+                                    <select id="acesso_fabrica">
+                                      <option disabled selected>Selecione uma opção</option>
+                                      <option>Sim</option>
+                                      <option>Não</option>
+                      
+                                    </select>
                                   </div>
-      
                                   <div class="input-field">
-                                      <label>Acesso ao Estacionamento</label>
-                                      <input id="estacionamento" type="text" placeholder="Digite a Empresa" disabled>
+                                    <label>Acesso ao Estacionamento</label>
+                                    <select  id="estacionamento">
+                                      <option value="" disabled selected>Selecione uma opção</option>
+                                      <option value="Sim">Sim</option>
+                                      <option value="Não">Não</option>
+                      
+                                    </select>
                                   </div>
       
                                   <div class="input-field">
@@ -247,6 +254,31 @@
                                 </div>        
           </div>
         </div>
+
+        <script>
+
+          const estacionamento = document.getElementById("estacionamento");
+          const placa_carro = document.getElementById("placa_carro");
+          const modelo_carro= document.getElementById("modelo_carro");
+
+          estacionamento.addEventListener("change", function () {
+            const selectedOption = estacionamento.value;
+
+            if (selectedOption === "Sim") {
+              // Habilite o input 1 e o input 2 se a opção 1 for selecionada
+              placa_carro.disabled = false;
+              modelo_carro.disabled = false;
+            } else {
+              // Desative o input 1 e o input 2 se a opção 2 ou nenhuma opção for selecionada
+
+              placa_carro.disabled = true;
+              modelo_carro.disabled = true;
+            }
+          });
+
+        </script>
+
+        
         <script src="firebase/consulta.js" type="module"></script>
     </body>
 </html>

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Consulta de Visitantes</title>
+        <title>Consulta Portaria</title>
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <link rel="shortcut icon" href="Images/Logo P.png" >
         <link rel="stylesheet" href="CSS/visualizar.css">
@@ -219,13 +219,22 @@
                                   </div>
       
                                   <div class="input-field">
-                                      <label>Acesso a Fábrica</label>
-                                      <input id="acesso_fabrica" type="text" placeholder="Digite a Empresa">
+                                    <label>Acesso a Fábrica</label>
+                                    <select id="acesso_fabrica">
+                                      <option selected>Selecione uma opção</option>
+                                      <option>Sim</option>
+                                      <option>Não</option>
+                      
+                                    </select>
                                   </div>
-      
                                   <div class="input-field">
-                                      <label>Acesso ao Estacionamento</label>
-                                      <input id="estacionamento" type="text" placeholder="Digite a Empresa">
+                                    <label>Acesso ao Estacionamento</label>
+                                    <select  id="estacionamento">
+                                      <option value="" disabled selected>Selecione uma opção</option>
+                                      <option value="Sim">Sim</option>
+                                      <option value="Não">Não</option>
+                      
+                                    </select>
                                   </div>
       
                                   <div class="input-field">
@@ -247,6 +256,29 @@
                                 </div>        
           </div>
         </div>
+
+        <script>
+
+          const estacionamento = document.getElementById("estacionamento");
+          const placa_carro = document.getElementById("placa_carro");
+          const modelo_carro= document.getElementById("modelo_carro");
+
+          estacionamento.addEventListener("change", function () {
+            const selectedOption = estacionamento.value;
+
+            if (selectedOption === "Sim") {
+              // Habilite o input 1 e o input 2 se a opção 1 for selecionada
+              placa_carro.disabled = false;
+              modelo_carro.disabled = false;
+            } else {
+              // Desative o input 1 e o input 2 se a opção 2 ou nenhuma opção for selecionada
+
+              placa_carro.disabled = true;
+              modelo_carro.disabled = true;
+            }
+          });
+
+        </script>
         <script src="firebase/consulta-portaria.js" type="module"></script>
     </body>
 </html>
