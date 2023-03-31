@@ -53,7 +53,8 @@
   color: #fff;
   z-index: 4;
   width: 70%;
-background-color: #11101D;
+  background-color: #11101D;
+
 
 }
 
@@ -323,6 +324,8 @@ img{
 
   #sidebar{
     height: 172vh;
+    transition: display 0.5s ease;
+
   }
   .container{
     position: absolute;
