@@ -78,8 +78,9 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
   })
 
 //Validação dos campos
-
+  
   const name = document.getElementById("nome");
+  const cpf = document.getElementById("cpf");
   const empresa = document.getElementById("empresa");
   const visita = document.getElementById("responsavelVisita");
   const periodoDe = document.getElementById("periodoDe");
@@ -87,7 +88,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
   const submitBtn = document.getElementById("enviarSolici");
 
   function checkValidity() {
-    if (name.validity.valid && empresa.validity.valid && visita.validity.valid && periodoDe.validity.valid && periodoAte.validity.valid) {
+    if (name.validity.valid && empresa.validity.valid && visita.validity.valid && periodoDe.validity.valid && periodoAte.validity.valid && cpf.validity.valid) {
       submitBtn.disabled = false;
     } else {
       submitBtn.disabled = true;
@@ -99,3 +100,4 @@ empresa.addEventListener("input", checkValidity);
 visita.addEventListener("input", checkValidity);
 periodoDe.addEventListener("input", checkValidity);
 periodoAte.addEventListener("input", checkValidity);
+cpf.addEventListener("input", checkValidity);

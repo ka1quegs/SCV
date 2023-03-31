@@ -322,12 +322,11 @@ img{
 @media(max-width:1601px){
 
   #sidebar{
-    height: 150vh;
-    width: 15%;
+    height: 172vh;
   }
   .container{
     position: absolute;
-    max-width: 1100px;
+    max-width: 1030px;
     max-height: 1950px;
     width: 100%;
     border-radius: 6px;
