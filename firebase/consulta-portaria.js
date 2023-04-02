@@ -1,5 +1,5 @@
 import { db } from "./modules.js"
-import {collection,getDocs, query, where, updateDoc, doc}
+import {collection,getDocs, query, where, updateDoc, doc,getDoc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 const colecao = query(collection(db,"visitante"),where("verificacao", "==", true))
@@ -139,8 +139,12 @@ for (let i = 0; i < arrayRegistro.length; i++){
       
       // update document in the Firestore database
       const docRef = doc(db, "visitante", cpf)
-      await updateDoc(docRef, { entrada, saida, nome, rg, emailVisitante, responsavelVisita, setor, celular, periodoDe, periodoAte, empresa,modelo_carro,placa_carro,observacao })
-      
+      const docSnap = await getDoc(docRef)
+      if (docSnap.exists()) {
+        await updateDoc(docRef, { entrada, saida, nome, rg, emailVisitante, responsavelVisita, setor, celular, periodoDe, periodoAte, empresa,modelo_carro,placa_carro,observacao })
+      } else {
+        console.log("Document does not exist")
+      }
       // hide the modal and reload the page
       modal.addEventListener("click", (event) => {
         if (event.target == modal) {
