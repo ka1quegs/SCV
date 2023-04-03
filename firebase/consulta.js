@@ -23,45 +23,54 @@ const arrayDocumentos = await getDocs(colecao)
    
     //tbody
     try{
-        let td = document.createElement("td");
+        let td = document.createElement("td"); 
         td = document.createElement("td")
         td.innerHTML = doc.get("periodoDe")
+        td.setAttribute("data-label","Data")
         tbody.append(td)
         
         td = document.createElement("td")
         td.innerHTML = doc.get("nome")
+        td.setAttribute("data-label","Nome")
         tbody.append(td)
 
         td = document.createElement("td")
         td.innerHTML = doc.get("empresa")
+        td.setAttribute("data-label","Empresa")
         tbody.append(td)
 
         td = document.createElement("td")
         td.innerHTML = doc.get("responsavelVisita")
+        td.setAttribute("data-label","Solicitante")
         tbody.append(td)
 
         td = document.createElement("td")
         td.innerHTML = doc.get("status")
+        td.setAttribute("data-label","Status")
         tbody.append(td)
 
         td = document.createElement("td")
-        td.innerHTML = doc.get("estadoVisita")
+        td.setAttribute("data-label","Visita")
+        td.innerHTML = doc.get("#")
       
         tbody.append(td)
 
         td = document.createElement("td")
+        td.setAttribute("data-label","Aprovado/Rejeitado por")
         td.innerHTML = doc.get("#")
         tbody.append(td)
 
         //Botão VISUALIZAR
+        td = document.createElement("td")
         let button = document.createElement("button")
         button.setAttribute("class", "visualizar")
+        td.setAttribute("data-label","Ações")
         button.setAttribute("id", "visualizar")
         button.innerHTML = "Visualizar"
-        tbody.appendChild(button)
+        td.append(button)
+        tbody.appendChild(td)
 
         //Botão REVER
-      
         button = document.createElement("button")
         button.setAttribute("id", "revisao")
         button.setAttribute("class","revisar")
@@ -74,7 +83,9 @@ const arrayDocumentos = await getDocs(colecao)
         })
         button.innerHTML = "Revisar"
 
-        tbody.appendChild(button)
+        td.append(button)
+        tbody.appendChild(td)
+
 
         //Botão negar
         table.append(tbody)
