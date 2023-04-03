@@ -14,7 +14,6 @@
     font-size: 20px;
     font-weight: 600;
     color: #333;
-    
     text-align: center;
 }
 .container header::before{
@@ -72,7 +71,7 @@ main.secActive .main.first{
 }
 main .fields .input-field{
     display: flex;
-    width: calc(100% / 4 - 15px);
+    width: calc(100% / 3 - 15px);
     flex-direction: column;
     margin: 4px 0;
 }
@@ -187,27 +186,3 @@ input[type='file']{
 
 /**/
 
-@media(max-width:1920px){
-    main .fields .input-field{
-        display: flex;
-        width: calc(100% / 3 - 15px);
-        flex-direction: column;
-        margin: 4px 0;
-    }
-}
-@media(max-width:1370px){
-    main .fields .input-field{
-    display: flex;
-    width: calc(100% / 3 - 15px);
-    flex-direction: column;
-    margin: 4px 0;
-}
-}
-@media(max-width:1360px){
-    main .fields .input-field{
-    display: flex;
-    width: calc(100% / 3 - 15px);
-    flex-direction: column;
-    margin: 4px 0;
-}
-}

@@ -128,12 +128,15 @@ for (let i = 0; i < arrayRegistro.length; i++){
 
       modal.style.display = "block"
 
+      // hide the modal and reload the page
+      modal.addEventListener("click", (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });  
+    })
 
-    })}
+  }
 
 
-    modal.addEventListener("click", (event) => {
-      if (event.target == modal) {
-      modal.style.display = "none";
-      }
-      });
+  

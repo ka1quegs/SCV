@@ -145,14 +145,13 @@ for (let i = 0; i < arrayRegistro.length; i++){
       } else {
         console.log("Document does not exist")
       }
-      // hide the modal and reload the page
+   
+    })
+   // hide the modal and reload the page
       modal.addEventListener("click", (event) => {
         if (event.target == modal) {
           modal.style.display = "none";
         }
       });  
-
-
-    })
   })
 }
