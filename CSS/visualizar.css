@@ -114,17 +114,18 @@ main .fields .input-field{
     color: #fff;
     border-radius: 5px;
     margin: 25px 0;
-    background-color: #4d84e2;
+    background-color: #f58634;
     transition: all 0.3s linear;
     cursor: pointer;
     margin-top: 30px;
+    font-weight: bold;
 }
 .container main .btnText{
     font-size: 14px;
     font-weight: 400;
 }
 main button:hover{
-    background-color: #265df2;
+    background-color: #ff6a00;
 }
 main button i,
 main .backBtn i{
