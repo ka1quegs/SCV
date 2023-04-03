@@ -81,44 +81,82 @@ if(sidebarOpen) {
 }
 }
   </script>        
-        <div class="title">
-            <h1>Consulta de Visitantes</h1>
+       <header>
+        <h1 style="color: #f58634;">Consulta de Visitantes</h1>
+        <hr>
+        <input id="input-busca" type="text" placeholder="O que você procura?" style="width: 100%; margin-bottom: 10px;">
         
-            <hr>
-          
-            <input id="input-busca" type="text" placeholder="O que você procura?">
-            <table class="table">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Data da Visita</th>
-                        <th>Nome</th>
-                        <th>Empresa</th>
-                        <th>Solicitante</th>
-                        <th>Status</th>
-                        <th>Visita</th>
-                        <th>Aprov./Rejeitado Por</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-            </table>
+           <table class="table">
+             <thead>
+               <tr>
+                <th>Data da Visita</th>
+                <th>Nome</th>
+                <th>Empresa</th>
+                <th>Solicitante</th>
+                <th>Status</th>
+                <th>Visita</th>
+                <th>Aprov./Rejeitado Por</th>
+                <th>Ações</th>
+               </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                     <td data-label="Data">02/04/2023</td>
+                     <td data-label="Nome">Kaique Eduardo Gonçalves Santana</td>
+                     <td data-label="Empresa">Cerdia</td>
+                     <td data-label="Solicitante">Kaique Eduardo Gonçalves Santana</td>
+                     <td data-label="Status">Aprovado</td>
+                     <td data-label="Visita">Em Andamento</td>
+                     <td data-label="Aprovado/Rejeitado Por">Cristiane Alves</td>
+                     <td data-label="Ações">
+                      <button class="visualizar">Visualizar</button>
+                      <button class="revisar">Revisar</button>
+                    </td>
+                 </tr>
         
-                <section id="sectionRegistro">
- <!--   <tbody id="tabela-func">
-                    <tr>
-                        <td>01/02/2023</td>
-                        <td>Caio Garcia</td>
-                        <td>Paranóa</td>
-                        <td>Crislaine Garcia</td>
-                        <td>Aprovado</td>
-                        <td>Cristiane Alves</td>
-                        <td>
-                            <a href="visualizar.html"><button class="btn btn-sm btn-warning">Visualizar</button></a>
-                        </td>
-                    </tr>
-                </tbody>
--->
-
-                </section>
+                 <tr>
+                    <td data-label="Data">03/04/2023</td>
+                    <td data-label="Nome">Caio Garcia Capel</td>
+                    <td data-label="Empresa">Paranoá</td>
+                    <td data-label="Solicitante">Caio Garcia Capel</td>
+                    <td data-label="Status">Aprovado</td>
+                    <td data-label="Visita">Finalizada</td>
+                    <td data-label="Aprovado/Rejeitado Por">Regiane Kemita</td>
+                    <td data-label="Ações">
+                      <button class="visualizar">Visualizar</button>
+                      <button class="revisar">Revisar</button>
+                    </td>
+                 </tr>
+        
+                 <tr>
+                    <td data-label="Data">04/04/2023</td>
+                    <td data-label="Nome">Wanderson Fabricio Medina Rodrigues</td>
+                    <td data-label="Empresa">Scania</td>
+                    <td data-label="Solicitante">Wanderson Fabricio Medina Rodrigues</td>
+                    <td data-label="Status">Rejeitado</td>
+                    <td data-label="Visita">Em Aberto</td>
+                    <td data-label="Aprovado/Rejeitado Por">José Carlos</td>
+                    <td data-label="Ações">
+                      <button class="visualizar">Visualizar</button>
+                      <button class="revisar">Revisar</button>
+                    </td>
+                   </tr>
+        
+                 <tr>
+                    <td data-label="Data">05/04/2023</td>
+                    <td data-label="Nome">Isabelly Pereira Gomes</td>
+                    <td data-label="Empresa">Mercedes</td>
+                    <td data-label="Solicitante">Isabelly Pereira Gomes</td>
+                    <td data-label="Status">Aprovado</td>
+                    <td data-label="Visita">Finalizado</td>
+                    <td data-label="Aprovado/Rejeitado Por">Cristiane Alves</td>
+                    <td data-label="Ações">
+                      <button class="visualizar">Visualizar</button>
+                      <button class="revisar">Revisar</button>
+                    </td>
+                   </tr>
+             </tbody>
+           </table>
 
        
 
