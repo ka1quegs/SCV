@@ -26,31 +26,37 @@ const arrayDocumentos = await getDocs(colecao)
       let td = document.createElement("td");
       td = document.createElement("td")
       td.innerHTML = doc.get("periodoDe")
+      td.setAttribute("data-label","Data")
       tbody.append(td)
       
       td = document.createElement("td")
       td.innerHTML = doc.get("nome")
+      td.setAttribute("data-label","Nome")
       tbody.append(td)
 
       td = document.createElement("td")
       td.innerHTML = doc.get("empresa")
+      td.setAttribute("data-label","Empresa")
       tbody.append(td)
 
       td = document.createElement("td")
       td.innerHTML = doc.get("responsavelVisita")
+      td.setAttribute("data-label","Solicitante")
       tbody.append(td)
 
       td = document.createElement("td")
       td.innerHTML = doc.get("status")
-      tbody.append(td)
-
-      td = document.createElement("td")
-      td.innerHTML = doc.get("estadoVisita")
-    
+      td.setAttribute("data-label","Status")
       tbody.append(td)
 
       td = document.createElement("td")
       td.innerHTML = doc.get("#")
+      td.setAttribute("data-label","Visita")
+      tbody.append(td)
+
+      td = document.createElement("td")
+      td.innerHTML = doc.get("#")
+      td.setAttribute("data-label","Aprovado/Rejeitado por")
       tbody.append(td)
 
       //Botão Visualizar
