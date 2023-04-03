@@ -54,35 +54,36 @@ const arrayDocumentos = await getDocs(colecao)
       tbody.append(td)
 
       //Botão Visualizar
-      let img = document.createElement("img")
-      img.setAttribute("src", "Images/olho.png")
-      img.setAttribute("class", "visualizar")
-      img.setAttribute("alt", "Visualizar")
-      img.setAttribute("id", "visualizar")
-      tbody.appendChild(img)
+        td = document.createElement("td")
+        let button = document.createElement("button")
+        button.setAttribute("class", "visualizar")
+        td.setAttribute("data-label","Ações")
+        button.setAttribute("id", "visualizar")
+        button.innerHTML = "Visualizar"
+        td.append(button)
+        tbody.appendChild(td)
 
-      //Botão rever
-    
-      img = document.createElement("img")
-      img.setAttribute("src", "Images/revisar.png")
-      img.setAttribute("alt", "Revisar")
-      img.setAttribute("id", "revisao")
+        //Botão REVER
+        button = document.createElement("button")
+        button.setAttribute("id", "revisao")
+        button.setAttribute("class","revisar")
+        button.addEventListener("click", async () => {
+          await updateDoc(doc.ref, { verificacao: false })
+          await updateDoc(doc.ref, { tipo_cadastro: "Pré-Cadastro" })
+          await updateDoc(doc.ref, { status: "" })
+          console.log("Atualizado")
+          location.reload()
+        })
+        button.innerHTML = "Revisar"
 
-      img.addEventListener("click", async () => {
-        await updateDoc(doc.ref, { verificacao: false })
-        await updateDoc(doc.ref, { tipo_cadastro: "Pré-Cadastro" })
-        await updateDoc(doc.ref, { status: "" })
-        console.log("Atualizado")
-        location.reload()
-      })
+        td.append(button)
+        tbody.appendChild(td)
 
-      tbody.appendChild(img)
 
-      //Botão negar
-      table.append(tbody)
-      registro.append(table, valueCpf)
-      sectionRegistro.append(registro)
-
+        //Botão negar
+        table.append(tbody)
+        registro.append(table,valueCpf)
+        sectionRegistro.append(registro)
   }catch{}
 })
 
