@@ -148,7 +148,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
       const docRef = doc(db, "visitante", cpf)
       const docSnap = await getDoc(docRef)
       if (docSnap.exists()) {
-        await updateDoc(docRef, { entrada, saida, nome, rg, emailVisitante, responsavelVisita, setor, celular, periodoDe, periodoAte, empresa,modelo_carro,placa_carro,observacao })
+        await updateDoc(docRef, { cpf, entrada, saida, nome, rg, emailVisitante, responsavelVisita, setor, celular, periodoDe, periodoAte, empresa,modelo_carro,placa_carro,observacao })
       } else {
         console.log("Document does not exist")
       }
