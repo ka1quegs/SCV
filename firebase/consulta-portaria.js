@@ -26,31 +26,37 @@ const arrayDocumentos = await getDocs(colecao)
       let td = document.createElement("td");
       td = document.createElement("td")
       td.innerHTML = doc.get("periodoDe")
+      td.setAttribute("data-label","Data")
       tbody.append(td)
       
       td = document.createElement("td")
       td.innerHTML = doc.get("nome")
+      td.setAttribute("data-label","Nome")
       tbody.append(td)
 
       td = document.createElement("td")
       td.innerHTML = doc.get("empresa")
+      td.setAttribute("data-label","Empresa")
       tbody.append(td)
 
       td = document.createElement("td")
       td.innerHTML = doc.get("responsavelVisita")
+      td.setAttribute("data-label","Solicitante")
       tbody.append(td)
 
       td = document.createElement("td")
       td.innerHTML = doc.get("status")
-      tbody.append(td)
-
-      td = document.createElement("td")
-      td.innerHTML = doc.get("estadoVisita")
-    
+      td.setAttribute("data-label","Status")
       tbody.append(td)
 
       td = document.createElement("td")
       td.innerHTML = doc.get("#")
+      td.setAttribute("data-label","Visita")
+      tbody.append(td)
+
+      td = document.createElement("td")
+      td.innerHTML = doc.get("#")
+      td.setAttribute("data-label","Aprovado/Rejeitado por")
       tbody.append(td)
 
       //Botão Visualizar
@@ -142,7 +148,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
       const docRef = doc(db, "visitante", cpf)
       const docSnap = await getDoc(docRef)
       if (docSnap.exists()) {
-        await updateDoc(docRef, { entrada, saida, nome, rg, emailVisitante, responsavelVisita, setor, celular, periodoDe, periodoAte, empresa,modelo_carro,placa_carro,observacao })
+        await updateDoc(docRef, { cpf, entrada, saida, nome, rg, emailVisitante, responsavelVisita, setor, celular, periodoDe, periodoAte, empresa,modelo_carro,placa_carro,observacao })
       } else {
         console.log("Document does not exist")
       }
