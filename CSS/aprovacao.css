@@ -170,6 +170,7 @@
 table{
 	width: 80vw;
 	border-collapse: collapse;
+  
 }
 
 .table td,.table th{
@@ -194,6 +195,7 @@ table{
 	width: 85vw;
 	border-collapse: collapse;
   table-layout: fixed;
+ 
 }
 
 .table2 td,.table2{
@@ -289,7 +291,6 @@ hr{
     font-weight: bold;
     cursor: pointer;
     margin: 5px;
-    
   }
 
 .btn2{
@@ -300,7 +301,13 @@ hr{
     font-weight: bold;
     cursor: pointer;
     margin: 5px;
+  
+}
 
+.btn, .btn2{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    
 }
 
 .btn:hover {

@@ -27,12 +27,14 @@
 
 .menu-icon {
   display: none;
-  background-color: #21232d;
-  color: #9799ab;
+  background-color: white;
+  color: black;
   padding: 4px;
   z-index: 3;
   cursor: pointer;
+  
 }
+
 
 
 /* ---------- SIDEBAR ---------- */

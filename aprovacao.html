@@ -36,22 +36,22 @@
       </div>
       <ul class="sidebar-list">
         <li class="sidebar-list-item">
-          <a href="solicitacao.html" target="_blank">
+          <a href="solicitacao.html" target="_self">
             <box-icon name='id-card' color='#05aeed' ></box-icon>ㅤSolicitação
           </a>
         </li>
         <li class="sidebar-list-item">
-          <a href="consulta.html" target="_blank">
+          <a href="consulta.html" target="_self">
             <box-icon name='file-find' color='#05aeed' ></box-icon>ㅤConsulta
           </a>
         </li>
         <li class="sidebar-list-item">
-          <a href="consulta-portaria.html" target="_blank">
-            <span class="material-icons-outlined"></span> Consulta
+          <a href="consulta-portaria.html" target="_self">
+            <box-icon name='user-check' color='#05aeed' ></box-icon> ㅤPortaria
           </a>
         </li>
         <li class="sidebar-list-item">
-          <a href="aprovacao.html" target="_blank">
+          <a href="aprovacao.html" target="_self">
             <box-icon name='user-check' color='#05aeed' ></box-icon>ㅤAprovação
           </a>
         </li>
@@ -182,8 +182,9 @@ if(sidebarOpen) {
   <div class="modal" id="modal">
     <div class="modal-content">
       
-        <div class="container">
+        <div class="container">                  
               <div class="max-width">
+        
                 <div class="imageContainer">
                   
                     <img src="Images/camera.png" alt="Selecione a Imagem" id="imgPhoto">
@@ -192,10 +193,10 @@ if(sidebarOpen) {
             
            <input type="file" id="flImage" name="fImage" accept="image/*">
            
-            <form action="#">
+            <main action="#">
                 <div class="form first">
                     <div class="details personal">
-                        <h3 style="margin-bottom: 20px; color: #f58634;">INFORMAÇÕES GERAIS</h3>
+                        <h3 style="margin-bottom: 20px; color:#f58634;">INFORMAÇÕES GERAIS</h3>
         
                         <div class="fields">
                             <div class="input-field">
@@ -205,11 +206,11 @@ if(sidebarOpen) {
         
                             <div class="input-field">
                                 <label>Hora da Entrada</label>
-                                <input type="time" disabled>
+                                <input id="entrada" type="time" disabled>
                             </div>
                             <div class="input-field">
                                 <label>Hora da Saída</label>
-                                <input type="time" disabled>
+                                <input id="saida" type="time" disabled>
                             </div>
                             <div class="input-field">
                                 <label>Periodo de:</label>
@@ -223,7 +224,7 @@ if(sidebarOpen) {
         
                             <div class="input-field">
                               <label>Tipo do Cadastro</label>
-                              <input id="tipo_cadastro" type="text" placeholder="Pré-Cadastro/Efetivo" disabled >
+                              <input id="tipo_cadastro" type="text" placeholder="Pré-Cadastro/Efetivo" disabled>
                           </div>
                          
         
@@ -275,34 +276,72 @@ if(sidebarOpen) {
                             </div>
 
                             <div class="input-field">
-                                <label>Acesso a Fábrica</label>
-                                <input id="acesso_fabrica" type="text" placeholder="Digite a Empresa" disabled>
+                              <label>Acesso a Fábrica</label>
+                              <select id="acesso_fabrica" disabled>
+                                <option selected>Selecione uma opção</option>
+                                <option>Sim</option>
+                                <option>Não</option>
+                
+                              </select>
                             </div>
-
                             <div class="input-field">
-                                <label>Acesso ao Estacionamento</label>
-                                <input id="estacionamento" type="text" placeholder="Acesso ao estacionamento" disabled>
+                              <label>Acesso ao Estacionamento</label>
+                              <select  id="estacionamento" disabled>
+                                <option value="" disabled selected>Selecione uma opção</option>
+                                <option value="Sim">Sim</option>
+                                <option value="Não">Não</option>
+                
+                              </select>
                             </div>
 
                             <div class="input-field">
                                 <label>Placa do Carro</label>
-                                <input id="placa_carro" type="text" placeholder="Digite a placa do carro" disabled>
+                                <input id="placa_carro" type="text" placeholder="Digite a Empresa" disabled>
                             </div>
 
                             <div class="input-field">
                                 <label>Modelo do Carro</label>
-                                <input id="modelo_carro" type="text" placeholder="Digite o modelo do carro" disabled>
+                                <input id="modelo_carro" type="text" placeholder="Digite a Empresa" disabled>
                             </div>
         
                               <div class="input-field">
                                 <label>Observação</label>
                                 <textarea id="story" name="story" disabled>
                               </textarea>
+                              
+                             
+                            
                               </div>
                             </div>                       
-                          </div>        
+                          </div>   
+                </div>     
     </div>
+    
   </div>
+  
+</main>
+  <script>
+
+    const estacionamento = document.getElementById("estacionamento");
+    const placa_carro = document.getElementById("placa_carro");
+    const modelo_carro= document.getElementById("modelo_carro");
+
+    estacionamento.addEventListener("change", function () {
+      const selectedOption = estacionamento.value;
+
+      if (selectedOption === "Sim") {
+        // Habilite o input 1 e o input 2 se a opção 1 for selecionada
+        placa_carro.disabled = false;
+        modelo_carro.disabled = false;
+      } else {
+        // Desative o input 1 e o input 2 se a opção 2 ou nenhuma opção for selecionada
+
+        placa_carro.disabled = true;
+        modelo_carro.disabled = true;
+      }
+    });
+
+  </script>
 <script type="module" src="firebase/aprovacao.js"></script>
 </body>
 </html>
