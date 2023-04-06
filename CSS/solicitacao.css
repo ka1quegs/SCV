@@ -321,6 +321,8 @@ img{
     cursor: pointer;
     margin-top: 30px;
   }
+
+ 
 }
 @media(max-width:1601px){
 
@@ -552,11 +554,15 @@ img{
   #sidebar{
     height: 190vh;
     width: 65%;
+    background-image: url(../Images/cool-background-3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   img{
     width: 100px;
   }
+
 }
 
 @media (max-width: 281px) {

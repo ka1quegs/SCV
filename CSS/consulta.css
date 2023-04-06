@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
-  
 }
 
 /**/
@@ -391,6 +390,28 @@
     border-radius: 20%;
     margin-right: 20px; 
   }
+
+  #input-busca{
+    width: 99%;
+    padding: 7px;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid rgb(173, 173, 173);
 }
+
+.table2 td::before{
+  font-size: 13px;
+}
+
+.modal-content{
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+}
+
 
 

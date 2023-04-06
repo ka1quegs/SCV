@@ -187,3 +187,22 @@ input[type='file']{
 
 /**/
 
+
+@media (max-width:500px){
+    main .fields .input-field{
+        display: flex;
+        width: calc(100% / 1 - 15px);
+        flex-direction: column;
+        margin: 4px 0;
+    }
+
+    textarea {
+        resize: none;
+        width: 100%;
+        height: 50px;
+        text-align: left;
+        padding: 0;
+      }
+      
+}
+
