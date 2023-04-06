@@ -187,6 +187,15 @@ input[type='file']{
 
 /**/
 
+@media (max-width:1601px){
+    textarea{
+        resize:none;
+        width: 55vw;
+        height: 50px;
+    }
+}
+
+
 
 @media (max-width:500px){
     main .fields .input-field{

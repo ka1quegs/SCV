@@ -200,6 +200,7 @@ main.secActive .main.first{
   margin: 6px 0;
   color: #333;
   background-color: white;
+  width: 100%
   
 }
 .container main .fields{
@@ -283,10 +284,12 @@ img{
 
 @media(max-width:1920px){
 
+
+
   .container{
     position: absolute;
     max-width: 1840px;
-    max-height: 1900px;
+    max-height: 2000px;
     width: 87%;
     border-radius: 6px;
     padding: 30px;
@@ -327,14 +330,14 @@ img{
 @media(max-width:1601px){
 
   #sidebar{
-    height: 172vh;
+    height: 123vh;
     transition: display 0.5s ease;
 
   }
   .container{
     position: absolute;
-    max-width: 1030px;
-    max-height: 1950px;
+    max-width: 1190px;
+    max-height: 123vh;
     width: 100%;
     border-radius: 6px;
     padding: 30px;
@@ -343,11 +346,14 @@ img{
     
   }
 
+  
+
   main .fields .input-field{
     display: flex;
     width: calc(100% / 2 - 15px);
     flex-direction: column;
     margin: 4px 0;
+    
     
   }
 
