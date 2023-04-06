@@ -203,6 +203,10 @@ input[type='file']{
         text-align: left;
         padding: 0;
       }
+
+      #imgPhoto{
+        display: none;
+      }
       
 }
 

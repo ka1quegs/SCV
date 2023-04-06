@@ -392,23 +392,52 @@
   }
 
   #input-busca{
-    width: 99%;
+    width: 95%;
     padding: 7px;
     font-size: 15px;
     border-radius: 5px;
+    margin-left: 9px;
     margin-top: 10px;
     margin-bottom: 10px;
     border: 2px solid rgb(173, 173, 173);
 }
 
+.table2{
+  margin: 0 auto;
+  width: 95%;
+}
+
 .table2 td::before{
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .modal-content{
   width: 80%;
-  margin: 0 auto;
+  margin: 45% auto;
 }
+
+header{
+  margin-left: 13px;
+  margin-top: 10px;
+  
+}
+
+h1{
+  width: 100%;
+  font-size: 20px;
+}
+
+img{
+  width: 100px;
+  margin: 0 auto;
+  margin-top: -30px;
+}
+
+body{
+  padding: 17px;
+}
+
+
 
 
 }

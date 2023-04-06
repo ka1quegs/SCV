@@ -414,7 +414,9 @@ img{
     top: 0;
     height: 100%;
     width: 40%;
-    background: #11101D;
+    background-image: url(../Images/cool-background-3.png);
+    background-repeat: no-repeat;
+    background-size: cover;    
     padding: 6px 14px;
     z-index: 99;
     transition: all 0.5s ease;
@@ -488,7 +490,8 @@ img{
     width: 35px;
     height: 32px;
     color: black;
-    background-color: white;
+    background-color: transparent;
+    
     font-weight: bold;
     border-radius: 20%;
      
