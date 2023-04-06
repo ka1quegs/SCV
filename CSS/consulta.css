@@ -433,9 +433,7 @@ img{
   margin-top: -30px;
 }
 
-body{
-  padding: 17px;
-}
+
 }
 
 @media (max-width:550px){
@@ -451,6 +449,7 @@ body{
     font-weight: bold;
     border-radius: 20%;
     margin-right: 20px; 
+    padding: 17px;
   }
 
   #input-busca{
@@ -458,14 +457,15 @@ body{
     padding: 7px;
     font-size: 15px;
     border-radius: 5px;
-    margin-left: 9px;
+    margin-left: 12px;
     margin-top: 10px;
     margin-bottom: 10px;
     border: 2px solid rgb(173, 173, 173);
+
 }
 
 .table2{
-  margin: 0 auto;
+  padding: 17px;
   width: 95%;
 }
 
@@ -479,8 +479,9 @@ body{
 }
 
 header{
-  margin-left: 13px;
+  margin-left: 14px;
   margin-top: 10px;
+  
   
 }
 
@@ -495,9 +496,6 @@ img{
   margin-top: -30px;
 }
 
-body{
-  padding: 17px;
-}
 }
 
 
