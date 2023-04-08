@@ -126,34 +126,45 @@ for (let i = 0; i < arrayRegistro.length; i++){
     modal.style.display = "block"
 
     // add event listener to the update button
-    const updateBtn = document.getElementById("updateBtn")
-    updateBtn.addEventListener("click", async () => {
-      let entrada = document.getElementById('entrada').value
-      let saida = document.getElementById('nomeVisitante').value
-      let nome = document.getElementById('nomeVisitante').value
-      let rg = document.getElementById('rg').value
-      let cpf = document.getElementById('cpf').value
-      let emailVisitante = document.getElementById('emailVisitante').value
-      let responsavelVisita = document.getElementById('responsavelVisita').value
-      let setor = document.getElementById('setor').value
-      let celular = document.getElementById('celular').value
-      let periodoDe = document.getElementById('periodoDe').value
-      let periodoAte = document.getElementById('periodoAte').value
-      let empresa = document.getElementById('empresaVisitante').value
-      let modelo_carro = document.getElementById('modelo_carro').value
-      let placa_carro =  document.getElementById('placa_carro').value
-      let observacao = document.getElementById('story').value
-      
-      // update document in the Firestore database
-      const docRef = doc(db, "visitante", cpf)
-      const docSnap = await getDoc(docRef)
-      if (docSnap.exists()) {
-        await updateDoc(docRef, { cpf, entrada, saida, nome, rg, emailVisitante, responsavelVisita, setor, celular, periodoDe, periodoAte, empresa,modelo_carro,placa_carro,observacao })
-      } else {
-        console.log("Document does not exist")
-      }
-   
-    })
+const updateBtn = document.getElementById("updateBtn")
+updateBtn.addEventListener("click", async () => {
+  const cpf = document.getElementById("cpf").value
+  const nome = document.getElementById("nomeVisitante").value
+  const email = document.getElementById("emailVisitante").value
+  const celular = document.getElementById("celular").value
+  const rg = document.getElementById("rg").value
+  const empresa = document.getElementById("empresaVisitante").value
+  const responsavelVisita = document.getElementById("responsavelVisita").value
+  const setor = document.getElementById("setor").value
+  const acesso_fabrica = document.getElementById("acesso_fabrica").value
+  const estacionamento = document.getElementById("estacionamento").value
+  const placa_carro = document.getElementById("placa_carro").value
+  const modelo_carro = document.getElementById("modelo_carro").value
+  const periodoDe = document.getElementById("periodoDe").value
+  const periodoAte = document.getElementById("periodoAte").value
+  const observacao = document.getElementById("story").value
+
+  const docRef = doc(db, "visitante", cpf)
+  const updateData = {
+    nome,
+    email,
+    celular,
+    rg,
+    empresa,
+    responsavelVisita,
+    setor,
+    acesso_fabrica,
+    estacionamento,
+    placa_carro,
+    modelo_carro,
+    periodoDe,
+    periodoAte,
+    observacao,
+  }
+  await updateDoc(docRef, updateData)
+  console.log("Document updated successfully")
+
+})
    // hide the modal and reload the page
       modal.addEventListener("click", (event) => {
         if (event.target == modal) {
