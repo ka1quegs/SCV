@@ -455,7 +455,7 @@ hr{
     padding: 7px;
     font-size: 15px;
     border-radius: 5px;
-    margin-left: 12px;
+    margin-left: 1px;
     margin-top: 10px;
     margin-bottom: 10px;
     border: 2px solid rgb(173, 173, 173);
@@ -473,7 +473,7 @@ hr{
 
 .modal-content{
   width: 80%;
-  margin: 60% auto;
+  margin: 10%;
 }
 
 header{
