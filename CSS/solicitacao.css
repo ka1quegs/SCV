@@ -330,9 +330,7 @@ img{
 @media(max-width:1601px){
 
   #sidebar{
-    height: 123vh;
-    transition: display 0.5s ease;
-
+    height: 156vh;
   }
   .container{
     position: absolute;
@@ -345,8 +343,6 @@ img{
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     
   }
-
-  
 
   main .fields .input-field{
     display: flex;

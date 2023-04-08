@@ -198,67 +198,6 @@
 }
 
 
-@media(max-width: 992px){
-	.table thead{
-		display: none;
-	}
-
-	.table, .table tbody, .table tr, .table td{
-		display: block;
-		width: 100%;
-    margin-left: 0;
-	}
-	.table tr{
-		margin-bottom:15px;
-	}
-	.table td{
-		text-align: right;
-		padding-left: 50%;
-		text-align: right;
-		position: relative;
-   
-	}
-	.table td::before{
-		content: attr(data-label);
-		position: absolute;
-		left:0;
-		width: 50%;
-		padding-left:15px;
-		font-size:15px;
-		font-weight: bold;
-		text-align: left;
-	}
-	.table2 thead{
-		display: none;
-	}
-
-	.table2, .table2 tbody, .table2 tr, .table2 td{
-		display: block;
-		width: 100%;
-    margin-left: 0;
-	}
-	.table2 tr{
-		margin-bottom:15px;
-	}
-	.table2 td{
-		text-align: right;
-		padding-left: 50%;
-		text-align: right;
-		position: relative;
-   
-	}
-	.table2 td::before{
-		content: attr(data-label);
-		position: absolute;
-		left:0;
-		width: 50%;
-		padding-left:15px;
-		font-size:15px;
-		font-weight: bold;
-		text-align: left;
-	}
-}
-
 .visualizar{
   background-color: #f58634;
   color: white;
@@ -425,7 +364,66 @@ hr{
 }
 
 
+@media(max-width: 992px){
+	.table thead{
+		display: none;
+	}
 
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+    margin-left: 0;
+	}
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+   
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+	.table2 thead{
+		display: none;
+	}
+
+	.table2, .table2 tbody, .table2 tr, .table2 td{
+		display: block;
+		width: 100%;
+    margin-left: 0;
+	}
+	.table2 tr{
+		margin-bottom:15px;
+	}
+	.table2 td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+   
+	}
+	.table2 td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+}
   
 
 
