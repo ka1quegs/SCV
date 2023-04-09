@@ -257,11 +257,15 @@
 
 
 @media (max-width:1920px){
+
+  #sidebar{
+    height: 128vh;
+  }
+
   .imagem{
     display: none;
   }
  
-
   header{
     margin-left: -3%;
   }
@@ -272,6 +276,7 @@
 
   .modal-content{
     margin: 0 auto;
+    margin-left: 21%;
     width: 70vw;
     }
 
