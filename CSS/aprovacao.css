@@ -537,7 +537,7 @@ hr{
   }
 
   .card{
-    width: 35vw;
+    width: 40vw;
     margin-left: 30%;
   }
 
@@ -557,13 +557,14 @@ hr{
 
   .table, .table2{
     width: 83vw;
+    margin-left: 8%;
   }
   h1{
-    margin-left: 1%;
+    margin-left: 8%;
   }
   hr{
-    margin-left: 1%;
-    width: 82vw;
+    margin-left: 8%;
+    width: 83vw;
   }
 
   .modal-content{
