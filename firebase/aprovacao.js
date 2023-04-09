@@ -28,6 +28,8 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
           let image = document.createElement("img");
           image.setAttribute("class", "img-table")
           image.setAttribute("src","Images/olho.png")
+          td.setAttribute("data-label","Visualizar")
+
         
           td.innerHTML = ""
           td.append(image)
@@ -35,25 +37,31 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
           td = document.createElement("td")
           td.innerHTML = doc.get("nome")
+          td.setAttribute("data-label","Nome")
           tbody.append(td)
     
           td = document.createElement("td")
           td.innerHTML = doc.get("empresa")
+          td.setAttribute("data-label","Empresa")
           tbody.append(td)
     
           td = document.createElement("td")
           td.innerHTML = doc.get("responsavelVisita")
+          td.setAttribute("data-label","Responsável")
           tbody.append(td)
     
           td = document.createElement("td")
           td.innerHTML = doc.get("periodoDe")
+          td.setAttribute("data-label","Período De:")
           tbody.append(td)
-    
+
           td = document.createElement("td")
           td.innerHTML = doc.get("periodoAte")
+          td.setAttribute("data-label","Período Até")
           tbody.append(td)
     
           //Botão aprovar
+          td = document.createElement("td")
           let button = document.createElement("button")
           button.setAttribute("class", "btn")
           button.setAttribute("id", "aprovar")
