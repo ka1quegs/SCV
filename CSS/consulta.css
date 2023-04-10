@@ -275,10 +275,8 @@
   }
 
   .modal-content{
-    margin: 0 auto;
-    margin-left: 21%;
-    width: 70vw;
-    }
+    margin: 2% auto;
+  }
 
     .table2, .table th{
       font-size: 14px;
