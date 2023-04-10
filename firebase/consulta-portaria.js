@@ -1,5 +1,5 @@
 import { db } from "./modules.js"
-import {collection,getDocs, query, where, updateDoc, doc,getDoc}
+import {collection,getDocs, query, where, updateDoc, doc,getDoc, setDoc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 const colecao = query(collection(db,"visitante"),where("verificacao", "==", true))
@@ -161,7 +161,7 @@ updateBtn.addEventListener("click", async () => {
     periodoAte,
     observacao,
   }
-  await updateDoc(docRef, updateData)
+  await setDoc(docRef, updateData)
   console.log("Document updated successfully")
 
 })
