@@ -49,10 +49,18 @@ const arrayDocumentos = await getDocs(colecao)
       td.setAttribute("data-label","Status")
       tbody.append(td)
 
-      td = document.createElement("td")
-      td.innerHTML = doc.get("#")
-      td.setAttribute("data-label","Visita")
-      tbody.append(td)
+      td = document.createElement("td");
+      if (doc.get("entrada") === "") {
+        td.innerHTML = "Em aberto";
+      } else{
+        td.innerHTML = "Em andamento";
+      }
+      if(doc.get("saida") !== ""){
+        td.innerHTML = "Finalizada"
+      }
+
+      td.setAttribute("data-label", "Entrada");
+      tbody.append(td);
 
       td = document.createElement("td")
       td.innerHTML = doc.get("#")
@@ -69,7 +77,7 @@ const arrayDocumentos = await getDocs(colecao)
         td.append(button)
         tbody.appendChild(td)
 
-        //Botão REVER
+        //Botão REVISAR
         button = document.createElement("button")
         button.setAttribute("id", "revisao")
         button.setAttribute("class","revisar")
@@ -121,6 +129,8 @@ for (let i = 0; i < arrayRegistro.length; i++){
       document.getElementById("periodoDe").value = doc.get("periodoDe")
       document.getElementById("periodoAte").value = doc.get("periodoAte")
       document.getElementById("story").value = doc.get("observacao")
+      document.getElementById("entrada").value = doc.get("entrada")
+      document.getElementById("saida").value = doc.get("saida")
 
         console.log(doc.data())
 
@@ -149,8 +159,6 @@ for (let i = 0; i < arrayRegistro.length; i++){
       const entrada = document.getElementById("entrada").value
       const saida = document.getElementById("saida").value
 
-
-      // update document in Firestore
       const docRef = doc(db, "visitante", cpf)
       await updateDoc(docRef, {
         nome: nome,
@@ -172,8 +180,6 @@ for (let i = 0; i < arrayRegistro.length; i++){
         saida: saida
       })
       location.reload()
-  // close modal
-// modal.style.display = "none"
 
   
 
