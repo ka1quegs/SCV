@@ -58,7 +58,6 @@ const arrayDocumentos = await getDocs(colecao)
       if(doc.get("saida") !== ""){
         td.innerHTML = "Finalizada"
       }
-
       td.setAttribute("data-label", "Entrada");
       tbody.append(td);
 
@@ -85,6 +84,8 @@ const arrayDocumentos = await getDocs(colecao)
           await updateDoc(doc.ref, { verificacao: false })
           await updateDoc(doc.ref, { tipo_cadastro: "Pré-Cadastro" })
           await updateDoc(doc.ref, { status: "" })
+          await updateDoc(doc.ref, { entrada: "" })
+          await updateDoc(doc.ref, { saida: "" })
           console.log("Atualizado")
           location.reload()
         })
@@ -92,7 +93,6 @@ const arrayDocumentos = await getDocs(colecao)
 
         td.append(button)
         tbody.appendChild(td)
-
 
         //Botão negar
         table.append(tbody)
@@ -180,8 +180,6 @@ for (let i = 0; i < arrayRegistro.length; i++){
         saida: saida
       })
       location.reload()
-
-  
 
 })
    // hide the modal and reload the page
