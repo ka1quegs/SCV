@@ -85,7 +85,6 @@ if(sidebarOpen) {
   </script>
   
   <div class="container">
-    <img src="Images/logo600x80.png" class="image" alt="" />
     <header style="color: #f58634;">Solicitação de Aprovação de Visitas</header>
 
     <main> 
@@ -174,6 +173,11 @@ if(sidebarOpen) {
               <label for="modelo_carro">Modelo do Carro</label>
               <input type="text" id="modelo_carro" disabled>
             </div>
+            <div class="input-field">
+              <label>Observação</label>
+              <textarea  id="observacao" name="story">
+            </textarea>
+            </div>
             <script>
 
               const mySelect = document.getElementById("mySelect");
@@ -202,12 +206,8 @@ if(sidebarOpen) {
           </div>
         </div>
 
-        <div class="fields">
-          <div class="input-field">
-            <label>Observação</label>
-            <textarea  id="observacao" name="story">
-          </textarea>
-          </div>
+     
+         
         </div>
       </div>
   </div>
