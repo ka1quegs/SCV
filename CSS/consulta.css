@@ -259,7 +259,7 @@
 @media (max-width:1920px){
 
   #sidebar{
-    height: 128vh;
+    height: auto;
   }
 
   .imagem{
@@ -285,7 +285,7 @@
 
 @media (max-width:1601px){
   #sidebar{
-    height: 147vh;
+    height: auto;
     
   }
   .modal-content{
