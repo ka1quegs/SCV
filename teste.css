@@ -1,28 +1,4 @@
-div{
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
+.tabela {
+  max-height: 200px;
+  overflow-y: auto;
 }
-
-.input{
-  padding: 6px;
-}
-
-.labelInput{
-  pointer-events: none;
-
-  position: absolute;
-  margin-top: 5px;
-  margin-left: 5px;
-
-  transition: 0.3s;
-}
-
-div input:focus + label, div input:valid + label{
-  font-size: 10px;
-  margin-top: -6px;
-  background-color: white;
-  padding-left: 3px;
-  padding-right: 3px;
-}
-
