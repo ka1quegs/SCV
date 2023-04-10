@@ -122,57 +122,60 @@ for (let i = 0; i < arrayRegistro.length; i++){
       document.getElementById("periodoAte").value = doc.get("periodoAte")
       document.getElementById("story").value = doc.get("observacao")
 
-      console.log(doc.data())
-    })
+        console.log(doc.data())
+
+      })
 
     modal.style.display = "block"
-// add event listener to the form
-const updateBtn = document.getElementById("updateBtn")
-updateBtn.addEventListener("click", async () => {
-  // prevent default form behavior
+
+    //Quando clicado no botão updateBtn pega todos os valores dos Inputs do modal e atualiza o firestore para aquele usuario
+    const updateBtn = document.getElementById("updateBtn")
+    updateBtn.addEventListener("click", async () => {
+    
+      const nome = document.getElementById("nomeVisitante").value
+      const email = document.getElementById("emailVisitante").value
+      const celular = document.getElementById("celular").value
+      const rg = document.getElementById("rg").value
+      const empresa = document.getElementById("empresaVisitante").value
+      const responsavelVisita = document.getElementById("responsavelVisita").value
+      const setor = document.getElementById("setor").value
+      const acesso_fabrica = document.getElementById("acesso_fabrica").value
+      const estacionamento = document.getElementById("estacionamento").value
+      const placa_carro = document.getElementById("placa_carro").value
+      const modelo_carro = document.getElementById("modelo_carro").value
+      const periodoDe = document.getElementById("periodoDe").value
+      const periodoAte = document.getElementById("periodoAte").value
+      const observacao = document.getElementById("story").value
+      const entrada = document.getElementById("entrada").value
+      const saida = document.getElementById("saida").value
 
 
-  // get values from input fields
-  const cpf = document.getElementById("cpf").value
-  const nome = document.getElementById("nomeVisitante").value
-  const email = document.getElementById("emailVisitante").value
-  const celular = document.getElementById("celular").value
-  const rg = document.getElementById("rg").value
-  const empresa = document.getElementById("empresaVisitante").value
-  const responsavelVisita = document.getElementById("responsavelVisita").value
-  const setor = document.getElementById("setor").value
-  const acesso_fabrica = document.getElementById("acesso_fabrica").value
-  const estacionamento = document.getElementById("estacionamento").value
-  const placa_carro = document.getElementById("placa_carro").value
-  const modelo_carro = document.getElementById("modelo_carro").value
-  const periodoDe = document.getElementById("periodoDe").value
-  const periodoAte = document.getElementById("periodoAte").value
-  const observacao = document.getElementById("story").value
-
-  // update document in Firestore
-  const docRef = doc(db, "visitante", cpf)
-  await updateDoc(docRef, {
-    nome: nome,
-    emailVisitante: email,
-    celular: celular,
-    rg: rg,
-    empresa: empresa,
-    responsavelVisita: responsavelVisita,
-    setor: setor,
-    acesso_fabrica: acesso_fabrica,
-    estacionamento: estacionamento,
-    placa_carro: placa_carro,
-    modelo_carro: modelo_carro,
-    periodoDe: periodoDe,
-    periodoAte: periodoAte,
-    observacao: observacao,
-    cpf: cpf
-  })
-  location.reload()
+      // update document in Firestore
+      const docRef = doc(db, "visitante", cpf)
+      await updateDoc(docRef, {
+        nome: nome,
+        emailVisitante: email,
+        celular: celular,
+        rg: rg,
+        empresa: empresa,
+        responsavelVisita: responsavelVisita,
+        setor: setor,
+        acesso_fabrica: acesso_fabrica,
+        estacionamento: estacionamento,
+        placa_carro: placa_carro,
+        modelo_carro: modelo_carro,
+        periodoDe: periodoDe,
+        periodoAte: periodoAte,
+        observacao: observacao,
+        cpf: cpf,
+        entrada: entrada,
+        saida: saida
+      })
+      location.reload()
   // close modal
 // modal.style.display = "none"
 
-  // reload page to show updated data
+  
 
 })
    // hide the modal and reload the page
