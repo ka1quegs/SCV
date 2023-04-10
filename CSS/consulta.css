@@ -283,6 +283,16 @@
     }
 }
 
+@media (max-width:1601px){
+  #sidebar{
+    height: 147vh;
+  }
+  .modal-content{
+    margin: 2% 17% auto;
+    width: 80%;
+  }
+}
+
 
 /* Medium <= 992px */
 @media screen and (max-width: 1200px) {

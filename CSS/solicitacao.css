@@ -332,12 +332,12 @@ img{
 @media(max-width:1601px){
 
   #sidebar{
-    height: 156vh;
+    height: 170vh;
   }
   .container{
     position: absolute;
-    max-width: 1190px;
-    max-height: 123vh;
+    max-width: 1030px;
+    max-height: 170vh;
     width: 100%;
     border-radius: 6px;
     padding: 30px;
@@ -345,7 +345,6 @@ img{
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     
   }
-
   main .fields .input-field{
     display: flex;
     width: calc(100% / 2 - 15px);
