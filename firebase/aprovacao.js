@@ -62,6 +62,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
     
           //Botão aprovar
           td = document.createElement("td")
+          td.setAttribute("data-label","Ações")
           let button = document.createElement("button")
           button.setAttribute("class", "btn")
           button.setAttribute("id", "aprovar")
@@ -72,7 +73,8 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
             location.reload()
           })
           button.innerHTML = "Aprovar"
-          tbody.appendChild(button)
+          td.appendChild(button)
+          
     
           //Botão negar
           button = document.createElement("button")
@@ -85,8 +87,8 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
             location.reload()
           })
           button.innerHTML = "Rejeitar"
-    
-          tbody.appendChild(button)
+          td.appendChild(button)
+          tbody.appendChild(td)
           table.append(tbody)
           registro.append(table,valueCpf)
           sectionRegistro.append(registro)
