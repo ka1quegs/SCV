@@ -1,5 +1,5 @@
 import { db } from "./modules.js"
-import { collection, addDoc}
+import { collection, addDoc,setDoc, doc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 
@@ -27,7 +27,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
         //Adiciona os dados para o Firestore
 
-        addDoc(collection(db, "visitante"), {   
+        setDoc(doc(db, "visitante",cpf), {   
           nome: `${nome}`,  
           rg: `${rg}`,
           cpf: `${cpf}`,

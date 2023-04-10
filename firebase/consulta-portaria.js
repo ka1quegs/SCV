@@ -121,13 +121,18 @@ for (let i = 0; i < arrayRegistro.length; i++){
       document.getElementById("periodoDe").value = doc.get("periodoDe")
       document.getElementById("periodoAte").value = doc.get("periodoAte")
       document.getElementById("story").value = doc.get("observacao")
+
+      console.log(doc.data())
     })
 
     modal.style.display = "block"
-
-    // add event listener to the update button
+// add event listener to the form
 const updateBtn = document.getElementById("updateBtn")
 updateBtn.addEventListener("click", async () => {
+  // prevent default form behavior
+
+
+  // get values from input fields
   const cpf = document.getElementById("cpf").value
   const nome = document.getElementById("nomeVisitante").value
   const email = document.getElementById("emailVisitante").value
@@ -144,25 +149,30 @@ updateBtn.addEventListener("click", async () => {
   const periodoAte = document.getElementById("periodoAte").value
   const observacao = document.getElementById("story").value
 
+  // update document in Firestore
   const docRef = doc(db, "visitante", cpf)
-  const updateData = {
-    nome,
-    email,
-    celular,
-    rg,
-    empresa,
-    responsavelVisita,
-    setor,
-    acesso_fabrica,
-    estacionamento,
-    placa_carro,
-    modelo_carro,
-    periodoDe,
-    periodoAte,
-    observacao,
-  }
-  await setDoc(docRef, updateData)
-  console.log("Document updated successfully")
+  await updateDoc(docRef, {
+    nome: nome,
+    emailVisitante: email,
+    celular: celular,
+    rg: rg,
+    empresa: empresa,
+    responsavelVisita: responsavelVisita,
+    setor: setor,
+    acesso_fabrica: acesso_fabrica,
+    estacionamento: estacionamento,
+    placa_carro: placa_carro,
+    modelo_carro: modelo_carro,
+    periodoDe: periodoDe,
+    periodoAte: periodoAte,
+    observacao: observacao,
+    cpf: cpf
+  })
+  location.reload()
+  // close modal
+// modal.style.display = "none"
+
+  // reload page to show updated data
 
 })
    // hide the modal and reload the page
