@@ -286,6 +286,7 @@
 @media (max-width:1601px){
   #sidebar{
     height: 147vh;
+    
   }
   .modal-content{
     margin: 2% 17% auto;
@@ -389,10 +390,10 @@ hr{
   width: 95%;
   margin: 5% auto;
 }
+
+@media(max-width:992px){
 }
 
-
-@media(max-width: 992px){
 	.table thead{
 		display: none;
 	}
@@ -466,14 +467,34 @@ hr{
 .modal-content{
   width: 93%;
 }
+
+#sidebar{
+  width: 20%;
+}
+}
+
+@media(max-width:992px){
+  #sidebar{
+    width: 20%;
+  }
 }
   
+@media(max-width:860px){
+  #sidebar{
+    width: 22%;
+  }
+}
+
 
 
 /* Extra Small <= 576px */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 790px) {
   .header-left {
     display: none;
+  }
+
+  #sidebar{
+    width: 31%;
   }
 }
 

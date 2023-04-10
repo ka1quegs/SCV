@@ -64,7 +64,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
           td = document.createElement("td")
           td.setAttribute("data-label","Ações")
           let button = document.createElement("button")
-          button.setAttribute("class", "btn")
+          button.setAttribute("class", "aprovar")
           button.setAttribute("id", "aprovar")
           button.addEventListener("click", async () => {
             await updateDoc(doc.ref, { verificacao: true } )
@@ -78,7 +78,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
     
           //Botão negar
           button = document.createElement("button")
-          button.setAttribute("class", "btn2")
+          button.setAttribute("class", "rejeitar")
           button.setAttribute("id", "rejeitar")
           button.addEventListener("click", async () => {
             await updateDoc(doc.ref, { verificacao: true })
