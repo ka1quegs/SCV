@@ -58,7 +58,7 @@ const arrayDocumentos = await getDocs(colecao)
       if(doc.get("saida") !== ""){
         td.innerHTML = "Finalizada"
       }
-      td.setAttribute("data-label", "Entrada");
+      td.setAttribute("data-label", "Visita");
       tbody.append(td);
 
       td = document.createElement("td")

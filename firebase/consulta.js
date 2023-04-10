@@ -49,10 +49,17 @@ const arrayDocumentos = await getDocs(colecao)
         td.setAttribute("data-label","Status")
         tbody.append(td)
 
-        td = document.createElement("td")
-        td.setAttribute("data-label","Visita")
-        td.innerHTML = doc.get("#")
-      
+        td = document.createElement("td");
+        if (doc.get("entrada") === "") {
+          td.innerHTML = "Em aberto";
+        } else{
+          td.innerHTML = "Em andamento";
+        }
+        if(doc.get("saida") !== ""){
+          td.innerHTML = "Finalizada"
+        }
+        td.setAttribute("data-label", "Visita");
+        
         tbody.append(td)
 
         td = document.createElement("td")
