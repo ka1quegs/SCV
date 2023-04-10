@@ -7,6 +7,10 @@
   font-family: "Poppins" , sans-serif;
 }
 
+body{
+  overflow: hidden;
+}
+
 /**/
   
 .grid-container {
@@ -156,6 +160,7 @@
     width: 80vw;
     padding: 10px 14px;
     transition: var(--tran-05);
+    
 }
 
 .dashboard .top{
@@ -406,6 +411,12 @@ hr{
     transition: 0.3s ease;
   }
 
+  section{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 250px;
+  }
+
   /* ---------- MEDIA QUERIES ---------- */
 
   @media (max-width: 1920px) {
@@ -426,20 +437,10 @@ hr{
   @media (max-width: 1601px) {
     .main-cards{
       margin: 0 auto;
-      margin-left: -4%;
     }
 
     .table2{
-      width: 86vw;
-      margin-left: -10% ;
-    }
-
-    h1{
-      margin-left: -8%;
-    }
-
-    hr{
-      margin-left: -8%;
+      width: 80vw;
     }
 
     .aprovar, .rejeitar{
@@ -451,6 +452,8 @@ hr{
       width: 80%;
       margin: 2% 17% auto;
     }
+
+
 
   
    
@@ -610,7 +613,7 @@ hr{
   }
 
   .main-cards{
-    margin-left: -10%;
+    margin-left: -17%;
     padding: 40px;
     
   }
@@ -622,6 +625,14 @@ hr{
 
   .modal{
     z-index: 999;
+  }
+
+  .dashboard{
+    width: 95%;
+  }
+
+  .table2, h1, hr{
+    margin-left: -1%;
   }
 }
 
