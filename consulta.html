@@ -115,10 +115,7 @@
                     </tr>
                 </tbody>
 -->
-
                 </section>
-
-       
 
         <div class="modal" id="modal">
           <div class="modal-content">
@@ -267,8 +264,8 @@
         </div>
         
       </main>
-        <script>
 
+        <script>
           const estacionamento = document.getElementById("estacionamento");
           const placa_carro = document.getElementById("placa_carro");
           const modelo_carro= document.getElementById("modelo_carro");
@@ -287,8 +284,37 @@
               modelo_carro.disabled = true;
             }
           });
-
         </script>
+
+        <script>
+          const INPUT_BUSCA = document.getElementById('input-busca');
+      const TABELA_BEBIDAS = document.getElementById('tabela-bebidas');
+
+INPUT_BUSCA.addEventListener('keyup', () => {
+    let expressao = INPUT_BUSCA.value.toLowerCase();
+
+    if (expressao.length === 1) {
+        return;
+    }
+
+    let linhas = TABELA_BEBIDAS.getElementsByTagName('tr');
+
+    for (let posicao in linhas) {
+        if (true === isNaN(posicao)) {
+            continue;
+        }
+
+        let conteudoDaLinha = linhas[posicao].innerHTML.toLowerCase();
+
+        if (true === conteudoDaLinha.includes(expressao)) {
+            linhas[posicao].style.display = '';
+        } else {
+            linhas[posicao].style.display = 'none';
+        }
+    }
+});
+        </script>
+
         <script src="firebase/consulta.js" type="module"></script>
     </body>
 </html>
