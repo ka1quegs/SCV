@@ -154,7 +154,7 @@
 .dashboard{
     position: relative;
     background-color: var(--panel-color);
-    min-height: 100vh;
+    min-height: 90vh;
     width: 100%;
     padding: 10px 14px;
     transition: var(--tran-05);
