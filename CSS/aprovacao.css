@@ -146,10 +146,11 @@
 .dashboard{
     position: relative;
     background-color: var(--panel-color);
-    min-height: 90vh;
+    min-height: 100vh;
     width: 100%;
     padding: 10px 14px;
     transition: var(--tran-05);
+    
     
 }
 
@@ -404,7 +405,7 @@ hr{
   }
 
   section{
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     height: 250px;
   }
@@ -436,7 +437,12 @@ hr{
   @media (max-width: 1601px) {
     .main-cards{
       margin: 0 auto;
+      margin-bottom: 10%;
     }
+
+   .dashboard{
+    width: 80vw;
+   }
 
     .table2{
       width: 80vw;
@@ -452,9 +458,9 @@ hr{
       margin: 2% 17% auto;
     }
 
-
-
-  
+    section{
+      height: 300px;
+    }
    
   }
 
@@ -528,6 +534,7 @@ hr{
   .card{
     width: 41vw;
     margin: 4% 15% auto;
+    
   }
 
   .main-cards {
@@ -542,12 +549,13 @@ hr{
 
   .table2 td, .table2 {
     border: 1px solid #ddd;
-  
+
   }
 
   .table, .table2{
     width: 75vw;
     margin-left: 8%;
+    
   }
   h1{
     margin-left: 8%;
