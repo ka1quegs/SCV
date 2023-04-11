@@ -577,6 +577,10 @@ hr{
    height: 400px;
  }
 
+ .dashboard{
+  height: 10px;
+ }
+
 }
 
 @media (max-width: 860px) {
@@ -591,9 +595,15 @@ hr{
     z-index: 999;
   }
 
+  .main-cards{
+    margin-top: 10%;
+    margin-bottom: 20%;
+  }
+
   .card{
     width: 40vw;
     margin-left: 10%;
+    
   }
   .dashboard{
     width: 100%;
@@ -603,22 +613,19 @@ hr{
     width: 90%;
   }
 
-}
-
-@media (max-width: 700px) {
-  .modal-content{
-    margin: 5% 10% auto;
-    width: 80%;
-  }
-  .modal{
-    z-index: 999;
-  }
-  .dashboard{
-    width: 100%;
+  section{
+    height: 600px;
   }
 
- 
+  .menu-icon{
+    padding-left: 40px;
+    padding-top: 20px;
+  }
+
+
 }
+
+
 
 
   /* Extra Small <= 576px */
