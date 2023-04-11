@@ -185,16 +185,20 @@ input[type='file']{
     border: 5px solid #111;
 }
 
+textarea{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-align: left;
+    resize: horizontal; 
+}
+
 
 
 /**/
 
 @media (max-width:1601px){
-    textarea{
-        resize:none;
-        width: 55vw;
-        height: 50px;
-    }
 
     #imgPhoto{
         margin-top: 1%;
@@ -223,19 +227,8 @@ input[type='file']{
         flex-direction: column;
         margin: 4px 0;
     }
-
-    textarea {
-
-        resize: none;
-        width: 100%;
-        height: 50px;
-        text-align: left;
-        padding: 0;
-      }
-
       #imgPhoto{
         display: none;
       }
-      
 }
 
