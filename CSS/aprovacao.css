@@ -695,7 +695,8 @@ hr{
 
 @media (max-width: 450px) {
   .card{
-    width: 90%;
+    width: 35vw;
+    padding: 10px;
     margin-left: -10%;
     }
 
