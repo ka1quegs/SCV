@@ -155,7 +155,7 @@
     position: relative;
     background-color: var(--panel-color);
     min-height: 100vh;
-    width: 80vw;
+    width: 100%;
     padding: 10px 14px;
     transition: var(--tran-05);
     
@@ -430,7 +430,14 @@ hr{
       margin: 2% auto;
     }
 
-   
+   .dashboard{
+     width: 84vw;
+     overflow: hidden;
+   }
+
+   section{
+     overflow-y: auto;
+   }
   
   }
 
@@ -547,7 +554,7 @@ hr{
   }
 
   .table, .table2{
-    width: 83vw;
+    width: 75vw;
     margin-left: 8%;
   }
   h1{
@@ -566,7 +573,9 @@ hr{
     z-index: 999;
   }
 
-  
+ section{
+   height: 400px;
+ }
 
 }
 
@@ -584,10 +593,14 @@ hr{
 
   .card{
     width: 40vw;
-    margin-left: 20%;
+    margin-left: 10%;
   }
   .dashboard{
     width: 100%;
+  }
+
+  .table2{
+    width: 90%;
   }
 
 }
@@ -603,6 +616,8 @@ hr{
   .dashboard{
     width: 100%;
   }
+
+ 
 }
 
 
@@ -636,8 +651,7 @@ hr{
   }
 
   .main-cards{
-    margin-left: -20%;
-    padding: 40px;
+    padding: 50px;
     
   }
 
@@ -663,8 +677,8 @@ hr{
 
 @media (max-width: 450px) {
   .card{
-    width: 75%;
-    
+    width: 90%;
+    margin-left: -10%;
     }
 
     .card-inner > p {
