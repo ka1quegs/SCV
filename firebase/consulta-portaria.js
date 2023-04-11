@@ -21,9 +21,10 @@ const arrayDocumentos = await getDocs(colecao)
     valueCpf.value = doc.get("cpf")
     valueCpf.setAttribute("type", "hidden")
 
-    let valueVisita = ""
+    
     //tbody
     try{
+      let valueVisita = ""
       let td = document.createElement("td");
       td = document.createElement("td")
       td.innerHTML = doc.get("periodoDe")
@@ -63,6 +64,7 @@ const arrayDocumentos = await getDocs(colecao)
         td.innerHTML = valueVisita
       }
       td.setAttribute("data-label", "Visita");
+      td.setAttribute("id", "andamentoVisita");
       tbody.append(td);
 
       td = document.createElement("td")
