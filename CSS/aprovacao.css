@@ -631,6 +631,7 @@ hr{
 
   .table2, h1, hr{
     margin-left: 4%;
+    
   }
  
 }
@@ -638,6 +639,7 @@ hr{
 @media (max-width: 450px) {
   .card{
     width: 87%;
+    
     }
 
     .card-inner > p {
