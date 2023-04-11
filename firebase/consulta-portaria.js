@@ -21,6 +21,7 @@ const arrayDocumentos = await getDocs(colecao)
     valueCpf.value = doc.get("cpf")
     valueCpf.setAttribute("type", "hidden")
 
+    let valueVisita = ""
     //tbody
     try{
       let td = document.createElement("td");
@@ -51,12 +52,15 @@ const arrayDocumentos = await getDocs(colecao)
 
       td = document.createElement("td");
       if (doc.get("entrada") === "") {
-        td.innerHTML = "Em aberto";
+        valueVisita = "Em aberto"
+        td.innerHTML = valueVisita;
       } else{
-        td.innerHTML = "Em andamento";
+        valueVisita = "Em andamento"
+        td.innerHTML = valueVisita;
       }
       if(doc.get("saida") !== ""){
-        td.innerHTML = "Finalizada"
+        valueVisita = "Finalizada"
+        td.innerHTML = valueVisita
       }
       td.setAttribute("data-label", "Visita");
       tbody.append(td);
@@ -131,9 +135,9 @@ for (let i = 0; i < arrayRegistro.length; i++){
       document.getElementById("story").value = doc.get("observacao")
       document.getElementById("entrada").value = doc.get("entrada")
       document.getElementById("saida").value = doc.get("saida")
-
-        console.log(doc.data())
-
+      document.getElementById("status").value = doc.get("status")
+      document.getElementById("aprov_rej").value = doc.get("#")
+      document.getElementById("visita").value = doc.get("#")
       })
 
     modal.style.display = "block"
@@ -175,7 +179,6 @@ for (let i = 0; i < arrayRegistro.length; i++){
         periodoDe: periodoDe,
         periodoAte: periodoAte,
         observacao: observacao,
-        cpf: cpf,
         entrada: entrada,
         saida: saida
       })
