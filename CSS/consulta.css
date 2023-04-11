@@ -298,6 +298,7 @@ section{
     margin: 2% 17% auto;
     width: 80%;
   }
+  
 }
 
 
@@ -504,7 +505,7 @@ hr{
   }
 
   section{
-    height: 920px;
+    height: 200%;
   }
 }
 

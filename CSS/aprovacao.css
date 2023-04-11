@@ -621,6 +621,8 @@ hr{
 
   .table2{
     width: 90%;
+    border:none;
+    margin: 0 auto;
   }
 
   section{
