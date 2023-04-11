@@ -613,8 +613,9 @@ hr{
   .main-cards{
     margin-left: -13%;
     padding: 40px;
-    
   }
+
+  
 
   .modal-content{
     margin: 5% 10% auto;
@@ -630,14 +631,13 @@ hr{
   }
 
   .table2, h1, hr{
-    margin-left: -1%;
+    margin-left: 3%;
   }
 }
 
 @media (max-width: 450px) {
   .card{
-    width: 100%;
-    margin-left: 10%;
+    width: 90%;
   }
 
   .main-cards {
