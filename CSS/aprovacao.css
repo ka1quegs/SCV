@@ -613,9 +613,8 @@ hr{
   .main-cards{
     margin-left: -13%;
     padding: 40px;
+    
   }
-
-  
 
   .modal-content{
     margin: 5% 10% auto;
@@ -631,14 +630,19 @@ hr{
   }
 
   .table2, h1, hr{
-    margin-left: 3%;
+    margin-left: 4%;
   }
+ 
 }
 
 @media (max-width: 450px) {
   .card{
-    width: 90%;
-  }
+    width: 87%;
+    }
+
+    .card-inner > p {
+      font-size: 15px;
+    }
 
   .main-cards {
     grid-template-columns: repeat(2, 1fr);
