@@ -169,11 +169,10 @@
    
 }
 
-
 table{
 	width: 80vw;
 	border-collapse: collapse;
-  
+
 }
 
 .table td,.table th{
@@ -199,6 +198,7 @@ table{
 	width: 100%;
 	border-collapse: collapse;
   table-layout: fixed;
+  
   
 }
 
@@ -265,6 +265,8 @@ hr{
 .titulo{
   font-weight: bold;
   color: #f58634;
+  margin-top: -60px;
+
 }
 
 hr{
@@ -656,10 +658,6 @@ hr{
     margin-left: 4%;
     
   }
-
-
-
-  
  
 }
 
