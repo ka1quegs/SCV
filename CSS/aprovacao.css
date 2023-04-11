@@ -596,7 +596,7 @@ hr{
   }
 
   .main-cards{
-    margin-top: 10%;
+    margin-top: 18%;
     margin-bottom: 20%;
   }
 
@@ -607,7 +607,7 @@ hr{
   }
   .dashboard{
     width: 100%;
-  }
+    position: fixed;  }
 
   .table2{
     width: 90%;
@@ -673,6 +673,7 @@ hr{
 
   .dashboard{
     width: 100%;
+    
   }
 
   .table2, h1, hr{
@@ -714,15 +715,13 @@ hr{
     width: 93%;
     margin-top: -20px;
     border: hidden;
-
   }
-
- 
 
   section{
     height: 400px;
   }
 
+  
 
 }
 @media (max-width: 400px) {
