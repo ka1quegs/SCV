@@ -347,7 +347,7 @@ img{
   }
   .container{
     position: absolute;
-    max-width: 1100px;
+    max-width: 83%;
     max-height: 200vh;
     border-radius: 6px;
     padding: 10px;
