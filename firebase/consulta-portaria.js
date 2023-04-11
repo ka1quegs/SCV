@@ -72,7 +72,7 @@ const arrayDocumentos = await getDocs(colecao)
         button.setAttribute("class", "visualizar")
         td.setAttribute("data-label","Ações")
         button.setAttribute("id", "visualizar")
-        button.innerHTML = "Visualizar"
+        button.innerHTML = "Visualizar/Editar"
         td.append(button)
         tbody.appendChild(td)
 
