@@ -695,6 +695,21 @@ hr{
     z-index: 999;
   }
 
+  .table2{
+    width: 93%;
+    margin-top: -20px;
+    border: hidden;
+
+  }
+
+  .titulo,hr{
+    display: none;
+  }
+
+  section{
+    height: 400px;
+  }
+
 
 }
 @media (max-width: 400px) {
