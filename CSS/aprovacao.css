@@ -717,9 +717,7 @@ hr{
 
   }
 
-  .titulo,hr{
-    display: none;
-  }
+ 
 
   section{
     height: 400px;
