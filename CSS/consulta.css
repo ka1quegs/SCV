@@ -510,7 +510,6 @@ hr{
 @media (max-width:550px){
   #sidebar{
     width: 50%;
-    height: 100%;
   }
   .menu-icon {
     width: 35px;
@@ -552,8 +551,6 @@ hr{
 header{
   margin-left: 14px;
   margin-top: 10px;
-  
-  
 }
 
 h1{
@@ -568,7 +565,7 @@ img{
 }
 
 section{
-  height: 900px;
+  height: 27%;
 }
 
 }
