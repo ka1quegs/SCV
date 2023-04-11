@@ -11,6 +11,7 @@ const arrayDocumentos = await getDocs(colecao)
     
     let registro = document.createElement('div')
     registro.setAttribute("class", "registro")
+    registro.setAttribute("data-nome", doc.get("nome").toUpperCase());
 
     let table = document.createElement("table")
     table.setAttribute("class", "table2")
@@ -195,3 +196,15 @@ for (let i = 0; i < arrayRegistro.length; i++){
       });  
   })
 }
+
+const input = document.getElementById('input-busca');
+  input.addEventListener('keyup', () => {
+    const filter = input.value.toUpperCase();
+    arrayDocumentos.forEach(doc => {
+      const nome = doc.get('nome').toUpperCase();
+      const registro = document.querySelector(`.registro[data-nome="${nome}"]`);
+      if (registro) {
+        registro.style.display = nome.includes(filter) ? '' : 'none';
+      }
+    });
+  });
