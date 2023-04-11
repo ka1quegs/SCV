@@ -721,6 +721,10 @@ hr{
     height: 400px;
   }
 
+  .titulo{
+    margin-top: -25%;
+  }
+
   
 
 }
@@ -763,10 +767,6 @@ hr{
   .titulo,hr{
     display: none;
   }
-
-  
-
-  
 }
 
 
