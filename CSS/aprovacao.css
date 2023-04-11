@@ -584,6 +584,9 @@ hr{
     width: 40vw;
     margin-left: 20%;
   }
+  .dashboard{
+    width: 100%;
+  }
 
 }
 
@@ -595,6 +598,9 @@ hr{
   .modal{
     z-index: 999;
   }
+  .dashboard{
+    width: 100%;
+  }
 }
 
 
@@ -603,6 +609,23 @@ hr{
   .header-left {
     display: none;
   }
+
+  .dashboard{
+    width: 100%;
+  }
+
+  .card{
+    width: 100%;
+    margin-left: -5%;
+    }
+
+    .card-inner > p {
+      font-size: 17px;
+    }
+
+    section{
+      height: 400px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -633,12 +656,16 @@ hr{
     margin-left: 4%;
     
   }
+
+
+
+  
  
 }
 
 @media (max-width: 450px) {
   .card{
-    width: 100%;
+    width: 75%;
     
     }
 
