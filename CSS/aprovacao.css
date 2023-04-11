@@ -431,6 +431,11 @@ hr{
    section{
      overflow-y: auto;
    }
+
+   .main-cards{
+    margin-bottom: 10%;
+
+   }
   
   }
 
@@ -441,11 +446,12 @@ hr{
     }
 
    .dashboard{
-    width: 80vw;
+    width: 79vw;
    }
 
     .table2{
-      width: 80vw;
+      width: 79vw;
+      margin-left: 0.1px;
     }
 
     .aprovar, .rejeitar{
@@ -460,6 +466,10 @@ hr{
 
     section{
       height: 300px;
+    }
+
+    .aprovar,.rejeitar{
+      width: 55px;
     }
    
   }
@@ -533,7 +543,7 @@ hr{
 
   .card{
     width: 41vw;
-    margin: 4% 15% auto;
+    margin: 0 auto;
     
   }
 
@@ -578,7 +588,7 @@ hr{
  }
 
  .dashboard{
-  height: 10px;
+  width: 100%;
  }
 
 }
