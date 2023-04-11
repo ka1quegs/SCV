@@ -478,6 +478,14 @@ hr{
 #sidebar{
   width: 20%;
 }
+
+section{
+  height: 100%
+}
+
+.table2{
+  margin: 0 auto
+}
 }
 
 @media(max-width:992px){
@@ -506,6 +514,10 @@ hr{
 
   section{
     height: 200%;
+  }
+
+  .table2{
+    margin: 0 auto
   }
 }
 
