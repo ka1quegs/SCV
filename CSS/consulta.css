@@ -291,6 +291,10 @@ section{
     .table2, .table th{
       font-size: 14px;
     }
+    section{
+      height: 65%;
+    }
+      
 }
 
 @media (max-width:1601px){
