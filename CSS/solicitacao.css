@@ -296,7 +296,7 @@ img{
 
   .container{
     position: absolute;
-    max-width: 1840px;
+    max-width: 1650px;
     max-height: 100%;
     border-radius: 6px;
     padding: 30px;
@@ -383,6 +383,7 @@ img{
 
 
 
+
 }
 
  
@@ -406,7 +407,8 @@ img{
 
   .menu-icon {
     display: inline;
-    
+    padding-top: 30px;
+
   }
 
   .sidebar-title > span {
@@ -465,38 +467,48 @@ img{
   }
 }
 
-@media (max-width: 750px) {
-    .container form{
-        overflow-y: scroll;
-    }
-    .container form::-webkit-scrollbar{
-       display: none;
-    }
-    form .fields .input-field{
-        width: calc(100% / 2 - 15px);
-    }
 
-    #sidebar{
-      width: 30%;
-    }
-
-    .menu-icon{
-      padding-top: 10px;
-    }
-
-    
-}
 
 @media (max-width:799px){
   .container{
     max-width: 100%;
   }
+
+  #sidebar{
+    width: 40%;
+  }
+}
+
+@media (max-width: 750px) {
+  .container form{
+      overflow-y: scroll;
+  }
+  .container form::-webkit-scrollbar{
+     display: none;
+  }
+  form .fields .input-field{
+      width: calc(100% / 2 - 15px);
+  }
+
+  #sidebar{
+    width: 30%;
+  }
+
+  .menu-icon{
+    padding-top: 20px;
+    position: fixed;
+  }
+
+  
 }
 
 /* Extra Small <= 576px */
 @media screen and (max-width: 576px) {
   .header-left {
     display: none;
+  }
+  #sidebar{
+    width: 50%;
   }
 }
 
@@ -521,6 +533,7 @@ img{
   .menu-icon {
     width: 35px;
     height: 32px;
+    padding-bottom: 40px;
     color: black;
     background-color: transparent;
     font-weight: bold;
@@ -595,6 +608,10 @@ img{
 
   img{
     width: 100px;
+  }
+
+  .menu-icon{
+    padding-bottom: 50px;
   }
 
 }

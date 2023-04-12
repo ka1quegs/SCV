@@ -443,6 +443,12 @@ hr{
     .main-cards{
       margin: 0 auto;
       margin-bottom: 10%;
+      margin-top: 7%;
+    }
+
+    .menu-icon{
+      padding-left: 30px;
+      margin-top: 10px;
     }
 
    .dashboard{
@@ -593,7 +599,7 @@ hr{
 
 }
 
-@media (max-width: 860px) {
+@media (max-width: 900px) {
   #sidebar{
     width: 30%;
   }
@@ -607,7 +613,7 @@ hr{
 
   .main-cards{
     margin-top: 18%;
-    margin-bottom: 20%;
+    margin-bottom: 10%;
   }
 
   .card{
@@ -630,11 +636,16 @@ hr{
   }
 
   .menu-icon{
-    padding-left: 40px;
+    padding-left: 15px;
     padding-top: 20px;
   }
+}
 
-
+@media (max-width: 700px) {
+  .main-cards{
+    margin-top: 18%;
+    margin-bottom: 15%;
+  }
 }
 
 
@@ -651,8 +662,14 @@ hr{
   }
 
   .card{
-    width: 100%;
-    margin-left: -5%;
+    width: 35vw;
+    margin: 0 auto;
+    padding: 7px;
+
+    }
+
+    .main-cards{
+      margin-top: 25%;
     }
 
     .card-inner > p {
@@ -662,6 +679,10 @@ hr{
     section{
       height: 400px;
     }
+
+    .menu-icon{
+      padding-left: 10px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -669,10 +690,17 @@ hr{
     width: 50%;
   }
 
-  .main-cards{
-    padding: 50px;
-    
-  }
+  .card{
+    width: 35vw;
+    margin: 0 auto;
+    padding: 7px;
+
+    }
+
+    .main-cards{
+      margin-top: 30%;
+      margin-bottom: 20%;
+    }
 
   .modal-content{
     margin: 5% 10% auto;
@@ -697,9 +725,7 @@ hr{
 
 @media (max-width: 450px) {
   .card{
-    width: 35vw;
-    padding: 10px;
-    margin-left: -10%;
+    margin: 0 auto;
     }
 
     .card-inner > p {
@@ -708,6 +734,8 @@ hr{
 
   .main-cards {
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 30%;
+    margin-bottom: 40%;
   }
 
   .top-cards,
@@ -743,8 +771,7 @@ hr{
 }
 @media (max-width: 400px) {
   .card{
-    width: 90%;
-    margin-left: -30%;
+    margin: 0 auto;
     }
 
     .card-inner > p {
@@ -753,8 +780,8 @@ hr{
 
   .main-cards {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: -80px;
-    
+    margin-top: 35%;
+    margin-bottom: 10%;
   }
 
   .top-cards,
@@ -773,8 +800,6 @@ hr{
 
   .table2{
     width: 93%;
-    margin-top: -20px;
-    border: hidden;
   }
 
   .titulo,hr{
