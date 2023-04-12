@@ -259,7 +259,7 @@ body{
 
 section{
   overflow-y: auto; 
-  height: 450px;
+  height: 100%;
 }
 
 
@@ -304,9 +304,8 @@ section{
   }
 
 section{
-  height: 57%;
+  height: 60%;
 }
-
   
 }
 

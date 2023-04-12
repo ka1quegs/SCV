@@ -94,11 +94,6 @@ body{
   margin-bottom: 20px;
   
 }
-.sidebar-list-item2 {
-  padding: 20px 20px 20px 15px;
-  margin-bottom: 20px;
-  
-}
 
 .sidebar-list-item:hover {
   background-color: #36363660;
@@ -115,17 +110,6 @@ body{
   align-items: center;
   font-weight: bold;
 }
-.sidebar-list-item2 > a {
-  text-decoration: none;
-  color: white;
-  display: flex;
-  height: 80vh;
-  width: 100%;
-  align-items: center;
-  font-weight: bold;
-}
-
-
 
 .sidebar-responsive {
   display: inline !important;
@@ -176,6 +160,7 @@ body{
   background-color: white;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   margin-left: 5%;
+  
   
 }
 .container header{
@@ -347,10 +332,6 @@ img{
     text-align: left;
   }
 
-
-
-
- 
 }
 @media(max-width:1651px){
   #sidebar{
