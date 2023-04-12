@@ -7,8 +7,6 @@
   font-family: "Poppins" , sans-serif;
 }
 
-
-
 /**/
   
 .grid-container {
@@ -442,8 +440,7 @@ hr{
   @media (max-width: 1601px) {
     .main-cards{
       margin: 0 auto;
-      margin-bottom: 10%;
-      margin-top: 7%;
+      margin-bottom: 7%;
     }
 
     .menu-icon{

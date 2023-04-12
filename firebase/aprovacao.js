@@ -82,7 +82,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
           button.setAttribute("id", "rejeitar")
           button.addEventListener("click", async () => {
             await updateDoc(doc.ref, { verificacao: true })
-            await updateDoc(doc.ref, { status: "Reprovado" })
+            await updateDoc(doc.ref, { status: "Rejeitado" })
             await updateDoc(doc.ref, { tipo_cadastro: "Efetivo" })
             location.reload()
           })
@@ -110,7 +110,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
     const thirdCounter = await getCountFromServer(coll3);
       document.getElementById("count-aprovada").innerHTML = thirdCounter.data().count;
   
-    const coll4 = query(collection(db, "visitante"), where("status", "==", "Reprovado"))
+    const coll4 = query(collection(db, "visitante"), where("status", "==", "Rejeitado"))
     const fourthCounter = await getCountFromServer(coll4);
       document.getElementById("count-negada").innerHTML = fourthCounter.data().count;
 

@@ -7,6 +7,10 @@
   font-family: "Poppins" , sans-serif;
 }
 
+body{
+  overflow: hidden;
+}
+
 /**/
   
 .grid-container {
@@ -127,7 +131,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #4f35a1;
+  background-color: #070d63;
   border-radius: 10px;
 }
 
@@ -164,7 +168,7 @@
 }
 
 .table th{
-	background-color: black;
+	background-color: #070d63;
 	color:#ffffff;
   width: 10vw;
 }
@@ -298,6 +302,11 @@ section{
     margin: 2% 17% auto;
     width: 80%;
   }
+
+section{
+  height: 57%;
+}
+
   
 }
 
