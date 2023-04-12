@@ -454,7 +454,7 @@ hr{
 
     .table2{
       width: 79vw;
-      margin-left: 0.1px;
+      margin-left: -20px;
     }
 
     .aprovar, .rejeitar{
