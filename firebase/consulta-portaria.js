@@ -1,6 +1,9 @@
-import { db } from "./modules.js"
+import { db, storage } from "./modules.js"
 import {collection,getDocs, query, where, updateDoc, doc,getDoc, setDoc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+
+
+
 
 const colecao = query(collection(db,"visitante"),where("verificacao", "==", true))
 
@@ -208,3 +211,40 @@ const input = document.getElementById('input-busca');
       }
     });
   });
+
+  // foto 
+
+  const video = document.querySelector('video');
+navigator.mediaDevices.getUserMedia({ video: true })
+  .then(stream => {
+    video.srcObject = stream;
+    video.play();
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+
+  const canvas = document.getElementById("canvas")
+  const context = canvas.getContext('2d');
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+
+
+  context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+  /*
+  const dataUrl = canvas.toDataURL();
+
+  const storageRef = firebase.storage().ref();
+  const imageRef = storageRef.child('images/image.jpg');
+  const metadata = { contentType: 'image/jpeg' };
+  imageRef.putString(dataUrl, 'data_url', metadata)
+    .then(snapshot => {
+      console.log('Image uploaded successfully');
+    })
+    .catch(error => {
+      console.log(error);
+    });
+
+*/
