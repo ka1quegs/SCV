@@ -105,12 +105,12 @@ if(sidebarOpen) {
             </div>
             <div class="input-field">
               <label>RG</label>
-              <input id="rg" type="number" placeholder="Digite o RG">
+              <input id="rg" type="text" placeholder="Digite o RG">
             </div>
 
             <div class="input-field">
               <label>CPF<p style="display: inline-block; color: red; ">*</p></label>
-              <input id="cpf" type="number" placeholder="Digite o CPF" required>
+              <input id="cpf" type="text" placeholder="Digite o CPF" required>
             </div>
 
             <div class="input-field">
@@ -220,10 +220,16 @@ if(sidebarOpen) {
 </main>
 </div>
 <script>
-  $('#periodoDe').mask('99/99/9999 00:00:00');
+  $(document).ready(function() {
+  $('#periodoDe').inputmask('99/99/9999  99:99');
+  $('#periodoAte').inputmask('99/99/9999  99:99');
+  $('#celular').inputmask('(99) 99999-9999');
+  $('#cpf').inputmask('999.999.999-99');
+  $('#rg').inputmask('99.999.999-9');
+  })
 </script>
-<script src="js/jQuery-Mask-Plugin-master/src/jquery.mask.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
 </body>
 
 <script type="module" src="firebase/solicitacao.js"></script>
