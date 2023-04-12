@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="CSS/solicitacao.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <link rel="shortcut icon" href="Images/Logo P.png">
   <title>Solicitação de Visita</title>
 </head>
@@ -123,7 +124,7 @@ if(sidebarOpen) {
             </div>
             <div class="input-field">
               <label>Período da visita De<p style="display: inline-block; color: red; ">*</p></label>
-              <input id="periodoDe" type="datetime-local" placeholder="Digite o Período">
+              <input id="periodoDe" type="text" placeholder="Digite o Período">
             </div>
             <div class="input-field">
               <label>Período da visita Até<p style="display: inline-block; color: red; ">*</p></label>
@@ -214,8 +215,13 @@ if(sidebarOpen) {
   </div>
 </main>
 </div>
+<script>
+  $('#periodoDe').mask('99/99/9999 00:00:00');
+</script>
+<script src="js/jQuery-Mask-Plugin-master/src/jquery.mask.js"></script>
 
 </body>
+
 <script type="module" src="firebase/solicitacao.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </html>
