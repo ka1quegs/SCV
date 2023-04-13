@@ -288,6 +288,7 @@ img{
 
   #sidebar{
     height: 100%;
+    
   }
 
 
@@ -336,6 +337,7 @@ img{
 @media(max-width:1650px){
   #sidebar{
     height: 115vh;
+    
   }
   .container{
     position: absolute;
@@ -376,6 +378,7 @@ img{
 @media(max-width:1450px){
   #sidebar{
     height: 142vh;
+    
   }
   .container{
     position: absolute;
@@ -412,9 +415,9 @@ img{
   }
 }
 
-@media(max-width:1300px){
+@media(max-width:1000px){
   #sidebar{
-    height: 152vh ;
+    height: 152vh;
   }
 }
 
@@ -427,10 +430,6 @@ img{
     grid-template-areas:
       "header"
       "main";
-  }
-  body{
-    height: 100%;
-    width: 100%;
   }
 
   #sidebar {
@@ -552,13 +551,8 @@ img{
     form .fields .input-field{
         width: 100%;
     }
-  
     }
-    
-  #sidebar{
-    width: 40%;
-  }
-
+  
   @media (max-width: 530px) {
     #sidebar{
       width: 45%;
