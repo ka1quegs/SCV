@@ -293,6 +293,7 @@ section{
     }
     section{
       height: 65%;
+      overflow-y: auto;
     }
       
 }
@@ -309,11 +310,17 @@ section{
 
 section{
   height: 60%;
+}  
+}
+
+@media (max-width:1300px){
+  section{
+    height: 40%;
+    overflow-y: auto;
+  }
 }
 
 
-  
-}
 
 
 /* Medium <= 992px */

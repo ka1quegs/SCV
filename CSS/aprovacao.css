@@ -478,6 +478,15 @@ hr{
    
   }
 
+  @media (max-width: 1300px) {
+    .main-cards{
+      margin-top:-50px;
+    }
+    section{
+      overflow-y: auto;
+    }
+  }
+
 /* Medium <= 992px */
 @media screen and (max-width: 1200px) {
   .grid-container {
@@ -684,6 +693,11 @@ hr{
 }
 
 @media (max-width: 500px) {
+
+  body{
+    overflow: hidden;
+  }
+
   #sidebar{
     width: 50%;
   }
@@ -722,6 +736,10 @@ hr{
 }
 
 @media (max-width: 450px) {
+  body{
+    overflow: hidden;
+  }
+
   .card{
     margin: 0 auto;
     }
@@ -768,6 +786,10 @@ hr{
 
 }
 @media (max-width: 400px) {
+  body{
+    overflow: hidden;
+  }
+  
   .card{
     margin: 0 auto;
     }
