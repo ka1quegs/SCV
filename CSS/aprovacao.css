@@ -7,6 +7,10 @@
   font-family: "Poppins" , sans-serif;
 }
 
+body{
+  overflow: hidden;
+}
+
 /**/
   
 .grid-container {
@@ -489,6 +493,7 @@ hr{
 
 /* Medium <= 992px */
 @media screen and (max-width: 1200px) {
+ 
   .grid-container {
     grid-template-columns: 1fr;
     grid-template-rows: 0.2fr 3fr;
@@ -562,7 +567,7 @@ hr{
 
   .main-cards {
     grid-template-columns: repeat(2, 1fr);
-    
+    margin-top: 70px;
   }
 
   .top-cards,
@@ -597,7 +602,7 @@ hr{
   }
 
  section{
-   height: 400px;
+   height: 300px;
  }
 
  .dashboard{
@@ -619,8 +624,8 @@ hr{
   }
 
   .main-cards{
-    margin-top: 18%;
-    margin-bottom: 10%;
+    margin-top: 14%;
+    margin-bottom: 8%;
   }
 
   .card{
@@ -636,10 +641,11 @@ hr{
     width: 90%;
     border:none;
     margin: 0 auto;
+    margin-top: -20px;
   }
 
   section{
-    height: 600px;
+    height: 350px;
   }
 
   .menu-icon{
@@ -651,11 +657,15 @@ hr{
 @media (max-width: 700px) {
   .main-cards{
     margin-top: 18%;
-    margin-bottom: 15%;
+    margin-bottom: 11%;
   }
 }
 
-
+@media (max-width:670px) {
+  section{
+    height: 300px;
+  }
+}  
 
 
   /* Extra Small <= 576px */
@@ -676,7 +686,8 @@ hr{
     }
 
     .main-cards{
-      margin-top: 25%;
+      margin-top: 20%;
+      margin-bottom: 12%;
     }
 
     .card-inner > p {
@@ -684,11 +695,15 @@ hr{
     }
 
     section{
-      height: 400px;
+      height: 380px;
     }
 
     .menu-icon{
       padding-left: 10px;
+    }
+
+    #sidebar{
+      width: 35%
     }
 }
 
@@ -699,7 +714,7 @@ hr{
   }
 
   #sidebar{
-    width: 50%;
+    width: 40%;
   }
 
   .card{
@@ -710,8 +725,8 @@ hr{
     }
 
     .main-cards{
-      margin-top: 30%;
-      margin-bottom: 20%;
+      margin-top: 25%;
+      margin-bottom: 15%;
     }
 
   .modal-content{
@@ -732,6 +747,10 @@ hr{
     margin-left: 4%;
     
   }
+
+  section{
+    height: 350px;
+  }
  
 }
 
@@ -750,8 +769,8 @@ hr{
 
   .main-cards {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 30%;
-    margin-bottom: 40%;
+    margin-top: 27%;
+    margin-bottom:17%;
   }
 
   .top-cards,
@@ -775,16 +794,25 @@ hr{
   }
 
   section{
+    height: 350px;
+  }
+
+  #sidebar{
+    width: 45%;
+  }
+}
+
+@media (max-width: 420px) {
+  .main-cards{
+    margin-top: 35%;
+    margin-bottom: 25%;
+  }
+
+  section{
     height: 400px;
   }
+}  
 
-  .titulo{
-    margin-top: -25%;
-  }
-
-  
-
-}
 @media (max-width: 400px) {
   body{
     overflow: hidden;
@@ -825,7 +853,22 @@ hr{
   .titulo,hr{
     display: none;
   }
+
+  #sidebar{
+    width: 50%;
+  }
 }
+
+@media (max-width: 360px) {
+  #sidebar{
+    width: 60%;
+  }
+}  
+
+
+
+
+
 
 
 
