@@ -133,6 +133,11 @@ for (let i = 0; i < arrayRegistro.length; i++){
           document.getElementById("periodoDe").value = doc.get("periodoDe")
           document.getElementById("periodoAte").value = doc.get("periodoAte")
           document.getElementById("story").value = doc.get("observacao")
+          document.getElementById("entrada").value = doc.get("entrada")
+          document.getElementById("saida").value = doc.get("saida")
+          document.getElementById("status").value = doc.get("status")
+          document.getElementById("aprov_rej").value = doc.get("#")
+          document.getElementById("visita").value = doc.get("#")
       })
 
       modal.style.display = "block"
