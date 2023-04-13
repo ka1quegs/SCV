@@ -288,6 +288,7 @@ img{
 
   #sidebar{
     height: 100%;
+    
   }
 
 
@@ -336,6 +337,7 @@ img{
 @media(max-width:1650px){
   #sidebar{
     height: 115vh;
+    
   }
   .container{
     position: absolute;
@@ -376,6 +378,7 @@ img{
 @media(max-width:1450px){
   #sidebar{
     height: 142vh;
+    
   }
   .container{
     position: absolute;
@@ -412,9 +415,9 @@ img{
   }
 }
 
-@media(max-width:1300px){
+@media(max-width:1000px){
   #sidebar{
-    height: 152vh ;
+    height: 152vh;
   }
 }
 
@@ -427,10 +430,6 @@ img{
     grid-template-areas:
       "header"
       "main";
-  }
-  body{
-    height: 100%;
-    width: 100%;
   }
 
   #sidebar {
@@ -500,7 +499,6 @@ img{
 }
 
 
-
 @media (max-width:799px){
   .container{
     max-width: 100%;
@@ -529,10 +527,14 @@ img{
 
   .menu-icon{
     padding-top: 20px;
-  }
-
-  
+  }  
 }
+
+@media (max-width: 671px) {
+  #sidebar{
+    width:35%;
+  }
+}  
 
 /* Extra Small <= 576px */
 @media screen and (max-width: 576px) {
@@ -540,7 +542,7 @@ img{
     display: none;
   }
   #sidebar{
-    width: 50%;
+    width: 36%;
   }
 }
 
@@ -549,16 +551,14 @@ img{
     form .fields .input-field{
         width: 100%;
     }
-  
     }
   
+  @media (max-width: 530px) {
+    #sidebar{
+      width: 45%;
+    }
+  }    
 
-  @media (max-width: 500px) {
-    
-  #sidebar{
-    width: 50%;
-  }
-  }
 
 @media (max-width: 451px) {
   #sidebar{
@@ -612,7 +612,7 @@ img{
 @media (max-width: 392px) {
   #sidebar{
     height: 190vh;
-    width: 65%;
+    width: 66%;
     background-image: url(../Images/cool-background-3.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -628,7 +628,7 @@ img{
 
 }
 
-@media (max-width: 281px) {
+@media (max-width: 305px) {
   #sidebar{
     height: 190vh;
     width: 75%;
@@ -638,5 +638,7 @@ img{
     width: 75px;
   }
 
-  
-}
+  @media (max-width: 270px) {
+    #sidebar{
+      width: 80%
+    }

@@ -309,8 +309,9 @@ section{
   }
 
 section{
-  height: 60%;
+  height: 600px;
 }  
+
 }
 
 @media (max-width:1300px){
@@ -319,10 +320,6 @@ section{
     height: 400px;
     overflow-y: auto;
   }
-
- 
-
- 
 }
 
 
@@ -506,7 +503,8 @@ hr{
 }
 
 section{
-  height: 100%
+  height: 650px;
+  overflow-x:auto;
 }
 
 .table2{
