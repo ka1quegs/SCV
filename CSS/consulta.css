@@ -314,10 +314,15 @@ section{
 }
 
 @media (max-width:1300px){
+  
   section{
-    height: 40%;
+    height: 400px;
     overflow-y: auto;
   }
+
+ 
+
+ 
 }
 
 
@@ -507,12 +512,6 @@ section{
 .table2{
   margin: 0 auto
 }
-}
-
-@media(max-width:992px){
-  #sidebar{
-    width: 20%;
-  }
 }
   
 @media(max-width:860px){
