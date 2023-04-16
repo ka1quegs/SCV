@@ -11,112 +11,101 @@ body{
   overflow: hidden;
 }
 
-/**/
-  
-.grid-container {
-  display: grid;
-  grid-template-columns: 260px 1fr 1fr 1fr;
-  grid-template-rows: 0.2fr 3fr;
-  grid-template-areas:
-    "sidebar header header header"
-    "sidebar main main main";
-  height: 100vh;
-  
+/*sidebar*/
+
+nav{
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-items: start;
+position: fixed;
+width: 270px;
+height: 100%;
+min-height: 350px;
+color: white;
+background: rgba(0, 0, 0, 0.801);
+border-top-right-radius: 20px;
+border-bottom-right-radius: 10px;
+transition: ease-in 0.3s;
+z-index: 100;
+}
+
+nav.hide{
+width: 0;
+}
+
+nav span{
+width: 100%;
+text-align: center;
+padding: 20px 0;
+font-size: 28px;
+font-weight: 800;
+overflow: hidden;
+}
+
+.sidebar-menu{
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+justify-content: space-around;
+height: 70%;
+width: 100%;
+list-style: none;
+overflow: hidden;
+}
+
+.sidebar-menu li{
+text-align: center;
+width: 100%;
+}
+
+.sidebar-menu li a{
+display: inline-flex;
+align-items: center;
+width: 95%;
+padding: 5px 15px;
+color: white;
+text-decoration: none;
+font-size: 25px;
+transition: ease-in 0.2s;
+border: 1px solid rgba(0, 0, 0, 0);
+border-radius: 5px;
+}
+
+.sidebar-menu li a:hover{
+color: #265df2;
+border: 1px solid white;
+}
+
+.sidebar-menu li a i{
+margin: 0 18px;
+width: 20px;
+}
+
+#toggle-btn{
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+top: 10px;
+right: -39px;
+width: 40px;
+height: 40px;
+font-size: 18px;
+background: rgba(0, 0, 0, 0.801);
+border-radius: 0 7px 7px 0;
+border: none;
+cursor: pointer;
+color: white;
+transition: linear 0.2s;
+}
+
+#toggle-btn:hover{
+background: rgba(0, 0, 0, 0.623);
+color: #265df2;
 }
 
 
-/* ---------- HEADER ---------- */
-
-
-.menu-icon {
-  display: none;
-  background-color: white;
-  color: black;
-  padding: 4px;
-  z-index: 3;
-  cursor: pointer;
-  
-}
-
-
-
-/* ---------- SIDEBAR ---------- */
-
-#sidebar {
-  grid-area: sidebar;
-  height: 100vh;
-  color: #fff;
-  z-index: 4;
-  width: 70%;
-  background-image: url(../Images/cool-background-3.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-
-
-}
-
-
-.sidebar-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 20px 20px 20px;
-  margin-bottom: 30px;
- 
-}
-
-.sidebar-title > span {
-  display: none;
-  
-}
-
-.sidebar-brand {
-  margin-top: 15px;
-  font-size: 20px;
-  font-weight: 700;
-  
-}
-
-.sidebar-list {
-  padding: 0;
-  margin-top: 15px;
-  list-style-type: none; 
-  
-}
-
-.sidebar-list-item {
-  padding: 20px 20px 20px 20px;
-  margin-bottom: 20px;
-  
-}
-
-.sidebar-list-item:hover {
-  background-color: #36363660;
-  cursor: pointer;
-  
-}
-
-.sidebar-list-item > a {
-  text-decoration: none;
-  color: white;
-  display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  font-weight: bold;
-}
-
-.sidebar-responsive {
-  display: inline !important;
-  position: absolute;
-  /*
-    the z-index of the ApexCharts is 11
-    we want the z-index of the sidebar higher so that
-    the charts are not showing over the sidebar 
-    on small screens
-  */
-  z-index: 12 !important;
-}
 
 /* ---------- SCROLLBARS ---------- */
 
@@ -170,7 +159,6 @@ body{
 .table th{
 	background-color: #070d63;
 	color:#ffffff;
-  width: 10vw;
 }
 
 .table tbody tr:nth-child(even){
@@ -272,16 +260,8 @@ section{
     height: 100%;
   }
 
-  .imagem{
-    display: none;
-  }
- 
   header{
-    margin-left: -3%;
-  }
-
-  #input-busca{
-    width: 97%;;
+    width: 100%;
   }
 
   .modal-content{
@@ -299,19 +279,27 @@ section{
 }
 
 @media (max-width:1601px){
-  #sidebar{
-    height: 100%;
-    
-  }
   .modal-content{
-    margin: 2% 17% auto;
+    margin: 0 auto;
     width: 80%;
   }
 
 section{
   height: 600px;
-}  
+} 
 
+h1{
+  text-align: center;
+}
+
+.table2, .table {
+  width: 100%;  
+}
+
+header{
+  margin: 0  auto;
+  width: 100%;
+}
 }
 
 @media (max-width:1300px){
@@ -322,61 +310,11 @@ section{
   }
 }
 
-
-
-
 /* Medium <= 992px */
 @media screen and (max-width: 1200px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 3fr;
-    grid-template-areas:
-      "header"
-      "main";
-  }
-
-  #sidebar {
-    display: none;
-  }
-
-  .menu-icon {
-    display: inline;
-    
-  }
-
-  .sidebar-title > span {
-    display: inline;
-  }
-
-  #sidebar{
-    width: 20%;
-    height: 100%;
-  }
-  .menu-icon {
-    width: 35px;
-    height: 32px;
-    color: black;
-    background-color: white;
-    font-weight: bold;
-    border-radius: 20%;
-    margin-right: 20px; 
-  }
-
-  #input-busca{
-    width: 98%;
-    padding: 7px;
-    font-size: 15px;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 2px solid rgb(173, 173, 173);
-}
-
 .table2, .table{
-  width: 98%;
-  
+  width: 100%;
 }
-
 .table2, .table th{
   font-size: 14px;
 }
@@ -387,24 +325,12 @@ section{
 
 .modal-content{
   width: 80%;
-  margin: 45% auto;
-}
-
-header{
-  margin-left: 1%;
-  margin-top: 10px;
-  
+  margin: 0 auto;
 }
 
 h1{
   width: 100%;
   font-size: 20px;
-}
-
-img{
-  width: 150px;
-  margin: 0 auto;
-  margin-top: -30px;
 }
 
 .modal-content{
@@ -415,15 +341,9 @@ img{
 hr{
   width: 100%
 }
-
-.modal-content{
-  width: 95%;
-  margin: 5% auto;
 }
 
 @media(max-width:992px){
-}
-
 	.table thead{
 		display: none;
 	}
@@ -483,40 +403,24 @@ hr{
 		text-align: left;
 	}
 
-  #input-busca{
-    width: 98%;
-    padding: 7px;
-    font-size: 15px;
-    border-radius: 5px;
-    margin-left: 1px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 2px solid rgb(173, 173, 173);
-}
+
 
 .modal-content{
   width: 93%;
 }
 
-#sidebar{
-  width: 20%;
-}
 
 section{
-  height: 650px;
+  height: 460px;
   overflow-x:auto;
 }
 
 .table2{
   margin: 0 auto
 }
+
 }
-  
-@media(max-width:860px){
-  #sidebar{
-    width: 22%;
-  }
-}
+
 
 
 
@@ -524,10 +428,6 @@ section{
 @media screen and (max-width: 790px) {
   .header-left {
     display: none;
-  }
-
-  #sidebar{
-    width: 31%;
   }
 
   section{
@@ -540,32 +440,6 @@ section{
 }
 
 @media (max-width:550px){
-  #sidebar{
-    width: 50%;
-  }
-  .menu-icon {
-    width: 35px;
-    height: 32px;
-    color: black;
-    background-color: white;
-    font-weight: bold;
-    border-radius: 20%;
-    margin-right: 20px; 
-    padding: 17px;
-  }
-
-  #input-busca{
-    width: 95%;
-    padding: 7px;
-    font-size: 15px;
-    border-radius: 5px;
-    margin-left: 1px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 2px solid rgb(173, 173, 173);
-
-}
-
 .table2{
   padding: 17px;
   width: 95%;
@@ -577,30 +451,17 @@ section{
 
 .modal-content{
   width: 80%;
-  margin: 10%;
-}
-
-header{
-  margin-left: 14px;
-  margin-top: 10px;
-}
-
-h1{
-  width: 100%;
-  font-size: 20px;
-}
-
-img{
-  width: 100px;
   margin: 0 auto;
-  margin-top: -30px;
 }
 
 section{
-  height: 700px;
+  height: 500px;
+}
 }
 
+@media (max-width:370px){
+
+    nav{
+      width: 225px;
+    }
 }
-
-
-

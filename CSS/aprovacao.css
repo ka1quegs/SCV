@@ -8,115 +8,107 @@
 }
 
 body{
-  overflow: hidden;
-}
-
-/**/
-  
-.grid-container {
-  display: grid;
-  grid-template-columns: 260px 1fr 1fr 1fr;
-  grid-template-rows: 0.2fr 3fr;
-  grid-template-areas:
-    "sidebar header header header"
-    "sidebar main main main";
-  height: 100vh;
-  
+  overflow-y: hidden;
 }
 
 
-/* ---------- HEADER ---------- */
+/*sidebar*/
 
 
+nav{
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-items: start;
+position: fixed;
+width: 270px;
+height: 100%;
+min-height: 350px;
+color: white;
+background: rgba(0, 0, 0, 0.801);
+border-top-right-radius: 20px;
+border-bottom-right-radius: 10px;
+transition: ease-in 0.3s;
+z-index: 100;
+}
 
-.menu-icon {
-  display: none;
-  background-color: transparent;
-  color: black;
-  padding: 4px;
-  z-index: 3;
-  width: 0;
-  cursor: pointer;
+nav.hide{
+width: 0;
+}
+
+nav span{
+width: 100%;
+text-align: center;
+padding: 20px 0;
+font-size: 28px;
+font-weight: 800;
+overflow: hidden;
+}
+
+.sidebar-menu{
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+justify-content: space-around;
+height: 70%;
+width: 100%;
+list-style: none;
+overflow: hidden;
+}
+
+.sidebar-menu li{
+text-align: center;
+width: 100%;
+}
+
+.sidebar-menu li a{
+display: inline-flex;
+align-items: center;
+width: 95%;
+padding: 5px 15px;
+color: white;
+text-decoration: none;
+font-size: 25px;
+transition: ease-in 0.2s;
+border: 1px solid rgba(0, 0, 0, 0);
+border-radius: 5px;
+}
+
+.sidebar-menu li a:hover{
+color: #265df2;
+border: 1px solid white;
+}
+
+.sidebar-menu li a i{
+margin: 0 18px;
+width: 20px;
+}
+
+#toggle-btn{
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+top: 10px;
+right: -39px;
+width: 40px;
+height: 40px;
+font-size: 18px;
+background: rgba(0, 0, 0, 0.801);
+border-radius: 0 7px 7px 0;
+border: none;
+cursor: pointer;
+color: white;
+transition: linear 0.2s;
+}
+
+#toggle-btn:hover{
+background: rgba(0, 0, 0, 0.623);
+color: #265df2;
 }
 
 
-/* ---------- SIDEBAR ---------- */
 
-#sidebar {
-  grid-area: sidebar;
-  height: 100%;
-  color: #fff;
-  z-index: 4;
-  width: 70%;
-  background-image: url(../Images/cool-background-3.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-
-
-}
-
-
-.sidebar-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 20px 20px 20px;
-  margin-bottom: 30px;
- 
-}
-
-.sidebar-title > span {
-  display: none;
-  
-}
-
-.sidebar-brand {
-  margin-top: 15px;
-  font-size: 20px;
-  font-weight: 700;
-  
-}
-
-.sidebar-list {
-  padding: 0;
-  margin-top: 15px;
-  list-style-type: none; 
-  
-}
-
-.sidebar-list-item {
-  padding: 20px 20px 20px 20px;
-  margin-bottom: 20px;
-  
-}
-
-.sidebar-list-item:hover {
-  background-color:#36363660;
-  cursor: pointer;
-  
-}
-
-.sidebar-list-item > a {
-  text-decoration: none;
-  color: white;
-  display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  font-weight: bold;
-}
-
-.sidebar-responsive {
-  display: inline !important;
-  position: absolute;
-  /*
-    the z-index of the ApexCharts is 11
-    we want the z-index of the sidebar higher so that
-    the charts are not showing over the sidebar 
-    on small screens
-  */
-  z-index: 12 !important;
-}
 
 /* ---------- SCROLLBARS ---------- */
 
@@ -144,6 +136,12 @@ body{
   margin: 0 auto;
 }
 /*corpo*/
+
+.text{
+  text-align: center;
+  color: #f58634;
+  font-weight: bold;
+}
 
 .dashboard{
     position: relative;
@@ -410,6 +408,7 @@ hr{
     overflow-y: auto;
     overflow-x: hidden;
     height: 250px;
+    width: 100%;
   }
 
   /* ---------- MEDIA QUERIES ---------- */
@@ -426,7 +425,7 @@ hr{
     }
 
    .dashboard{
-     width: 84vw;
+     width: 100%;
      overflow: hidden;
    }
 
@@ -445,21 +444,18 @@ hr{
     .main-cards{
       margin: 0 auto;
       margin-bottom: 7%;
-      margin-top: 7%;
+      margin-top: 1%;
     }
-
-    .menu-icon{
-      padding-left: 30px;
-      margin-top: 10px;
-    }
-
    .dashboard{
-    width: 79vw;
+    width: 100%;
    }
 
     .table2{
-      width: 79vw;
-      margin-left: -20px;
+      width: 100%;
+    }
+
+    hr{
+      width: 100%;
     }
 
     .aprovar, .rejeitar{
@@ -473,7 +469,9 @@ hr{
     }
 
     section{
+      margin: 0 auto;
       height: 300px;
+      
     }
 
     .aprovar,.rejeitar{
@@ -493,28 +491,6 @@ hr{
 
 /* Medium <= 992px */
 @media screen and (max-width: 1200px) {
- 
-  .grid-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 3fr;
-    grid-template-areas:
-      "header"
-      "main";
-  }
-
-  #sidebar {
-    display: none;
-    width: 20%;
-  }
-
-  .menu-icon {
-    display: inline;
-    
-  }
-
-  .sidebar-title > span {
-    display: inline;
-  }
 
   .table thead{
     display: none;
@@ -580,21 +556,12 @@ hr{
 
   }
 
-  .table, .table2{
-    width: 75vw;
-    margin-left: 8%;
-    
-  }
-  h1{
-    margin-left: 8%;
-  }
-  hr{
-    margin-left: 8%;
-    width: 83vw;
+  .table, .table2, h1, hr{
+    margin: 0 auto;    
   }
 
   .modal-content{
-    margin: 2% auto;
+    margin: 0 auto;
     width: 80%;
   }
   .modal{
@@ -602,7 +569,7 @@ hr{
   }
 
  section{
-   height: 300px;
+   height: 200px;
  }
 
  .dashboard{
@@ -612,11 +579,9 @@ hr{
 }
 
 @media (max-width: 900px) {
-  #sidebar{
-    width: 30%;
-  }
+
   .modal-content{
-    margin: 5% 5% auto;
+    margin: 0 auto;
     width: 90%;
   }
   .modal{
@@ -624,7 +589,6 @@ hr{
   }
 
   .main-cards{
-    margin-top: 14%;
     margin-bottom: 8%;
   }
 
@@ -635,7 +599,7 @@ hr{
   }
   .dashboard{
     width: 100%;
-    position: fixed;  }
+  }
 
   .table2{
     width: 90%;
@@ -645,25 +609,33 @@ hr{
   }
 
   section{
-    height: 350px;
+    height: 600px;
   }
 
-  .menu-icon{
-    padding-left: 15px;
-    padding-top: 20px;
+  h1{
+    font-size: 20px;
   }
+
 }
 
 @media (max-width: 700px) {
   .main-cards{
-    margin-top: 18%;
     margin-bottom: 11%;
+  }
+  h1{
+    font-size: 20px;
+  }
+  section{
+    height: 750px;
   }
 }
 
 @media (max-width:670px) {
   section{
-    height: 300px;
+    height: 600px;
+  }
+  h1{
+    font-size: 20px;
   }
 }  
 
@@ -684,9 +656,7 @@ hr{
     padding: 7px;
 
     }
-
     .main-cards{
-      margin-top: 20%;
       margin-bottom: 12%;
     }
 
@@ -695,26 +665,17 @@ hr{
     }
 
     section{
-      height: 380px;
+      height: 250px;
+    }
+    h1{
+      font-size: 20px;
     }
 
-    .menu-icon{
-      padding-left: 10px;
-    }
-
-    #sidebar{
-      width: 35%
-    }
 }
 
 @media (max-width: 500px) {
-
   body{
     overflow: hidden;
-  }
-
-  #sidebar{
-    width: 40%;
   }
 
   .card{
@@ -725,12 +686,11 @@ hr{
     }
 
     .main-cards{
-      margin-top: 25%;
       margin-bottom: 15%;
     }
 
   .modal-content{
-    margin: 5% 10% auto;
+    margin: 0 auto;
     width: 70%;
   }
 
@@ -749,9 +709,12 @@ hr{
   }
 
   section{
-    height: 350px;
+    height: 250px;
   }
- 
+  
+  h1{
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -769,7 +732,6 @@ hr{
 
   .main-cards {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 27%;
     margin-bottom:17%;
   }
 
@@ -794,22 +756,25 @@ hr{
   }
 
   section{
-    height: 350px;
+    height: 250px;
+  }
+  h1{
+    font-size: 20px;
   }
 
-  #sidebar{
-    width: 45%;
-  }
 }
 
 @media (max-width: 420px) {
   .main-cards{
-    margin-top: 35%;
     margin-bottom: 25%;
   }
 
   section{
-    height: 400px;
+    height: 250px;
+  }
+
+  h1{
+    font-size: 20px;
   }
 }  
 
@@ -828,7 +793,6 @@ hr{
 
   .main-cards {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 35%;
     margin-bottom: 10%;
   }
 
@@ -854,14 +818,14 @@ hr{
     display: none;
   }
 
-  #sidebar{
-    width: 50%;
+  h1{
+    font-size: 20px;
   }
 }
 
 @media (max-width: 360px) {
-  #sidebar{
-    width: 60%;
+  nav{
+    width: 230px;
   }
 }  
 

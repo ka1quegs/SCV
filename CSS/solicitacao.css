@@ -11,118 +11,101 @@ body{
   height: 0;
   width: 0;
 }
-/**/
-  
-.grid-container {
-  display: grid;
-  grid-template-columns: 260px 1fr 1fr 1fr;
-  grid-template-rows: 0.2fr 3fr;
-  grid-template-areas:
-    "sidebar header header header"
-    "sidebar main main main";
-  height: 100vh;
-  
+
+/*sidebar*/
+
+
+nav{
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-items: start;
+position: fixed;
+width: 270px;
+height: 100%;
+min-height: 350px;
+color: white;
+background: rgba(0, 0, 0, 0.801);
+border-top-right-radius: 20px;
+border-bottom-right-radius: 10px;
+transition: ease-in 0.3s;
+z-index: 100;
 }
 
-
-/* ---------- HEADER ---------- */
-
-.header {
-  grid-area: header;
-  height: 70px;
-  background-color:transparent;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 30px 0 30px;
-  
+nav.hide{
+width: 0;
 }
 
-.menu-icon {
-  display: none;
-  color: black;
-  margin-top: -6%;
-  z-index: 3;
-  cursor: pointer;
+nav span{
+width: 100%;
+text-align: center;
+padding: 20px 0;
+font-size: 28px;
+font-weight: 800;
+overflow: hidden;
 }
 
-
-/* ---------- SIDEBAR ---------- */
-
-#sidebar {
-  grid-area: sidebar;
-  height: 100%;
-  color: #fff;
-  z-index: 4;
-  width: 70%;
-  background-image: url(../Images/cool-background-3.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+.sidebar-menu{
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+justify-content: space-around;
+height: 70%;
+width: 100%;
+list-style: none;
+overflow: hidden;
 }
 
-
-.sidebar-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 20px 20px 20px;
-  margin-bottom: 30px;
- 
+.sidebar-menu li{
+text-align: center;
+width: 100%;
 }
 
-.sidebar-title > span {
-  display: none;
-  
+.sidebar-menu li a{
+display: inline-flex;
+align-items: center;
+width: 95%;
+padding: 5px 15px;
+color: white;
+text-decoration: none;
+font-size: 25px;
+transition: ease-in 0.2s;
+border: 1px solid rgba(0, 0, 0, 0);
+border-radius: 5px;
 }
 
-.sidebar-brand {
-  margin-top: 15px;
-  font-size: 20px;
-  font-weight: 700;
-  
+.sidebar-menu li a:hover{
+color: #265df2;
+border: 1px solid white;
 }
 
-.sidebar-list {
-  padding: 0;
-  margin-top: 15px;
-  list-style-type: none; 
-  
+.sidebar-menu li a i{
+margin: 0 18px;
+width: 20px;
 }
 
-.sidebar-list-item {
-  padding: 20px 20px 20px 20px;
-  margin-bottom: 20px;
-  
+#toggle-btn{
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+top: 10px;
+right: -39px;
+width: 40px;
+height: 40px;
+font-size: 18px;
+background: rgba(0, 0, 0, 0.801);
+border-radius: 0 7px 7px 0;
+border: none;
+cursor: pointer;
+color: white;
+transition: linear 0.2s;
 }
 
-.sidebar-list-item:hover {
-  background-color: #36363660;
-  cursor: pointer;
-  
+#toggle-btn:hover{
+background: rgba(0, 0, 0, 0.623);
+color: #265df2;
 }
-
-.sidebar-list-item > a {
-  text-decoration: none;
-  color: white;
-  display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  font-weight: bold;
-}
-
-.sidebar-responsive {
-  display: inline !important;
-  position: absolute;
-  /*
-    the z-index of the ApexCharts is 11
-    we want the z-index of the sidebar higher so that
-    the charts are not showing over the sidebar 
-    on small screens
-  */
-  z-index: 12 !important;
-}
-
 
 
 /* ---------- SCROLLBARS ---------- */
@@ -156,6 +139,7 @@ body{
   max-width: 1200px;
   width: 100%;
   border-radius: 6px;
+  top: 20px;
   padding: 30px;
   background-color: white;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
@@ -165,8 +149,8 @@ body{
 }
 .container header{
   position: relative;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 27px;
+  font-weight: bold;
   color: #333;
 }
 .container header::before{
@@ -286,12 +270,6 @@ img{
 
 @media(max-width:1920px){
 
-  #sidebar{
-    height: 100%;
-    
-  }
-
-
   .container{
     position: absolute;
     max-width: 1650px;
@@ -335,10 +313,6 @@ img{
 
 }
 @media(max-width:1650px){
-  #sidebar{
-    height: 115vh;
-    
-  }
   .container{
     position: absolute;
     max-width: 80%;
@@ -371,22 +345,22 @@ img{
     transition: all 0.3s linear;
     cursor: pointer;
     margin-top: -5px;
+  }
+
+  header{
+    text-align: center;
   }
 
 }
 
 @media(max-width:1450px){
-  #sidebar{
-    height: 142vh;
-    
-  }
   .container{
     position: absolute;
-    max-width: 80%;
+    max-width: 90%;
     max-height: 100%;
     border-radius: 6px;
     padding: 10px;
-    margin: 0 215px auto;
+    margin: 0  70px auto;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   }
   main .fields .input-field{
@@ -415,54 +389,11 @@ img{
   }
 }
 
-@media(max-width:1000px){
-  #sidebar{
-    height: 152vh;
-  }
-}
+
 
  
 /* Medium <= 992px */
 @media screen and (max-width: 1200px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 3fr;
-    grid-template-areas:
-      "header"
-      "main";
-  }
-
-  #sidebar {
-    display: none;  
-  }
-
-  .menu-icon {
-    display: inline;
-    padding-top: 30px;
-
-  }
-
-  .sidebar-title > span {
-    display: inline;
-  }
-
-  #sidebar{
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 25%;
-    background-image: url(../Images/cool-background-3.png);
-    background-repeat: no-repeat;
-    background-size: cover;    
-    padding: 6px 14px;
-    z-index: 99;
-    transition: all 0.5s ease;
-  }
-
-  img{
-    width: 150px;
-  }
 
   .container{
     position: absolute;
@@ -482,16 +413,6 @@ img{
     flex-direction: column;
     margin: 4px 0;
   }
-  .sidebar li.profile{
-    position: absolute;
-    height: 60px;
-    width: 78px;
-    left: 0;
-    padding: 10px 14px;
-    background: #1d1b31;
-    transition: all 0.5s ease;
-    overflow: hidden;
-  }
 
   .btn{
     margin-top: 5px;
@@ -502,10 +423,6 @@ img{
 @media (max-width:799px){
   .container{
     max-width: 100%;
-  }
-
-  #sidebar{
-    width: 40%;
   }
 
 }
@@ -521,29 +438,14 @@ img{
       width: calc(100% / 2 - 15px);
   }
 
-  #sidebar{
-    width: 30%;
-  }
-
-  .menu-icon{
-    padding-top: 20px;
-  }  
 }
-
-@media (max-width: 671px) {
-  #sidebar{
-    width:35%;
-  }
-}  
 
 /* Extra Small <= 576px */
 @media screen and (max-width: 576px) {
   .header-left {
     display: none;
   }
-  #sidebar{
-    width: 36%;
-  }
+
 }
 
 
@@ -552,25 +454,10 @@ img{
         width: 100%;
     }
     }
-  
-  @media (max-width: 530px) {
-    #sidebar{
-      width: 45%;
-    }
-  }    
 
 
 @media (max-width: 451px) {
-  #sidebar{
-    width: 55%;
-    height: 190vh;
-    
-  }
-
-  img{
-    width: 40%;
-    
-  }
+  
   .container{
     position: absolute;
     max-width: 650px;
@@ -609,36 +496,10 @@ img{
   }
 }
 
-@media (max-width: 392px) {
-  #sidebar{
-    height: 190vh;
-    width: 66%;
-    background-image: url(../Images/cool-background-3.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
 
-  img{
-    width: 100px;
-  }
-
-  .menu-icon{
-    padding-bottom: 30px;
-  }
-
-}
 
 @media (max-width: 305px) {
-  #sidebar{
-    height: 190vh;
-    width: 75%;
-  }
-
-  img{
-    width: 75px;
-  }
-
-  @media (max-width: 270px) {
-    #sidebar{
-      width: 80%
-    }
+nav{
+  width: 220px;
+}
+}

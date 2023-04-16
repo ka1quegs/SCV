@@ -12,85 +12,54 @@
 </head>
 
 <body>
-  <!-- Montserrat Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+  <link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   
-  <div class="grid-container">
+  <nav class="hide">
+    <button type="button" id="toggle-btn">
+      <i class="fa fa-bars"></i>
+    </button>
+    <ul class="sidebar-menu">
+      <img src="Images/logoBranco.png" style="margin:0 auto; width: 200px;" alt="">
 
-    <!-- Header -->
-    <header class="header">
-      <div class="menu-icon" onclick="openSidebar()">
-        <span class="material-icons-outlined">menu</span>
-      </div>
-    </header>
-    <!-- End Header -->
+      <li><a href="solicitacao.html"><i class="fa-solid fa-user-plus"></i>Solicitação</a></li>
+      <li><a href="consulta.html"><i class="fa-solid fa-magnifying-glass"></i>Consulta</a></li>
+      <li><a href="consulta-portaria.html"><i class="fa-solid fa-magnifying-glass"></i>Portaria</a></li>
+      <li><a href="aprovacao.html"><i class="fa-solid fa-user-check"></i>Aprovação</a></li>
+    </ul>
+  </nav>
+  <section>
+  </section>
 
-    <!-- Sidebar -->  
-    <aside id="sidebar">
-      <div class="sidebar-title">
-        <div class="sidebar-brand">
-          <img class="logo-p" src="Images/logoBranco.png" alt="">
-        </div>
-        <span class="material-icons-outlined" onclick="closeSidebar()" style="cursor:pointer;">close</span>
-      </div>
-      <ul class="sidebar-list">
-        <li class="sidebar-list-item">
-          <a href="solicitacao.html" target="_self">
-            <box-icon name='id-card' color='#05aeed' ></box-icon>ㅤSolicitação
-          </a>
-        </li>
-        <li class="sidebar-list-item">
-          <a href="consulta.html" target="_self">
-            <box-icon name='file-find' color='#05aeed' ></box-icon>ㅤConsulta
-          </a>
-        </li>
-        <li class="sidebar-list-item">
-          <a href="consulta.html" target="_self">
-            <box-icon name='file-find' color='#05aeed' ></box-icon>ㅤPortaria
-          </a>
-        </li>
-        <li class="sidebar-list-item">
-          <a href="aprovacao.html" target="_self">
-            <box-icon name='user-check' color='#05aeed' ></box-icon>ㅤAprovação
-          </a>
-        </li>
-        <li class="sidebar-list-item">
-          <a href="login.html" target="_self">
-            <box-icon name='log-out' color='#05aeed'></box-icon>ㅤLog-Out
-          </a>
-        </li>
-      </ul>
-     
-    </aside>
+ 
 
-    <!-- End Sidebar -->
   <script>
-    // SIDEBAR TOGGLE
+    const nav = document.querySelector('nav');
+const toggle_btn = document.getElementById('toggle-btn');
+const content = document.querySelector('section');
 
-var sidebarOpen = false;
-var sidebar = document.getElementById("sidebar");
+toggle_btn.onclick = function() {
+    nav.classList.toggle('hide');
+    content.classList.toggle('expand');
+};
 
-function openSidebar() {
-if(!sidebarOpen) {
-  sidebar.classList.add("sidebar-responsive");
-  sidebarOpen = true;
-  
-}
-}
+const body = document.querySelector('body');
+const bgModeBtn = document.getElementById('bgModeBtn');
+const bgModeIcon = document.getElementById('bgModeIcon');
+const sectionHeader = document.querySelector('section h1');
 
-function closeSidebar() {
-if(sidebarOpen) {
-  sidebar.classList.remove("sidebar-responsive");
-  sidebarOpen = false;
-}
-}
+bgModeBtn.onclick = function(){
+    body.classList.toggle("dark-mode");
+    bgModeIcon.classList.toggle("fa-sun-o");
+    bgModeIcon.classList.toggle("fa-moon-o");
+    sectionHeader.classList.toggle("dark-mode");
+} 
   </script>
   
   <div class="container">
-    <header style="color: #f58634;">Solicitação de Aprovação de Visitas</header>
+    <header style="color: #f58634; font-weight: bold;">Solicitação de Visitantes</header>
 
     <main> 
       <div class="form first">
