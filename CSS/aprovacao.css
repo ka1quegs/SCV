@@ -380,7 +380,7 @@ section{
 
     .modal-content{
       width: 80%;
-      margin: 2% 17% auto;
+      margin: 0 auto;
     }
 
     section{
@@ -476,11 +476,9 @@ section{
 
   .modal-content{
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
   }
-  .modal{
-    z-index: 999;
-  }
+ 
 
  section{
    height: 300px;
@@ -498,9 +496,7 @@ section{
     margin: 0 auto;
     width: 90%;
   }
-  .modal{
-    z-index: 999;
-  }
+ 
 
   .main-cards{
     margin-bottom: 8%;
@@ -606,9 +602,7 @@ section{
     width: 70%;
   }
 
-  .modal{
-    z-index: 999;
-  }
+
 
   .dashboard{
     width: 100%;
@@ -657,10 +651,6 @@ section{
   .modal-content{
     margin: 0 10% auto;
     width: 80%;
-  }
-
-  .modal{
-    z-index: 999;
   }
 
   .table2{
@@ -719,11 +709,6 @@ section{
     margin: 0 10% auto;
     width: 80%;
   }
-
-  .modal{
-    z-index: 999;
-  }
-
   .table2{
     width: 93%;
   }

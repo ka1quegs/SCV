@@ -141,7 +141,6 @@ color: #265df2;
   padding: 30px;
   background-color: white;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-  margin-left: 5%;
   
   
 }
@@ -228,7 +227,7 @@ form button:hover{
     border-radius: 6px;
     padding: 30px;
     margin: 1% 215px auto;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px black;
   }
 
   main .fields .input-field{
@@ -271,7 +270,7 @@ form button:hover{
     border-radius: 6px;
     padding: 10px;
     margin: 0 215px auto;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px black;
   }
   main .fields .input-field{
     display: flex;
@@ -302,17 +301,19 @@ form button:hover{
     text-align: center;
   }
 
+ 
+
 }
 
 @media(max-width:1450px){
   .container{
     position: absolute;
     max-width: 90%;
-    max-height: 100%;
+    max-height: 152vh;
     border-radius: 6px;
     padding: 10px;
     margin: 0  70px auto;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px black;
   }
   main .fields .input-field{
     display: flex;
