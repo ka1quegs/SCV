@@ -724,6 +724,7 @@ hr{
 
   .card{
     margin: 0 auto;
+    
     }
 
     .card-inner > p {
@@ -733,6 +734,7 @@ hr{
   .main-cards {
     grid-template-columns: repeat(2, 1fr);
     margin-bottom:17%;
+    margin-top: 23%;
   }
 
   .top-cards,
