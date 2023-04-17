@@ -76,7 +76,7 @@ border-radius: 5px;
 }
 
 .sidebar-menu li a:hover{
-color: #265df2;
+color: #35afd4;
 border: 1px solid white;
 }
 
@@ -257,17 +257,20 @@ section{
 
   header{
     width: 100%;
+    text-align: center;
   }
 
   .modal-content{
-    margin: 2% auto;
+    margin: 0 auto;
   }
 
-    .table2, .table th{
+    .table2, .table{
       font-size: 14px;
+      width: 95%;
+      margin: 0 auto;
     }
     section{
-      height: 65%;
+      height: 100%;
       overflow-y: auto;
     }
       
@@ -288,7 +291,8 @@ h1{
 }
 
 .table2, .table {
-  width: 100%;  
+  width: 95%;  
+  margin: 0 auto;
 }
 
 header{
