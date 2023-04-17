@@ -455,6 +455,10 @@ section{
 section{
   height: 600px;
 }
+
+#toggle-btn{
+  margin-top: -7px;
+}
 }
 
 @media (max-width:370px){
