@@ -435,6 +435,9 @@ section{
   .table2{
     margin: 20px auto;
   }
+  #toggle-btn{
+    margin-top: -7px;
+  }
 }
 
 @media (max-width:550px){
