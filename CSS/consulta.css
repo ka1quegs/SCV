@@ -265,7 +265,7 @@ section{
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: none;
   background-color: rgba(0, 0, 0, 0.4);
   }
   
@@ -275,6 +275,8 @@ section{
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
+  max-height: 270px;
+  overflow-y: auto;
   }
   
   .close {
@@ -376,6 +378,10 @@ header{
   margin: 0  auto;
   width: 100%;
 } 
+
+.mod-content{
+  margin: 20% auto;
+}
 }
 
 @media (max-width:1300px){
@@ -383,6 +389,9 @@ header{
   section{
     height: 400px;
     overflow-y: auto;
+  }
+  .mod-content{
+    margin: 25% auto;
   }
 }
 
@@ -484,12 +493,17 @@ hr{
 
 
 section{
-  height: 660px;
+  height: 800px;
   overflow-x:auto;
 }
 
 .table2{
   margin: 0 auto
+}
+
+.mod-content{
+  width: 70%;
+  margin: 25% auto;
 }
 
 }
@@ -509,6 +523,15 @@ section{
   #toggle-btn{
     margin-top: -7px;
   }
+
+  .modal-content{
+    margin: 70px auto;
+  }
+
+  .mod-content{
+    width: 70%;
+    margin: 40% auto;
+  }
 }
 
 @media (max-width:550px){
@@ -527,11 +550,15 @@ section{
 }
 
 section{
-  height: 600px;
+  height: 720px;
 }
 
 #toggle-btn{
   margin-top: -7px;
+}
+.mod-content{
+  width: 80%;
+  margin: 40% auto;
 }
 }
 
