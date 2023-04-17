@@ -499,7 +499,7 @@ section{
  
 
   .main-cards{
-    margin-bottom: 8%;
+    margin-bottom: 10%;
   }
 
   .card{
@@ -515,11 +515,11 @@ section{
     width: 90%;
     border:none;
     margin: 0 auto;
-    margin-top: -20px;
+    margin-top: -10px;
   }
 
   section{
-    height: 350px;
+    height: 750px;
   }
 
   h1{
