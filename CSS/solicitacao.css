@@ -1,5 +1,7 @@
 /* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+/*BODY*/
+
 *{
   margin: 0;
   padding: 0;
@@ -12,8 +14,7 @@ body{
   width: 0;
 }
 
-/*sidebar*/
-
+/*SIDEBAR*/
 
 nav{
 display: flex;
@@ -129,10 +130,7 @@ color: #265df2;
   background-color: #a5aaad;
 }
 
-.logo-p{
-  width: 100%;
-  margin: 0 auto;
-}
+/*FORMULÁRIO*/
 
 .container{
   position: absolute;
@@ -148,45 +146,18 @@ color: #265df2;
   
 }
 .container header{
-  position: relative;
+  text-align: center;
+  color: #f58634;
   font-size: 27px;
   font-weight: bold;
-  color: #333;
-}
-.container header::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  height: 3px;
-  width: 100px;
-  border-radius: 8px;
- 
-}
-.container main{
-  position: relative;
-  margin-top: 16px;
-  max-width: 100%;
-  background-color: #fff;
-  overflow: hidden;
-  background-color: white;
-  background-repeat: no-repeat;
-  
 }
 
-main.secActive .main.first{
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(-100%);
-}
 .container main .title{
   display: block;
-  margin-bottom: 8px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: bold;
   margin: 6px 0;
   color: #333;
-  background-color: white;
   width: 100%
   
 }
@@ -219,17 +190,7 @@ main .fields .input-field{
   height: 42px;
   margin: 8px 0;
 }
-.input-field input :focus,
-.input-field select:focus{
-  box-shadow: 0 3px 6px rgba(0,0,0,0.13);
-}
-.input-field select,
-.input-field input[type="date"]{
-  color: #707070;
-}
-.input-field input[type="date"]:valid{
-  color: #333;
-}
+
 .btn{
   display: flex;
   align-items: center;
@@ -248,23 +209,13 @@ main .fields .input-field{
   margin-top: 30px;
 }
 
+.btn:disabled{
+  background-color: #ccc;
+}
+
 form button:hover{
   background-color: #265df2;
-}
-
-
-form .buttons{
-  display: flex;
-  align-items: center;
-}
-
-
-img{
-  width: 18%;
-  margin-top: -20px;
-  margin-left: 38%;
-
-}
+}   
 
 /* ---------- MEDIA QUERIES ---------- */
 
@@ -389,10 +340,6 @@ img{
   }
 }
 
-
-
- 
-/* Medium <= 992px */
 @media screen and (max-width: 1200px) {
 
   .container{
@@ -440,7 +387,6 @@ img{
 
 }
 
-/* Extra Small <= 576px */
 @media screen and (max-width: 576px) {
   .header-left {
     display: none;
