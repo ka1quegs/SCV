@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
+/*BODY*/
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +12,8 @@ body,
 input {
   font-family: "Poppins", sans-serif;
 }
+
+/*FORMULÁRIO*/
 
 .container {
   position: relative;
@@ -118,11 +122,12 @@ form.login-form {
   margin-left: 40%;
 }
 
-
-
 .btn:hover {
   background-color: #011b6c;
 }
+
+/*PAINEL*/
+
 .panels-container {
   position: absolute;
   height: 100%;
@@ -170,19 +175,13 @@ form.login-form {
   padding: 3rem 17% 2rem 12%;
 }
 
-
-
 .panel .content {
   color: #fff;
   transition: transform 0.9s ease-in-out;
   transition-delay: 0.6s;
 }
 
-
-
-
-
-/* ANIMATION */
+/* ANIMAÇÃO */
 
 .container.sign-up-mode:before {
   transform: translate(100%, -50%);
@@ -220,6 +219,8 @@ form.login-form {
 .container.sign-up-mode .right-panel {
   pointer-events: all;
 }
+
+/* ---------- MEDIA QUERIES ---------- */
 
 
 @media (max-width: 870px) {
