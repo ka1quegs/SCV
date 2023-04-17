@@ -78,10 +78,6 @@ input[type='file']{
     display: none;
 }
 
-.max-width{
-    width: 100%;
-}
-
 .imageContainer{
     width: 100%;
     max-width: 300px;

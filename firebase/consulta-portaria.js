@@ -200,6 +200,8 @@ for (let i = 0; i < arrayRegistro.length; i++){
   })
 }
 
+  // modal-dentro 
+
 const input = document.getElementById('input-busca');
   input.addEventListener('keyup', () => {
     const filter = input.value.toUpperCase();
@@ -211,6 +213,24 @@ const input = document.getElementById('input-busca');
       }
     });
   });
+
+  var mod = document.getElementById("mod");
+  var abre = document.getElementById("abre");
+  var span = document.getElementsByClassName("close")[0];
+  
+  abre.onclick = function() {
+    mod.style.display = "block";
+  }
+  
+  span.onclick = function() {
+    mod.style.display = "none";
+  }
+  
+  window.onclick = function(event) {
+    if (event.target == mod) {
+      mod.style.display = "none";
+    }
+  }
 
   // foto 
 

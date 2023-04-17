@@ -101,19 +101,20 @@
             
               <div class="container">                  
                     <div class="max-width">
-              
+                        
                       <div class="imageContainer">
                         
                           <img src="Images/camera.png" alt="Selecione a Imagem" id="imgPhoto">
                       </div>
                   </div>
+                 
                   
-                
                   <main action="#">
                       <div class="form first">
                           <div class="details personal">
-                              <h3 style="margin-bottom: 20px; color:#f58634;">INFORMAÇÕES GERAIS</h3>
-              
+                              <h3 style="margin-bottom: 20px; color:#f58634;">INFORMAÇÕES GERAIS 
+                                  <img class="historico" id="abre" src="images/relogio.png" alt="">
+                                </h3>
                               <div class="fields">
                                   <div class="input-field">
                                     <label>Data do Cadastro</label>
@@ -269,7 +270,39 @@
 
         </script>
 
-        
+<div id="mod" class="mod">
+        <div class="mod-content">
+          <span class="close">&times;</span>
+          <table class="table-dentro">
+              <img class="img-dentro" src="images/logo600x80.png" alt="">
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Hora de Entrada</th>
+                    <th>Hora de Saída</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>01/04/2023</td>
+                    <td>09:00</td>
+                    <td>17:00</td>
+                  </tr>
+                  <tr>
+                    <td>02/04/2023</td>
+                    <td>09:15</td>
+                    <td>16:45</td>
+                  </tr>
+                  <tr>
+                    <td>03/04/2023</td>
+                    <td>08:45</td>
+                    <td>17:15</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+        </div>
+      </div>
         
 
         <script src="firebase/consulta-portaria.js" type="module"></script>
