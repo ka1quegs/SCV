@@ -101,3 +101,21 @@ visita.addEventListener("input", checkValidity);
 periodoDe.addEventListener("input", checkValidity);
 periodoAte.addEventListener("input", checkValidity);
 cpf.addEventListener("input", checkValidity);
+
+/*
+// Capturar os dados do formulário
+var form = document.querySelector('form');
+var dataInicial = new Date(form.querySelector('input[name="dataInicial"]').value);
+var dataFinal = new Date(form.querySelector('input[name="dataFinal"]').value);
+var dados = {
+  // insira aqui os dados adicionais que deseja armazenar no Firebase
+};
+
+// Criar um registro para cada dia entre as datas inicial e final
+var database = firebase.database();
+var ref = database.ref('registros');
+for (var data = dataInicial; data <= dataFinal; data.setDate(data.getDate() + 1)) {
+  var dataFormatada = data.toISOString().substring(0, 10);
+  ref.child(dataFormatada).set(dados);
+}
+*/

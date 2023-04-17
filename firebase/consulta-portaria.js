@@ -100,8 +100,13 @@ const arrayDocumentos = await getDocs(colecao)
           location.reload()
         })
         button.innerHTML = "Revisar"
+        let image = document.createElement("img");
+          image.setAttribute("class", "historico")
+          image.setAttribute("id", "historico")
+          image.setAttribute("src","Images/relogio.png")
+          td.setAttribute("data-label","Visualizar")
 
-        td.append(button)
+        td.append(button,image)
         tbody.appendChild(td)
 
         //Botão negar
