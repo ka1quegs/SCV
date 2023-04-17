@@ -403,15 +403,13 @@ hr{
 		text-align: left;
 	}
 
-
-
 .modal-content{
   width: 93%;
 }
 
 
 section{
-  height: 460px;
+  height: 660px;
   overflow-x:auto;
 }
 
@@ -455,7 +453,7 @@ section{
 }
 
 section{
-  height: 500px;
+  height: 700px;
 }
 }
 

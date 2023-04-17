@@ -569,7 +569,7 @@ hr{
   }
 
  section{
-   height: 200px;
+   height: 300px;
  }
 
  .dashboard{
@@ -609,7 +609,7 @@ hr{
   }
 
   section{
-    height: 600px;
+    height: 350px;
   }
 
   h1{
@@ -626,13 +626,13 @@ hr{
     font-size: 20px;
   }
   section{
-    height: 750px;
+    height: 300px;
   }
 }
 
 @media (max-width:670px) {
   section{
-    height: 600px;
+    height: 300px;
   }
   h1{
     font-size: 20px;
@@ -665,7 +665,7 @@ hr{
     }
 
     section{
-      height: 250px;
+      height: 380px;
     }
     h1{
       font-size: 20px;
@@ -709,7 +709,7 @@ hr{
   }
 
   section{
-    height: 250px;
+    height: 350px;
   }
   
   h1{
@@ -756,7 +756,7 @@ hr{
   }
 
   section{
-    height: 250px;
+    height: 350px;
   }
   h1{
     font-size: 20px;
@@ -770,7 +770,7 @@ hr{
   }
 
   section{
-    height: 250px;
+    height: 400px;
   }
 
   h1{
