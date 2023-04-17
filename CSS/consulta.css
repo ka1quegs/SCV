@@ -218,6 +218,10 @@ color: #265df2;
   transition: all 0.3s ease-in;
 }
 
+.historico{
+  width: 20px;
+}
+
 section{
   overflow-y: auto; 
   height: 100%;

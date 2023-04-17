@@ -223,19 +223,21 @@
                                     <label>Aprovado/Rejeitado Por</label>
                                     <input id="aprov_rej" type="text" placeholder="" disabled>
                                 </div> 
-                            
                                <div class="input-field">
                                 <label>Status</label>
                                 <input id="status" type="text" placeholder="" disabled>
                             </div>
+                            <div class="input-field">
+                            <button id="updateBtn">SALVAR</button>
+                            </div>
+
                                     <div class="input-field">
                                       <label>Observação</label>
                                       <textarea id="story" name="story" >
                                     </textarea>
-                                    
-                                   
-                                    <button id="updateBtn">SALVAR</button>
                                     </div>
+                                    
+
                                   </div>                       
                                 </div>   
                       </div>     
@@ -266,6 +268,8 @@
           });
 
         </script>
+
+        
         
 
         <script src="firebase/consulta-portaria.js" type="module"></script>

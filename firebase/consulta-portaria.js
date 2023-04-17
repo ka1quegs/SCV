@@ -101,11 +101,7 @@ const arrayDocumentos = await getDocs(colecao)
         })
         button.innerHTML = "Revisar"
         let image = document.createElement("img");
-          image.setAttribute("class", "historico")
-          image.setAttribute("id", "historico")
-          image.setAttribute("src","Images/relogio.png")
           td.setAttribute("data-label","Visualizar")
-
         td.append(button,image)
         tbody.appendChild(td)
 
@@ -148,7 +144,6 @@ for (let i = 0; i < arrayRegistro.length; i++){
       document.getElementById("saida").value = doc.get("saida")
       document.getElementById("status").value = doc.get("status")
       document.getElementById("aprov_rej").value = doc.get("#")
-      document.getElementById("visita").value = doc.get("#")
       })
 
     modal.style.display = "block"
