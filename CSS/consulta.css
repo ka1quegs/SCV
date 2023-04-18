@@ -508,13 +508,13 @@ section{
 
 }
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 890px) {
   .header-left {
     display: none;
   }
 
   section{
-    height: 1000px;
+    height: 1200px;
   }
 
   .table2{
