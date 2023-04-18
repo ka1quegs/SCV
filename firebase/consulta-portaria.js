@@ -3,8 +3,6 @@ import {collection,getDocs, query, where, updateDoc, doc,getDoc, setDoc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 
-
-
 const colecao = query(collection(db,"visitante"),where("verificacao", "==", true))
 
 const arrayDocumentos = await getDocs(colecao)
@@ -188,7 +186,19 @@ for (let i = 0; i < arrayRegistro.length; i++){
         entrada: entrada,
         saida: saida
       })
-      location.reload()
+      
+
+      if (entrada & saida != "") {
+        const docRef = doc(db, "visitante", cpf);
+        const registroCollectionRef = doc(docRef, "registro", cpf);
+
+       await setDoc(registroCollectionRef, {
+          dataRegistro: new Date(),
+          entrada: entrada,
+          saida: saida
+        });
+     
+      } 
 
 })
    // hide the modal and reload the page
@@ -198,22 +208,6 @@ for (let i = 0; i < arrayRegistro.length; i++){
         }
       });  
   })
-}
-
-  // modal-dentro 
-
-const input = document.getElementById('input-busca');
-  input.addEventListener('keyup', () => {
-    const filter = input.value.toUpperCase();
-    arrayDocumentos.forEach(doc => {
-      const nome = doc.get('nome').toUpperCase();
-      const registro = document.querySelector(`.registro[data-nome="${nome}"]`);
-      if (registro) {
-        registro.style.display = nome.includes(filter) ? '' : 'none';
-      }
-    });
-  });
-
   var mod = document.getElementById("mod");
   var abre = document.getElementById("abre");
   var span = document.getElementsByClassName("close")[0];
@@ -231,6 +225,20 @@ const input = document.getElementById('input-busca');
       mod.style.display = "none";
     }
   }
+}
 
-  // foto 
+  // modal-dentro 
 
+const input = document.getElementById('input-busca');
+  input.addEventListener('keyup', () => {
+    const filter = input.value.toUpperCase();
+    arrayDocumentos.forEach(doc => {
+      const nome = doc.get('nome').toUpperCase();
+      const registro = document.querySelector(`.registro[data-nome="${nome}"]`);
+      if (registro) {
+        registro.style.display = nome.includes(filter) ? '' : 'none';
+      }
+    });
+  });
+
+ 

@@ -27,37 +27,47 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
         //Adiciona os dados para o Firestore
 
-        setDoc(doc(db, "visitante",cpf), {   
-          nome: `${nome}`,  
-          rg: `${rg}`,
-          cpf: `${cpf}`,
-          emailVisitante: `${emailVisitante}`,
-          responsavelVisita: `${responsavelVisita}`,
-          setor:`${setor}`,
-          telefone: `${telefone}`,
-          celular: `${celular}`,
-          periodoDe: `${periodoDe}`,
-          periodoAte: `${periodoAte}`,
-          empresa:`${empresa}`,
-          modelo_carro: `${modelo_carro}`,
-          placa_carro: `${placa_carro}`,
-          acesso_fabrica : `${acesso_fabrica}`,
-          estacionamento : `${estacionamento}`,
-          observacao:   `${observacao}`,
-          verificacao: false,
-          status: "",
-          entrada: "",
-          saida: "",
-          date: `${dataFormatada}`,
-          estadoVisita: "",
-          tipo_cadastro: "Pré-Cadastro"
+        //Adiciona os dados para o Firestore
+    const visitorRef = doc(db, "visitante", cpf);
+    const registroCollectionRef = collection(visitorRef, "registro");
 
-    })
-      window.location.href = "#";
-      
-      });
+    setDoc(visitorRef, {   
+      nome: `${nome}`,  
+      rg: `${rg}`,
+      cpf: `${cpf}`,
+      emailVisitante: `${emailVisitante}`,
+      responsavelVisita: `${responsavelVisita}`,
+      setor:`${setor}`,
+      telefone: `${telefone}`,
+      celular: `${celular}`,
+      periodoDe: `${periodoDe}`,
+      periodoAte: `${periodoAte}`,
+      empresa:`${empresa}`,
+      modelo_carro: `${modelo_carro}`,
+      placa_carro: `${placa_carro}`,
+      acesso_fabrica : `${acesso_fabrica}`,
+      estacionamento : `${estacionamento}`,
+      observacao:   `${observacao}`,
+      verificacao: false,
+      status: "",
+      entrada: "",
+      saida: "",
+      date: `${dataFormatada}`,
+      estadoVisita: "",
+      tipo_cadastro: "Pré-Cadastro"
+    });
+
+    addDoc(registroCollectionRef, {
+      dataRegistro: new Date(),
+      entrada: "",
+      saida: "",
+      cpf: `${cpf}`
+    });
+
     
-    }catch{}
+    }
+    )
+  }catch{}
 
   //Toastify de Solicitação enviada
   enviarSolici.addEventListener('click', () => { 
