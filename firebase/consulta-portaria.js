@@ -186,19 +186,20 @@ for (let i = 0; i < arrayRegistro.length; i++){
         entrada: entrada,
         saida: saida
       })
-      
-
-      if (entrada & saida != "") {
-        const docRef = doc(db, "visitante", cpf);
-        const registroCollectionRef = doc(docRef, "registro", cpf);
-
-       await setDoc(registroCollectionRef, {
-          dataRegistro: new Date(),
-          entrada: entrada,
-          saida: saida
-        });
-     
-      } 
+  
+     /*
+        if (doc.get("entrada") !== "") {
+          const registroCollectionRef = collection(docRef, "registro");
+          addDoc(registroCollectionRef, {
+            cpf: `${cpf}`,
+            dataRegistro: new Date(),
+            entrada: entrada,
+            saida: saida
+            
+          });
+        }
+     */
+  
 
 })
    // hide the modal and reload the page
@@ -241,4 +242,4 @@ const input = document.getElementById('input-busca');
     });
   });
 
- 
+
