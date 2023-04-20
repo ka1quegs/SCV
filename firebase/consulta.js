@@ -2,7 +2,7 @@ import { db } from "./modules.js"
 import {collection,getDocs, query, where, updateDoc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
-const colecao = query(collection(db,"visitante"),where("verificacao", "==", true))
+const colecao = query(collection(db,"visitante"), where("consulta", "==", true))
 
 const arrayDocumentos = await getDocs(colecao)
 

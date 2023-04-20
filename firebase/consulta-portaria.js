@@ -3,7 +3,7 @@ import {collection,getDocs, query, where, updateDoc, doc,getDoc, setDoc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 
-const colecao = query(collection(db,"visitante"),where("verificacao", "==", true))
+const colecao = query(collection(db,"visitante"), where("consulta", "==", true ) )
 
 const arrayDocumentos = await getDocs(colecao)
 
@@ -88,15 +88,18 @@ const arrayDocumentos = await getDocs(colecao)
         button = document.createElement("button")
         button.setAttribute("id", "revisao")
         button.setAttribute("class","revisar")
+        button.setAttribute("disable","true")
         button.addEventListener("click", async () => {
           await updateDoc(doc.ref, { verificacao: false })
+          await updateDoc(doc.ref, { pendente: true })
           await updateDoc(doc.ref, { tipo_cadastro: "Pré-Cadastro" })
-          await updateDoc(doc.ref, { status: "" })
+          await updateDoc(doc.ref, { status: "Pendente" })
           await updateDoc(doc.ref, { entrada: "" })
           await updateDoc(doc.ref, { saida: "" })
           console.log("Atualizado")
           location.reload()
         })
+       
         button.innerHTML = "Revisar"
         let image = document.createElement("img");
           td.setAttribute("data-label","Visualizar")
@@ -200,7 +203,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
         }
      */
   
-
+        location.reload()    
 })
    // hide the modal and reload the page
       modal.addEventListener("click", (event) => {
