@@ -147,6 +147,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
       document.getElementById("aprov_rej").value = doc.get("#")
       })
 
+    
     modal.style.display = "block"
 
     //Quando clicado no botão updateBtn pega todos os valores dos Inputs do modal e atualiza o firestore para aquele usuario
@@ -191,23 +192,53 @@ for (let i = 0; i < arrayRegistro.length; i++){
       })
   
     const registrosRef = collection(docRef, "registros");
-    const novoRegistroRef = doc(registrosRef);
+    // Gera o ID do documento na subcoleção REGISTRO com  a DATA ATUAL
+    const hoje = new Date();
+    const documentId = `${hoje.getFullYear()}-${hoje.getMonth() + 1}-${hoje.getDate()}`;
 
-    await setDoc(novoRegistroRef, {
-      dataRegistro: new Date(),
-      entrada: entrada,
-      saida: saida
-    });
-     
-  
-         
+    const existingDoc = await getDoc(doc(registrosRef, documentId));
+    if (existingDoc.exists()) {
+      const novoRegistroRef = doc(registrosRef, documentId);
+      await setDoc(novoRegistroRef, {
+        dataRegistro: hoje,
+        entrada: entrada,
+        saida: saida
+      });
+    
+    } else {
+      const novoRegistroRef = doc(registrosRef, documentId);
+      await setDoc(novoRegistroRef, {
+        dataRegistro: hoje,
+        entrada: entrada,
+        saida: saida
+      });
+    }
+    reload.location()     
 })
+
+
+const docRef = doc(db, "visitante", cpf);
+const subcollectionRef = collection(docRef, "registros");
+
+const arrayDocumentosRegistros = await getDocs(subcollectionRef)
+
+arrayDocumentosRegistros.forEach(doc =>{
+
+  
+
+
+
+})
+
+
    // hide the modal and reload the page
       modal.addEventListener("click", (event) => {
         if (event.target == modal) {
           modal.style.display = "none";
         }
-      });  
+      }); 
+      
+      
   })
   var mod = document.getElementById("mod");
   var abre = document.getElementById("abre");
@@ -228,7 +259,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
   }
 }
 
-  // modal-dentro 
+  // modal de HISTÓRICO
 
 const input = document.getElementById('input-busca');
   input.addEventListener('keyup', () => {

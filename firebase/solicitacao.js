@@ -28,8 +28,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         //Adiciona os dados para o Firestore
 
     const visitorRef = doc(db, "visitante", cpf);
-    const registroCollectionRef = collection(visitorRef, "registro");
-
+    
     setDoc(visitorRef, {   
       nome: `${nome}`,  
       rg: `${rg}`,
@@ -57,15 +56,6 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
       estadoVisita: "",
       tipo_cadastro: "Pré-Cadastro"
     });
-
-   /*
-    addDoc(registroCollectionRef, {
-      dataRegistro: new Date(),
-      entrada: "",
-      saida: "",
-      cpf: `${cpf}`
-    });
-    */
 
     
     }
