@@ -190,20 +190,17 @@ for (let i = 0; i < arrayRegistro.length; i++){
         saida: saida
       })
   
-     /*
-        if (doc.get("entrada") !== "") {
-          const registroCollectionRef = collection(docRef, "registro");
-          addDoc(registroCollectionRef, {
-            cpf: `${cpf}`,
-            dataRegistro: new Date(),
-            entrada: entrada,
-            saida: saida
-            
-          });
-        }
-     */
+    const registrosRef = collection(docRef, "registros");
+    const novoRegistroRef = doc(registrosRef);
+
+    await setDoc(novoRegistroRef, {
+      dataRegistro: new Date(),
+      entrada: entrada,
+      saida: saida
+    });
+     
   
-        location.reload()    
+         
 })
    // hide the modal and reload the page
       modal.addEventListener("click", (event) => {
