@@ -311,7 +311,7 @@ section{
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgba(0,0,0,0.5);
     
   }
@@ -336,10 +336,11 @@ section{
     }
 
     .modal-content{
-      margin: 0 12% auto;
+      margin: 0 17% auto;
       width: 100%;
     }
 
+   
    .dashboard{
      width: 100%;
      overflow: hidden;
