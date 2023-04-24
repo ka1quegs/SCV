@@ -216,7 +216,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
     reload.location()     
 })
 
-
+/*
 const docRef = doc(db, "visitante", cpf);
 const subcollectionRef = collection(docRef, "registros");
 
@@ -224,12 +224,17 @@ const arrayDocumentosRegistros = await getDocs(subcollectionRef)
 
 arrayDocumentosRegistros.forEach(doc =>{
 
+  let sectionHistorico = document.getElementById('sectionHistorico')
+  let table = createElement ("table")
+  table.setAttribute("class","table-dentro")
+
+  let tbody = document.createElement("tbody")
+
+  let td = createElement("td")
   
-
-
-
+  table.append(tbody)
 })
-
+*/
 
    // hide the modal and reload the page
       modal.addEventListener("click", (event) => {
