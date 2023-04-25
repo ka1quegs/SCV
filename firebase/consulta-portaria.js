@@ -192,7 +192,9 @@ for (let i = 0; i < arrayRegistro.length; i++){
       })
   
     const registrosRef = collection(docRef, "registros");
+
     // Gera o ID do documento na subcoleção REGISTRO com  a DATA ATUAL
+
     const hoje = new Date();
     const documentId = `${hoje.getFullYear()}-${hoje.getMonth() + 1}-${hoje.getDate()}`;
 
@@ -203,7 +205,8 @@ for (let i = 0; i < arrayRegistro.length; i++){
         dataRegistro: new Date(),
         entrada: entrada,
         saida: saida,
-        empresa: empresa
+        empresa: empresa,
+        cpf: cpf
       });
     
     } else {
@@ -212,57 +215,85 @@ for (let i = 0; i < arrayRegistro.length; i++){
         dataRegistro: new Date(),
         entrada: entrada,
         saida: saida,
-        empresa: empresa
+        empresa: empresa,
+        cpf:cpf
       });
     }
     location.reload()
 })
 
-
-const docRef = doc(db, "visitante", cpf);
-const subcollectionRef = collection(docRef, "registros");
-
-const arrayDocumentosRegistros = await getDocs(subcollectionRef)
-
-try{
-arrayDocumentosRegistros.forEach(doc =>{
-
-  let sectionHistorico = document.getElementById('sectionHistorico')
+  var mod = document.getElementById("mod");
+  var abre = document.getElementById("abre");
+  var span = document.getElementsByClassName("close")[0];
   
-  let div = createElement('div')
 
-  let table = createElement ("table")
-  table.setAttribute("class","table-dentro")
+  abre.addEventListener("click", async () => {
 
-  let tbody = document.createElement("tbody")
+    mod.style.display = "block";
 
-  let tr = document.createElement("tr")
+      const docRef = doc(db, "visitante", cpf);
+      const subcollectionRef = collection(docRef, "registros");
 
-  let td = createElement("td")
-  td.innerHTML = doc.get("dataRegistro")
-  tr.append(td)
+      const arrayDocumentosRegistros = await getDocs(subcollectionRef)
 
-  td = createElement("td")
-  td.innerHTML = doc.get("entrada")
-  tr.append(td)
+      arrayDocumentosRegistros.forEach(doc =>{
 
-  td = createElement("td")
-  td.innerHTML = doc.get("saida")
-  tr.append(td)
+        let sectionHistorico = document.getElementById('sectionHistorico')
+        let valueCpf = document.createElement("input")
+        valueCpf.setAttribute("class", "valueCpf")
+        valueCpf.value = doc.get("cpf")
+        valueCpf.setAttribute("type", "hidden")
 
-  td = createElement("td")
-  td.innerHTML = doc.get("empresa")
-  tr.append(td)
+        
+        let div = document.createElement('div')
+        div.setAttribute("class", "mod-content")
 
+
+        let table = document.createElement ("table")
+        table.setAttribute("class","table-dentro")
+
+        let tbody = document.createElement("tbody")
+
+        let tr = document.createElement("tr")
+
+        let td = document.createElement("td")
+        td.innerHTML = doc.get("#")
+        tr.append(td)
+
+        td = document.createElement("td")
+        td.innerHTML = doc.get("entrada")
+        tr.append(td)
+
+        td = document.createElement("td")
+        td.innerHTML = doc.get("saida")
+        tr.append(td)
+
+        td = document.createElement("td")
+        td.innerHTML = doc.get("empresa")
+        tr.append(td)
+
+
+        tbody.append(tr)
+
+        table.append(tbody)
+
+        div.append(table,valueCpf)
+
+        sectionHistorico.append(div)
+      })
+
+
+  })
+
+  span.addEventListener("click", async () => {
+    mod.style.display = "none";
+  })
   
-  tbody.append(tr)
-
-  table.append(tbody)
-
-  div.append(table)
-  
-  sectionHistorico.append(div)
-})}catch{}
+  window.onclick = function(event) {
+    if (event.target == mod) {
+      mod.style.display = "none";
+    }
+  }
 
 
    // hide the modal and reload the page
@@ -274,23 +305,7 @@ arrayDocumentosRegistros.forEach(doc =>{
       
       
   })
-  var mod = document.getElementById("mod");
-  var abre = document.getElementById("abre");
-  var span = document.getElementsByClassName("close")[0];
   
-  abre.onclick = function() {
-    mod.style.display = "block";
-  }
-  
-  span.onclick = function() {
-    mod.style.display = "none";
-  }
-  
-  window.onclick = function(event) {
-    if (event.target == mod) {
-      mod.style.display = "none";
-    }
-  }
 }
 
   // modal de HISTÓRICO
