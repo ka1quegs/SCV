@@ -196,45 +196,74 @@ for (let i = 0; i < arrayRegistro.length; i++){
     const hoje = new Date();
     const documentId = `${hoje.getFullYear()}-${hoje.getMonth() + 1}-${hoje.getDate()}`;
 
-    const existingDoc = await getDoc(doc(registrosRef, documentId));
-    if (existingDoc.exists()) {
+    const documentoRegistro = await getDoc(doc(registrosRef, documentId));
+    if (documentoRegistro.exists()) {
       const novoRegistroRef = doc(registrosRef, documentId);
       await setDoc(novoRegistroRef, {
-        dataRegistro: hoje,
+        dataRegistro: new Date(),
         entrada: entrada,
-        saida: saida
+        saida: saida,
+        empresa: empresa
       });
     
     } else {
       const novoRegistroRef = doc(registrosRef, documentId);
       await setDoc(novoRegistroRef, {
-        dataRegistro: hoje,
+        dataRegistro: new Date(),
         entrada: entrada,
-        saida: saida
+        saida: saida,
+        empresa: empresa
       });
     }
-    reload.location()     
+    location.reload()
 })
 
-/*
+
 const docRef = doc(db, "visitante", cpf);
 const subcollectionRef = collection(docRef, "registros");
 
 const arrayDocumentosRegistros = await getDocs(subcollectionRef)
 
+try{
 arrayDocumentosRegistros.forEach(doc =>{
 
   let sectionHistorico = document.getElementById('sectionHistorico')
+  
+  let div = createElement('div')
+
   let table = createElement ("table")
   table.setAttribute("class","table-dentro")
 
   let tbody = document.createElement("tbody")
 
+  let tr = document.createElement("tr")
+
   let td = createElement("td")
+  td.innerHTML = doc.get("dataRegistro")
+  tr.append(td)
+
+  td = createElement("td")
+  td.innerHTML = doc.get("entrada")
+  tr.append(td)
+
+  td = createElement("td")
+  td.innerHTML = doc.get("saida")
+  tr.append(td)
+
+  td = createElement("td")
+  td.innerHTML = doc.get("empresa")
+  tr.append(td)
+
   
+  tbody.append(tr)
+
   table.append(tbody)
-})
-*/
+
+  div.append(table)
+  
+  sectionHistorico.append(div)
+})}catch{}
+
 
    // hide the modal and reload the page
       modal.addEventListener("click", (event) => {
