@@ -282,17 +282,20 @@ for (let i = 0; i < arrayRegistro.length; i++){
         sectionHistorico.append(div)
       })
 
-
   })
 
   span.addEventListener("click", async () => {
     mod.style.display = "none";
+    
   })
   
   window.onclick = function(event) {
     if (event.target == mod) {
       mod.style.display = "none";
+      location.reload()
     }
+    
+
   }
 
 
