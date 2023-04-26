@@ -113,6 +113,8 @@ const arrayDocumentos = await getDocs(colecao)
   }catch{}
 })
 
+
+let modal = document.getElementById("modal")
 //Puxando informações de visitante para o Modal
 let arrayRegistro = document.getElementsByClassName("visualizar")
 
@@ -169,8 +171,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
       const periodoAte = document.getElementById("periodoAte").value
       const observacao = document.getElementById("story").value
       const entrada = document.getElementById("entrada").value
-      const saida = document.getElementById("saida").value
-
+      const saida = document.getElementById("saida").value      
       const docRef = doc(db, "visitante", cpf)
       await updateDoc(docRef, {
         nome: nome,
@@ -201,6 +202,8 @@ for (let i = 0; i < arrayRegistro.length; i++){
     const documentoRegistro = await getDoc(doc(registrosRef, documentId));
     if (documentoRegistro.exists()) {
       const novoRegistroRef = doc(registrosRef, documentId);
+      
+      
       await setDoc(novoRegistroRef, {
         dataRegistro: new Date(),
         entrada: entrada,
@@ -208,8 +211,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
         empresa: empresa,
         cpf: cpf
       });
-    
-    } else {
+    }else{
       const novoRegistroRef = doc(registrosRef, documentId);
       await setDoc(novoRegistroRef, {
         dataRegistro: new Date(),
@@ -222,88 +224,93 @@ for (let i = 0; i < arrayRegistro.length; i++){
     location.reload()
 })
 
-  var mod = document.getElementById("mod");
-  var abre = document.getElementById("abre");
-  var span = document.getElementsByClassName("close")[0];
+var mod = document.getElementById("mod");
+var abre = document.getElementById("abre");
+var span = document.getElementsByClassName("close")[0];
+
+let sectionInfos = document.getElementById("registros-${cpf}")
+
+const mainDiv = document.createElement("div");
+mainDiv.setAttribute("id", "main");
+document.body.appendChild(mainDiv);
+
+const visitanteDiv = document.createElement("div");
+visitanteDiv.setAttribute("id", `visitante-${cpf}`);
+mainDiv.appendChild(visitanteDiv);
+
+abre.addEventListener("click", async () => {
   
-
-  abre.addEventListener("click", async () => {
-
-    mod.style.display = "block";
-
-      const docRef = doc(db, "visitante", cpf);
-      const subcollectionRef = collection(docRef, "registros");
-
-      const arrayDocumentosRegistros = await getDocs(subcollectionRef)
-
-      arrayDocumentosRegistros.forEach(doc =>{
-
-        let sectionHistorico = document.getElementById('sectionHistorico')
-        let valueCpf = document.createElement("input")
-        valueCpf.setAttribute("class", "valueCpf")
-        valueCpf.value = doc.get("cpf")
-        valueCpf.setAttribute("type", "hidden")
-
-        
-        let div = document.createElement('div')
-        div.setAttribute("class", "mod-content")
-
-
-        let table = document.createElement ("table")
-        table.setAttribute("class","table-dentro")
-
-        let tbody = document.createElement("tbody")
-
-        let tr = document.createElement("tr")
-
-        let td = document.createElement("td")
-        td.innerHTML = doc.get("#")
-        tr.append(td)
-
-        td = document.createElement("td")
-        td.innerHTML = doc.get("entrada")
-        tr.append(td)
-
-        td = document.createElement("td")
-        td.innerHTML = doc.get("saida")
-        tr.append(td)
-
-        td = document.createElement("td")
-        td.innerHTML = doc.get("empresa")
-        tr.append(td)
-
-
-        tbody.append(tr)
-
-        table.append(tbody)
-
-        div.append(table,valueCpf)
-
-        sectionHistorico.append(div)
-      })
-
-  })
-
-  span.addEventListener("click", async () => {
-    mod.style.display = "none";
-    
-  })
   
-  window.onclick = function(event) {
-    if (event.target == mod) {
-      mod.style.display = "none";
-      location.reload()
-    }
-    
+  const cpf = document.getElementById("cpf").value;
 
+  mod.style.display = "block";
+
+  const docRef = doc(db, "visitante", cpf);
+  const subcollectionRef = collection(docRef, "registros");
+
+  const arrayDocumentosRegistros = await getDocs(subcollectionRef);
+
+  // Limpa o conteúdo antigo do elemento "visitanteDiv"
+  while (visitanteDiv.firstChild) {
+    visitanteDiv.removeChild(visitanteDiv.firstChild);
   }
+
+  arrayDocumentosRegistros.forEach((doc) => {
+    let div = document.createElement("div");
+
+    let table = document.createElement("table");
+
+    let tbody = document.createElement("tbody");
+
+    let tr = document.createElement("tr");
+
+    let td = document.createElement("td");
+    td.innerHTML = doc.get("#");
+    tr.appendChild(td);
+
+    td = document.createElement("td");
+    td.innerHTML = doc.get("entrada");
+    tr.appendChild(td);
+
+    td = document.createElement("td");
+    td.innerHTML = doc.get("saida");
+    tr.appendChild(td);
+
+    td = document.createElement("td");
+    td.innerHTML = doc.get("empresa");
+    tr.appendChild(td);
+
+    tbody.appendChild(tr);
+
+    table.appendChild(tbody);
+
+    div.appendChild(table);
+
+    visitanteDiv.appendChild(div);
+  });
+
+  sectionInfos.appendChild(mainDiv);
+});
+
+
+span.addEventListener("click", async () => {
+  mod.style.display = "none";
+});
+
+window.onclick = function (event) {
+  if (event.target == mod) {
+    mod.style.display = "none";
+  }
+};
 
 
    // hide the modal and reload the page
       modal.addEventListener("click", (event) => {
         if (event.target == modal) {
           modal.style.display = "none";
+          location.reload()
         }
+        
       }); 
       
       
