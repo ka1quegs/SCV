@@ -104,10 +104,8 @@ const arrayDocumentos = await getDocs(colecao)
         })
        
         button.innerHTML = "Revisar"
-        let image = document.createElement("img");
-          td.setAttribute("data-label","Ações")
-          
-        td.append(button,image)
+        td.setAttribute("data-label","Ações")  
+        td.append(button)
         tbody.appendChild(td)
         
         //Botão negar
@@ -202,10 +200,11 @@ for (let i = 0; i < arrayRegistro.length; i++){
 
     const hoje = new Date();
   
-    const dia = new Date().getDate;
-    const mes = new Date().getMonth;
+   
+    const dia = new Date().getDate();
+    const mes = new Date().getMonth();
     const ano = new Date().getFullYear();
-
+   
     const documentId = `${hoje.getFullYear()}-${hoje.getMonth() + 1}-${hoje.getDate()}`;
 
     const documentoRegistro = await getDoc(doc(registrosRef, documentId));
@@ -213,7 +212,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
       const novoRegistroRef = doc(registrosRef, documentId);
       
       await setDoc(novoRegistroRef, {
-      //  dataRegistro:`${dia }`,
+        dataRegistro: `${dia}/${mes + 1}/${ano}`,
         entrada: entrada,
         saida: saida,
         empresa: empresa,
@@ -222,7 +221,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
     }else{
       const novoRegistroRef = doc(registrosRef, documentId);
       await setDoc(novoRegistroRef, {
-        dataRegistro: new Date(),
+        dataRegistro: `${dia}/${mes + 1}/${ano}`,
         entrada: entrada,
         saida: saida,
         empresa: empresa,
@@ -231,6 +230,8 @@ for (let i = 0; i < arrayRegistro.length; i++){
     }
     location.reload()
 })
+
+// modal de HISTÓRICO
 
 var mod = document.getElementById("mod");
 var abre = document.getElementById("abre");
@@ -325,8 +326,6 @@ window.onclick = function (event) {
   })
   
 }
-
-  // modal de HISTÓRICO
 
 const input = document.getElementById('input-busca');
   input.addEventListener('keyup', () => {
