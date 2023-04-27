@@ -88,6 +88,9 @@ const arrayDocumentos = await getDocs(colecao)
         button = document.createElement("button")
         button.setAttribute("id", "revisao")
         button.setAttribute("class","revisar")
+        if (doc.get("status") == "Pendente") {
+          button.style.display = "none"
+        } 
         button.setAttribute("disable","true")
         button.addEventListener("click", async () => {
           await updateDoc(doc.ref, { verificacao: false })
@@ -102,10 +105,11 @@ const arrayDocumentos = await getDocs(colecao)
        
         button.innerHTML = "Revisar"
         let image = document.createElement("img");
-          td.setAttribute("data-label","Visualizar")
+          td.setAttribute("data-label","Ações")
+          
         td.append(button,image)
         tbody.appendChild(td)
-
+        
         //Botão negar
         table.append(tbody)
         registro.append(table,valueCpf)
@@ -197,15 +201,19 @@ for (let i = 0; i < arrayRegistro.length; i++){
     // Gera o ID do documento na subcoleção REGISTRO com  a DATA ATUAL
 
     const hoje = new Date();
+  
+    const dia = new Date().getDate;
+    const mes = new Date().getMonth;
+    const ano = new Date().getFullYear();
+
     const documentId = `${hoje.getFullYear()}-${hoje.getMonth() + 1}-${hoje.getDate()}`;
 
     const documentoRegistro = await getDoc(doc(registrosRef, documentId));
     if (documentoRegistro.exists()) {
       const novoRegistroRef = doc(registrosRef, documentId);
       
-      
       await setDoc(novoRegistroRef, {
-        dataRegistro: new Date(),
+      //  dataRegistro:`${dia }`,
         entrada: entrada,
         saida: saida,
         empresa: empresa,
@@ -265,7 +273,7 @@ abre.addEventListener("click", async () => {
     let tr = document.createElement("tr");
 
     let td = document.createElement("td");
-    td.innerHTML = doc.get("#");
+    td.innerHTML = doc.get("dataRegistro");
     tr.appendChild(td);
 
     td = document.createElement("td");
