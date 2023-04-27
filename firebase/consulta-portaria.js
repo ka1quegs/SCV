@@ -107,8 +107,6 @@ const arrayDocumentos = await getDocs(colecao)
         td.setAttribute("data-label","Ações")  
         td.append(button)
         tbody.appendChild(td)
-        
-        //Botão negar
         table.append(tbody)
         registro.append(table,valueCpf)
         sectionRegistro.append(registro)
@@ -199,8 +197,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
     // Gera o ID do documento na subcoleção REGISTRO com  a DATA ATUAL
 
     const hoje = new Date();
-  
-   
+
     const dia = new Date().getDate();
     const mes = new Date().getMonth();
     const ano = new Date().getFullYear();
@@ -210,7 +207,6 @@ for (let i = 0; i < arrayRegistro.length; i++){
     const documentoRegistro = await getDoc(doc(registrosRef, documentId));
     if (documentoRegistro.exists()) {
       const novoRegistroRef = doc(registrosRef, documentId);
-      
       await setDoc(novoRegistroRef, {
         dataRegistro: `${dia}/${mes + 1}/${ano}`,
         entrada: entrada,
@@ -248,7 +244,6 @@ visitanteDiv.setAttribute("id", `visitante-${cpf}`);
 mainDiv.appendChild(visitanteDiv);
 
 abre.addEventListener("click", async () => {
-  
   
   const cpf = document.getElementById("cpf").value;
 

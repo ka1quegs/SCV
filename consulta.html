@@ -109,12 +109,12 @@
                       </div>
                   </div>
                   
-                 <input type="file" id="flImage" name="fImage" accept="image/*">
                  
                   <main action="#">
                       <div class="form first">
                           <div class="details personal">
-                              <h3 style="margin-bottom: 20px; color:#f58634;">INFORMAÇÕES GERAIS</h3>
+                              <h3 style="margin-bottom: 20px; color:#f58634;">INFORMAÇÕES GERAIS
+                                <box-icon id="abre" name='time-five'></box-icon></h3>
               
                               <div class="fields">
                                   <div class="input-field">
@@ -264,6 +264,28 @@
             }
           });
         </script>
+
+      <div id="mod" class="mod">
+        <div id="mod2" class="mod-content">
+          <span class="close">&times;</span>
+          <table class="table-dentro">
+              <img class="img-dentro" src="images/logo600x80.png">
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Hora de Entrada</th>
+                    <th>Hora de Saída</th>
+                    <th>Empresa</th>
+                  </tr>
+                </thead>
+                </tbody>
+              </table>
+
+            <section id="registros-${cpf}">
+
+            </section>
+          </div>
+      </div>       
 
         <script src="firebase/consulta.js" type="module"></script>
     </body>
