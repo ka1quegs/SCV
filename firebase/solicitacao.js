@@ -1,5 +1,5 @@
 import { db } from "./modules.js"
-import { collection, addDoc,setDoc, doc}
+import { collection, getDoc,setDoc, doc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 
@@ -105,20 +105,38 @@ periodoDe.addEventListener("input", checkValidity);
 periodoAte.addEventListener("input", checkValidity);
 cpf.addEventListener("input", checkValidity);
 
-/*
-// Capturar os dados do formulário
-var form = document.querySelector('form');
-var dataInicial = new Date(form.querySelector('input[name="dataInicial"]').value);
-var dataFinal = new Date(form.querySelector('input[name="dataFinal"]').value);
-var dados = {
-  // insira aqui os dados adicionais que deseja armazenar no Firebase
-};
+const buscarBtn = document.getElementById("buscarVisitante");
+const cpfBuscar = document.getElementById("cpf");
 
-// Criar um registro para cada dia entre as datas inicial e final
-var database = firebase.database();
-var ref = database.ref('registros');
-for (var data = dataInicial; data <= dataFinal; data.setDate(data.getDate() + 1)) {
-  var dataFormatada = data.toISOString().substring(0, 10);
-  ref.child(dataFormatada).set(dados);
-}
-*/
+buscarBtn.addEventListener("click", async () => {
+  const visitorRef = doc(db, "visitante", cpf.value);
+  try {
+    const docSnap = await getDoc(visitorRef);
+
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+
+      // Preenche os respectivos inputs com os dados do Firestore
+      document.getElementById("nome").value = data.nome;
+      document.getElementById("rg").value = data.rg;
+      document.getElementById("cpf").value = data.cpf;
+      document.getElementById("emailVisitante").value = data.emailVisitante;
+      document.getElementById("responsavelVisita").value = data.responsavelVisita;
+      document.getElementById("setor").value = data.setor;
+      document.getElementById("telefone").value = data.telefone;
+      document.getElementById("celular").value = data.celular;
+      document.getElementById("periodoDe").value = data.periodoDe;
+      document.getElementById("periodoAte").value = data.periodoAte;
+      document.getElementById("empresa").value = data.empresa;
+      document.getElementById("modelo_carro").value = data.modelo_carro;
+      document.getElementById("placa_carro").value = data.placa_carro;
+      document.getElementById("acesso_fabrica").value = data.acesso_fabrica;
+      document.getElementById("mySelect").value = data.estacionamento;
+      document.getElementById("observacao").value = data.observacao;
+    } else {
+      console.log("Visitante não encontrado");
+    }
+  } catch (error) {
+    console.log("Erro ao buscar visitante:", error);
+  }
+});
