@@ -88,47 +88,70 @@ function hideAll(){
     }
 }
 
-const colecao = collection(db, "visitante")
-const arrayDocumentos = await getDocs(colecao)
-
-arrayDocumentos.forEach (async (doc) => {
-  const cpf = doc.id
-  const registrosColecao = collection(doc.ref, "registros")
-
-  const registrosDocumentos = await getDocs(registrosColecao)
-
-  if (!registrosDocumentos.empty) {
-    console.log("Subcoleção:", registrosDocumentos.docs)
-    
-    let sectionHistorico= document.getElementById("sectionHistorico")
-
-    registrosDocumentos.forEach(registroDoc => {
+async function mostrarHistorico() {
+    const colecao = collection(db, "visitante")
+    const registros = []
+  
+    const arrayDocumentos = await getDocs(colecao)
+  
+    arrayDocumentos.forEach(async (doc) => {
+      const registrosColecao = collection(doc.ref, "registros")
+  
+      const registrosDocumentos = await getDocs(registrosColecao)
+  
+      if (!registrosDocumentos.empty) {
+        registrosDocumentos.forEach((registroDoc) => {
+          registros.push({
+            cpf: doc.id,
+            dataRegistro: registroDoc.get("dataRegistro"),
+            nome: registroDoc.get("nome"),
+            entrada: registroDoc.get("entrada"),
+            saida: registroDoc.get("saida"),
+          })
+        })
+      }
+    })
+  
+    // Esperar um tempo para aguardar a resolução das Promises
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+  
+    // Ordenar os registros pelo campo "dataRegistro"
+    registros.sort((a, b) => {
+      const dataA = a.dataRegistro
+      const dataB = b.dataRegistro
+      return dataA > dataB ? -1 : dataA < dataB ? 1 : 0
+    })
+  
+    let sectionHistorico = document.getElementById("sectionHistorico")
+    sectionHistorico.innerHTML = ""
+  
+    registros.forEach((registro) => {
       let registroItem = document.createElement("div")
       registroItem.setAttribute("class", "visitas active")
   
       let table = document.createElement("table")
-      table.setAttribute('id', 'table2')
-      table.setAttribute('class', 'table')
+      table.setAttribute("id", "table2")
+      table.setAttribute("class", "table")
       let tbody = document.createElement("tbody")
       let valueCpf = document.createElement("input")
       valueCpf.setAttribute("type", "hidden")
       valueCpf.setAttribute("class", "valueCpf")
-      valueCpf.value = cpf
+      valueCpf.value = registro.cpf
   
       let td = document.createElement("td")
-      td.innerHTML = registroDoc.get("nome")
+      td.innerHTML = registro.nome
       tbody.append(td)
   
       td = document.createElement("td")
-      td.innerHTML = registroDoc.get("dataRegistro")
+      td.innerHTML = registro.dataRegistro
       tbody.append(td)
   
       td = document.createElement("td")
-      td.innerHTML = registroDoc.get("entrada")
+      td.innerHTML = registro.entrada
       tbody.append(td)
   
       td = document.createElement("td")
-      td.innerHTML = registroDoc.get("saida")
+      td.innerHTML = registro.saida
       tbody.append(td)
   
       table.append(tbody)
@@ -136,8 +159,10 @@ arrayDocumentos.forEach (async (doc) => {
       sectionHistorico.append(registroItem)
     })
   }
-})
-
+  
+  // Chamar a função para mostrar o histórico na tela
+  mostrarHistorico()
+  
 //Gráfico
 
 var tabela = document.getElementsByTagName('table')[0];
