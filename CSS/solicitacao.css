@@ -189,6 +189,53 @@ main .fields .input-field{
   margin: 8px 0;
 }
 
+.input-field2 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 49%;
+}
+
+.input-field2 label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2e2e2e;
+  margin-bottom: 0.5rem;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group input {
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 42px;
+  margin-right: 0.5rem;
+  flex: 1;
+
+}
+
+.input-group button {
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  border: none;
+  padding: 0 15px;
+  height: 42px;
+  cursor: pointer;
+
+}
+
+
 .btn{
   align-items: center;
   justify-content: center;
@@ -213,6 +260,7 @@ main .fields .input-field{
 form button:hover{
   background-color: #265df2;
 }   
+
 
 
 
@@ -365,6 +413,11 @@ form button:hover{
   .btn{
     margin-top: 5px;
   }
+
+  .input-field2 {
+    width: 98.5%;
+  }
+
 }
 
 
