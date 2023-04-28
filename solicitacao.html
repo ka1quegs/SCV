@@ -48,15 +48,13 @@ toggle_btn.onclick = function() {
 };
  
   </script>
-  
+  <div id="mensagemErro"></div>
   <div class="container">
     <header>Solicitação de Visitantes</header>
-
     <main> 
       <div class="form first">
         <div class="details personal">
           <span class="title">Informações Pessoais</span>
-
           <div class="fields">
             <div class="input-field">
               <label>Nome Completo<p style="display: inline-block; color: red; ">*</p></label>
@@ -182,6 +180,7 @@ toggle_btn.onclick = function() {
   </div>
 </main>
 </div>
+
 <script>
   $(document).ready(function() {
   $('#periodoDe').inputmask('99/99/9999  99:99');

@@ -106,6 +106,8 @@ periodoAte.addEventListener("input", checkValidity);
 cpf.addEventListener("input", checkValidity);
 
 const buscarBtn = document.getElementById("buscarVisitante");
+const mensagemErro = document.getElementById("mensagemErro");
+
 
 buscarBtn.addEventListener("click", async () => {
   const visitorRef = doc(db, "visitante", cpf.value);
@@ -122,7 +124,7 @@ buscarBtn.addEventListener("click", async () => {
       document.getElementById("celular").value = data.celular;
       
     } else {
-      console.log("Visitante não encontrado");
+      mensagemErro.textContent = "Cadastro não encontrado.";
     }
   } catch (error) {
     console.log("Erro ao buscar visitante:", error);
