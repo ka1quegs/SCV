@@ -194,7 +194,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
   
     const registrosRef = collection(docRef, "registros");
 
-    // Gera o ID do documento na subcoleção REGISTRO com  a DATA ATUAL
+    // Gera o ID do documento na subcoleção REGISTRO com a DATA ATUAL
 
     const hoje = new Date();
 

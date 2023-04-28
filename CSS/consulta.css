@@ -285,6 +285,7 @@ section{
   float: right;
   font-size: 28px;
   font-weight: bold;
+  
   }
   
   .close:hover,
@@ -294,40 +295,35 @@ section{
   cursor: pointer;
   }
 
-.img-dentro {
-  width: 150px;
-  display: block;
-  margin: 0 auto;
-  pointer-events: none;
-}
-
 .table-dentro {
   border-collapse: collapse;
   width: 100%;
+  margin: 0 auto;
   margin-bottom: 1em;
   font-family: Arial, sans-serif;
+  table-layout: fixed;
+  text-align: center;
 }
 
 th, td {
-  text-align: left;
   padding: 0.5em;
-  
+  text-align: center;
+}
+
+.section-two table{
+  width: 100%;
+  table-layout: fixed;
 }
 
 thead {
   background-color: #afbfe6;
-  
 }
 
 th {
   font-weight: bold;
   border:1px solid gray;
-  
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
 
 /* ---------- MEDIA QUERIES ---------- */
 
@@ -372,9 +368,6 @@ tr:nth-child(even) {
     width: 80%;
   }
 
-section{
-  height: 600px;
-} 
 
 h1{
   text-align: center;
@@ -391,7 +384,7 @@ header{
 
 .mod-content{
   width: 65%;
-  margin: 25% auto;
+  margin: 20% auto;
 }
 #input-busca{
   width: 95%;
@@ -401,11 +394,13 @@ header{
 
 
 @media (max-width:1300px){
-  
-  section{
-    height: 400px;
-    overflow-y: auto;
+
+  section {
+    overflow: auto;
   }
+
+ 
+
   .mod-content{
     width: 70%;
     margin: 25% auto;
@@ -552,7 +547,7 @@ hr{
 
 
 section{
-  height: 800px;
+  height: auto;
   overflow-x:auto;
 }
 
@@ -573,8 +568,10 @@ section{
   }
 
   section{
-    height: 1200px;
+    height: auto;
   }
+
+
 
   .table2{
     margin: 20px auto;
@@ -609,8 +606,10 @@ section{
 }
 
 section{
-  height: 720px;
+  height: auto;
 }
+
+
 
 #toggle-btn{
   margin-top: -7px;
