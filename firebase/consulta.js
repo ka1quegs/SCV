@@ -221,7 +221,6 @@ for (let i = 0; i < arrayRegistro.length; i++){
         
       }); 
       
-      
   })
   
 }
