@@ -191,7 +191,6 @@ main .fields .input-field{
 }
 
 .btn{
-  display: flex;
   align-items: center;
   justify-content: center;
   height: 45px;
@@ -215,6 +214,8 @@ main .fields .input-field{
 form button:hover{
   background-color: #265df2;
 }   
+
+
 
 /* ---------- MEDIA QUERIES ---------- */
 

@@ -222,10 +222,7 @@ color: #265df2;
   width: 20px;
 }
 
-section{
-  overflow-y: auto; 
-  height: 100%;
-}
+
 
 /*MODAL*/
 
@@ -297,12 +294,13 @@ section{
 
 .table-dentro {
   border-collapse: collapse;
-  width: 100%;
+  width: 97%;
   margin: 0 auto;
   margin-bottom: 1em;
   font-family: Arial, sans-serif;
   table-layout: fixed;
   text-align: center;
+
 }
 
 th, td {
@@ -311,7 +309,7 @@ th, td {
 }
 
 .section-two table{
-  width: 100%;
+  width: 98.5%;
   table-layout: fixed;
 }
 
@@ -323,6 +321,12 @@ th {
   font-weight: bold;
   border:1px solid gray;
 }
+
+#sectionRegistro{
+  overflow-y: scroll;
+}
+
+
 
 
 /* ---------- MEDIA QUERIES ---------- */
@@ -346,9 +350,9 @@ th {
       font-size: 14px;
       width: 95%;
     }
-    section{
-      height: 100%;
-      overflow-y: auto;
+    #sectionRegistro{
+      overflow-y: scroll;
+      height: auto;
     }
 
     #input-busca{
@@ -367,7 +371,6 @@ th {
     margin: 2% auto;
     width: 80%;
   }
-
 
 h1{
   text-align: center;
@@ -389,21 +392,25 @@ header{
 #input-busca{
   width: 95%;
 }
+
+#sectionRegistro{
+  overflow-y: scroll;
+  height: 480px;
+}
 }
 
 
 
 @media (max-width:1300px){
 
-  section {
-    overflow: auto;
+  #sectionRegistro{
+    overflow-y: scroll;
+    height: 400px;
   }
-
- 
 
   .mod-content{
     width: 70%;
-    margin: 25% auto;
+    margin: 15% auto;
   }
 }
 
@@ -477,7 +484,12 @@ hr{
     width: 70%;
     margin: 25% auto;
   }
+
+  #sectionRegistro{
+    overflow-y: scroll;
+    height: 500px;
   }
+}
 
 
 @media(max-width:992px){
@@ -546,9 +558,9 @@ hr{
 }
 
 
-section{
-  height: auto;
-  overflow-x:auto;
+#sectionRegistro{
+  overflow-y: scroll;
+  height: 600px;
 }
 
 .table2{
@@ -570,8 +582,6 @@ section{
   section{
     height: auto;
   }
-
-
 
   .table2{
     margin: 20px auto;
