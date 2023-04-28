@@ -106,7 +106,6 @@ periodoAte.addEventListener("input", checkValidity);
 cpf.addEventListener("input", checkValidity);
 
 const buscarBtn = document.getElementById("buscarVisitante");
-const cpfBuscar = document.getElementById("cpf");
 
 buscarBtn.addEventListener("click", async () => {
   const visitorRef = doc(db, "visitante", cpf.value);
@@ -115,24 +114,14 @@ buscarBtn.addEventListener("click", async () => {
 
     if (docSnap.exists()) {
       const data = docSnap.data();
-
-      // Preenche os respectivos inputs com os dados do Firestore
       document.getElementById("nome").value = data.nome;
       document.getElementById("rg").value = data.rg;
       document.getElementById("cpf").value = data.cpf;
       document.getElementById("emailVisitante").value = data.emailVisitante;
-      document.getElementById("responsavelVisita").value = data.responsavelVisita;
-      document.getElementById("setor").value = data.setor;
+      
       document.getElementById("telefone").value = data.telefone;
       document.getElementById("celular").value = data.celular;
-      document.getElementById("periodoDe").value = data.periodoDe;
-      document.getElementById("periodoAte").value = data.periodoAte;
-      document.getElementById("empresa").value = data.empresa;
-      document.getElementById("modelo_carro").value = data.modelo_carro;
-      document.getElementById("placa_carro").value = data.placa_carro;
-      document.getElementById("acesso_fabrica").value = data.acesso_fabrica;
-      document.getElementById("mySelect").value = data.estacionamento;
-      document.getElementById("observacao").value = data.observacao;
+      
     } else {
       console.log("Visitante não encontrado");
     }
