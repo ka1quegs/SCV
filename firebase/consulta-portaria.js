@@ -91,7 +91,7 @@ const arrayDocumentos = await getDocs(colecao)
         if (doc.get("status") == "Pendente") {
           button.style.display = "none"
         } 
-        button.setAttribute("disable","true")
+       
         button.addEventListener("click", async () => {
           await updateDoc(doc.ref, { verificacao: false })
           await updateDoc(doc.ref, { pendente: true })
