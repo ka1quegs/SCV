@@ -118,7 +118,6 @@ buscarBtn.addEventListener("click", async () => {
       document.getElementById("rg").value = data.rg;
       document.getElementById("cpf").value = data.cpf;
       document.getElementById("emailVisitante").value = data.emailVisitante;
-      
       document.getElementById("telefone").value = data.telefone;
       document.getElementById("celular").value = data.celular;
       
