@@ -193,7 +193,7 @@ color: #265df2;
   padding: 6px;
   border: none;
   border-radius: 5px;
-  font-size: 10px;
+  font-size: 11px;
   margin: 2px;
   cursor: pointer;
 }
@@ -204,9 +204,9 @@ color: #265df2;
   padding: 6px;
   border: none;
   border-radius: 5px;
-  font-size: 10px;
+  font-size: 12px;
   cursor: pointer;
-  width: 93px;
+  width: 99px;
 }
 
 .visualizar:hover{
