@@ -101,6 +101,11 @@ input[type='file']{
     border: 5px solid #111;
 }
 
+
+#abrirCamera{
+    width: 100px;
+    margin-left: 950px;
+}
 /* ---------- MEDIA QUERIES ---------- */
 
 @media (max-width:1601px){

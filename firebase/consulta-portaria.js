@@ -152,6 +152,43 @@ for (let i = 0; i < arrayRegistro.length; i++){
     
     modal.style.display = "block"
 
+    var video = document.querySelector('#video');
+    const tirarFoto = document.getElementById('tirarFoto')
+    const abrirCamera = document.getElementById("abrirCamera")
+    const divAreaCamera = document.querySelector("#divAreaCamera")
+
+    abrirCamera.addEventListener("click", () => {
+      divAreaCamera.style.display = "block"
+      abrirCamera.style.display = "none"
+
+    })
+    
+    navigator.mediaDevices.getUserMedia({video:true})
+    .then(stream => {
+        video.srcObject = stream;
+        video.play();
+    })
+    .catch(error =>{
+        console.log(error)
+    })
+
+    tirarFoto.addEventListener('click', () =>{
+        var canvas = document.querySelector('canvas')
+        canvas.height = video.videoHeight;
+        canvas.width = video.videoWidth;
+        var context = canvas.getContext('2d');
+        context.drawImage(video, 0, 0)
+
+        var link = document.createElement('a');
+        link.download = `${cpf}.png`;
+        link.href = canvas.toDataURL();
+        link.textContent = 'Clique para baixar a imagem';
+        document.body.appendChild(link);
+        
+       
+    });
+
+
     //Quando clicado no botão updateBtn pega todos os valores dos Inputs do modal e atualiza o firestore para aquele usuario
     const updateBtn = document.getElementById("updateBtn")
     updateBtn.addEventListener("click", async () => {
@@ -225,6 +262,8 @@ for (let i = 0; i < arrayRegistro.length; i++){
       });
     }
     location.reload()
+
+   
 })
 
 // modal de HISTÓRICO

@@ -29,4 +29,4 @@
   
   export const auth = getAuth();
 
-   export const storage = getStorage(app, "gs://projeto-tcc-bca68.appspot.com");
+  export const storage = getStorage(app, "gs://projeto-tcc-bca68.appspot.com");
