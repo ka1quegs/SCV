@@ -4,7 +4,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 
 const colecao = query(collection(db,"visitante"), where("consulta", "==", true ) )
-
+const entrada = document.getElementById("entrada")
 const arrayDocumentos = await getDocs(colecao)
 
   arrayDocumentos.forEach(doc =>{
@@ -90,6 +90,7 @@ const arrayDocumentos = await getDocs(colecao)
         button.setAttribute("class","revisar")
         if (doc.get("status") == "Pendente") {
           button.style.display = "none"
+            
         } 
        
         button.addEventListener("click", async () => {
@@ -151,6 +152,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
 
     
     modal.style.display = "block"
+    /*
 
     var video = document.querySelector('#video');
     const tirarFoto = document.getElementById('tirarFoto')
@@ -163,6 +165,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
 
     })
     
+    
     navigator.mediaDevices.getUserMedia({video:true})
     .then(stream => {
         video.srcObject = stream;
@@ -171,6 +174,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
     .catch(error =>{
         console.log(error)
     })
+    /*
 
     tirarFoto.addEventListener('click', () =>{
         var canvas = document.querySelector('canvas')
@@ -187,6 +191,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
         
        
     });
+    */
 
 
     //Quando clicado no botão updateBtn pega todos os valores dos Inputs do modal e atualiza o firestore para aquele usuario
@@ -358,6 +363,7 @@ window.onclick = function (event) {
       
       
   })
+
   
 }
 
