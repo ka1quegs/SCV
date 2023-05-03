@@ -349,12 +349,14 @@ section{
 
    section{
      overflow-y: auto;
+     height: 550px;
    }
 
    .main-cards{
     margin-bottom: 10%;
-
    }
+
+   
   
   }
 
