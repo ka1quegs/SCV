@@ -1,6 +1,7 @@
 import { db, storage } from "./modules.js"
 import {collection,getDocs, query, where, updateDoc, doc,getDoc, setDoc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import { ref } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js";
 
 
 const colecao = query(collection(db,"visitante"), where("consulta", "==", true ) )
@@ -191,8 +192,8 @@ for (let i = 0; i < arrayRegistro.length; i++){
     
       var confirmacao = confirm("Deseja enviar a imagem capturada para o Firebase Storage?");
       if (confirmacao) {
-        const storageRef = firebase.storage().ref();;
         const nomeArquivo = `${cpf}.png`;
+        const storageRef = ref(storage, 'images/' + nomeArquivo);
         const imagemRef = storageRef.ref(nomeArquivo);
     
         canvas.toBlob(function(blob) {
