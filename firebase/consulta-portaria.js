@@ -365,7 +365,7 @@ window.onclick = function (event) {
       modal.addEventListener("click", (event) => {
         if (event.target == modal) {
           modal.style.display = "none";
-          
+          location.reload()
         }
         
       }); 
