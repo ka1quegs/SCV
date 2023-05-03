@@ -106,8 +106,6 @@ periodoAte.addEventListener("input", checkValidity);
 cpf.addEventListener("input", checkValidity);
 
 const buscarBtn = document.getElementById("buscarVisitante");
-const mensagemErro = document.getElementById("mensagemErro");
-
 
 buscarBtn.addEventListener("click", async () => {
   const visitorRef = doc(db, "visitante", cpf.value);
@@ -122,9 +120,37 @@ buscarBtn.addEventListener("click", async () => {
       document.getElementById("emailVisitante").value = data.emailVisitante;
       document.getElementById("telefone").value = data.telefone;
       document.getElementById("celular").value = data.celular;
+
+      Toastify({
+        text: "Cadastro encontrado",
+        duration: 4000,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "#265df2",
+          top: 40,
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
       
     } else {
-      mensagemErro.textContent = "Cadastro não encontrado.";
+      Toastify({
+        text: "Cadastro não encontrado",
+        duration: 4000,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "#265df2",
+          top: 40,
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
     }
   } catch (error) {
     console.log("Erro ao buscar visitante:", error);
