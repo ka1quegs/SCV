@@ -395,7 +395,7 @@ header{
 
 #sectionRegistro{
   overflow-y: scroll;
-  height: 480px;
+  height: 700px;
 }
 }
 
@@ -405,7 +405,7 @@ header{
 
   #sectionRegistro{
     overflow-y: scroll;
-    height: 400px;
+    height: 700px;
   }
 
   .mod-content{
@@ -420,6 +420,7 @@ header{
 }
 .table2, .table th{
   font-size: 14px;
+  
 }
 
 .table2 td::before{
@@ -487,7 +488,7 @@ hr{
 
   #sectionRegistro{
     overflow-y: scroll;
-    height: 500px;
+    height: 700px;
   }
 }
 
