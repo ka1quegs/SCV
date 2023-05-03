@@ -153,7 +153,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
     
     modal.style.display = "block"
     
-    /*
+    
 
     var video = document.querySelector('#video');
     const tirarFoto = document.getElementById('tirarFoto')
@@ -182,24 +182,40 @@ for (let i = 0; i < arrayRegistro.length; i++){
         console.log(error)
     })
     
-
-    tirarFoto.addEventListener('click', () =>{
-        var canvas = document.querySelector('canvas')
-        canvas.height = video.videoHeight;
-        canvas.width = video.videoWidth;
-        var context = canvas.getContext('2d');
-        context.drawImage(video, 0, 0)
-
-        var link = document.createElement('a');
-        link.download = `${cpf}.png`;
-        link.href = canvas.toDataURL();
-        link.textContent = 'Clique para baixar a imagem';
-        document.body.appendChild(link);
-        
-       
+    tirarFoto.addEventListener('click', () => {
+      var canvas = document.querySelector('canvas');
+      canvas.height = video.videoHeight;
+      canvas.width = video.videoWidth;
+      var context = canvas.getContext('2d');
+      context.drawImage(video, 0, 0);
+    
+      var confirmacao = confirm("Deseja enviar a imagem capturada para o Firebase Storage?");
+      if (confirmacao) {
+        const storageRef = firebase.storage();
+        const nomeArquivo = `${cpf}.png`;
+        const imagemRef = storageRef.ref().child(nomeArquivo);
+    
+        canvas.toBlob(function(blob) {
+          // Enviar o blob para o Firebase Storage
+          var uploadTask = imagemRef.put(blob);
+    
+          // Monitorar o progresso do upload
+          uploadTask.on('state_changed', function(snapshot) {
+            // Mostrar o progresso do upload
+            var progresso = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log('Upload está ' + progresso.toFixed(2) + '% completo');
+          }, function(error) {
+            // Lidar com erros de upload
+            console.error('Erro ao enviar a imagem para o Firebase Storage:', error);
+          }, function() {
+            // Lidar com o sucesso do upload
+            console.log('Imagem enviada com sucesso para o Firebase Storage');
+          });
+        }, 'image/png');
+      }
     });
-  
-    */
+    
+    
 
     //Quando clicado no botão updateBtn pega todos os valores dos Inputs do modal e atualiza o firestore para aquele usuario
     const updateBtn = document.getElementById("updateBtn")
