@@ -153,6 +153,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
     
     modal.style.display = "block"
     
+    /*
 
     var video = document.querySelector('#video');
     const tirarFoto = document.getElementById('tirarFoto')
@@ -162,6 +163,12 @@ for (let i = 0; i < arrayRegistro.length; i++){
     abrirCamera.addEventListener("click", () => {
       divAreaCamera.style.display = "block"
       abrirCamera.style.display = "none"
+
+    })
+
+    fecharCamera.addEventListener("click", () => {
+      divAreaCamera.style.display = "none"
+      abrirCamera.style.display = "block"
 
     })
     
@@ -191,7 +198,8 @@ for (let i = 0; i < arrayRegistro.length; i++){
         
        
     });
-    
+  
+    */
 
     //Quando clicado no botão updateBtn pega todos os valores dos Inputs do modal e atualiza o firestore para aquele usuario
     const updateBtn = document.getElementById("updateBtn")
