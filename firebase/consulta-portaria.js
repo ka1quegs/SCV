@@ -152,7 +152,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
 
     
     modal.style.display = "block"
-    /*
+    
 
     var video = document.querySelector('#video');
     const tirarFoto = document.getElementById('tirarFoto')
@@ -174,7 +174,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
     .catch(error =>{
         console.log(error)
     })
-    /*
+    
 
     tirarFoto.addEventListener('click', () =>{
         var canvas = document.querySelector('canvas')
@@ -191,8 +191,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
         
        
     });
-    */
-
+    
 
     //Quando clicado no botão updateBtn pega todos os valores dos Inputs do modal e atualiza o firestore para aquele usuario
     const updateBtn = document.getElementById("updateBtn")
@@ -303,6 +302,8 @@ abre.addEventListener("click", async () => {
     visitanteDiv.removeChild(visitanteDiv.firstChild);
   }
 
+  
+
   arrayDocumentosRegistros.forEach((doc) => {
     let div = document.createElement("div");
 
@@ -356,7 +357,7 @@ window.onclick = function (event) {
       modal.addEventListener("click", (event) => {
         if (event.target == modal) {
           modal.style.display = "none";
-          location.reload()
+          
         }
         
       }); 
