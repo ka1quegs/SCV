@@ -1,118 +1,118 @@
 import { db, storage } from "./modules.js"
-import {collection,getDocs, query, where, updateDoc, doc,getDoc, setDoc}
-from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
-import { ref } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js";
+import { collection, getDocs, query, where, updateDoc, doc, getDoc, setDoc }
+  from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import { ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js";
 
 
-const colecao = query(collection(db,"visitante"), where("consulta", "==", true ) )
+const colecao = query(collection(db, "visitante"), where("consulta", "==", true))
 const entrada = document.getElementById("entrada")
 const arrayDocumentos = await getDocs(colecao)
 
-  arrayDocumentos.forEach(doc =>{
-    let sectionRegistro = document.getElementById('sectionRegistro')
-    
-    let registro = document.createElement('div')
-    registro.setAttribute("class", "registro")
-    registro.setAttribute("data-nome", doc.get("nome").toUpperCase());
+arrayDocumentos.forEach(doc => {
+  let sectionRegistro = document.getElementById('sectionRegistro')
 
-    let table = document.createElement("table")
-    table.setAttribute("class", "table2")
-    
-    let tbody = document.createElement("tbody")
-    let valueCpf = document.createElement("input")
-    valueCpf.setAttribute("class", "valueCpf")
-    valueCpf.value = doc.get("cpf")
-    valueCpf.setAttribute("type", "hidden")
+  let registro = document.createElement('div')
+  registro.setAttribute("class", "registro")
+  registro.setAttribute("data-nome", doc.get("nome").toUpperCase());
 
-    
-    //tbody
-    try{
-      let valueVisita = ""
-      let td = document.createElement("td");
-      td = document.createElement("td")
-      td.innerHTML = doc.get("periodoDe")
-      td.setAttribute("data-label","Data")
-      tbody.append(td)
-      
-      td = document.createElement("td")
-      td.innerHTML = doc.get("nome")
-      td.setAttribute("data-label","Nome")
-      tbody.append(td)
+  let table = document.createElement("table")
+  table.setAttribute("class", "table2")
 
-      td = document.createElement("td")
-      td.innerHTML = doc.get("empresa")
-      td.setAttribute("data-label","Empresa")
-      tbody.append(td)
+  let tbody = document.createElement("tbody")
+  let valueCpf = document.createElement("input")
+  valueCpf.setAttribute("class", "valueCpf")
+  valueCpf.value = doc.get("cpf")
+  valueCpf.setAttribute("type", "hidden")
 
-      td = document.createElement("td")
-      td.innerHTML = doc.get("responsavelVisita")
-      td.setAttribute("data-label","Solicitante")
-      tbody.append(td)
 
-      td = document.createElement("td")
-      td.innerHTML = doc.get("status")
-      td.setAttribute("data-label","Status")
-      tbody.append(td)
+  //tbody
+  try {
+    let valueVisita = ""
+    let td = document.createElement("td");
+    td = document.createElement("td")
+    td.innerHTML = doc.get("periodoDe")
+    td.setAttribute("data-label", "Data")
+    tbody.append(td)
 
-      td = document.createElement("td");
-      if (doc.get("entrada") === "") {
-        valueVisita = "Em aberto"
-        td.innerHTML = valueVisita;
-      } else{
-        valueVisita = "Em andamento"
-        td.innerHTML = valueVisita;
-      }
-      if(doc.get("saida") !== ""){
-        valueVisita = "Finalizada"
-        td.innerHTML = valueVisita
-      }
-      td.setAttribute("data-label", "Visita");
-      td.setAttribute("id", "andamentoVisita");
-      tbody.append(td);
+    td = document.createElement("td")
+    td.innerHTML = doc.get("nome")
+    td.setAttribute("data-label", "Nome")
+    tbody.append(td)
 
-      td = document.createElement("td")
-      td.innerHTML = doc.get("#")
-      td.setAttribute("data-label","Aprovado/Rejeitado por")
-      tbody.append(td)
+    td = document.createElement("td")
+    td.innerHTML = doc.get("empresa")
+    td.setAttribute("data-label", "Empresa")
+    tbody.append(td)
 
-      //Botão Visualizar
-        td = document.createElement("td")
-        let button = document.createElement("button")
-        button.setAttribute("class", "visualizar")
-        td.setAttribute("data-label","Ações")
-        button.setAttribute("id", "visualizar")
-        button.innerHTML = "Visualizar/Editar"
-        td.append(button)
-        tbody.appendChild(td)
+    td = document.createElement("td")
+    td.innerHTML = doc.get("responsavelVisita")
+    td.setAttribute("data-label", "Solicitante")
+    tbody.append(td)
 
-        //Botão REVISAR
-        button = document.createElement("button")
-        button.setAttribute("id", "revisao")
-        button.setAttribute("class","revisar")
-        if (doc.get("status") == "Pendente") {
-          button.style.display = "none"
-            
-        } 
-       
-        button.addEventListener("click", async () => {
-          await updateDoc(doc.ref, { verificacao: false })
-          await updateDoc(doc.ref, { pendente: true })
-          await updateDoc(doc.ref, { tipo_cadastro: "Pré-Cadastro" })
-          await updateDoc(doc.ref, { status: "Pendente" })
-          await updateDoc(doc.ref, { entrada: "" })
-          await updateDoc(doc.ref, { saida: "" })
-          console.log("Atualizado")
-          location.reload()
-        })
-       
-        button.innerHTML = "Revisar"
-        td.setAttribute("data-label","Ações")  
-        td.append(button)
-        tbody.appendChild(td)
-        table.append(tbody)
-        registro.append(table,valueCpf)
-        sectionRegistro.append(registro)
-  }catch{}
+    td = document.createElement("td")
+    td.innerHTML = doc.get("status")
+    td.setAttribute("data-label", "Status")
+    tbody.append(td)
+
+    td = document.createElement("td");
+    if (doc.get("entrada") === "") {
+      valueVisita = "Em aberto"
+      td.innerHTML = valueVisita;
+    } else {
+      valueVisita = "Em andamento"
+      td.innerHTML = valueVisita;
+    }
+    if (doc.get("saida") !== "") {
+      valueVisita = "Finalizada"
+      td.innerHTML = valueVisita
+    }
+    td.setAttribute("data-label", "Visita");
+    td.setAttribute("id", "andamentoVisita");
+    tbody.append(td);
+
+    td = document.createElement("td")
+    td.innerHTML = doc.get("#")
+    td.setAttribute("data-label", "Aprovado/Rejeitado por")
+    tbody.append(td)
+
+    //Botão Visualizar
+    td = document.createElement("td")
+    let button = document.createElement("button")
+    button.setAttribute("class", "visualizar")
+    td.setAttribute("data-label", "Ações")
+    button.setAttribute("id", "visualizar")
+    button.innerHTML = "Visualizar/Editar"
+    td.append(button)
+    tbody.appendChild(td)
+
+    //Botão REVISAR
+    button = document.createElement("button")
+    button.setAttribute("id", "revisao")
+    button.setAttribute("class", "revisar")
+    if (doc.get("status") == "Pendente") {
+      button.style.display = "none"
+
+    }
+
+    button.addEventListener("click", async () => {
+      await updateDoc(doc.ref, { verificacao: false })
+      await updateDoc(doc.ref, { pendente: true })
+      await updateDoc(doc.ref, { tipo_cadastro: "Pré-Cadastro" })
+      await updateDoc(doc.ref, { status: "Pendente" })
+      await updateDoc(doc.ref, { entrada: "" })
+      await updateDoc(doc.ref, { saida: "" })
+      console.log("Atualizado")
+      location.reload()
+    })
+
+    button.innerHTML = "Revisar"
+    td.setAttribute("data-label", "Ações")
+    td.append(button)
+    tbody.appendChild(td)
+    table.append(tbody)
+    registro.append(table, valueCpf)
+    sectionRegistro.append(registro)
+  } catch { }
 })
 
 
@@ -120,10 +120,10 @@ let modal = document.getElementById("modal")
 //Puxando informações de visitante para o Modal
 let arrayRegistro = document.getElementsByClassName("visualizar")
 
-for (let i = 0; i < arrayRegistro.length; i++){
+for (let i = 0; i < arrayRegistro.length; i++) {
   arrayRegistro[i].addEventListener("click", async () => {
     const cpf = document.getElementsByClassName("valueCpf")[i].value;
-    
+
     const busca = query(collection(db, "visitante"), where("cpf", "==", cpf))
 
     const resultadoBusca = await getDocs(busca)
@@ -149,12 +149,12 @@ for (let i = 0; i < arrayRegistro.length; i++){
       document.getElementById("saida").value = doc.get("saida")
       document.getElementById("status").value = doc.get("status")
       document.getElementById("aprov_rej").value = doc.get("#")
-      })
+    })
 
-    
+
     modal.style.display = "block"
-    
-    
+
+
 
     var video = document.querySelector('#video');
     const tirarFoto = document.getElementById('tirarFoto')
@@ -172,56 +172,44 @@ for (let i = 0; i < arrayRegistro.length; i++){
       abrirCamera.style.display = "block"
 
     })
-    
-    
-    navigator.mediaDevices.getUserMedia({video:true})
-    .then(stream => {
+
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
         video.srcObject = stream;
         video.play();
-    })
-    .catch(error =>{
+      })
+      .catch(error => {
         console.log(error)
-    })
-    
+      })
+
     tirarFoto.addEventListener('click', () => {
       var canvas = document.querySelector('canvas');
       canvas.height = video.videoHeight;
       canvas.width = video.videoWidth;
       var context = canvas.getContext('2d');
       context.drawImage(video, 0, 0);
-    
+
       var confirmacao = confirm("Deseja enviar a imagem capturada para o Firebase Storage?");
       if (confirmacao) {
-        const nomeArquivo = `${cpf}.png`;
-        const storageRef = ref(storage, 'images/' + nomeArquivo);
-        const imagemRef = storageRef.ref(nomeArquivo);
-    
-        canvas.toBlob(function(blob) {
-          // Enviar o blob para o Firebase Storage
-          var uploadTask = imagemRef.put(blob);
-    
-          // Monitorar o progresso do upload
-          uploadTask.on('state_changed', function(snapshot) {
-            // Mostrar o progresso do upload
-            var progresso = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            console.log('Upload está ' + progresso.toFixed(2) + '% completo');
-          }, function(error) {
-            // Lidar com erros de upload
-            console.error('Erro ao enviar a imagem para o Firebase Storage:', error);
-          }, function() {
-            // Lidar com o sucesso do upload
-            console.log('Imagem enviada com sucesso para o Firebase Storage');
+        const nomeArquivo = `${cpf}.jpg`;
+        const storageRef = ref(storage, `images/${nomeArquivo}`);
+
+        canvas.toBlob((blob) => {
+          uploadBytes(storageRef, blob).then((snapshot) => {
+            console.log('Uploaded a blob or file!');
           });
-        }, 'image/png');
+
+        });
       }
     });
-    
-    
+
+
 
     //Quando clicado no botão updateBtn pega todos os valores dos Inputs do modal e atualiza o firestore para aquele usuario
     const updateBtn = document.getElementById("updateBtn")
     updateBtn.addEventListener("click", async () => {
-    
+
       const nome = document.getElementById("nomeVisitante").value
       const email = document.getElementById("emailVisitante").value
       const celular = document.getElementById("celular").value
@@ -237,7 +225,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
       const periodoAte = document.getElementById("periodoAte").value
       const observacao = document.getElementById("story").value
       const entrada = document.getElementById("entrada").value
-      const saida = document.getElementById("saida").value      
+      const saida = document.getElementById("saida").value
       const docRef = doc(db, "visitante", cpf)
       await updateDoc(docRef, {
         nome: nome,
@@ -257,152 +245,152 @@ for (let i = 0; i < arrayRegistro.length; i++){
         entrada: entrada,
         saida: saida
       })
-  
-    const registrosRef = collection(docRef, "registros");
 
-    // Gera o ID do documento na subcoleção REGISTRO com a DATA ATUAL
+      const registrosRef = collection(docRef, "registros");
 
-    const hoje = new Date();
+      // Gera o ID do documento na subcoleção REGISTRO com a DATA ATUAL
 
-    const dia = new Date().getDate();
-    const mes = new Date().getMonth();
-    const ano = new Date().getFullYear();
-   
-    const documentId = `${hoje.getFullYear()}-${hoje.getMonth() + 1}-${hoje.getDate()}`;
+      const hoje = new Date();
 
-    const documentoRegistro = await getDoc(doc(registrosRef, documentId));
-    if (documentoRegistro.exists()) {
-      const novoRegistroRef = doc(registrosRef, documentId);
-      await setDoc(novoRegistroRef, {
-        dataRegistro: `${dia}/${mes + 1}/${ano}`,
-        entrada: entrada,
-        saida: saida,
-        empresa: empresa,
-        cpf: cpf
+      const dia = new Date().getDate();
+      const mes = new Date().getMonth();
+      const ano = new Date().getFullYear();
+
+      const documentId = `${hoje.getFullYear()}-${hoje.getMonth() + 1}-${hoje.getDate()}`;
+
+      const documentoRegistro = await getDoc(doc(registrosRef, documentId));
+      if (documentoRegistro.exists()) {
+        const novoRegistroRef = doc(registrosRef, documentId);
+        await setDoc(novoRegistroRef, {
+          dataRegistro: `${dia}/${mes + 1}/${ano}`,
+          entrada: entrada,
+          saida: saida,
+          empresa: empresa,
+          cpf: cpf
+        });
+      } else {
+        const novoRegistroRef = doc(registrosRef, documentId);
+        await setDoc(novoRegistroRef, {
+          dataRegistro: `${dia}/${mes + 1}/${ano}`,
+          entrada: entrada,
+          saida: saida,
+          empresa: empresa,
+          cpf: cpf
+        });
+      }
+      location.reload()
+
+
+    })
+
+    // modal de HISTÓRICO
+
+    var mod = document.getElementById("mod");
+    var abre = document.getElementById("abre");
+    var span = document.getElementsByClassName("close")[0];
+
+    let sectionInfos = document.getElementById("registros-${cpf}")
+
+    const mainDiv = document.createElement("div");
+    mainDiv.setAttribute("id", "main");
+    document.body.appendChild(mainDiv);
+
+    const visitanteDiv = document.createElement("div");
+    visitanteDiv.setAttribute("id", `visitante-${cpf}`);
+    mainDiv.appendChild(visitanteDiv);
+
+    abre.addEventListener("click", async () => {
+
+      const cpf = document.getElementById("cpf").value;
+
+      mod.style.display = "block";
+
+      const docRef = doc(db, "visitante", cpf);
+      const subcollectionRef = collection(docRef, "registros");
+
+      const arrayDocumentosRegistros = await getDocs(subcollectionRef);
+
+      // Limpa o conteúdo antigo do elemento "visitanteDiv"
+      while (visitanteDiv.firstChild) {
+        visitanteDiv.removeChild(visitanteDiv.firstChild);
+      }
+
+
+
+      arrayDocumentosRegistros.forEach((doc) => {
+        let div = document.createElement("div");
+
+        let table = document.createElement("table");
+
+        let tbody = document.createElement("tbody");
+
+        let tr = document.createElement("tr");
+
+        let td = document.createElement("td");
+        td.innerHTML = doc.get("dataRegistro");
+        tr.appendChild(td);
+
+        td = document.createElement("td");
+        td.innerHTML = doc.get("entrada");
+        tr.appendChild(td);
+
+        td = document.createElement("td");
+        td.innerHTML = doc.get("saida");
+        tr.appendChild(td);
+
+        td = document.createElement("td");
+        td.innerHTML = doc.get("empresa");
+        tr.appendChild(td);
+
+        tbody.appendChild(tr);
+
+        table.appendChild(tbody);
+
+        div.appendChild(table);
+
+        visitanteDiv.appendChild(div);
       });
-    }else{
-      const novoRegistroRef = doc(registrosRef, documentId);
-      await setDoc(novoRegistroRef, {
-        dataRegistro: `${dia}/${mes + 1}/${ano}`,
-        entrada: entrada,
-        saida: saida,
-        empresa: empresa,
-        cpf:cpf
-      });
-    }
-    location.reload()
 
-   
-})
-
-// modal de HISTÓRICO
-
-var mod = document.getElementById("mod");
-var abre = document.getElementById("abre");
-var span = document.getElementsByClassName("close")[0];
-
-let sectionInfos = document.getElementById("registros-${cpf}")
-
-const mainDiv = document.createElement("div");
-mainDiv.setAttribute("id", "main");
-document.body.appendChild(mainDiv);
-
-const visitanteDiv = document.createElement("div");
-visitanteDiv.setAttribute("id", `visitante-${cpf}`);
-mainDiv.appendChild(visitanteDiv);
-
-abre.addEventListener("click", async () => {
-  
-  const cpf = document.getElementById("cpf").value;
-
-  mod.style.display = "block";
-
-  const docRef = doc(db, "visitante", cpf);
-  const subcollectionRef = collection(docRef, "registros");
-
-  const arrayDocumentosRegistros = await getDocs(subcollectionRef);
-
-  // Limpa o conteúdo antigo do elemento "visitanteDiv"
-  while (visitanteDiv.firstChild) {
-    visitanteDiv.removeChild(visitanteDiv.firstChild);
-  }
-
-  
-
-  arrayDocumentosRegistros.forEach((doc) => {
-    let div = document.createElement("div");
-
-    let table = document.createElement("table");
-
-    let tbody = document.createElement("tbody");
-
-    let tr = document.createElement("tr");
-
-    let td = document.createElement("td");
-    td.innerHTML = doc.get("dataRegistro");
-    tr.appendChild(td);
-
-    td = document.createElement("td");
-    td.innerHTML = doc.get("entrada");
-    tr.appendChild(td);
-
-    td = document.createElement("td");
-    td.innerHTML = doc.get("saida");
-    tr.appendChild(td);
-
-    td = document.createElement("td");
-    td.innerHTML = doc.get("empresa");
-    tr.appendChild(td);
-
-    tbody.appendChild(tr);
-
-    table.appendChild(tbody);
-
-    div.appendChild(table);
-
-    visitanteDiv.appendChild(div);
-  });
-
-  sectionInfos.appendChild(mainDiv);
-});
+      sectionInfos.appendChild(mainDiv);
+    });
 
 
-span.addEventListener("click", async () => {
-  mod.style.display = "none";
-});
+    span.addEventListener("click", async () => {
+      mod.style.display = "none";
+    });
 
-window.onclick = function (event) {
-  if (event.target == mod) {
-    mod.style.display = "none";
-  }
-};
+    window.onclick = function (event) {
+      if (event.target == mod) {
+        mod.style.display = "none";
+      }
+    };
 
 
-   // hide the modal and reload the page
-      modal.addEventListener("click", (event) => {
-        if (event.target == modal) {
-          modal.style.display = "none";
-          location.reload()
-        }
-        
-      }); 
-      
-      
+    // hide the modal and reload the page
+    modal.addEventListener("click", (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        location.reload()
+      }
+
+    });
+
+
   })
 
-  
+
 }
 
 const input = document.getElementById('input-busca');
-  input.addEventListener('keyup', () => {
-    const filter = input.value.toUpperCase();
-    arrayDocumentos.forEach(doc => {
-      const nome = doc.get('nome').toUpperCase();
-      const registro = document.querySelector(`.registro[data-nome="${nome}"]`);
-      if (registro) {
-        registro.style.display = nome.includes(filter) ? '' : 'none';
-      }
-    });
+input.addEventListener('keyup', () => {
+  const filter = input.value.toUpperCase();
+  arrayDocumentos.forEach(doc => {
+    const nome = doc.get('nome').toUpperCase();
+    const registro = document.querySelector(`.registro[data-nome="${nome}"]`);
+    if (registro) {
+      registro.style.display = nome.includes(filter) ? '' : 'none';
+    }
   });
+});
 
 
