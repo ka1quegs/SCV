@@ -1,0 +1,71 @@
+<button id="open-camera-btn">Abrir câmera</button>
+
+<div id="camera-modal" class="modal-cam">
+  <div class="modal-camera">
+    <video id="camera-video" class="video"></video>
+    <button id="close-camera-btn">Fechar</button>
+  </div>
+</div>
+
+<style>
+    .modal-cam {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-camera {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+}
+
+canvasFoto {
+  width: 100%;
+  height: auto;
+}
+
+</style>
+
+<script>
+    const openCameraBtn = document.getElementById('open-camera-btn');
+const closeCameraBtn = document.getElementById('close-camera-btn');
+const cameraModal = document.getElementById('camera-modal');
+const cameraVideo = document.getElementById('camera-video');
+
+openCameraBtn.addEventListener('click', () => {
+  cameraModal.style.display = 'block';
+
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(stream => {
+      cameraVideo.srcObject = stream;
+      cameraVideo.play();
+    })
+    .catch(error => {
+      console.error('Erro ao acessar a câmera', error);
+      cameraModal.style.display = 'none';
+    });
+});
+
+closeCameraBtn.addEventListener('click', () => {
+  cameraModal.style.display = 'none';
+  cameraVideo.pause();
+  cameraVideo.srcObject = null;
+});
+
+</script>
