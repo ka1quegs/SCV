@@ -82,12 +82,12 @@ input[type='file']{
     width: 100%;
     max-width: 300px;
     border-radius: 50%;
-    margin-left: 85%;
+    margin-left: 75%;
     
 }
 #imgPhoto{
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     padding: 10px;
     background-color: #eee;
     border: 5px solid #ccc;

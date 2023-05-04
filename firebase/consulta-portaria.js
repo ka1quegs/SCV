@@ -1,7 +1,7 @@
 import { db, storage } from "./modules.js"
 import { collection, getDocs, query, where, updateDoc, doc, getDoc, setDoc }
   from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
-import { ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js";
+import { ref, uploadBytes, getDownloadURL  } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js";
 
 
 const colecao = query(collection(db, "visitante"), where("consulta", "==", true))
@@ -151,7 +151,7 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       document.getElementById("aprov_rej").value = doc.get("#")
     })
 
-
+  
     modal.style.display = "block"
 
 
@@ -192,9 +192,9 @@ for (let i = 0; i < arrayRegistro.length; i++) {
 
       var confirmacao = confirm("Deseja enviar a imagem capturada para o Firebase Storage?");
       if (confirmacao) {
-        const nomeArquivo = `${cpf}.jpg`;
-        const storageRef = ref(storage, `images/${nomeArquivo}`);
-
+        let nomeArquivo = `${cpf}.jpg`;
+        let storageRef = ref(storage, `images/${nomeArquivo}`);
+        
         canvas.toBlob((blob) => {
           uploadBytes(storageRef, blob).then((snapshot) => {
             console.log('Uploaded a blob or file!');
@@ -202,9 +202,23 @@ for (let i = 0; i < arrayRegistro.length; i++) {
 
         });
       }
+
+    });
+    
+    //Puxa a imagem para o visitante correspondente com o CPF
+    const nomeArquivo = `${cpf}.jpg`;
+    const storageRef = ref(storage, `images/${nomeArquivo}`);
+
+    getDownloadURL(storageRef).then(function(url) {
+      imgPhoto.src = `${url}`
+    
+    }).catch(function(error) {
+      
     });
 
+    
 
+    
 
     //Quando clicado no botão updateBtn pega todos os valores dos Inputs do modal e atualiza o firestore para aquele usuario
     const updateBtn = document.getElementById("updateBtn")

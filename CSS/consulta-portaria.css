@@ -108,6 +108,21 @@ background: rgba(0, 0, 0, 0.623);
 color: #265df2;
 }
 
+#video{
+  width: 400px;
+  height: 400px;
+  margin-left: 300px;
+  
+}
+
+#canvasFoto{
+  height: 300px;
+  width: 350px;
+}
+
+
+
+
 /* ---------- SCROLLBARS ---------- */
 
 ::-webkit-scrollbar {
