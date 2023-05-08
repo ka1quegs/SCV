@@ -172,6 +172,16 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       abrirCamera.style.display = "block"
 
     })
+     // hide the modal and reload the page
+     modalCamera.addEventListener("click", (event) => {
+      if (event.target == modalCamera) {
+        modalCamera.style.display = "none";
+        abrirCamera.style.display = "block"
+      }
+
+    });
+
+    
 
 
     navigator.mediaDevices.getUserMedia({ video: true })
@@ -228,6 +238,15 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       });
       
     })
+
+    // hide the modal when click out
+    modalFoto.addEventListener("click", (event) => {
+      if (event.target == modalFoto) {
+        modalFoto.style.display = "none";
+        
+      }
+
+    });
 
     //Quando clicado no botão updateBtn pega todos os valores dos Inputs do modal e atualiza o firestore para aquele usuario
     const updateBtn = document.getElementById("updateBtn")
