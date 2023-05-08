@@ -107,13 +107,28 @@
                   
                   
                   <main action="#">
+                    <div id="modalFoto" class="modalFoto">
+                      <div class="modalFoto-content">
+                        <span class="close">&times;</span>                     
+                        <section class="section-two" id="fotoGeral">
+                          <img id="fotoModal">
+                        </section>
+                      </div>
+                    </div>  
                    
-                    <div id="divAreaCamera" style="display: none;" >
-                      <video  id="video" autoplay></video>
-                      <canvas id="canvasFoto" ></canvas>
-                      <button id="tirarFoto">Tirar Foto</button>
-                      <button id="fecharCamera">Fechar camera</button>
-                    </div>
+
+                    <div id="modalCamera" class="modalFoto">
+                      <div class="modalCamera-content">
+                        <span class="close">&times;</span>                     
+                            <video  id="video" autoplay></video>
+                            <canvas id="canvasFoto" ></canvas>
+                            <button id="tirarFoto">Tirar Foto</button>
+                            <button id="fecharCamera">Fechar camera</button>
+                          </div>
+                        </section>
+                        
+                      </div>
+                    
                     <button id="abrirCamera">Abrir Camera</button>
                     
                       <div class="form first">

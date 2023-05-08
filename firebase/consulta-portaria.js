@@ -159,16 +159,16 @@ for (let i = 0; i < arrayRegistro.length; i++) {
     var video = document.querySelector('#video');
     const tirarFoto = document.getElementById('tirarFoto')
     const abrirCamera = document.getElementById("abrirCamera")
-    const divAreaCamera = document.querySelector("#divAreaCamera")
+   
 
     abrirCamera.addEventListener("click", () => {
-      divAreaCamera.style.display = "block"
+      modalCamera.style.display = "block"
       abrirCamera.style.display = "none"
 
     })
 
     fecharCamera.addEventListener("click", () => {
-      divAreaCamera.style.display = "none"
+      modalCamera.style.display = "none"
       abrirCamera.style.display = "block"
 
     })
@@ -204,6 +204,7 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       }
 
     });
+
     
     //Puxa a imagem para o visitante correspondente com o CPF
     const nomeArquivo = `${cpf}.jpg`;
@@ -216,9 +217,17 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       
     });
 
-    
+    document.getElementById("imgPhoto").addEventListener('click', ()=>{
+      modalFoto.style.display = "block"
 
-    
+      getDownloadURL(storageRef).then(function(url) {
+        fotoModal.src = `${url}`
+      
+      }).catch(function(error) {
+        
+      });
+      
+    })
 
     //Quando clicado no botão updateBtn pega todos os valores dos Inputs do modal e atualiza o firestore para aquele usuario
     const updateBtn = document.getElementById("updateBtn")
