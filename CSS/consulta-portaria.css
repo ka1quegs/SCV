@@ -111,19 +111,34 @@ color: #265df2;
 #video{
   width: 400px;
   height: 400px;
-  margin: 0 auto;
-  
+  margin-left: 120px;
+  margin-bottom: -357px;
+
 }
 
 #canvasFoto{
   width: 400px;
   height: 300px;
-  margin-top: -200vw;
-
-  
+  margin-left: 120px;
 }
 
+.funcoes{
+  display: flex;
+  margin: 0 20px auto;
+}
 
+#tirarFoto{
+  background-color: blue;
+  width: 100%;
+  margin: 10px;
+
+}
+#fecharCamera{
+  background-color: blue;
+  width: 100%;
+  margin: 10px;
+
+}
 
 
 /* ---------- SCROLLBARS ---------- */
@@ -216,9 +231,7 @@ color: #265df2;
   cursor: pointer;
 }
 
-#tirarFoto{
-  background-color: red;
-}
+
 
 .revisar{
   background-color: #f58634;
@@ -312,13 +325,14 @@ color: #265df2;
 
   .modalFoto-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 7% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 700px;
     height: auto; 
     overflow-y: auto;
     }
+
     .modalCamera {
       display: none;
       position: fixed;
