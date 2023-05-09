@@ -126,6 +126,7 @@ color: #265df2;
   display: flex;
   position: fixed;
   width: 45%;
+  top: 450px;
   margin: 0 20px auto;
 }
 
@@ -331,7 +332,7 @@ color: #265df2;
 
   .modalFoto-content {
     background-color: #fefefe;
-    margin: 7% auto;
+    margin: 3% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 700px;
