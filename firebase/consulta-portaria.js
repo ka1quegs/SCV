@@ -1,6 +1,6 @@
 import { db, storage } from "./modules.js"
 import { collection, getDocs, query, where, updateDoc, doc, getDoc, setDoc }
-  from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 import { ref, uploadBytes, getDownloadURL  } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js";
 
 
@@ -91,7 +91,6 @@ arrayDocumentos.forEach(doc => {
     button.setAttribute("class", "revisar")
     if (doc.get("status") == "Pendente") {
       button.style.display = "none"
-
     }
 
     button.addEventListener("click", async () => {
@@ -114,7 +113,6 @@ arrayDocumentos.forEach(doc => {
     sectionRegistro.append(registro)
   } catch { }
 })
-
 
 let modal = document.getElementById("modal")
 //Puxando informações de visitante para o Modal
@@ -150,11 +148,8 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       document.getElementById("status").value = doc.get("status")
       document.getElementById("aprov_rej").value = doc.get("#")
     })
-
-  
+ 
     modal.style.display = "block"
-
-
 
     var video = document.querySelector('#video');
     const tirarFoto = document.getElementById('tirarFoto')
@@ -180,9 +175,6 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       }
 
     });
-
-    
-
 
     navigator.mediaDevices.getUserMedia({ video: true })
       .then(stream => {
@@ -233,6 +225,7 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       
     })
 
+    const imgPhoto = document.getElementById('imgPhoto');
     
     //Puxa a imagem para o visitante correspondente com o CPF
     const nomeArquivo = `${cpf}.jpg`;
@@ -375,8 +368,6 @@ for (let i = 0; i < arrayRegistro.length; i++) {
         visitanteDiv.removeChild(visitanteDiv.firstChild);
       }
 
-
-
       arrayDocumentosRegistros.forEach((doc) => {
         let div = document.createElement("div");
 
@@ -425,7 +416,6 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       }
     };
 
-
     // hide the modal and reload the page
     modal.addEventListener("click", (event) => {
       if (event.target == modal) {
@@ -434,11 +424,7 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       }
 
     });
-
-
   })
-
-
 }
 
 const input = document.getElementById('input-busca');
