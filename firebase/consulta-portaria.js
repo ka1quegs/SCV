@@ -159,7 +159,7 @@ for (let i = 0; i < arrayRegistro.length; i++) {
     var video = document.querySelector('#video');
     const tirarFoto = document.getElementById('tirarFoto')
     const abrirCamera = document.getElementById("abrirCamera")
-   
+    const retirarFoto = document.getElementById('retirarFoto')
 
     abrirCamera.addEventListener("click", () => {
       modalCamera.style.display = "block"
@@ -193,6 +193,7 @@ for (let i = 0; i < arrayRegistro.length; i++) {
         console.log(error)
       })
 
+    
     tirarFoto.addEventListener('click', () => {
       var canvas = document.querySelector('canvas');
       canvas.height = video.videoHeight;
@@ -209,11 +210,28 @@ for (let i = 0; i < arrayRegistro.length; i++) {
           uploadBytes(storageRef, blob).then((snapshot) => {
             console.log('Uploaded a blob or file!');
           });
-
+          tirarFoto.style.display = "none"
+          retirarFoto.style.display = "block"
+          canvas.style.display = "block"
         });
       }
+      
 
     });
+
+
+    retirarFoto.addEventListener('click', () =>{
+      var canvas = document.querySelector('canvas');
+      canvas.height = video.videoHeight;
+      canvas.width = video.videoWidth;
+      var context = canvas.getContext('2d');
+      context.drawImage(video, 0, 0);
+      
+      canvas.style.display = "none";
+      retirarFoto.style.display = "none";
+      tirarFoto.style.display = "block";
+      
+    })
 
     
     //Puxa a imagem para o visitante correspondente com o CPF
