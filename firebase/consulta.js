@@ -232,10 +232,22 @@ for (let i = 0; i < arrayRegistro.length; i++){
   }).catch(function(error) {
     
   });
+  
+  document.getElementById("imgPhoto").addEventListener('click', ()=>{
+    
+    modalFoto.style.display = "block"
+
+    getDownloadURL(storageRef).then(function(url) {
+      fotoModal.src = `${url}`
+    
+    }).catch(function(error) {
+      
+    });
+    
   })
   
+})
 }
-
 const input = document.getElementById('input-busca');
   input.addEventListener('keyup', () => {
     const filter = input.value.toUpperCase();
