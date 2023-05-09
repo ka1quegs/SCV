@@ -112,18 +112,20 @@ color: #265df2;
   width: 400px;
   height: 400px;
   margin-left: 120px;
-  margin-bottom: -357px;
+  margin-bottom: -300px;
 
 }
 
 #canvasFoto{
   width: 400px;
   height: 300px;
-  margin-left: 120px;
+  margin-left: 110px;
 }
 
 .funcoes{
   display: flex;
+  position: fixed;
+  width: 45%;
   margin: 0 20px auto;
 }
 
@@ -138,6 +140,10 @@ color: #265df2;
   width: 100%;
   margin: 10px;
 
+}
+
+#retirarFoto{
+  display: none;
 }
 
 
@@ -346,7 +352,7 @@ color: #265df2;
   
     .modalCamera-content {
       background-color: #fefefe;
-      margin: 15% auto;
+      margin: 3% auto;
       padding: 20px;
       border: 1px solid #888;
       width: 50%;
