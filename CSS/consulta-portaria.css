@@ -236,18 +236,22 @@ color: #265df2;
   font-size: 11px;
   margin: 2px;
   cursor: pointer;
+  font-weight: 600;
 }
 
 
 
 .revisar{
-  background-color: #f58634;
+  background-color: #09128d;
   color: white;
   padding: 6px;
   border: none;
   border-radius: 5px;
   font-size: 12px;
   cursor: pointer;
+  width: 100px;
+  font-weight: 600;
+
 }
 
 .visualizar:hover{
@@ -255,7 +259,7 @@ color: #265df2;
   transition: all 0.3s ease-in;
 }
 .revisar:hover{
-  background-color: #f37820;
+  background-color:#070d63 ;
   transition: all 0.3s ease-in;
 }
 
