@@ -201,7 +201,7 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       context.drawImage(video, 0, 0);
 
       var confirmacao = confirm("Deseja enviar a imagem capturada para o Firebase Storage?");
-      if (confirmacao) {
+      if (confirmacao === true) {
         let nomeArquivo = `${cpf}.jpg`;
         let storageRef = ref(storage, `images/${nomeArquivo}`);
         
