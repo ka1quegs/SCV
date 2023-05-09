@@ -145,7 +145,17 @@ color: #265df2;
 
 #retirarFoto{
   display: none;
+  background-color: blue;
+  width: 100%;
+  margin: 10px;
 }
+
+#abrirCamera{
+  width: 100px;
+  margin-left: 880px;
+}
+
+
 
 
 /* ---------- SCROLLBARS ---------- */
@@ -228,7 +238,7 @@ color: #265df2;
 }
 
 .visualizar{
-  background-color: #f58634;
+  background-color: #070d63;
   color: white;
   padding: 6px;
   border: none;
@@ -242,7 +252,7 @@ color: #265df2;
 
 
 .revisar{
-  background-color: #09128d;
+  background-color: #f58634;
   color: white;
   padding: 6px;
   border: none;
@@ -255,11 +265,11 @@ color: #265df2;
 }
 
 .visualizar:hover{
-  background-color: #f37820;
+  background-color: #070d63;
   transition: all 0.3s ease-in;
 }
 .revisar:hover{
-  background-color:#070d63 ;
+  background-color:#f37820 ;
   transition: all 0.3s ease-in;
 }
 
@@ -281,6 +291,7 @@ color: #265df2;
   height: 100%;
   overflow-x: hidden;
   background-color: rgba(0,0,0,0.5);
+  border-radius: 10px;
   
 }
 
@@ -290,7 +301,7 @@ color: #265df2;
   border: 1px solid #888;
   width: 60%;
   position: relative;
-  
+  border-radius: 10px;
 }
 
 .historico{
@@ -309,6 +320,8 @@ color: #265df2;
   height: 100%;
   overflow: none;
   background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+
   }
   
   .mod-content {
@@ -320,6 +333,8 @@ color: #265df2;
   height: auto;
   max-height: 270px;
   overflow-y: auto;
+  border-radius: 10px;
+
   }
 
   .modalFoto {
@@ -332,6 +347,8 @@ color: #265df2;
     height: 100%;
     overflow: none;
     background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+
     }
 
   .modalFoto-content {
@@ -342,6 +359,8 @@ color: #265df2;
     width: 700px;
     height: auto; 
     overflow-y: auto;
+    border-radius: 10px;
+
     }
 
     .modalCamera {
@@ -353,6 +372,8 @@ color: #265df2;
       width: auto;
       height: auto;
       background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+
       }
   
     .modalCamera-content {
@@ -362,8 +383,9 @@ color: #265df2;
       border: 1px solid #888;
       width: 50%;
       height: 500px; 
-     
+      border-radius: 10px;
       } 
+
   .close {
   color: #aaa;
   float: right;
@@ -453,7 +475,44 @@ th {
 
     }
 
+    hr{
+      width: 95%;
+    }
+
+    #video{
+      width: 400px;
+      height: 400px;
+      margin-left: 250px;
+      margin-bottom: -300px;
+    }
+
+    #canvasFoto{
+      width: 400px;
+      height: 300px;
+      margin-left: 250px;
+      margin-top: -55px;
+    }
+
+    .modalCamera-content{
+      margin: 10% auto;
+      height: 550px;
+    }
  
+    .funcoes{
+      display: flex;
+      position: fixed;
+      width: 45%;
+      top: 620px;
+      margin: 0 20px auto;
+    }
+
+    .modalFoto-content{
+      margin: 10% auto;
+    }
+
+    #fotoModal{
+      margin-left: 9px;
+    }
 }
 
 @media (max-width:1601px){

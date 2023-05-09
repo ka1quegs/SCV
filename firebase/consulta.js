@@ -245,6 +245,15 @@ for (let i = 0; i < arrayRegistro.length; i++){
     });
     
   })
+
+   // hide the modal when click out
+    modalFoto.addEventListener("click", (event) => {
+      if (event.target == modalFoto) {
+        modalFoto.style.display = "none";
+        
+      }
+
+    });
   
 })
 }

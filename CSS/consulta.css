@@ -235,7 +235,7 @@ color: #265df2;
   height: 100%;
   overflow-x: hidden;
   background-color: rgba(0,0,0,0.5);
-  
+  border-radius: 10px;
 }
 
 .modal-content {
@@ -244,37 +244,69 @@ color: #265df2;
   border: 1px solid #888;
   width: 60%;
   position: relative;
-  
+  border-radius: 10px;
 }
 
 .historico{
   margin: 0 10px auto;
 }
 
+
 /*MODAL DENTRO*/
 
-.mod {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: none;
-  background-color: rgba(0, 0, 0, 0.4);
-  }
+  .mod {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
   
-  .mod-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 50%;
-  height: auto;
-  max-height: 270px;
-  overflow-y: auto;
-  }
+    }
+    
+    .mod-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: auto;
+    max-height: 270px;
+    overflow-y: auto;
+    border-radius: 10px;
+  
+    }
+  
+    .modalFoto {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: none;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+  
+      }
+  
+    .modalFoto-content {
+      background-color: #fefefe;
+      margin: 3% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 700px;
+      height: auto; 
+      overflow-y: auto;
+      border-radius: 10px;
+  
+      }
+  
   
   .close {
   color: #aaa;
@@ -323,6 +355,7 @@ th {
 
 #sectionRegistro{
   overflow-y: scroll;
+  line-height: 3.2;
 }
 
 
@@ -358,9 +391,21 @@ th {
       width: 95%;
     }
 
+    hr{
+      width: 95%;
+    }
+
     .mod-content{
       margin: 20% auto;
 
+    }
+
+    .modalFoto-content{
+      margin: 10% auto;
+    }
+
+    #fotoModal{
+      margin-left: 9px;
     }
 
  

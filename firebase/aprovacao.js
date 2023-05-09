@@ -1,6 +1,7 @@
-import { db } from "./modules.js"
+import { db, storage} from "./modules.js"
 import { collection, getDocs, query, where, updateDoc, getCountFromServer}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import { ref, getDownloadURL  } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js";
 
 
     const colecao = query(collection(db,"visitante"),where("verificacao", "==", false))
@@ -148,12 +149,45 @@ for (let i = 0; i < arrayRegistro.length; i++){
       })
 
       modal.style.display = "block"
+
+      const imgPhoto = document.getElementById('imgPhoto');
   
+        //Puxa a imagem para o visitante correspondente com o CPF
+      const nomeArquivo = `${cpf}.jpg`;
+      const storageRef = ref(storage, `images/${nomeArquivo}`);
+
+      getDownloadURL(storageRef).then(function(url) {
+        imgPhoto.src = `${url}`
+      
+      }).catch(function(error) {
+        
+      });
+
+      imgPhoto.addEventListener('click', ()=>{
+        modalFoto.style.display = "block"
+  
+        getDownloadURL(storageRef).then(function(url) {
+          fotoModal.src = `${url}`
+        
+        }).catch(function(error) {
+          
+        });
+        
+      })
 
     })}
 
     modal.addEventListener("click", (event) => {
       if (event.target == modal) {
         modal.style.display = "none";
+        location.reload()
       }
     });  
+    // hide the modal when click out
+    modalFoto.addEventListener("click", (event) => {
+      if (event.target == modalFoto) {
+        modalFoto.style.display = "none";
+        
+      }
+
+    });

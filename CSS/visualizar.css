@@ -101,10 +101,7 @@ input[type='file']{
 }
 
 
-#abrirCamera{
-    width: 100px;
-    margin-left: 850px;
-}
+
 /* ---------- MEDIA QUERIES ---------- */
 
 @media (max-width:1601px){

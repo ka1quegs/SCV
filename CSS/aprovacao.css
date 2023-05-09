@@ -234,6 +234,7 @@ table{
 	width: 100%;
 	border-collapse: collapse;
   table-layout: fixed;
+  
 }
 
 .table2 td,.table2{
@@ -241,6 +242,7 @@ table{
   border:none;
   text-align: center;
   font-size:16px;
+
 }
 
 .table2 th{
@@ -327,12 +329,38 @@ section{
     
   }
 
+  .modalFoto {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+
+    }
+
+  .modalFoto-content {
+    background-color: #fefefe;
+    margin: 3% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 700px;
+    height: auto; 
+    overflow-y: auto;
+    border-radius: 10px;
+
+    }
+
   /* ---------- MEDIA QUERIES ---------- */
 
   @media (max-width: 1920px) {
 
     .table, .table2{
-      margin-left: -3%;
+      margin-left: -1%;
       
     }
 
@@ -356,8 +384,15 @@ section{
     margin-bottom: 10%;
    }
 
+   #fotoModal{
+    margin-left: 9px;
+   }
    
-  
+    .modalFoto-content{
+    margin: 8% auto;
+    height: 530px;
+    overflow-y: hidden;
+    }
   }
 
   @media (max-width: 1601px) {
