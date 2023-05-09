@@ -1,6 +1,8 @@
 import { db, storage } from "./modules.js"
-import {collection,getDocs, query, where, updateDoc, doc,getDoc, setDoc}
+import {collection,getDocs, query, where, doc }
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import { ref,  getDownloadURL  } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js";
+
 
 const colecao = query(collection(db,"visitante"), where("consulta", "==", true ) )
 
@@ -220,7 +222,16 @@ for (let i = 0; i < arrayRegistro.length; i++){
         }
         
       }); 
-      
+      //Puxa a imagem para o visitante correspondente com o CPF
+  const nomeArquivo = `${cpf}.jpg`;
+  const storageRef = ref(storage, `images/${nomeArquivo}`);
+
+  getDownloadURL(storageRef).then(function(url) {
+    imgPhoto.src = `${url}`
+  
+  }).catch(function(error) {
+    
+  });
   })
   
 }
