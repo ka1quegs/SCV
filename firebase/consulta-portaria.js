@@ -201,7 +201,7 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       var context = canvas.getContext('2d');
       context.drawImage(video, 0, 0);
 
-      var confirmacao = confirm("Deseja enviar a imagem capturada para o Firebase Storage?");
+      var confirmacao = confirm("Deseja salvar a foto?");
       if (confirmacao === true) {
         let nomeArquivo = `${cpf}.jpg`;
         let storageRef = ref(storage, `images/${nomeArquivo}`);
