@@ -138,6 +138,7 @@ color: #265df2;
   gap: 20px;
   margin: 20px 0;
   width: 100%;    
+  
 }
 
 
@@ -153,6 +154,7 @@ color: #265df2;
   border-radius: 5px;
   box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  user-select: none;  
 }
 
 .card:first-child {
@@ -192,6 +194,7 @@ color: #265df2;
   text-align: center;
   color: #f58634;
   font-weight: bold;
+  user-select: none;
 }
 
 .dashboard{
@@ -294,6 +297,7 @@ table{
   font-weight: bold;
   color: #f58634;
   margin-top: -60px;
+  user-select: none;
 }
 
 section{
@@ -301,6 +305,7 @@ section{
   overflow-x: hidden;
   height: 250px;
   width: 100%;
+  user-select: none;
 }
 
   /*MODAL*/
