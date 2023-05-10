@@ -57,9 +57,13 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
       tipo_cadastro: "Pré-Cadastro"
     });
 
-    
+    setTimeout(() => {
+      location.reload(); // recarregar a página
+    }, 1000); // esperar 1 segundo antes de recarregar a página
+  
     }
     )
+
   }catch{}
 
   //Toastify de Solicitação enviada
