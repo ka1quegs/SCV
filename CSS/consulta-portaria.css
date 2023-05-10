@@ -190,12 +190,14 @@ color: #265df2;
     margin-top: 10px;
     margin-bottom: 10px;
     border: 2px solid rgb(173, 173, 173);
+    user-select: none;
 }
 
 .table{
 	width: 80vw;
 	border-collapse: collapse;
  table-layout: fixed;
+ user-select: none;
 }
 
 .table td,.table th{
@@ -433,10 +435,31 @@ th {
 
 #sectionRegistro{
   overflow-y: scroll;
+  user-select: none;
 }
 
 
+.contador{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 17%;
+  height: 50px;
+  margin-right: 18px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 1px black;
+  border-left: 10px solid #246dec;
+  pointer-events: none;
 
+}
+
+.texto{
+  font-size: 17px;
+  font-weight: 600;
+  margin-left: 10px;
+  user-select: none;
+}
 
 
 

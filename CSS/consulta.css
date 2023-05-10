@@ -146,6 +146,7 @@ color: #265df2;
 	width: 80vw;
 	border-collapse: collapse;
  table-layout: fixed;
+ user-select: none;
 }
 
 .table td,.table th{
@@ -356,6 +357,7 @@ th {
 #sectionRegistro{
   overflow-y: scroll;
   line-height: 2.5;
+  user-select: none;
 }
 
 
