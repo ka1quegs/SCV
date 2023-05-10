@@ -1,5 +1,5 @@
 import { db, storage } from "./modules.js"
-import {collection,getDocs, query, where, doc }
+import {collection,getDocs, query, where, doc,getCountFromServer }
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 import { ref,  getDownloadURL  } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js";
 
@@ -270,3 +270,7 @@ const input = document.getElementById('input-busca');
   });
 
 
+ //Contadores de Aprovações
+ const coll = query(collection(db, "visitante"));
+ const firstCounter = await getCountFromServer(coll);
+   document.getElementById("count-total").innerHTML = firstCounter.data().count;
