@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/aprovacao.css">
+    <link rel="stylesheet" href="CSS/visualizar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=devi  ce-width, initial-scale=1.0">
+     <link rel="shortcut icon" href="Images/Logo P.png" >
+     <title>Histórico de visitantes</title>
+   </head>
+<body>  
+  <nav class="hide">
+    <button type="button" id="toggle-btn">
+      <i class="fa fa-bars"></i>
+    </button>
+    <ul class="sidebar-menu">
+      <img src="Images/logoBranco.png" style="margin:0 auto; width: 200px; pointer-events: none;" alt="">
+      <li><a href="solicitacao.html"><i class="fa-solid fa-user-plus"></i>Solicitação</a></li>
+      <li><a href="consulta.html"><i class="fa-solid fa-magnifying-glass"></i>Consulta</a></li>
+      <li><a href="consulta-portaria.html"><i class="fa-solid fa-magnifying-glass"></i>Portaria</a></li>
+      <li><a href="aprovacao.html"><i class="fa-solid fa-user-check"></i>Aprovação</a></li>
+      <li><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i>Sair</a></li>
+    </ul>
+  </nav>
+  <script>
+    const nav = document.querySelector('nav');
+const toggle_btn = document.getElementById('toggle-btn');
+const content = document.querySelector('section');
+
+toggle_btn.onclick = function() {
+    nav.classList.toggle('hide');
+    content.classList.toggle('expand');
+};
+  </script>
+   <!--Corpo da Página-->
+
+
+  <h1 class="text">Histórico de Visitantes</h1>
+  <hr>
+  <section id="sectionRegistro">
+
+
+  </section>
+
+
+
+<script type="module" src="firebase/historico.js"></script>
+</body>
+</html>

@@ -5,7 +5,6 @@ import { ref, uploadBytes, getDownloadURL  } from "https://www.gstatic.com/fireb
 
 
 const colecao = query(collection(db, "visitante"), where("consulta", "==", true))
-const entrada = document.getElementById("entrada")
 const arrayDocumentos = await getDocs(colecao)
 
 arrayDocumentos.forEach(doc => {
