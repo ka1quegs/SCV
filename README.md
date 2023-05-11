@@ -12,4 +12,6 @@ https://ka1quegs.github.io/SCV/aprovacao
 
 https://ka1quegs.github.io/SCV/consulta
 
+https://ka1quegs.github.io/SCV/historico
+
 
