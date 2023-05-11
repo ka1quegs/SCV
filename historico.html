@@ -1,29 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt-br" dir="ltr">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="CSS/aprovacao.css">
-    <link rel="stylesheet" href="CSS/visualizar.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-     <meta name="viewport" content="width=devi  ce-width, initial-scale=1.0">
-     <link rel="shortcut icon" href="Images/Logo P.png" >
-     <title>Histórico de Visitantes</title>
-   </head>
-<body>  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="shortcut icon" href="Images/Logo P.png" >
+    <link rel="stylesheet" href="CSS/historico.css">
+    <title>Histórico</title>
+
+</head>
+<body>
+
+    <link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  
   <nav class="hide">
     <button type="button" id="toggle-btn">
       <i class="fa fa-bars"></i>
     </button>
     <ul class="sidebar-menu">
       <img src="Images/logoBranco.png" style="margin:0 auto; width: 200px; pointer-events: none;" alt="">
+
       <li><a href="solicitacao.html"><i class="fa-solid fa-user-plus"></i>Solicitação</a></li>
       <li><a href="consulta.html"><i class="fa-solid fa-magnifying-glass"></i>Consulta</a></li>
       <li><a href="consulta-portaria.html"><i class="fa-solid fa-magnifying-glass"></i>Portaria</a></li>
       <li><a href="aprovacao.html"><i class="fa-solid fa-user-check"></i>Aprovação</a></li>
+      <li><a href="historico.html"><i class="fa-sharp fa-regular fa-clock"></i>Histórico</a></li>
       <li><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i>Sair</a></li>
+
     </ul>
   </nav>
+  <section>
+  </section>
+
+ 
+
   <script>
     const nav = document.querySelector('nav');
 const toggle_btn = document.getElementById('toggle-btn');
@@ -33,19 +46,191 @@ toggle_btn.onclick = function() {
     nav.classList.toggle('hide');
     content.classList.toggle('expand');
 };
+ 
   </script>
-   <!--Corpo da Página-->
+
+<h1 style="color: #f58634; font-weight: bold; text-align: center; user-select: none;">Histórico de Visitantes</h1>
+<div class="container">
+        <div class="tabs-btn">
+            <ul>
+
+                <!-- note that for attribute of li is the class of respected li -->
+                <!-- we will use this relation in js -->
+                <li for="visitas">Visitas Recentes</li>
+                <li for="grafico">Média de Visitas</li>
+                
+            </ul>
+            <!-- for bottom line -->
+            <div class="line"><span></span></div>
+        </div>
+        <div class="tabs-content">
+            <ul>
+                <li class="visitas active">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Data de Visita</th>
+                                <th>Horário de Entrada</th>
+                                <th>Horário de Saída</th>
+                            </tr>
+                        </thead>
+                   
+                        <tbody>
+                            
+                            <tr>
+                                <td>João Silva</td>
+                                <td>01/01/2023</td>
+                                <td>14:30</td>
+                                <td>14:30</td>
+                            </tr>
+                            <tr>
+                                <td>Maria Santos</td>
+                                <td>03/02/2023</td>
+                                <td>10:00</td>
+                                <td>10:00</td>
+                            </tr>
+                            <tr>
+                                <td>Pedro Rocha</td>
+                                <td>05/03/2023</td>
+                                <td>16:45</td>
+                                <td>16:45</td>
+
+                            </tr>
+                            <tr>
+                                <td>Lucas Mendes</td>
+                                <td>08/04/2023</td>
+                                <td>11:15</td>
+                                <td>11:15</td>
+
+                            </tr>
+                            <tr>
+                                <td>Paula Oliveira</td>
+                                <td>10/05/2023</td>
+                                <td>09:30</td>
+                                <td>09:30</td>
+
+                            </tr>
+                            <tr>
+                                <td>Luiza Souza</td>
+                                <td>12/06/2023</td>
+                                <td>14:00</td>
+                                <td>14:00</td>
+
+                            </tr>
+                            <tr>
+                                <td>Carlos Ferreira</td>
+                                <td>15/07/2023</td>
+                                <td>10:30</td>
+                                <td>10:30</td>
+
+                            </tr>
+                            <tr>
+                                <td>Fernanda Santos</td>
+                                <td>20/08/2023</td>
+                                <td>16:00</td>
+                                <td>16:00</td>
+
+                            </tr>
+                            <tr>
+                                <td>Renato Lima</td>
+                                <td>22/09/2023</td>
+                                <td>11:45</td>
+                                <td>11:45</td>
+
+                            </tr>
+                            <tr>
+                                <td>Bruna Silva</td>
+                                <td>25/10/2023</td>
+                                <td>09:15</td>
+                                <td>09:15</td>
+
+                            </tr>
+                            <tr>
+                                <td>Gustavo Mendes</td>
+                                <td>28/11/2023</td>
+                                <td>14:30</td>
+                                <td>14:30</td>
+
+                            </tr>
+                            <tr>
+                                <td>Julia Souza</td>
+                                <td>30/12/2023</td>
+                                <td>10:00</td>
+                                <td>10:00</td>
+                            </tr>                          
+                            <tr>
+                                <td>Julia Souza</td>
+                                <td>30/12/2023</td>
+                                <td>10:00</td>
+                                <td>10:00</td>
+                            </tr>                          
+                            <tr>
+                                <td>Julia Souza</td>
+                                <td>30/12/2023</td>
+                                <td>10:00</td>
+                                <td>10:00</td>
+                            </tr>                          
+                            <tr>
+                                <td>Julia Souza</td>
+                                <td>30/12/2023</td>
+                                <td>10:00</td>
+                                <td>10:00</td>
+                            </tr>                          
+                            <tr>
+                                <td>Julia Souza</td>
+                                <td>30/12/2023</td>
+                                <td>10:00</td>
+                                <td>10:00</td>
+                            </tr>                          
+                            <tr>
+                                <td>Julia Souza</td>
+                                <td>30/12/2023</td>
+                                <td>10:00</td>
+                                <td>10:00</td>
+                            </tr>                          
+                            <tr>
+                                <td>Julia Souza</td>
+                                <td>30/12/2023</td>
+                                <td>10:00</td>
+                                <td>10:00</td>
+                            </tr>                          
+                            <tr>
+                                <td>Julia Souza</td>
+                                <td>30/12/2023</td>
+                                <td>10:00</td>
+                                <td>10:00</td>
+                            </tr>                          
+                            <tr>
+                                <td>Julia Souza</td>
+                                <td>30/12/2023</td>
+                                <td>10:00</td>
+                                <td>10:00</td>
+                            </tr>                          
+                            <tr>
+                                <td>Julia Souza</td>
+                                <td>30/12/2023</td>
+                                <td>10:00</td>
+                                <td>10:00</td>
+                            </tr>                          
+                            <tr>
+                                <td>Julia Souza</td>
+                                <td>30/12/2023</td>
+                                <td>10:00</td>
+                                <td>10:00</td>
+                            </tr>   
+                        </section>                       
+                    </tbody>
+                  </table>
+                </li>
+                <li class="grafico">
+                    <canvas id="myChart"></canvas>
+                </li>
+            </ul>
+        </div>
 
 
-  <h1 class="text">Histórico de Visitantes</h1>
-  <hr>
-  <section id="sectionRegistro">
-
-
-  </section>
-
-
-
-<script type="module" src="firebase/historico.js"></script>
+    </div>
+    <script src="firebase/historico.js"></script>
 </body>
 </html>
