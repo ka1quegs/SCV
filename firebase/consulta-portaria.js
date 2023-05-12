@@ -156,7 +156,7 @@ for (let i = 0; i < arrayRegistro.length; i++) {
     const retirarFoto = document.getElementById('retirarFoto')
 
     abrirCamera.addEventListener("click", () => {
-      modalCamera.style.display = "block"
+      modalCamera.style.display = "block"   
       abrirCamera.style.display = "none"
 
     })

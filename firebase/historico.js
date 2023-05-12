@@ -1,6 +1,7 @@
 import { db } from "./modules.js"
-import { collection, getDocs, query, where, updateDoc, doc, getDoc, setDoc }
+import { collection, getDocs, getDoc, doc }
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+
 
 const tabsLine = document.querySelector('.tabs-btn .line span')
 const tabsBtnLi = document.querySelectorAll('.tabs-btn li')
@@ -139,102 +140,54 @@ var myChart = new Chart(ctx, {
     }
 });
 
-const colecao = collection(db, "visitantes")
+
+
+const colecao = collection(db, "visitante")
 const arrayDocumentos = await getDocs(colecao)
 
-arrayDocumentos.forEach(async (d) => {
-    const solicitacao = doc(db, "Aluno", d.id, "solicitacoes", "solicitacao")
-    const docSolicitacao = await getDoc(solicitacao)
+arrayDocumentos.forEach (async (doc) => {
+  const cpf = doc.id
+  const registrosColecao = collection(doc.ref, "registros")
 
-    if (docSolicitacao.exists()) {
-        console.log("Subcoleção:", docSolicitacao.data())
-        console.log("Subcoleção: ", typeof docSolicitacao.get("jaleco"))
+  const registrosDocumentos = await getDocs(registrosColecao)
 
-        let sectionRegistro = document.getElementById("sectionRegistro")
+  if (!registrosDocumentos.empty) {
+    console.log("Subcoleção:", registrosDocumentos.docs)
+    
+    let sectionHistorico= document.getElementById("sectionHistorico")
 
-        let registroItem = document.createElement("div")
-        registroItem.setAttribute("class", "registroItem")
-    
-        let imgAluno = document.createElement("img")
-        imgAluno.setAttribute("class", "imgAluno")
-        imgAluno.src = "../../img/icones/icon-foto-perfil.png"
-    
-        let table = document.createElement("table")
-        let thead = document.createElement("thead")
-        let tbody = document.createElement("tbody")
-        let valueMatricula = document.createElement("input")
-        valueMatricula.setAttribute("type", "hidden")
-        valueMatricula.setAttribute("class", "valueMatricula")
-        valueMatricula.value = d.get("numMatricula")
-    
-        let th = document.createElement("th")
-        th.innerHTML = "Matrícula"
-        thead.append(th)
-    
-        th = document.createElement("th")
-        th.innerHTML = "Nome"
-        thead.append(th)
-    
-        th = document.createElement("th")
-        th.innerHTML = "CPF"
-        th.setAttribute("class", "sumir")
-        thead.append(th)
-    
-        th = document.createElement("th")
-        th.innerHTML = "Curso"
-        th.setAttribute("class", "sumir")
-        thead.append(th)
-    
-        th = document.createElement("th")
-        th.innerHTML = "Turma"
-        th.setAttribute("class", "sumir")
-        thead.append(th)
-    
-        /**/
-    
-        let td = document.createElement("td")
-        td.innerHTML = d.get("numMatricula")
-        tbody.append(td)
-    
-        td = document.createElement("td")
-        td.innerHTML = d.get("nome")
-        tbody.append(td)
-    
-        td = document.createElement("td")
-        td.innerHTML = d.get("cpf")
-        td.setAttribute("class", "sumir")
-        tbody.append(td)
-    
-        td = document.createElement("td")
-        td.innerHTML = d.get("curso")
-        td.setAttribute("class", "sumir")
-        tbody.append(td)
-    
-        td = document.createElement("td")
-        td.innerHTML = d.get("turma")
-        td.setAttribute("class", "sumir")
-        tbody.append(td)
-    
-    
-        table.append(thead, tbody)
-        registroItem.append(imgAluno, table, valueMatricula)
-        sectionRegistro.append(registroItem)
-    
-        try{
-    
-            //Adiciona imagem.
-            const storage = getStorage();
-            const starsRef = ref(storage, `images/${d.get("email")}`)
-            
-            getDownloadURL(starsRef)
-              .then((url) => {
-                imgAluno.src = `${url}`
-              })
-              .catch((error) => {
-                console.log(error)
-              });
-    
-        } catch {}
-
-    }
-});
+    registrosDocumentos.forEach(registroDoc => {
+      let registroItem = document.createElement("div")
+      registroItem.setAttribute("class", "visitas active")
+  
+      let table = document.createElement("table")
+      table.setAttribute('id', 'table2')
+      table.setAttribute('class', 'table')
+      let tbody = document.createElement("tbody")
+      let valueCpf = document.createElement("input")
+      valueCpf.setAttribute("type", "hidden")
+      valueCpf.setAttribute("class", "valueCpf")
+      valueCpf.value = cpf
+  
+      let td = document.createElement("td")
+      td.innerHTML = registroDoc.get("nome")
+      tbody.append(td)
+  
+      td = document.createElement("td")
+      td.innerHTML = registroDoc.get("dataRegistro")
+      tbody.append(td)
+  
+      td = document.createElement("td")
+      td.innerHTML = registroDoc.get("entrada")
+      tbody.append(td)
+  
+      td = document.createElement("td")
+      td.innerHTML = registroDoc.get("saida")
+      tbody.append(td)
+  
+      table.append(tbody)
+      registroItem.append(table, valueCpf)
+      sectionHistorico.append(registroItem)
+    })
+  }
+})
