@@ -603,6 +603,45 @@ header{
     width: 70%;
     margin: 15% auto;
   }
+  #video{
+    width: 400px;
+    height: 400px;
+    margin-left: 100px;
+    margin-bottom: -300px;
+  }
+  #canvasFoto{
+    width: 400px;
+    height: 300px;
+    margin-left: 100px;
+    margin-top: -55px;
+  }
+
+  .modalCamera-content{
+    margin: 3% auto;
+    height: 550px;
+  }
+
+  .funcoes{
+    display: flex;
+    position: fixed;
+    width: 45%;
+    top: 500px;
+    margin: 0 20px auto;
+  }
+
+  .modalFoto-content{
+    margin: 3% auto;
+  }
+
+  #fotoModal{
+    margin-left: 9px;
+  }
+
+  #abrirCamera{
+    width: 100px;
+    margin-left: 810px;
+  }
+
 }
 
 @media screen and (max-width: 1200px) {
@@ -640,6 +679,8 @@ hr{
   width: 70%;
   margin: 30% auto;
 }
+
+
 }
 
 @media(max-width:1192px){

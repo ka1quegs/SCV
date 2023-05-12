@@ -88,6 +88,56 @@ function hideAll(){
     }
 }
 
+const colecao = collection(db, "visitante")
+const arrayDocumentos = await getDocs(colecao)
+
+arrayDocumentos.forEach (async (doc) => {
+  const cpf = doc.id
+  const registrosColecao = collection(doc.ref, "registros")
+
+  const registrosDocumentos = await getDocs(registrosColecao)
+
+  if (!registrosDocumentos.empty) {
+    console.log("Subcoleção:", registrosDocumentos.docs)
+    
+    let sectionHistorico= document.getElementById("sectionHistorico")
+
+    registrosDocumentos.forEach(registroDoc => {
+      let registroItem = document.createElement("div")
+      registroItem.setAttribute("class", "visitas active")
+  
+      let table = document.createElement("table")
+      table.setAttribute('id', 'table2')
+      table.setAttribute('class', 'table')
+      let tbody = document.createElement("tbody")
+      let valueCpf = document.createElement("input")
+      valueCpf.setAttribute("type", "hidden")
+      valueCpf.setAttribute("class", "valueCpf")
+      valueCpf.value = cpf
+  
+      let td = document.createElement("td")
+      td.innerHTML = registroDoc.get("nome")
+      tbody.append(td)
+  
+      td = document.createElement("td")
+      td.innerHTML = registroDoc.get("dataRegistro")
+      tbody.append(td)
+  
+      td = document.createElement("td")
+      td.innerHTML = registroDoc.get("entrada")
+      tbody.append(td)
+  
+      td = document.createElement("td")
+      td.innerHTML = registroDoc.get("saida")
+      tbody.append(td)
+  
+      table.append(tbody)
+      registroItem.append(table, valueCpf)
+      sectionHistorico.append(registroItem)
+    })
+  }
+})
+
 //Gráfico
 
 var tabela = document.getElementsByTagName('table')[0];
@@ -139,55 +189,3 @@ var myChart = new Chart(ctx, {
         }
     }
 });
-
-
-
-const colecao = collection(db, "visitante")
-const arrayDocumentos = await getDocs(colecao)
-
-arrayDocumentos.forEach (async (doc) => {
-  const cpf = doc.id
-  const registrosColecao = collection(doc.ref, "registros")
-
-  const registrosDocumentos = await getDocs(registrosColecao)
-
-  if (!registrosDocumentos.empty) {
-    console.log("Subcoleção:", registrosDocumentos.docs)
-    
-    let sectionHistorico= document.getElementById("sectionHistorico")
-
-    registrosDocumentos.forEach(registroDoc => {
-      let registroItem = document.createElement("div")
-      registroItem.setAttribute("class", "visitas active")
-  
-      let table = document.createElement("table")
-      table.setAttribute('id', 'table2')
-      table.setAttribute('class', 'table')
-      let tbody = document.createElement("tbody")
-      let valueCpf = document.createElement("input")
-      valueCpf.setAttribute("type", "hidden")
-      valueCpf.setAttribute("class", "valueCpf")
-      valueCpf.value = cpf
-  
-      let td = document.createElement("td")
-      td.innerHTML = registroDoc.get("nome")
-      tbody.append(td)
-  
-      td = document.createElement("td")
-      td.innerHTML = registroDoc.get("dataRegistro")
-      tbody.append(td)
-  
-      td = document.createElement("td")
-      td.innerHTML = registroDoc.get("entrada")
-      tbody.append(td)
-  
-      td = document.createElement("td")
-      td.innerHTML = registroDoc.get("saida")
-      tbody.append(td)
-  
-      table.append(tbody)
-      registroItem.append(table, valueCpf)
-      sectionHistorico.append(registroItem)
-    })
-  }
-})
