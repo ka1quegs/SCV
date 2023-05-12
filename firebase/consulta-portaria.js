@@ -314,6 +314,7 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       if (documentoRegistro.exists()) {
         const novoRegistroRef = doc(registrosRef, documentId);
         await setDoc(novoRegistroRef, {
+          nome: nome,
           dataRegistro: `${dia}/${mes + 1}/${ano}`,
           entrada: entrada,
           saida: saida,
@@ -323,6 +324,7 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       } else {
         const novoRegistroRef = doc(registrosRef, documentId);
         await setDoc(novoRegistroRef, {
+          nome: nome,
           dataRegistro: `${dia}/${mes + 1}/${ano}`,
           entrada: entrada,
           saida: saida,

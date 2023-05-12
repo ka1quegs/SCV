@@ -1,3 +1,7 @@
+import { db } from "./modules.js"
+import { collection, getDocs, query, where, updateDoc, doc, getDoc, setDoc }
+from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+
 const tabsLine = document.querySelector('.tabs-btn .line span')
 const tabsBtnLi = document.querySelectorAll('.tabs-btn li')
 const tabsContent = document.querySelector('.tabs-content')
