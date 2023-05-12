@@ -64,7 +64,18 @@
                 <p class="texto">Total de visitantes cadastrados: <span id="count-total"></span></p>
               </div>
             </div>
-            <input id="input-busca" type="text" placeholder="O que você procura?">
+            <div class="pesquisa">
+              <input class="input-pesquisa" type="text" id="input-busca" placeholder="O que você procura?" >
+              <select class="filtro">
+                  <option selected>Procurar Por: Nome</option>
+                  <option>Procurar Por: Data</option>
+                  <option>Procurar Por: Empresa</option>
+                  <option>Procurar Por: Solicitante</option>
+                  <option>Procurar Por: Status</option>
+                  <option>Procurar Por: Visita</option>
+                  <option>Procurar Por: Liberação</option>
+              </select>
+          </div>  
             <table class="table">
                 <thead class="table-dark">
                     <tr>
