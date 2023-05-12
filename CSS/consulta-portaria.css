@@ -581,7 +581,7 @@ header{
 
   #sectionRegistro{
     overflow-y: scroll;
-    height: 700px;
+    height: 350px;
   }
 
   .mod-content{
