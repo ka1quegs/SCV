@@ -121,14 +121,13 @@ color: #265df2;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #070d63;
+  background-color: #007bff;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #a5aaad;
 }
-
 
 /*TABELA*/
 
