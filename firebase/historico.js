@@ -113,7 +113,7 @@ async function mostrarHistorico() {
     })
   
     // Esperar um tempo para aguardar a resolução das Promises
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise((resolve) => setTimeout(resolve, 500))
   
     // Ordenar os registros pelo campo "dataRegistro"
     registros.sort((a, b) => {
@@ -162,7 +162,8 @@ async function mostrarHistorico() {
   
   // Chamar a função para mostrar o histórico na tela
   mostrarHistorico()
-  
+
+
 //Gráfico
 
 var tabela = document.getElementsByTagName('table')[0];
@@ -214,3 +215,4 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+
