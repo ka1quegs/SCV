@@ -305,6 +305,7 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       const hoje = new Date();
 
       const dia = new Date().getDate();
+      
       const mes = new Date().getMonth();
       const ano = new Date().getFullYear();
 
