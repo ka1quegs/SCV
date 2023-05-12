@@ -131,16 +131,6 @@ color: #265df2;
 
 /*TABELA*/
 
-#input-busca{
-    width: 100%;
-    padding: 7px;
-    font-size: 15px;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 2px solid rgb(173, 173, 173);
-}
-
 .table{
 	width: 80vw;
 	border-collapse: collapse;
@@ -381,8 +371,29 @@ th {
   user-select: none;
 }
 
+.pesquisa{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 95%;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  margin-right: 20px;
+  border-radius: 10px;
+  border: 2px solid rgb(173, 173, 173);
+}
+  .filtro{
+      cursor: pointer;
+      border-color: transparent;
+      outline: none;
+  }
 
-
+  .input-pesquisa{
+      width: 95%;
+      outline: none;
+      border-color: transparent;
+      font-size: 15px;      
+  }
 
 /* ---------- MEDIA QUERIES ---------- */
 
@@ -408,10 +419,6 @@ th {
     #sectionRegistro{
       overflow-y: scroll;
       height: 800px;
-    }
-
-    #input-busca{
-      width: 95%;
     }
 
     hr{
@@ -457,10 +464,6 @@ header{
   width: 65%;
   margin: 20% auto;
 }
-#input-busca{
-  width: 95%;
-}
-
 #sectionRegistro{
   overflow-y: scroll;
   height: 400px;

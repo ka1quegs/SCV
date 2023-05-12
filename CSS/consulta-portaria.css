@@ -182,16 +182,29 @@ color: #265df2;
 
 /*TABELA*/
 
-#input-busca{
-    width: 100%;
-    padding: 7px;
-    font-size: 15px;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 2px solid rgb(173, 173, 173);
-    user-select: none;
+.pesquisa{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 95%;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  margin-right: 20px;
+  border-radius: 10px;
+  border: 2px solid rgb(173, 173, 173);
 }
+  .filtro{
+      cursor: pointer;
+      border-color: transparent;
+      outline: none;
+  }
+
+  .input-pesquisa{
+      width: 95%;
+      outline: none;
+      border-color: transparent;
+      font-size: 15px;      
+  }
 
 .table{
 	width: 80vw;
@@ -460,6 +473,8 @@ th {
   margin-left: 10px;
   user-select: none;
 }
+
+
 
 
 
