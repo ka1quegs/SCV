@@ -26,34 +26,60 @@ arrayDocumentos.forEach(doc => {
 
   //tbody
   try {
-    let valueVisita = ""
+    
     let td = document.createElement("td");
     td = document.createElement("td")
     td.innerHTML = doc.get("periodoDe")
     td.setAttribute("data-label", "Data")
+    let valueData = document.createElement("input")
+    valueData.setAttribute("class", "valueData")
+    valueData.value = doc.get("periodoDe")
+    valueData.setAttribute("type", "hidden")
+    td.append(valueData)
     tbody.append(td)
 
     td = document.createElement("td")
     td.innerHTML = doc.get("nome")
     td.setAttribute("data-label", "Nome")
+    let valueNome = document.createElement("input")
+    valueNome.setAttribute("class", "valueNome")
+    valueNome.value = doc.get("nome")
+    valueNome.setAttribute("type", "hidden")
+    td.append(valueNome)
     tbody.append(td)
 
     td = document.createElement("td")
     td.innerHTML = doc.get("empresa")
     td.setAttribute("data-label", "Empresa")
+    let valueEmpresa = document.createElement("input")
+    valueEmpresa.setAttribute("class", "valueEmpresa")
+    valueEmpresa.value = doc.get("empresa")
+    valueEmpresa.setAttribute("type", "hidden")
+    td.append(valueEmpresa)
     tbody.append(td)
 
     td = document.createElement("td")
     td.innerHTML = doc.get("responsavelVisita")
     td.setAttribute("data-label", "Solicitante")
+    let valueResponsavelVisita = document.createElement("input")
+    valueResponsavelVisita.setAttribute("class", "valueResponsavelVisita")
+    valueResponsavelVisita.value = doc.get("responsavelVisita")
+    valueResponsavelVisita.setAttribute("type", "hidden")
+    td.append(valueResponsavelVisita)
     tbody.append(td)
 
     td = document.createElement("td")
     td.innerHTML = doc.get("status")
     td.setAttribute("data-label", "Status")
+    let valueStatus = document.createElement("input")
+    valueStatus.setAttribute("class", "valueStatus")
+    valueStatus.value = doc.get("status")
+    valueStatus.setAttribute("type", "hidden")
+    td.append(valueStatus)
     tbody.append(td)
 
     td = document.createElement("td");
+    let valueVisita = ""
     if (doc.get("entrada") === "") {
       valueVisita = "Em aberto"
       td.innerHTML = valueVisita;
@@ -65,6 +91,7 @@ arrayDocumentos.forEach(doc => {
       valueVisita = "Finalizada"
       td.innerHTML = valueVisita
     }
+  
     td.setAttribute("data-label", "Visita");
     td.setAttribute("id", "andamentoVisita");
     tbody.append(td);
@@ -428,54 +455,46 @@ for (let i = 0; i < arrayRegistro.length; i++) {
   })
 }
 
-const input = document.getElementById('input-busca');
-const selectFiltro = document.getElementById('selectFiltro');
+/*Input SEARCH*/
 
-input.addEventListener('keyup', () => {
-  const filter = input.value.toUpperCase();
-  const filtroSelecionado = selectFiltro.value;
+let registroItem = document.getElementsByClassName("registro")
+let barraDePesquisa = document.getElementById("input-busca")
+let filtro = document.getElementById("selectFiltro")
 
-  arrayDocumentos.forEach(doc => {
-    let campoFiltro = '';
+barraDePesquisa.addEventListener("input", function busca(){
+    let paramBusca;
 
-    switch (filtroSelecionado) {
-      case 'Procurar Por: Nome':
-        campoFiltro = 'nome';
-        
+    switch (filtro.value){
+        case "Procurar Por: Nome":
+            paramBusca = document.getElementsByClassName("valueNome")
         break;
-      case 'Procurar Por: Data':
-        campoFiltro = 'date';
-        
+
+        case "Procurar Por: Data":
+            paramBusca = document.getElementsByClassName("valueData")
         break;
-      case 'Procurar Por: Empresa':
-        campoFiltro = 'empresa';
-        
+
+        case "Procurar Por: Solicitante":
+            paramBusca = document.getElementsByClassName("valueResponsavelVisita")
         break;
-      case 'Procurar Por: Solicitante':
-        campoFiltro = 'responsavelVisita';
-        
+
+        case "Procurar Por: Status":
+            paramBusca = document.getElementsByClassName("valueStatus")
         break;
-      case 'Procurar Por: Status':
-        campoFiltro = 'status';
+
+        case "Procurar Por: Empresa":
+            paramBusca = document.getElementsByClassName("valueEmpresa")
         break;
-      case 'Procurar Por: Visita':
-        campoFiltro = 'visita';
-        break;
-      default:
-        campoFiltro = '';
-        break;
+  
     }
 
-    if (campoFiltro) {
-      const registros = document.querySelectorAll(`.registro[data-${campoFiltro}]`);
-      registros.forEach(registro => {
-        const valorRegistro = registro.getAttribute(`data-${campoFiltro}`).toUpperCase();
-        registro.style.display = valorRegistro.includes(filter) ? '' : 'none';
-      });
+    for (let i = 0; i < registroItem.length; i++){
+        if (String(paramBusca[i].value).toLowerCase().includes(String(barraDePesquisa.value).toLowerCase())){
+            registroItem[i].style.display = "flex"
+        } else {
+            registroItem[i].style.display = "none"
+        }
     }
-  });
-});
-
+})
 
 
  //Contadores de Aprovações
