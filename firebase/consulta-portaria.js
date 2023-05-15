@@ -429,16 +429,53 @@ for (let i = 0; i < arrayRegistro.length; i++) {
 }
 
 const input = document.getElementById('input-busca');
+const selectFiltro = document.getElementById('selectFiltro');
+
 input.addEventListener('keyup', () => {
   const filter = input.value.toUpperCase();
+  const filtroSelecionado = selectFiltro.value;
+
   arrayDocumentos.forEach(doc => {
-    const nome = doc.get('nome').toUpperCase();
-    const registro = document.querySelector(`.registro[data-nome="${nome}"]`);
-    if (registro) {
-      registro.style.display = nome.includes(filter) ? '' : 'none';
+    let campoFiltro = '';
+
+    switch (filtroSelecionado) {
+      case 'Procurar Por: Nome':
+        campoFiltro = 'nome';
+        
+        break;
+      case 'Procurar Por: Data':
+        campoFiltro = 'date';
+        
+        break;
+      case 'Procurar Por: Empresa':
+        campoFiltro = 'empresa';
+        
+        break;
+      case 'Procurar Por: Solicitante':
+        campoFiltro = 'responsavelVisita';
+        
+        break;
+      case 'Procurar Por: Status':
+        campoFiltro = 'status';
+        break;
+      case 'Procurar Por: Visita':
+        campoFiltro = 'visita';
+        break;
+      default:
+        campoFiltro = '';
+        break;
+    }
+
+    if (campoFiltro) {
+      const registros = document.querySelectorAll(`.registro[data-${campoFiltro}]`);
+      registros.forEach(registro => {
+        const valorRegistro = registro.getAttribute(`data-${campoFiltro}`).toUpperCase();
+        registro.style.display = valorRegistro.includes(filter) ? '' : 'none';
+      });
     }
   });
 });
+
 
 
  //Contadores de Aprovações
