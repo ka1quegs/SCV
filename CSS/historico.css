@@ -347,7 +347,7 @@
     }
     #sectionHistorico{
       overflow-y: auto;
-      height: 300px;
+      height: 400px;
     }
     body{
       overflow: none;
