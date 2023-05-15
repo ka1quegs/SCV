@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,18 +11,18 @@
   <img class="img" src="Images/logo600x80.png" alt="">
   <div class="div">
     <h1>Cadastro de Funcionário</h1>
-    <input type="text" id="username" name="username" placeholder="Nome de usuário" />
+    <select id="selectFuncao">
+      <option selected>Selecione a função</option>
+      <option>Gestor/Diretor</option>
+      <option>Funcionário</option>
+  </select>
+  <input type="text" id="username" name="username" placeholder="Nome de usuário" />
     <input type="text" id="email" name="email" placeholder="E-mail" />
     <input type="password" id="password" name="password" placeholder="Senha" />
-    
-    
-
   </div>
   <input type="submit" id='signUp' name="signup_submit" value="Cadastre-se" />
   <a href="login.html"><input style="margin-top: 5px;" type="submit" id='Login' name="signup_submit" value="Login" /></a>
 
-
-  
 </body>
 
 <script type="module" src="firebase/signup.js"></script>
