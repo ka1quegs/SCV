@@ -1,41 +1,43 @@
-import { database, auth} from "./modules.js"
-import { ref, update } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
-import {signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+import { db, auth } from "./modules.js";
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
+login.addEventListener('click', async (e) => {
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
 
-  //Login do usuário com email e senha criado
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
 
-  login.addEventListener('click',(e) =>{
+    // Verificar se o usuário existe no Firestore
+    const funcionarioRef = doc(db, "funcionario", user.email);
+    const funcionarioDoc = await getDoc(funcionarioRef);
+    if (!funcionarioDoc.exists()) {
+      throw new Error("Usuário não existe no Firestore");
+    }
 
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+    alert('Usuário logado!');
+    window.location.href = "https://ka1quegs.github.io/SCV/solicitacao";
+  } catch (error) {
+    const errorCode = error.code;
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        
-        const user = userCredential.user;
+    if (errorCode === "auth/user-not-found") {
+      alert("Usuário não existente, por favor realize o cadastro.");
+    } else if (errorCode === "auth/invalid-email") {
+      alert("Email inválido");
+    } else if (errorCode === "auth/wrong-password") {
+      alert("Email ou senha incorreta!");
+    } else if (errorCode === "auth/internal-error") {
+      alert("Ops, um erro ocorreu. Tente novamente mais tarde.");
+    } else {
+      alert("Ops, um erro ocorreu: " + errorCode);
+    }
+  }
 
-        const dt = new Date();
-        update(ref(database, 'users/' + user.uid ),{
-          ultimo_login: dt,
-        })
-        alert('Usuário logado!');
-        window.location.href = "https://ka1quegs.github.io/SCV/solicitacao"
-        
-      })
-    .catch((error) => {
-        const errorCode = error.code;
-      
-          if (errorCode == "auth/user-not-found"){
-            alert("Usuário não existente, por favor realize o cadastro.")
-          }else if(errorCode == "auth/invalid-email"){
-              alert("Email inválido")
-            }else if (errorCode == "auth/wrong-password"){
-                alert("Email ou senha incorreta!")
-              }else if(errorCode == "auth/internal-error"){
-                alert("Ops um erro ocorreu, tente novamente mais tarde")
-                }else {
-                  alert(errorCode, "Ops um erro ocorreu")}
-      });
+  let ultimo_login = new Date()
 
+  setDoc(funcionarioDoc, {
+    ultimo_login: ultimo_login
   })
+});
