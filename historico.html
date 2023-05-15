@@ -47,8 +47,10 @@ toggle_btn.onclick = function() {
 };
  
   </script>
+    
 
 <h1 style="color: #f58634; font-weight: bold; text-align: center; user-select: none; margin: 0; margin-bottom: 30px;">Histórico de Visitantes</h1>
+<button id="btn1">Exportar para Excel</button>
 <div class="container">
         <div class="tabs-btn">
             <ul>
@@ -63,8 +65,10 @@ toggle_btn.onclick = function() {
             <div class="line"><span></span></div>
         </div>
         <div class="tabs-content">
+            
             <ul>
                 <li class="visitas active">
+                    <div id="divTabela">
                     <table class="table">
                         <thead>
                             <tr>
@@ -88,9 +92,33 @@ toggle_btn.onclick = function() {
                     </tbody>
                     -->
                     </section>
+                </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                
+                <script>
+                    $(document).ready(function(){
+                    
+                    $("#btn1").click(function(e){
+                    e.preventDefault();
 
-                  
-                </li>
+                    var divTabela = document.getElementById('divTabela');
+                    var Dados = new Blob(['\ufeff' + divTabela.outerHTML], {type:'application/vnd.ms-excel'});
+                    var url = window.URL.createObjectURL(Dados);
+                    
+                    var a = document.createElement('a');
+
+                    a.href = url;
+
+                    a.download = 'Média de Visitas'
+
+                    a.click();
+
+                    });
+
+                    });
+
+                    
+                </script>
                 <li class="grafico">
                     <canvas id="myChart"></canvas>
                 </li>
