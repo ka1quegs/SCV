@@ -225,7 +225,7 @@
   }
 
   #btn1{
-    margin-left: 84%;
+    margin-left: 87%;
     align-items: center;
     justify-content: center;
     height: 35px;
@@ -248,7 +248,7 @@
 
   #sectionHistorico{
     overflow-y: scroll;
-    height: 500px;
+    height: 700px;
   }
 
 
