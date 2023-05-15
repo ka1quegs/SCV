@@ -240,6 +240,15 @@
     overflow-y: auto;
     height: 700px;
   }
+  
+  header{
+    color: #f58634;
+    text-align: center; 
+    user-select: none; 
+    margin-top: -30px;
+    margin-bottom: 30px;
+    font-size: 13px;
+  }
 
   @media(max-width:1300px){
     #sectionHistorico{
@@ -353,6 +362,7 @@
     .tabs-btn{
       margin-left: 0;
     }
+
   }
 
 
