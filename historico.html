@@ -128,5 +128,41 @@ toggle_btn.onclick = function() {
 
     </div>
     <script src="firebase/historico.js" type="module"></script>
+
+    <script>
+        // Obtém todos os elementos <li> dentro da <ul> da classe "tabs-btn"
+const tabItems = document.querySelectorAll('.tabs-btn ul li');
+
+// Itera sobre cada elemento <li>
+tabItems.forEach(function(item) {
+    // Adiciona um evento de clique a cada elemento <li>
+    item.addEventListener('click', function() {
+        // Remove a classe "active" de todos os elementos <li>
+        tabItems.forEach(function(tab) {
+            tab.classList.remove('active');
+        });
+        // Adiciona a classe "active" ao elemento <li> clicado
+        this.classList.add('active');
+
+        // Obtém o valor do atributo "for" do elemento <li> clicado
+        const tabId = this.getAttribute('for');
+
+        // Obtém todos os elementos <li> dentro da <ul> da classe "tabs-content"
+        const tabContentItems = document.querySelectorAll('.tabs-content ul li');
+
+        // Itera sobre cada elemento <li>
+        tabContentItems.forEach(function(contentItem) {
+            // Remove a classe "active" de todos os elementos <li>
+            contentItem.classList.remove('active');
+
+            // Adiciona a classe "active" ao elemento <li> que corresponde ao valor do atributo "for"
+            if (contentItem.classList.contains(tabId)) {
+                contentItem.classList.add('active');
+            }
+        });
+    });
+});
+
+    </script>
 </body>
 </html>
