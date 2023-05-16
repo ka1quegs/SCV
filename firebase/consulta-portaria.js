@@ -511,5 +511,5 @@ barraDePesquisa.addEventListener("input", function busca(){
 
  //Contadores de Aprovações
  const coll = query(collection(db, "visitante"));
- const firstCounter = await getCountFromServer(coll);
-   document.getElementById("count-total").innerHTML = firstCounter.data().count;
+ const counter = await getCountFromServer(coll);
+   document.getElementById("count-total").innerHTML = counter.data().count;
