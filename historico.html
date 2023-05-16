@@ -82,7 +82,32 @@
             </section>
         </div>
     </div>
+    <script>
+        $(document).ready(function(){
+        
+        $("#btn1").click(function(e){
+        e.preventDefault();
+
+        var divTabela = document.getElementById('divTabela');
+        var Dados = new Blob(['\ufeff' + divTabela.outerHTML], {type:'application/vnd.ms-excel'});
+        var url = window.URL.createObjectURL(Dados);
+        
+        var a = document.createElement('a');
+
+        a.href = url;
+
+        a.download = 'Média de Visitas'
+
+        a.click();
+
+        });
+
+        });
+   
+    </script>
     <script src="firebase/historico.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+
 </body>
 
 </html>
