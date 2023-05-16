@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
     <link rel="shortcut icon" href="Images/Logo P.png">
     <link rel="stylesheet" href="CSS/historico.css">
     <title>Histórico</title>
@@ -87,6 +89,16 @@
         
         $("#btn1").click(function(e){
         e.preventDefault();
+
+        var wb = XLSX.utils.table_to_book(document.getElementById('divTabela'), { sheet: "SheetJS" });
+        var wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
+
+        function s2ab(s) {
+          var buf = new ArrayBuffer(s.length);
+          var view = new Uint8Array(buf);
+          for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+          return buf;
+        }
 
         var divTabela = document.getElementById('divTabela');
         var Dados = new Blob(['\ufeff' + divTabela.outerHTML], {type:'application/vnd.ms-excel'});

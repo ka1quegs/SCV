@@ -54,18 +54,22 @@ async function mostrarHistorico() {
   
       let td = document.createElement("td")
       td.innerHTML = registro.nome
+      td.setAttribute("data-label", "Nome")
       tbody.append(td)
   
       td = document.createElement("td")
       td.innerHTML = registro.dataRegistro
+      td.setAttribute("data-label", "Data")
       tbody.append(td)
   
       td = document.createElement("td")
       td.innerHTML = registro.entrada
+      td.setAttribute("data-label", "Entrada")
       tbody.append(td)
   
       td = document.createElement("td")
       td.innerHTML = registro.saida
+      td.setAttribute("data-label", "Saída")
       tbody.append(td)
   
       table.append(tbody)
