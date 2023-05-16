@@ -147,11 +147,17 @@ let arrayRegistro = document.getElementsByClassName("visualizar")
 for (let i = 0; i < arrayRegistro.length; i++) {
   arrayRegistro[i].addEventListener("click", async () => {
     const cpf = document.getElementsByClassName("valueCpf")[i].value;
-
+    
     const busca = query(collection(db, "visitante"), where("cpf", "==", cpf))
 
     const resultadoBusca = await getDocs(busca)
     resultadoBusca.forEach((doc) => {
+      if (doc.get('status') === 'Rejeitado') {
+        document.getElementById('entrada').disabled = true;
+        document.getElementById('saida').disabled = true;
+        
+      }
+      
       document.getElementById("dataRegistro").value = doc.get("date")
       document.getElementById("cpf").value = doc.get("cpf")
       document.getElementById("nomeVisitante").value = doc.get("nome")
@@ -181,13 +187,14 @@ for (let i = 0; i < arrayRegistro.length; i++) {
     const tirarFoto = document.getElementById('tirarFoto')
     const abrirCamera = document.getElementById("abrirCamera")
     const retirarFoto = document.getElementById('retirarFoto')
+    
 
     abrirCamera.addEventListener("click", () => {
       modalCamera.style.display = "block"   
       abrirCamera.style.display = "none"
 
     })
-
+    
     fecharCamera.addEventListener("click", () => {
       modalCamera.style.display = "none"
       abrirCamera.style.display = "block"
@@ -363,6 +370,8 @@ for (let i = 0; i < arrayRegistro.length; i++) {
 
 
     })
+
+    
 
     // modal de HISTÓRICO
 

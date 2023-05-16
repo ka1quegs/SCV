@@ -75,6 +75,39 @@ signUp.addEventListener('click', () => {
       }
     });
   }
+  else if(funcao == "Portária"){
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const funcionarioRef = doc(db, "Portaria", userCredential.user.email); // Use o UID do usuário como ID do documento
+      setDoc(funcionarioRef, {
+        username: username,
+        email: email,
+        senha: password,
+      })
+      .then(() => {
+        alert('Usuário criado');
+      })
+      .catch((error) => {
+        console.error('Erro ao criar coleção de Portária:', error);
+      });
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+
+      if (errorCode == "auth/email-already-in-use") {
+        alert("Email já em uso");
+        window.location.href = "#"
+      } else if (errorCode == "auth/invalid-email") {
+        alert("Email inválido");
+      } else if (errorCode == "auth/weak-password") {
+        alert("Digite uma senha com mais de 6 caracteres");
+      } else if (errorCode == "auth/internal-error") {
+        alert("Algo deu errado! Digite email e senha novamente");
+      } else {
+        alert(errorCode);
+      }
+    });
+  }
 })
 
   
