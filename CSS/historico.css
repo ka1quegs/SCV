@@ -186,10 +186,12 @@ h1 {
   font-weight: bold
 }
 
-@media(max-width:1300px) {
+
+
+@media(max-width:1400px) {
   #sectionHistorico {
     overflow-y: auto;
-    height: 430px;
+    height: 450px;
   }
 }
 
