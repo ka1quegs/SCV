@@ -186,7 +186,30 @@ h1 {
   font-weight: bold
 }
 
+.pesquisa{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  margin-right: 20px;
+  border-radius: 10px;
+  border: 2px solid rgb(173, 173, 173);
+  padding: 13px;
+}
+  .filtro{
+      cursor: pointer;
+      border-color: transparent;
+      outline: none;
+  }
 
+  .input-pesquisa{
+      width: 100%;
+      outline: none;
+      border-color: transparent;
+      font-size: 15px;      
+  }
 
 @media(max-width:1400px) {
   #sectionHistorico {
