@@ -1,87 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="shortcut icon" href="Images/Logo P.png" >
+    <link rel="shortcut icon" href="Images/Logo P.png">
     <link rel="stylesheet" href="CSS/historico.css">
     <title>Histórico</title>
 
 </head>
+
 <body>
 
-    <link rel="stylesheet" 
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <nav class="hide">
-    <button type="button" id="toggle-btn">
-      <i class="fa fa-bars"></i>
-    </button>
-    <ul class="sidebar-menu">
-      <img src="Images/logoBranco.png" style="margin:0 auto; width: 200px; pointer-events: none;" alt="">
+    <nav class="hide">
+        <button type="button" id="toggle-btn">
+            <i class="fa fa-bars"></i>
+        </button>
+        <ul class="sidebar-menu">
+            <img src="Images/logoBranco.png" style="margin:0 auto; width: 200px; pointer-events: none;" alt="">
 
-      <li><a href="solicitacao.html"><i class="fa-solid fa-user-plus"></i>Solicitação</a></li>
-      <li><a href="consulta.html"><i class="fa-solid fa-magnifying-glass"></i>Consulta</a></li>
-      <li><a href="consulta-portaria.html"><i class="fa-solid fa-magnifying-glass"></i>Portaria</a></li>
-      <li><a href="aprovacao.html"><i class="fa-solid fa-user-check"></i>Aprovação</a></li>
-      <li><a href="historico.html"><i class="fa-sharp fa-regular fa-clock"></i>Histórico</a></li>
-      <li><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i>Sair</a></li>
+            <li><a href="solicitacao.html"><i class="fa-solid fa-user-plus"></i>Solicitação</a></li>
+            <li><a href="consulta.html"><i class="fa-solid fa-magnifying-glass"></i>Consulta</a></li>
+            <li><a href="consulta-portaria.html"><i class="fa-solid fa-magnifying-glass"></i>Portaria</a></li>
+            <li><a href="aprovacao.html"><i class="fa-solid fa-user-check"></i>Aprovação</a></li>
+            <li><a href="historico.html"><i class="fa-sharp fa-regular fa-clock"></i>Histórico</a></li>
+            <li><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i>Sair</a></li>
 
-    </ul>
-  </nav>
-  <section>
-  </section>
+        </ul>
+    </nav>
+    <section>
+    </section>
 
- 
 
-  <script>
-    const nav = document.querySelector('nav');
-const toggle_btn = document.getElementById('toggle-btn');
-const content = document.querySelector('section');
 
-toggle_btn.onclick = function() {
-    nav.classList.toggle('hide');
-    content.classList.toggle('expand');
-};
- 
-  </script>
-    
-<header>
-<h1>Histórico de Visitantes</h1>
-</header>
-<button id="btn1">Exportar para Excel</button>
-<div class="container">
-        <div class="tabs-btn">
-            <ul>
+    <script>
+        const nav = document.querySelector('nav');
+        const toggle_btn = document.getElementById('toggle-btn');
+        const content = document.querySelector('section');
 
-                <!-- note that for attribute of li is the class of respected li -->
-                <!-- we will use this relation in js -->
-                <li for="visitas">Visitas Recentes</li>
-                <li for="grafico">Média de Visitas</li>
-                
-            </ul>
-            <!-- for bottom line -->
-            <div class="line"><span></span></div>
-        </div>
-        <div class="tabs-content">
-            
-            <ul>
-                <li class="visitas active">
-                    <div id="divTabela">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Data de Visita</th>
-                                <th>Horário de Entrada</th>
-                                <th>Horário de Saída</th>
-                            </tr>
-                        </thead>
-                    </table>
-                        <section id="sectionHistorico">
-                            <!--
+        toggle_btn.onclick = function () {
+            nav.classList.toggle('hide');
+            content.classList.toggle('expand');
+        };
+
+    </script>
+
+    <header>
+        <h1>Histórico de Visitantes</h1>
+        <hr>
+    </header>
+    <button id="btn1">Exportar para Excel</button>
+    <div class="container">
+
+        <div id="divTabela">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Data de Visita</th>
+                        <th>Horário de Entrada</th>
+                        <th>Horário de Saída</th>
+                    </tr>
+                </thead>
+            </table>
+            <section id="sectionHistorico">
+                <!--
                         <tbody>
                             <tr>
                                 <td>João Silva</td>
@@ -92,78 +79,10 @@ toggle_btn.onclick = function() {
                             
                     </tbody>
                     -->
-                    </section>
-                </div>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-                
-                <script>
-                    $(document).ready(function(){
-                    
-                    $("#btn1").click(function(e){
-                    e.preventDefault();
-
-                    var divTabela = document.getElementById('divTabela');
-                    var Dados = new Blob(['\ufeff' + divTabela.outerHTML], {type:'application/vnd.ms-excel'});
-                    var url = window.URL.createObjectURL(Dados);
-                    
-                    var a = document.createElement('a');
-
-                    a.href = url;
-
-                    a.download = 'Média de Visitas'
-
-                    a.click();
-
-                    });
-
-                    });
-
-                    
-                </script>
-                <li class="grafico">
-                    <canvas id="myChart"></canvas>
-                </li>
-            </ul>
+            </section>
         </div>
-
-
     </div>
     <script src="firebase/historico.js" type="module"></script>
-
-    <script>
-        // Obtém todos os elementos <li> dentro da <ul> da classe "tabs-btn"
-const tabItems = document.querySelectorAll('.tabs-btn ul li');
-
-// Itera sobre cada elemento <li>
-tabItems.forEach(function(item) {
-    // Adiciona um evento de clique a cada elemento <li>
-    item.addEventListener('click', function() {
-        // Remove a classe "active" de todos os elementos <li>
-        tabItems.forEach(function(tab) {
-            tab.classList.remove('active');
-        });
-        // Adiciona a classe "active" ao elemento <li> clicado
-        this.classList.add('active');
-
-        // Obtém o valor do atributo "for" do elemento <li> clicado
-        const tabId = this.getAttribute('for');
-
-        // Obtém todos os elementos <li> dentro da <ul> da classe "tabs-content"
-        const tabContentItems = document.querySelectorAll('.tabs-content ul li');
-
-        // Itera sobre cada elemento <li>
-        tabContentItems.forEach(function(contentItem) {
-            // Remove a classe "active" de todos os elementos <li>
-            contentItem.classList.remove('active');
-
-            // Adiciona a classe "active" ao elemento <li> que corresponde ao valor do atributo "for"
-            if (contentItem.classList.contains(tabId)) {
-                contentItem.classList.add('active');
-            }
-        });
-    });
-});
-
-    </script>
 </body>
+
 </html>
