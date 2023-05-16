@@ -333,7 +333,9 @@ for (let i = 0; i < arrayRegistro.length; i++) {
         observacao: observacao,
         entrada: entrada,
         saida: saida
+        
       })
+      
 
       const registrosRef = collection(docRef, "registros");
 
@@ -348,32 +350,33 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       const documentId = `${hoje.getFullYear()}-${hoje.getMonth() + 1}-${hoje.getDate()}`;
 
       const documentoRegistro = await getDoc(doc(registrosRef, documentId));
-      if (documentoRegistro.exists()) {
+      
+      if((documentoRegistro.exists()) && (!(entrada && saida)) == ''){
+        const novoRegistroRef = doc(registrosRef, documentId);
+        await setDoc(novoRegistroRef, {
+        nome: nome,
+        dataRegistro: `${dia}/${mes + 1}/${ano}`,
+        empresa: empresa,
+        cpf: cpf,
+        entrada: entrada,
+        saida: saida
+          
+        })
+      }if(!documentoRegistro.exists() && (!(entrada && saida)) == ''){
         const novoRegistroRef = doc(registrosRef, documentId);
         await setDoc(novoRegistroRef, {
           nome: nome,
           dataRegistro: `${dia}/${mes + 1}/${ano}`,
-          entrada: entrada,
-          saida: saida,
           empresa: empresa,
-          cpf: cpf
-        });
-      } else {
-        const novoRegistroRef = doc(registrosRef, documentId);
-        await setDoc(novoRegistroRef, {
-          nome: nome,
-          dataRegistro: `${dia}/${mes + 1}/${ano}`,
+          cpf: cpf,
           entrada: entrada,
-          saida: saida,
-          empresa: empresa,
-          cpf: cpf
-        });
+          saida: saida
+      })
+      
       }
       location.reload()
-
-
     })
-
+  
     
 
     // modal de HISTÓRICO
