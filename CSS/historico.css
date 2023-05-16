@@ -126,72 +126,6 @@ nav span {
   background-color: #a5aaad;
 }
 
-.container {
-  width: 90%;
-  margin: -15px auto;
-  font-family: 'Poppins', sans-serif;
-  border-radius: 4px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-}
-
-.tabs-btn {
-  text-align: center;
-  background-color: #F5F5F5;
-  padding: 0px;
-  border-radius: 4px 4px 0px 0px;
-}
-
-.tabs-btn ul {
-  margin-left: -40px;
-  padding-top: 14px;
-  padding-bottom: 6px;
-}
-
-.tabs-btn ul li {
-  display: inline;
-  font-size: 18px;
-  padding: 10px 22px;
-  margin-top: 30px;
-  cursor: pointer;
-  user-select: none;
-}
-
-.tabs-btn ul li.active {
-  background-color: #f58434;
-  color: white;
-}
-
-.tabs-content {
-  position: relative;
-  margin-top: -15px;
-  /* set the height with respect to the large content li */
-  /* for this case js content tab has large data */
-}
-
-.tabs-content ul {
-  padding: 0px;
-}
-
-.tabs-content ul li {
-  list-style: none;
-  padding: 25px 35px;
-  border-radius: 0px 0px 4px 4px;
-  position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  /* we create animation in js with the help of these css variables */
-  /* lets give them initial value */
-  transform: translateX(var(--translate));
-  transition-duration: var(--transDur);
-}
-
-.tabs-content ul li.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0px);
-
-}
-
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -255,19 +189,11 @@ h1 {
 @media(max-width:1300px) {
   #sectionHistorico {
     overflow-y: auto;
-    height: 440px;
+    height: 430px;
   }
-
-
-
 }
 
-
-
-
 @media(max-width:950px) {
-
-
   .table {
     width: 85vw;
     margin-left: -20px;
@@ -278,8 +204,6 @@ h1 {
   }
 
 }
-
-
 
 @media(max-width:660px) {
   .tabs-btn {
