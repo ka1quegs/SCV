@@ -160,7 +160,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
         imgPhoto.src = `${url}`
       
       }).catch(function(error) {
-        imgPhoto.src = "https://www.petz.com.br/blog/wp-content/uploads/2019/03/papagaio-que-fala-1280x720.jpg"
+        imgPhoto.src = "https://cdn-icons-png.flaticon.com/512/1361/1361728.png"
       });
 
       imgPhoto.addEventListener('click', ()=>{
@@ -170,7 +170,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
           fotoModal.src = `${url}`
         
         }).catch(function(error) {
-          fotoModal.src = "https://www.petz.com.br/blog/wp-content/uploads/2019/03/papagaio-que-fala-1280x720.jpg"
+          fotoModal.src = "https://cdn-icons-png.flaticon.com/512/1361/1361728.png"
         });
         
       })
