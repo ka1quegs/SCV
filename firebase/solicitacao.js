@@ -25,33 +25,26 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         let dataFormatada = ((dataRegistro.getDate() )) + "/" + ((dataRegistro.getMonth() + 1)) + "/" + dataRegistro.getFullYear(); //Data de registro do modal FORMATADA
 
 
-        if (nome && empresa && responsavelVisita) {
-          // Se todos os campos estão preenchidos, continue com o envio do email
-          let template_id = 'template_9h82ztd';
-          emailjs.init('sOjNKoBbe3ikQg4y2');
-          const emailData = {
-            from_name: 'TESTES EMAIL',
-            to_name: 'kaiqueegs@outlook.com',
-            subject: 'Nova solicitação pendente',
-            template_id: template_id,
-            template_params: {
-              Nome: nome,
-              Empresa: empresa,
-              Solicitante: responsavelVisita
-            }
-          };
+        var params = {
+          nome: document.getElementById("nome").value,
+          empresa: document.getElementById("empresa").value,
+          responsavelVisita: document.getElementById("responsavelVisita").value,
+        };
       
-          emailjs.send('service_vf3mrfq', template_id, emailData)
-            .then((response) => {
-              console.log('Email enviado com sucesso!', response.status, response.text);
-            })
-            .catch((error) => {
-              console.error('Erro ao enviar o email:', error);
-            });
-        } else {
-          // Se algum dos campos está vazio, exiba uma mensagem de erro ou tome a ação apropriada
-          console.error('Preencha todos os campos antes de enviar o email.');
-        }
+        const serviceID = "service_vf3mrfq";
+        const templateID = "template_9h82ztd";
+        emailjs.init("sOjNKoBbe3ikQg4y2");
+          emailjs.send(serviceID, templateID, params)
+          .then(res=>{
+              document.getElementById("nome").value = "";
+              document.getElementById("empresa").value = "";
+              document.getElementById("responsavelVisita").value = "";
+              console.log(res);
+              alert("Your message sent successfully!!")
+      
+          })
+          .catch(err=>console.log(err));
+      
       
        
         //Adiciona os dados para o Firestore
@@ -86,9 +79,9 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
       tipo_cadastro: "Pré-Cadastro"
     });
 
-    setTimeout(() => {
+   setTimeout(() => {
       location.reload(); // recarregar a página
-    }, 1000); // esperar 1 segundo antes de recarregar a página
+    }, 2000); // esperar 1 segundo antes de recarregar a página
   
     // Verifique se os campos estão preenchidos
  
@@ -97,6 +90,10 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
     )
 
   }catch{}
+
+
+
+
 
   //Toastify de Solicitação enviada
   enviarSolici.addEventListener('click', () => { 
