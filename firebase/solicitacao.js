@@ -3,6 +3,7 @@ import { collection, getDoc,setDoc, doc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 
+
   try{
     const enviarSolici = document.getElementById('enviarSolici');
       enviarSolici.addEventListener('click', () => { 
@@ -25,6 +26,36 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         let dataRegistro = new Date();    //Data de registro do modal
         let dataFormatada = ((dataRegistro.getDate() )) + "/" + ((dataRegistro.getMonth() + 1)) + "/" + dataRegistro.getFullYear(); //Data de registro do modal FORMATADA
 
+
+        if (nome && empresa && responsavelVisita) {
+          // Se todos os campos estão preenchidos, continue com o envio do email
+          let template_id = 'template_9h82ztd';
+          emailjs.init('sOjNKoBbe3ikQg4y2');
+          const emailData = {
+            from_name: 'TESTES EMAIL',
+            to_name: 'kaiqueegs@outlook.com',
+            subject: 'Nova solicitação pendente',
+            template_id: template_id,
+            template_params: {
+              Nome: nome,
+              Empresa: empresa,
+              ResponsavelVisita: responsavelVisita
+            }
+          };
+      
+          emailjs.send('service_vf3mrfq', template_id, emailData)
+            .then((response) => {
+              console.log('Email enviado com sucesso!', response.status, response.text);
+            })
+            .catch((error) => {
+              console.error('Erro ao enviar o email:', error);
+            });
+        } else {
+          // Se algum dos campos está vazio, exiba uma mensagem de erro ou tome a ação apropriada
+          console.error('Preencha todos os campos antes de enviar o email.');
+        }
+      
+       
         //Adiciona os dados para o Firestore
 
     const visitorRef = doc(db, "visitante", cpf);
@@ -56,11 +87,14 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
       estadoVisita: "",
       tipo_cadastro: "Pré-Cadastro"
     });
-
+/*
     setTimeout(() => {
       location.reload(); // recarregar a página
     }, 1000); // esperar 1 segundo antes de recarregar a página
-  
+  */ 
+    // Verifique se os campos estão preenchidos
+ 
+
     }
     )
 
