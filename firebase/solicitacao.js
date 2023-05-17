@@ -2,8 +2,6 @@ import { db } from "./modules.js"
 import { collection, getDoc,setDoc, doc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
-
-
   try{
     const enviarSolici = document.getElementById('enviarSolici');
       enviarSolici.addEventListener('click', () => { 
@@ -39,7 +37,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
             template_params: {
               Nome: nome,
               Empresa: empresa,
-              ResponsavelVisita: responsavelVisita
+              Solicitante: responsavelVisita
             }
           };
       
@@ -87,11 +85,11 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
       estadoVisita: "",
       tipo_cadastro: "Pré-Cadastro"
     });
-/*
+
     setTimeout(() => {
       location.reload(); // recarregar a página
     }, 1000); // esperar 1 segundo antes de recarregar a página
-  */ 
+  
     // Verifique se os campos estão preenchidos
  
 
