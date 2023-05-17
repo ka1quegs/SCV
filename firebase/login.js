@@ -11,13 +11,10 @@ login.addEventListener('click', async (e) => {
     const user = userCredential.user;
 
     // Verificar se o usuário existe no Firestore
-    const funcionarioRef = doc(db, "funcionario", user.email);
-    const gestaoRef = doc(db, "Gestao", user.email)
-    const portariaRef = doc(db, "Portaria", user.email)
+    const funcionarioRef = doc(db, "funcionarios", user.email);
     const funcionarioDoc = await getDoc(funcionarioRef);
-    const gestaoDoc = await getDoc(gestaoRef);
-    const portariaDoc = await getDoc(portariaRef);
-    if (!funcionarioDoc.exists() & !gestaoDoc.exists() & !portariaDoc.exists() ) {
+  
+    if (!funcionarioDoc.exists()) {
       throw new Error("Usuário não existe no Firestore");
     }
 
@@ -27,13 +24,6 @@ login.addEventListener('click', async (e) => {
       ultimo_login: new Date()
     })
 
-    updateDoc(gestaoRef, {
-      ultimo_login: new Date()
-    })
-  
-    updateDoc(portariaRef, {
-      ultimo_login: new Date()
-    })
   } catch (error) {
     const errorCode = error.code;
 
