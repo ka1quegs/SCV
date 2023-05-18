@@ -88,6 +88,7 @@ async function mostrarHistorico() {
       let td = document.createElement("td")
       td.innerHTML = registro.nome
       td.setAttribute("data-label", "Nome")
+      td.classList.add("nome"); 
       tbody.append(td)
   
       td = document.createElement("td")
@@ -109,9 +110,25 @@ async function mostrarHistorico() {
       registroItem.append(table, valueCpf)
       sectionHistorico.append(registroItem)
     })
+    const input = document.getElementById('input-busca');
+    input.addEventListener('keyup', () => {
+      const filter = input.value.toUpperCase();
+      const visitas = document.getElementsByClassName('visitas');
+      
+      for (let i = 0; i < visitas.length; i++) {
+        const nome = visitas[i].querySelector('.nome').textContent.toUpperCase();
+        
+        if (nome.includes(filter)) {
+          visitas[i].style.display = '';
+        } else {
+          visitas[i].style.display = 'none';
+        }
+      }
+    });
+    
+
   }
   
   // Chamar a função para mostrar o histórico na tela
   mostrarHistorico()
-
 
