@@ -10,19 +10,28 @@ const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.email;
+
+    // Consulta para obter o documento do funcionário pelo email
+    const funcionariosRef = collection(db, 'funcionarios');
+    const queryFuncionario = query(funcionariosRef, where('email', '==', uid));
+
+    getDocs(queryFuncionario)
+      .then((querySnapshot) => {
+        if (!querySnapshot.empty) {
+          const doc = querySnapshot.docs[0]; 
+          const nomeFuncionario = doc.get('username');
+
+          const nomeUsuario = document.getElementById('nomeUsuario');
+          nomeUsuario.innerHTML = nomeFuncionario;
+        }
+      })
+      .catch((error) => {
+        console.log('Erro ao buscar o documento do funcionário:', error);
+      });
   } else {
-   window.location.href = "login.html"
+    window.location.href = 'login.html';
   }
 });
-const deslogar = document.getElementById('deslogar')
-deslogar.addEventListener('click', () =>{
-  signOut(auth).then(() => {
-  // Sign-out successful.
-  }).catch((error) => {
-  // An error happened.
-  });
-  })
-
 
 
 const colecao = query(collection(db,"visitante"), where("consulta", "==", true ) )
