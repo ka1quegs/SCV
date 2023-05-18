@@ -20,9 +20,7 @@ login.addEventListener('click', async (e) => {
 
     alert('Usuário logado!');
 
-    updateDoc(funcionarioRef, {
-      ultimo_login: new Date()
-    })
+    window.location.href = "solicitacao.html"
 
   } catch (error) {
     const errorCode = error.code;
@@ -40,6 +38,4 @@ login.addEventListener('click', async (e) => {
     }
   }
   
-window.location.href = "solicitacao.html"
-
 });
