@@ -33,6 +33,15 @@ onAuthStateChanged(auth, (user) => {
     window.location.href = 'login.html';
   }
 });
+const deslogar = document.getElementById('deslogar')
+deslogar.addEventListener('click', () =>{
+  signOut(auth).then(() => {
+  // Sign-out successful.
+  }).catch((error) => {
+  // An error happened.
+  });
+  })
+
 
 
 
