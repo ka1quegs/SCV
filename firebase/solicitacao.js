@@ -8,12 +8,13 @@ const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.email;
+    const nomeUsuario = document.getElementById('nomeUsuario')
+    nomeUsuario.innerHTML = uid
+   
   } else {
-   alert("Não logado. Você será redirecionado para o Login!")
    window.location.href = "login.html"
   }
 });
-
 const deslogar = document.getElementById('deslogar')
 deslogar.addEventListener('click', () =>{
   signOut(auth).then(() => {
@@ -22,6 +23,8 @@ deslogar.addEventListener('click', () =>{
   // An error happened.
   });
   })
+
+
 
   try{
     const enviarSolici = document.getElementById('enviarSolici');

@@ -18,8 +18,6 @@ login.addEventListener('click', async (e) => {
       throw new Error("Usuário não existe no Firestore");
     }
 
-    alert('Usuário logado!');
-
     window.location.href = "solicitacao.html"
 
   } catch (error) {

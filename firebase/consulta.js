@@ -6,13 +6,11 @@ import { ref,  getDownloadURL  } from "https://www.gstatic.com/firebasejs/9.17.1
 
 import { getAuth, onAuthStateChanged,signOut } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
-
 const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.email;
   } else {
-   alert("Você não está logado")
    window.location.href = "login.html"
   }
 });

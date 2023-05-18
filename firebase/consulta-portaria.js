@@ -12,7 +12,6 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.email;
   } else {
-   alert("Você não está logado")
    window.location.href = "login.html"
   }
 });
@@ -24,6 +23,7 @@ deslogar.addEventListener('click', () =>{
   // An error happened.
   });
   })
+
 
 
 
