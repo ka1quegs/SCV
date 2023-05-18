@@ -9,14 +9,14 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.email;
 
-    // Consulta ao Firestore para obter o documento do funcionário pelo email
+    // Consulta para obter o documento do funcionário pelo email
     const funcionariosRef = collection(db, 'funcionarios');
     const queryFuncionario = query(funcionariosRef, where('email', '==', uid));
 
     getDocs(queryFuncionario)
       .then((querySnapshot) => {
         if (!querySnapshot.empty) {
-          const doc = querySnapshot.docs[0]; // Assume que há apenas um documento correspondente
+          const doc = querySnapshot.docs[0];correspondente
           const nomeFuncionario = doc.get('username');
 
           const nomeUsuario = document.getElementById('nomeUsuario');
