@@ -2,8 +2,6 @@ import { db, storage } from "./modules.js"
 import {collection,getDocs, query, where, doc,getCountFromServer }
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 import { ref,  getDownloadURL  } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js";
-
-
 import { getAuth, onAuthStateChanged,signOut } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
 const auth = getAuth();
