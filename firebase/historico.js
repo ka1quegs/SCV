@@ -2,6 +2,30 @@ import { db } from "./modules.js"
 import { collection, getDocs, getDoc, doc }
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
+
+import { getAuth, onAuthStateChanged,signOut } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.email;
+  } else {
+   alert("Você não está logado")
+   window.location.href = "login.html"
+  }
+});
+const deslogar = document.getElementById('deslogar')
+deslogar.addEventListener('click', () =>{
+  signOut(auth).then(() => {
+  // Sign-out successful.
+  }).catch((error) => {
+  // An error happened.
+  });
+  })
+
+
+
 async function mostrarHistorico() {
     const colecao = collection(db, "visitante")
     const registros = []

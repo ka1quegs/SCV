@@ -40,6 +40,6 @@ login.addEventListener('click', async (e) => {
     }
   }
   
-
+window.location.href = "solicitacao.html"
 
 });

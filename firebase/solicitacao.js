@@ -1,6 +1,27 @@
 import { db } from "./modules.js"
 import { collection, getDoc,setDoc, doc}
 from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import { getAuth, onAuthStateChanged, signOut  } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.email;
+  } else {
+   alert("Não logado. Você será redirecionado para o Login!")
+   window.location.href = "login.html"
+  }
+});
+
+const deslogar = document.getElementById('deslogar')
+deslogar.addEventListener('click', () =>{
+  signOut(auth).then(() => {
+  // Sign-out successful.
+  }).catch((error) => {
+  // An error happened.
+  });
+  })
 
   try{
     const enviarSolici = document.getElementById('enviarSolici');
