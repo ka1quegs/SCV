@@ -411,9 +411,8 @@ th {
   }
   
   #cargo{
-    font-size: 15px;
     position: absolute;
-    bottom: 0;
+    bottom: 15px;
     user-select: none;
     width: 100px;
     left: 85px;

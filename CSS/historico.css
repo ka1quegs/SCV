@@ -227,9 +227,8 @@ h1 {
   }
   
   #cargo{
-    font-size: 15px;
     position: absolute;
-    bottom: 0;
+    bottom: 15px;
     user-select: none;
     width: 100px;
     left: 85px;
@@ -238,13 +237,15 @@ h1 {
 @media(max-width:1400px) {
   #sectionHistorico {
     overflow-y: auto;
-    height: 450px;
+    height: 340px;
   }
 }
 
 @media(max-width:950px) {
   #sectionHistorico {
     height: 700px;
+    overflow-y: auto;
+
   }
 
 }

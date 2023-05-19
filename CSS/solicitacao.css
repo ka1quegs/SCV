@@ -38,6 +38,8 @@ width: 0;
 font-size: 0;
 }
 
+
+
 nav span{
 width: 100%;
 text-align: center;
@@ -278,9 +280,8 @@ form button:hover{
 }
 
 #cargo{
-  font-size: 15px;
   position: absolute;
-  bottom: 0;
+  bottom: 15px;
   user-select: none;
   width: 100px;
   left: 85px;

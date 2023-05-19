@@ -335,6 +335,7 @@ section{
     
   }
 
+ 
   .modalFoto {
     display: none;
     position: fixed;
@@ -358,6 +359,11 @@ section{
     height: auto; 
     overflow-y: auto;
     border-radius: 10px;
+
+    }
+
+    .section-two{
+      height: auto;
     }
 
     #nomeUsuario{
@@ -377,9 +383,8 @@ section{
     }
     
     #cargo{
-      font-size: 15px;
       position: absolute;
-      bottom: 0;
+      bottom: 15px;
       user-select: none;
       width: 100px;
       left: 85px;
@@ -462,18 +467,24 @@ section{
     .aprovar,.rejeitar{
       width: 55px;
     }
-
-  
    
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     .main-cards{
       margin-top:-50px;
     }
     section{
       overflow-y: auto;
     }
+
+    #fotoModal{
+      margin-left: 9px;
+     }
+     
+      .modalFoto-content{
+      margin: 3% auto;
+      }
   }
 
 @media screen and (max-width: 1200px) {
