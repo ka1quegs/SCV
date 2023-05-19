@@ -413,6 +413,8 @@ th {
     font-size: 15px;
     position: absolute;
     bottom: 0;
+    user-select: none;
+
   }
 
 /* ---------- MEDIA QUERIES ---------- */
@@ -713,8 +715,6 @@ hr{
 section{
   height: auto;
 }
-
-
 
 #toggle-btn{
   margin-top: -7px;
