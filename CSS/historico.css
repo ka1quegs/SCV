@@ -229,6 +229,8 @@ h1 {
     font-size: 15px;
     position: absolute;
     bottom: 0;
+    user-select: none;
+
   }
 
 @media(max-width:1400px) {
