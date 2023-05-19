@@ -379,9 +379,9 @@ section{
       font-size: 15px;
       position: absolute;
       bottom: 0;
-      font-weight: 400;
       user-select: none;
-
+      width: 100px;
+      left: 85px;
     }
 
   /* ---------- MEDIA QUERIES ---------- */

@@ -494,7 +494,8 @@ th {
   position: absolute;
   bottom: 0;
   user-select: none;
-
+  width: 100px;
+  left: 85px;
 }
 
 

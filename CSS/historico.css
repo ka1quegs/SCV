@@ -230,7 +230,8 @@ h1 {
     position: absolute;
     bottom: 0;
     user-select: none;
-
+    width: 100px;
+    left: 85px;
   }
 
 @media(max-width:1400px) {
