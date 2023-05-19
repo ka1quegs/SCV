@@ -363,7 +363,6 @@ section{
       position: absolute;
       bottom: 50px;
       user-select: none;
-      display: flex;
       font-weight: 500;
 
     }

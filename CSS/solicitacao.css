@@ -267,7 +267,6 @@ form button:hover{
   position: absolute;
   bottom: 50px;
   user-select: none;
-  display: flex;
 }
 
 #icone{
