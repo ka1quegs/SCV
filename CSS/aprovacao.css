@@ -357,7 +357,30 @@ section{
     height: auto; 
     overflow-y: auto;
     border-radius: 10px;
+    }
 
+    #nomeUsuario{
+      position: absolute;
+      bottom: 50px;
+      user-select: none;
+      display: flex;
+      font-weight: 500;
+
+    }
+    
+    #icone{
+      position: absolute;
+      bottom: 20px;
+      width: 100px;
+      color: white;
+      margin-left: 85%;
+    }
+    
+    #cargo{
+      font-size: 15px;
+      position: absolute;
+      bottom: 0;
+      font-weight: 400;
     }
 
   /* ---------- MEDIA QUERIES ---------- */

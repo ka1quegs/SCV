@@ -475,7 +475,26 @@ th {
 }
 
 
+#nomeUsuario{
+  position: absolute;
+  bottom: 50px;
+  user-select: none;
+  display: flex;
+}
 
+#icone{
+  position: absolute;
+  bottom: 20px;
+  width: 100px;
+  color: white;
+  margin-left: 85%;
+}
+
+#cargo{
+  font-size: 15px;
+  position: absolute;
+  bottom: 0;
+}
 
 
 /* ---------- MEDIA QUERIES ---------- */
