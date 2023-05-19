@@ -20,9 +20,10 @@ onAuthStateChanged(auth, (user) => {
         if (!querySnapshot.empty) {
           const doc = querySnapshot.docs[0]; 
           const nomeFuncionario = doc.get('username');
-
           const nomeUsuario = document.getElementById('nomeUsuario');
           nomeUsuario.innerHTML = nomeFuncionario;
+          const cargo = doc.get('funcao')
+          document.getElementById('cargo').innerHTML = cargo
         }
       })
       .catch((error) => {

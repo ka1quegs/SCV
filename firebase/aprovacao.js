@@ -23,6 +23,8 @@ onAuthStateChanged(auth, (user) => {
 
           const nomeUsuario = document.getElementById('nomeUsuario');
           nomeUsuario.innerHTML = nomeFuncionario;
+          const cargo = doc.get('funcao')
+          document.getElementById('cargo').innerHTML = cargo
         }
       })
       .catch((error) => {
