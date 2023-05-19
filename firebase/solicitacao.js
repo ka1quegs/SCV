@@ -18,7 +18,6 @@ onAuthStateChanged(auth, (user) => {
         if (!querySnapshot.empty) {
           const doc = querySnapshot.docs[0]; 
           const nomeFuncionario = doc.get('username');
-
           const nomeUsuario = document.getElementById('nomeUsuario');
           nomeUsuario.innerHTML = nomeFuncionario;
         }
