@@ -12,12 +12,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      background-color: #e6e8ed;
-      color: #666666;
-      font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #e6e8ed;
+    color: #666666;
+    font-family: "Montserrat", sans-serif;
+    user-select: none;
+
     
   }
 
@@ -26,6 +28,7 @@
   .img{
     width: 150px;
     margin-left: 30%;
+    pointer-events: none;
   }
   
   #login-box {
@@ -79,6 +82,17 @@
     border: none;
     cursor: pointer;
   } 
+
+   select{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+  }
   
   /* ---------- MEDIA QUERIES ---------- */
   

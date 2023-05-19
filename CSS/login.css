@@ -11,6 +11,8 @@
 body,
 input {
   font-family: "Poppins", sans-serif;
+  user-select: none;
+
 }
 
 /*FORMULÁRIO*/
@@ -219,6 +221,11 @@ form.login-form {
 
 .container.sign-up-mode .right-panel {
   pointer-events: all;
+}
+
+#cadastro, a{
+  color: blue;
+  text-decoration: none !important;
 }
 
 /* ---------- MEDIA QUERIES ---------- */
