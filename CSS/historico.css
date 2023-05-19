@@ -32,6 +32,7 @@ nav {
 
 nav.hide {
   width: 0;
+  font-size: 0;
 }
 
 nav span {

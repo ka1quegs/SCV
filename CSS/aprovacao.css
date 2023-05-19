@@ -34,8 +34,9 @@ transition: ease-in 0.3s;
 z-index: 100;
 }
 
-nav.hide{
-width: 0;
+nav.hide {
+  width: 0;
+  font-size: 0;
 }
 
 nav span{
