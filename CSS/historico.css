@@ -257,6 +257,11 @@ h1 {
     overflow: none;
   }
 
+  h1{
+    font-size: 30px;
+    margin-left: 20px;
+  }
+
 }
 
 @media(max-width:992px){

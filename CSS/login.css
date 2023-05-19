@@ -349,4 +349,10 @@ form.login-form {
     bottom: 28%;
     left: 50%;
   }
+
+  .btn{
+    margin-left: 30%;
+  }
+
+ 
 }
