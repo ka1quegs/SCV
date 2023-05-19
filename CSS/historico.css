@@ -9,6 +9,7 @@
 body {
   margin: 0;
   overflow: hidden;
+  user-select: none;
 }
 
 /*SIDEBAR*/
@@ -28,6 +29,8 @@ nav {
   border-bottom-right-radius: 10px;
   transition: ease-in 0.3s;
   z-index: 100;
+  user-select: none;
+
 }
 
 nav.hide {
@@ -234,7 +237,14 @@ h1 {
     left: 85px;
   }
 
-@media(max-width:1400px) {
+  @media(max-width:1500px) {
+    #sectionHistorico {
+      overflow-y: auto;
+      height: 370px;
+    }
+  }
+
+@media(max-width:1300px) {
   #sectionHistorico {
     overflow-y: auto;
     height: 340px;
