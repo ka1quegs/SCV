@@ -25,6 +25,22 @@ onAuthStateChanged(auth, (user) => {
           nomeUsuario.innerHTML = nomeFuncionario;
           const cargo = doc.get('funcao')
           document.getElementById('cargo').innerHTML = cargo
+
+          if (cargo == 'Diretor' || cargo == 'Gestor') {
+            // Permite acesso total ao gerente
+            const cargoElement = document.getElementById('cargo');
+            cargoElement.innerHTML = cargo;
+            document.getElementById("consultaPortaria").style.display = "none"
+          } 
+
+          if(cargo == 'Porteiro'){
+            window.location.href = "consulta-portaria.html"
+          }
+
+          if(cargo == 'Funcionário'){
+            window.location.href = "solicitacao.html"
+          }
+          
         }
       })
       .catch((error) => {

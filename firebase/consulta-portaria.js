@@ -26,6 +26,21 @@ onAuthStateChanged(auth, (user) => {
           nomeUsuario.innerHTML = nomeFuncionario;
           const cargo = doc.get('funcao')
           document.getElementById('cargo').innerHTML = cargo
+
+          if (cargo == 'Porteiro') {
+            const cargoElement = document.getElementById('cargo');
+            cargoElement.innerHTML = cargo;
+            document.getElementById("aprovacao").style.display = "none"
+            document.getElementById("consulta").style.display = "none"
+          }
+
+          if(cargo == 'Gestor' || cargo == 'Diretor'){
+            window.location.href = "aprovacao.html"
+          }
+
+          if(cargo == 'Funcionário'){
+            window.location.href = "solicitacao.html"
+          }
         }
       })
       .catch((error) => {

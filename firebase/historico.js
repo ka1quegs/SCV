@@ -24,6 +24,27 @@ onAuthStateChanged(auth, (user) => {
           nomeUsuario.innerHTML = nomeFuncionario;
           const cargo = doc.get('funcao')
           document.getElementById('cargo').innerHTML = cargo
+
+          if (cargo == 'Funcionário' ) {
+            // Permite acesso total ao gerente
+            const cargoElement = document.getElementById('cargo');
+            cargoElement.innerHTML = cargo;
+            document.getElementById("aprovacao").style.display = "none"
+            document.getElementById("consultaPortaria").style.display = "none"
+          }
+          if (cargo == 'Gestor' || cargo == 'Diretor') {
+            // Permite acesso total ao gerente
+            const cargoElement = document.getElementById('cargo');
+            cargoElement.innerHTML = cargo;
+            document.getElementById("consultaPortaria").style.display = "none"
+          }
+          if (cargo == 'Porteiro'){
+            // Permite acesso total ao gerente
+            const cargoElement = document.getElementById('cargo');
+            cargoElement.innerHTML = cargo;
+            document.getElementById("consulta").style.display = "none"
+            document.getElementById("aprovacao").style.display = "none"
+          } 
         }
       })
       .catch((error) => {
