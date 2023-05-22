@@ -45,7 +45,10 @@ onAuthStateChanged(auth, (user) => {
             document.getElementById("consulta").style.display = "none"
             document.getElementById("aprovacao").style.display = "none"
             window.location.href = "consulta-portaria.html"
-          } 
+          }
+          if(cargo !== 'Funcionário' && cargo !== 'Gestor' && cargo !== 'Diretor' && cargo !== 'Porteiro'){
+            window.location.href = 'errorPage.html'
+          }
         }
       })
       .catch((error) => {
