@@ -127,8 +127,6 @@ deslogar.addEventListener('click', () =>{
           let button = document.createElement("button")
           button.setAttribute("class", "aprovar")
           button.setAttribute("id", "aprovar")
-          
-          
           button.addEventListener("click", async () => {
             await updateDoc(doc.ref, { verificacao: true } )
             await updateDoc(doc.ref, { status: "Aprovado" })
@@ -149,6 +147,7 @@ deslogar.addEventListener('click', () =>{
             await updateDoc(doc.ref, { pendente: false })
             await updateDoc(doc.ref, { status: "Rejeitado" })
             await updateDoc(doc.ref, { tipo_cadastro: "Efetivo" })
+            await updateDoc(doc.ref, { aprov_rejPor: nomeUsuarioLogado });
             location.reload()
           })
           button.innerHTML = "Rejeitar"
@@ -209,6 +208,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
           document.getElementById("periodoDe").value = doc.get("periodoDe")
           document.getElementById("periodoAte").value = doc.get("periodoAte")
           document.getElementById("story").value = doc.get("observacao")
+          document.getElementById("aprov_rejPor").value = doc.get("aprov_rejPor")
       })
 
       modal.style.display = "block"
