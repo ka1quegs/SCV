@@ -161,7 +161,10 @@ const arrayDocumentos = await getDocs(colecao)
       tbody.append(td);
 
       td = document.createElement("td")
-      td.innerHTML = doc.get("#")
+      td.innerHTML = doc.get("aprov_rejPor")
+      if(doc.get('aprov_rejPor') == ""){
+        td.innerHTML = "Em análise"
+      }
       td.setAttribute("data-label","Aprovado/Rejeitado por")
       tbody.append(td)
 
@@ -215,7 +218,8 @@ for (let i = 0; i < arrayRegistro.length; i++){
       document.getElementById("entrada").value = doc.get("entrada")
       document.getElementById("saida").value = doc.get("saida")
       document.getElementById("status").value = doc.get("status")
-      document.getElementById("aprov_rej").value = doc.get("#")
+      document.getElementById("aprov_rej").value = doc.get("aprov_rejPor")
+      
       })
 
     

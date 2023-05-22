@@ -158,7 +158,8 @@ arrayDocumentos.forEach(doc => {
     tbody.append(td);
 
     td = document.createElement("td")
-    td.innerHTML = doc.get("#")
+    td.innerHTML = doc.get("aprov_rejPor")
+    
     td.setAttribute("data-label", "Aprovado/Rejeitado por")
     tbody.append(td)
 
@@ -187,6 +188,7 @@ arrayDocumentos.forEach(doc => {
       await updateDoc(doc.ref, { status: "Pendente" })
       await updateDoc(doc.ref, { entrada: "" })
       await updateDoc(doc.ref, { saida: "" })
+      await updateDoc(doc.ref, { aprov_rejPor: "Em análise" })
       console.log("Atualizado")
       location.reload()
     })
@@ -242,7 +244,7 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       document.getElementById("entrada").value = doc.get("entrada")
       document.getElementById("saida").value = doc.get("saida")
       document.getElementById("status").value = doc.get("status")
-      document.getElementById("aprov_rej").value = doc.get("#")
+      document.getElementById("aprov_rej").value = doc.get("aprov_rejPor")
     })
  
     modal.style.display = "block"

@@ -144,7 +144,8 @@ deslogar.addEventListener('click', () =>{
       saida: "",
       date: `${dataFormatada}`,
       estadoVisita: "",
-      tipo_cadastro: "Pré-Cadastro"
+      tipo_cadastro: "Pré-Cadastro",
+      aprov_rejPor: "Em análise"
     });
 
    setTimeout(() => {
