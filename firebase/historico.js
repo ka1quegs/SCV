@@ -26,11 +26,8 @@ onAuthStateChanged(auth, (user) => {
           document.getElementById('cargo').innerHTML = cargo
 
           if (cargo == 'Funcionário' ) {
-            // Permite acesso total ao gerente
-            const cargoElement = document.getElementById('cargo');
-            cargoElement.innerHTML = cargo;
-            document.getElementById("aprovacao").style.display = "none"
-            document.getElementById("consultaPortaria").style.display = "none"
+            window.location.href = "solicitacao.html"
+            
           }
           if (cargo == 'Gestor' || cargo == 'Diretor') {
             // Permite acesso total ao gerente
