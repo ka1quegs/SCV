@@ -41,7 +41,10 @@ onAuthStateChanged(auth, (user) => {
             cargoElement.innerHTML = cargo;
             document.getElementById("consulta").style.display = "none"
             document.getElementById("aprovacao").style.display = "none"
-          } 
+          }
+          if(cargo !== 'Funcionário' && cargo !== 'Gestor' && cargo !== 'Diretor' && cargo !== 'Porteiro'){
+            window.location.href = 'errorPage.html'
+          }
         }
       })
       .catch((error) => {
