@@ -219,6 +219,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
       document.getElementById("saida").value = doc.get("saida")
       document.getElementById("status").value = doc.get("status")
       document.getElementById("aprov_rej").value = doc.get("aprov_rejPor")
+      
       })
 
     
