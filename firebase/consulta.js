@@ -54,7 +54,7 @@ onAuthStateChanged(auth, (user) => {
     window.location.href = 'login.html';
   }
 });
-const deslogar = document.getElementById('deslogar')
+const deslogar = document.getElementById('icone')
 deslogar.addEventListener('click', () =>{
   signOut(auth).then(() => {
   // Sign-out successful.
