@@ -227,7 +227,7 @@ for (let i = 0; i < arrayRegistro.length; i++){
           fotoModal.src = `${url}`
         
         }).catch(function(error) {
-          fotoModal.src = "https://cdn-icons-png.flaticon.com/512/1361/1361728.png"
+          fotoModal.src = "../images/user.png"
         });
         
       })
