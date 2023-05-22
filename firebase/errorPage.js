@@ -4,6 +4,7 @@ from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 import { getAuth, onAuthStateChanged,signOut } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
+
 const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (user) {
