@@ -43,7 +43,7 @@ onAuthStateChanged(auth, (user) => {
             document.getElementById("aprovacao").style.display = "none"
           }
           if(cargo !== 'Funcionário' && cargo !== 'Gestor' && cargo !== 'Diretor' && cargo !== 'Porteiro'){
-            window.location.href = 'errorPage.html'
+            window.location.href = 'errorpage.html'
           }
         }
       })

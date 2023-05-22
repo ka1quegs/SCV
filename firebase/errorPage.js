@@ -24,23 +24,6 @@ onAuthStateChanged(auth, (user) => {
           const cargo = doc.get('funcao')
           document.getElementById('cargo').innerHTML = cargo
 
-          if (cargo == 'Porteiro') {
-            const cargoElement = document.getElementById('cargo');
-            cargoElement.innerHTML = cargo;
-            document.getElementById("aprovacao").style.display = "none"
-            document.getElementById("consulta").style.display = "none"
-          }
-
-          if(cargo == 'Gestor' || cargo == 'Diretor'){
-            window.location.href = "aprovacao.html"
-          }
-
-          if(cargo == 'Funcionário'){
-            window.location.href = "solicitacao.html"
-          }
-          if(cargo !== 'Funcionário' && cargo !== 'Gestor' && cargo !== 'Diretor' && cargo !== 'Porteiro'){
-            window.location.href = 'errorPage.html'
-          }
         }
       })
       .catch((error) => {

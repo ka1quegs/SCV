@@ -44,7 +44,7 @@ onAuthStateChanged(auth, (user) => {
             document.getElementById("aprovacao").style.display = "none"
           } 
           if(cargo !== 'Funcionário' && cargo !== 'Gestor' && cargo !== 'Diretor' && cargo !== 'Porteiro'){
-            window.location.href = 'errorPage.html'
+            window.location.href = 'errorpage.html'
           }
           
         }
@@ -108,8 +108,7 @@ deslogar.addEventListener('click', () =>{
               document.getElementById("empresa").value = "";
               document.getElementById("responsavelVisita").value = "";
               console.log(res);
-              alert("Your message sent successfully!!")
-      
+          
           })
           .catch(err=>console.log(err));
       
