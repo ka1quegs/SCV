@@ -158,7 +158,7 @@ arrayDocumentos.forEach(doc => {
     tbody.append(td);
 
     td = document.createElement("td")
-    td.innerHTML = doc.get("#")
+    td.innerHTML = doc.get("aprov_rejPor")
     td.setAttribute("data-label", "Aprovado/Rejeitado por")
     tbody.append(td)
 
@@ -187,6 +187,7 @@ arrayDocumentos.forEach(doc => {
       await updateDoc(doc.ref, { status: "Pendente" })
       await updateDoc(doc.ref, { entrada: "" })
       await updateDoc(doc.ref, { saida: "" })
+      await updateDoc(doc.ref, { aprov_rejPor: "" })
       console.log("Atualizado")
       location.reload()
     })

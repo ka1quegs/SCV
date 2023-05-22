@@ -161,7 +161,7 @@ const arrayDocumentos = await getDocs(colecao)
       tbody.append(td);
 
       td = document.createElement("td")
-      td.innerHTML = doc.get("#")
+      td.innerHTML = doc.get("aprov_rejPor")
       td.setAttribute("data-label","Aprovado/Rejeitado por")
       tbody.append(td)
 

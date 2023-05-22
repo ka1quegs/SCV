@@ -5,7 +5,7 @@ import { ref, getDownloadURL  } from "https://www.gstatic.com/firebasejs/9.17.1/
 
 import { getAuth, onAuthStateChanged,signOut } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
-
+let nomeUsuarioLogado = '';
 const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -20,7 +20,7 @@ onAuthStateChanged(auth, (user) => {
         if (!querySnapshot.empty) {
           const doc = querySnapshot.docs[0]; 
           const nomeFuncionario = doc.get('username');
-
+          nomeUsuarioLogado = nomeFuncionario;
           const nomeUsuario = document.getElementById('nomeUsuario');
           nomeUsuario.innerHTML = nomeFuncionario;
           const cargo = doc.get('funcao')
@@ -127,11 +127,14 @@ deslogar.addEventListener('click', () =>{
           let button = document.createElement("button")
           button.setAttribute("class", "aprovar")
           button.setAttribute("id", "aprovar")
+          
+          
           button.addEventListener("click", async () => {
             await updateDoc(doc.ref, { verificacao: true } )
             await updateDoc(doc.ref, { status: "Aprovado" })
             await updateDoc(doc.ref, { pendente: false })
             await updateDoc(doc.ref, { tipo_cadastro: "Efetivo" })
+            await updateDoc(doc.ref, { aprov_rejPor: nomeUsuarioLogado });
             location.reload()
           })
           button.innerHTML = "Aprovar"
