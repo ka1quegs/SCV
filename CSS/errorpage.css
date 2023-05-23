@@ -77,3 +77,20 @@ img{
     width: 200px;
     height: 60px;
 }
+
+@media (max-width: 1000px) {
+    .right-col {
+    content: "";
+    position: absolute;
+    height: 1000px;
+    width: 1000px;
+    left: 0;
+    transform: translateY(-50%);
+    transition: 1.8s ease-in-out;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #0575E6, #021B79);
+}
+.error-content{
+    top: 40%;
+}
+}
