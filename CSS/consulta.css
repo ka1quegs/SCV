@@ -735,10 +735,16 @@ section{
 }
 
 
-@media (max-width:370px){
+@media (max-width:380px){
 
     nav{
       width: 225px;
     }
+
+    .filtro{
+      padding: 0;
+    }
+
+
 }
 

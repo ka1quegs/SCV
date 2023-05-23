@@ -529,13 +529,20 @@ form button:hover{
     margin-top: 30px;
   }
 
+  .input-field2 {
+    width: 95%;
+  }
 
 }
 
 
 
-@media (max-width: 305px) {
+@media (max-width: 380px) {
 nav{
   width: 220px;
+}
+
+.container header{
+  font-size: 20px;
 }
 }
