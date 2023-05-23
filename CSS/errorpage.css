@@ -1,73 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins" , sans-serif;
-}
-
-body{
-    background: linear-gradient(45deg, #000428, #004e92);
-    height: 100vh;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    overflow: hidden;
     user-select: none;
 }
 
-#container{
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    right: 10%;
-    bottom: 10%;
-    border-radius: 10px;
+.error-page {
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url(../Images/erro.png) #151729;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, .5);
 }
 
-#container .content{
-    max-width: 600px;
+.left-col {
+    flex-basis: 50%;
+    background: #ffffff;
+}
+
+.right-col {
+    content: "";
+    position: absolute;
+    height: 1500px;
+    width: 1000px;
+    left: 48%;
+    transform: translateY(-50%);
+    transition: 1.8s ease-in-out;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #0575E6, #021B79);
+}
+
+
+.error-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
-#container .content h2{
-    font-size: 18vw;
-    color: #fff;
-    line-height: 1em;
+.error-content h1 {
+    color: #00B4DB;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 35px;
+    
 }
 
-#container .content h4{
-    position: relative;
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: #111;
-    background: #fff;
-    font-weight: 300;
-    padding: 10px 20px;
-    display: inline-block;
+.error-content h2,
+.error-content p {
+    color: #303030;
 }
 
-#container .content p{
-    color: #fff;
-    font-size: 1.2em;
-}
-
-#container .content a{
-    position: relative;
-    display: inline-block;
-    padding: 10px 25px;
-    background: blue;
-    color: #fff;
-    text-decoration: none;
-    margin-top: 25px;
+.error-content button {
+    color: #ffffff;
+    background: #00B4DB;
+    border: 0;
+    padding: 10px 15px;
     border-radius: 25px;
-    border-bottom: 4px solid #1CB5E0;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
-#container .content a:hover{
-    background: #1CB5E0;
-    border-bottom: 4px solid blue;
-    transition: 0.5s all ease-in-out;
+.error-content button:focus {
+    outline: none;
+}
+
+img{
+    width: 400px;
+    height: 300px;
+    pointer-events: none;
 }
