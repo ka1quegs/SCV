@@ -282,6 +282,7 @@ color: #265df2;
     overflow: none;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
+    
   
     }
     
@@ -348,17 +349,20 @@ color: #265df2;
   font-family: Arial, sans-serif;
   table-layout: fixed;
   text-align: center;
+  
 
 }
 
 th, td {
   padding: 0.5em;
   text-align: center;
+  
 }
 
 .section-two table{
   width: 98.5%;
   table-layout: fixed;
+  
 }
 
 thead {
@@ -374,6 +378,7 @@ th {
   overflow-y: scroll;
   line-height: 2.5;
   user-select: none;
+  
 }
 
 .pesquisa{
@@ -512,6 +517,10 @@ header{
   .mod-content{
     width: 70%;
     margin: 15% auto;
+  }
+
+  .modalFoto-content{
+    margin-top: 50px;
   }
 }
 
