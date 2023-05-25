@@ -93,16 +93,24 @@ deslogar.addEventListener('click', () =>{
     // Esperar um tempo para aguardar a resolução das Promises
     await new Promise((resolve) => setTimeout(resolve, 500));
   
-// Ordenar os registros pelo campo "dataRegistro" em ordem crescente
-registros.sort((b, a) => {
-  const dataA = new Date(
-    a.dataRegistro.split('/').reverse().join('/')
-  );
-  const dataB = new Date(
-    b.dataRegistro.split('/').reverse().join('/')
-  );
-  return dataA - dataB;
-});
+    registros.sort((b, a) => {
+      const dataA = new Date(a.dataRegistro.split('/').reverse().join('/'));
+      const dataB = new Date(b.dataRegistro.split('/').reverse().join('/'));
+      
+      // Comparar as datas de registro
+      if (dataA < dataB) {
+        return -1;
+      } else if (dataA > dataB) {
+        return 1;
+      } else {
+        // Se as datas de registro forem iguais, comparar as horas de entrada
+        const horaA = new Date(`01/01/2000 ${a.entrada}`);
+        const horaB = new Date(`01/01/2000 ${b.entrada}`);
+        
+        return horaA - horaB;
+      }
+    });
+    
 
 
   
