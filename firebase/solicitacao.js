@@ -147,6 +147,9 @@ deslogar.addEventListener('click', () =>{
       aprov_rejPor: "Em análise"
     });
 
+   setTimeout(() => {
+      location.reload(); // recarregar a página
+    }, 4000); // esperar 2 segundo antes de recarregar a página
   
     // Verifique se os campos estão preenchidos
  
