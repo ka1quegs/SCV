@@ -164,9 +164,10 @@ nav span {
   background-color: #228B22;
   transition: all 0.3s linear;
   cursor: pointer;
-  margin-bottom: 20px;
-
+  margin-bottom: 5px;
+  float: right; 
 }
+
 
 #btn1:hover {
   transition: all 0.3s linear;
