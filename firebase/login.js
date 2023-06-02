@@ -1,6 +1,6 @@
 import { db, auth } from "./modules.js";
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-import { doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 
 
@@ -14,10 +14,17 @@ passwordInput.addEventListener('keydown', function(event) {
 });
 
 
+
+document.getElementById('login').addEventListener('click', function(event){
+  loginFunction()
+})
+
+
 async function loginFunction() {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
 
+  
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
@@ -34,6 +41,9 @@ async function loginFunction() {
   } catch (error) {
     const errorCode = error.code;
 
+
+    
+  
     if (errorCode === "auth/user-not-found") {
       alert("Usuário não existente, por favor realize o cadastro.");
     } else if (errorCode === "auth/invalid-email") {
@@ -44,6 +54,7 @@ async function loginFunction() {
       alert("Ops, um erro ocorreu. Tente novamente mais tarde.");
     } else {
       alert("Ops, um erro ocorreu: " + errorCode);
+
     }
   }
 }
