@@ -166,7 +166,7 @@ deslogar.addEventListener('click', () =>{
   //Toastify de Solicitação enviada
   enviarSolici.addEventListener('click', () => { 
     Toastify({
-      text: "Socilitação enviada",
+      text: "Socilitação Enviada",
       duration: 2500,
       newWindow: true,
       close: true,
@@ -239,7 +239,7 @@ buscarBtn.addEventListener("click", async () => {
       
     } else {
       Toastify({
-        text: "Cadastro não Encontrado",
+        text: "Cadastro Não Encontrado",
         duration: 4000,
         newWindow: true,
         close: true,

@@ -461,7 +461,7 @@ section{
 
     section{
       margin: 0 auto;
-      height: 320px;
+      height: 460px;
       
     }
 
@@ -477,6 +477,7 @@ section{
     }
     section{
       overflow-y: auto;
+      height: 350px;
     }
 
     #fotoModal{

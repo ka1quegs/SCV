@@ -238,14 +238,20 @@ h1 {
     left: 85px;
   }
 
-
-
-  @media(max-width:1500px) {
+  @media(max-width:1600px) {
     #sectionHistorico {
       overflow-y: auto;
-      height: 370px;
+      height: 550px;
+    }
+   }
+
+  @media(max-width:1400px) {
+    #sectionHistorico {
+      overflow-y: auto;
+      height: 400px;
     }
   }
+
 
 @media(max-width:1300px) {
   #sectionHistorico {

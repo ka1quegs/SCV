@@ -602,10 +602,50 @@ header{
   width: 65%;
   margin: 20% auto;
 }
-#input-busca{
-  width: 95%;
+#sectionRegistro{
+  overflow-y: scroll;
+  height: 500px;
+}
+.contador{
+  width: 320px;
 }
 
+#video{
+  margin-left: 150px;
+}
+
+#canvasFoto{
+  width: 400px;
+  height: 300px;
+  margin-left: 150px;
+  margin-top: -55px;
+}
+
+}  
+
+@media (max-width:1401px){
+  .modal-content{
+    margin: 2% auto;
+    width: 80%;
+  }
+
+h1{
+  text-align: center;
+}
+
+.table2, .table {
+  width: 95%;  
+}
+
+header{
+  margin: 0 3% auto;
+  width: 100%;
+} 
+
+.mod-content{
+  width: 65%;
+  margin: 20% auto;
+}
 #sectionRegistro{
   overflow-y: scroll;
   height: 350px;
@@ -613,10 +653,43 @@ header{
 .contador{
   width: 320px;
 }
+
+#video{
+  margin-left: 120px;
 }
 
+.modalCamera-content{
+  margin: 3% auto;
+  height: 550px;
+}
 
+.funcoes{
+  display: flex;
+  position: fixed;
+  width: 45%;
+  top: 500px;
+  margin: 0 20px auto;
+}
+#canvasFoto{
+  width: 400px;
+  height: 300px;
+  margin-left: 120px;
+  margin-top: -55px;
+}
 
+.modalFoto-content{
+  margin-top: 50px;
+}
+
+#fotoModal{
+  margin-left: 9px;
+}
+#abrirCamera{
+  width: 100px;
+  margin-left: 840px;
+}
+
+}
 @media (max-width:1300px){
 
   #sectionRegistro{
