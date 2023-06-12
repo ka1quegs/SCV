@@ -218,10 +218,12 @@ for (let i = 0; i < arrayRegistro.length; i++) {
       if (doc.get('status') === 'Rejeitado') {
         document.getElementById('entrada').disabled = true;
         document.getElementById('saida').disabled = true;
+        document.getElementById("abrirCamera").style.display = 'none'
         
       }else if(doc.get('status') === 'Pendente'){
         document.getElementById('entrada').disabled = true;
         document.getElementById('saida').disabled = true;
+        document.getElementById("abrirCamera").style.display = 'none'
       }
       
       document.getElementById("dataRegistro").value = doc.get("date")
