@@ -223,7 +223,7 @@ buscarBtn.addEventListener("click", async () => {
       document.getElementById("celular").value = data.celular;
 
       Toastify({
-        text: "Cadastro encontrado",
+        text: "Cadastro Encontrado",
         duration: 4000,
         newWindow: true,
         close: true,
@@ -239,7 +239,7 @@ buscarBtn.addEventListener("click", async () => {
       
     } else {
       Toastify({
-        text: "Cadastro não encontrado",
+        text: "Cadastro não Encontrado",
         duration: 4000,
         newWindow: true,
         close: true,
