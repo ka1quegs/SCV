@@ -533,6 +533,10 @@ header{
 .contador{
   width: 320px;
 }
+
+.modalFoto-content{
+  margin: 5% auto;
+}
 }
 
 
